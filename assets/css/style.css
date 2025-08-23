@@ -665,3 +665,46 @@ section h2 {
     gap: 1rem;
   }
 }
+
+/* Main page specific button sizing - smaller buttons only on main page */
+.main-page #essentials-button,
+.main-page #contact-button,
+.main-page #toggle-grades,
+.main-page #toggle-videos,
+.main-page #essentials-button-mobile,
+.main-page #contact-button-mobile,
+.main-page #toggle-grades-mobile,
+.main-page #toggle-videos-mobile {
+  font-size: 0.75rem !important; /* text-xs - smaller than current 0.875rem */
+  padding: 0.25rem 0.5rem !important; /* py-1 px-2 - smaller padding */
+}
+
+/* Updated lightbox navigation arrows - clean white arrows */
+.lightbox-prev::before {
+  content: '‹';
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.lightbox-next::before {
+  content: '›';
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Ensure arrows are centered properly */
+.lightbox-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-nav::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
