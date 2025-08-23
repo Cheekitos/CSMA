@@ -679,35 +679,17 @@ section h2 {
   padding: 0.25rem 0.5rem !important; /* py-1 px-2 - smaller padding */
 }
 
-/* Updated lightbox navigation arrows - clean white arrows */
+/* Updated lightbox navigation arrows - clean white arrows, properly centered */
 .lightbox-prev::before {
   content: '‹';
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  line-height: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .lightbox-next::before {
   content: '›';
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  line-height: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Make sure the button container is positioned relative for absolute positioning to work */
-.lightbox-nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
