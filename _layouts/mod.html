@@ -8,29 +8,14 @@ layout: default
     <a href="{{ '/' | relative_url }}" class="text-3xl font-bold hover:text-yellow-400 transition-colors">
       Cheeki's Mods Archive
     </a>
-    <div class="hidden sm:flex gap-2">
-      <button id="essentials-button" aria-label="View essential files" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-2 rounded">
-        Essentials
-      </button>
-      <button id="contact-button" aria-label="About" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-3 rounded">
-        About
-      </button>
-    </div>
+    {% include header-buttons.html %}
   </div>
 
-  <!-- Mobile buttons -->
-  <div class="grid grid-cols-2 gap-2 mb-4 sm:hidden">
-    <button id="essentials-button-mobile" aria-label="View essential files" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-2 rounded">
-      Essentials
-    </button>
-    <button id="contact-button-mobile" aria-label="About" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-3 rounded">
-      About
-    </button>
-  </div>
+  {% include mobile-buttons.html %}
 
   <article class="max-w-4xl mx-auto">
     
-<!-- Breadcrumb Navigation -->
+    <!-- Breadcrumb Navigation -->
     <nav class="mb-6" aria-label="Breadcrumb">
       <ol class="flex items-center space-x-2 text-sm">
         <li>
@@ -77,19 +62,19 @@ layout: default
         </div>
       </div>
       
-    <!-- Platform, Engine and Standalone buttons -->
-<div class="flex items-center flex-wrap gap-3 mb-4">
-  <span class="px-3 py-1 bg-gray-700 text-white rounded text-sm font-medium">{{ page.platform }}</span>
-  
-  {% if page.engine and page.engine != "" %}
-    <span class="px-3 py-1 bg-gray-700 text-white rounded text-sm font-medium flex items-center">
-      <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"/>
-      </svg>
-      {{ page.engine }}
-    </span>
-  {% endif %}
+      <!-- Platform, Engine and Standalone buttons -->
+      <div class="flex items-center flex-wrap gap-3 mb-4">
+        <span class="px-3 py-1 bg-gray-700 text-white rounded text-sm font-medium">{{ page.platform }}</span>
         
+        {% if page.engine and page.engine != "" %}
+          <span class="px-3 py-1 bg-gray-700 text-white rounded text-sm font-medium flex items-center">
+            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"/>
+            </svg>
+            {{ page.engine }}
+          </span>
+        {% endif %}
+              
         {% if page.standalone %}
           <span class="px-3 py-1 bg-green-600 text-white rounded text-sm font-medium flex items-center">
             <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -196,9 +181,9 @@ layout: default
       </div>
     </section>
 
-    <!-- Section 3: Links and Video - Now with 2:1 ratio -->
+    <!-- Section 3: Links and Video -->
     <div class="mod-page-sections mb-6">
-      <!-- Links Section - Takes 2/3 of the width -->
+      <!-- Links Section -->
       <section class="bg-gray-800 rounded-lg p-5">
         <div class="flex items-center mb-3">
           <svg class="w-5 h-5 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
@@ -288,7 +273,7 @@ layout: default
         </div>
       </section>
 
-      <!-- Video Section - Takes 1/3 of the width -->
+      <!-- Video Section -->
       <section class="bg-gray-800 rounded-lg p-5">
         <div class="flex items-center mb-3">
           <svg class="w-5 h-5 mr-2 text-red-400" fill="currentColor" viewBox="0 0 20 20">
@@ -354,119 +339,14 @@ layout: default
   <div id="lightbox" class="lightbox">
     <div class="lightbox-content">
       <img id="lightbox-img" src="" alt="" />
-      <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous image">❮</button>
-      <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next image">❯</button>
+      <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous image">◀</button>
+      <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next image">▶</button>
       <button id="lightbox-close" class="lightbox-close" aria-label="Close lightbox">×</button>
       <div id="lightbox-counter" class="lightbox-counter"></div>
     </div>
   </div>
   {% endif %}
 
-  <!-- About Section -->
-  <div id="contact-overlay" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center hidden z-50">
-      <div class="bg-gray-900 rounded-lg max-w-md w-full max-h-[90vh] overflow-auto p-4 relative text-sm text-gray-200">
-        <button id="contact-close" aria-label="Close contact popup" class="absolute top-2 right-2 text-gray-400 hover:text-white text-xl">&times;</button>
-        <h3 class="text-lg font-bold text-white mb-3">About</h3>
-        
-        <p class="mb-4">You can contact me here to report a broken link or incorrect information that needs fixing.<br><br><em>If you're a mod author and don't want me to repack/rehost some of your files, please let me know and I'll point the "Download Files" to the official website.</em></p>
-        <div class="flex items-center gap-2 mb-4">
-          <button id="reveal-email" class="bg-yellow-500 hover:bg-yellow-600 text-black text-xs font-medium py-1 px-2 rounded">
-            Reveal Email
-          </button>
-          <p id="email-text" class="text-blue-400 hidden">cheekitos@proton.me</p>
-        </div>
-        
-        <div class="bg-gray-800 rounded-lg p-3 mt-4">
-          <h4 class="text-white text-sm font-medium mb-3">Fan content creation guidelines</h4>
-          
-          <div class="mb-3">
-            <span class="text-white text-xs font-medium">GSC EULA:</span><br>
-            <a href="https://www.gsc-game.com/guidelines/" target="_blank" class="text-blue-400 hover:underline text-xs ml-2">Fan Content Creation Guidelines</a>
-          </div>
-          
-          <p class="text-gray-300 text-xs mb-3">
-            All mods shared are fan-made modifications for the S.T.A.L.K.E.R. series, developed and owned by GSC Game World.<br>
-            They are NOT official products but derivative works based on their games.<br>
-            Please support the original developers by purchasing the official games.
-          </p>
-          
-          <div class="space-y-2">
-            <div>
-              <span class="text-white text-xs font-medium">â€¢ Steam:</span><br>
-              <a href="https://store.steampowered.com/franchise/stalker" target="_blank" class="text-blue-400 hover:underline text-xs ml-2">S.T.A.L.K.E.R. Franchise</a>
-            </div>
-            
-            <div>
-              <span class="text-white text-xs font-medium">â€¢ GOG:</span><br>
-              <div class="ml-2 space-y-1">
-                <a href="https://www.gog.com/en/game/stalker_shadow_of_chernobyl" target="_blank" class="block text-blue-400 hover:underline text-xs">Shadow of Chernobyl</a>
-                <a href="https://www.gog.com/en/game/stalker_clear_sky" target="_blank" class="block text-blue-400 hover:underline text-xs">Clear Sky</a>
-                <a href="https://www.gog.com/en/game/stalker_call_of_pripyat" target="_blank" class="block text-blue-400 hover:underline text-xs">Call of Pripyat</a>
-              </div>
-            </div>
-            
-            <div>
-              <span class="text-white text-xs font-medium">â€¢ PlayStation Store:</span><br>
-              <a href="https://store.playstation.com/en-cz/product/EB0236-CUSA43978_00-0550328121149114" target="_blank" class="text-blue-400 hover:underline text-xs ml-2">S.T.A.L.K.E.R. Legends of the Zone Trilogy</a>
-            </div>
-            
-            <div>
-              <span class="text-white text-xs font-medium">â€¢ Xbox Store:</span><br>
-              <a href="https://www.xbox.com/en-US/games/store/stalker-legends-of-the-zone-trilogy/9N4GFFDG41JR" target="_blank" class="text-blue-400 hover:underline text-xs ml-2">S.T.A.L.K.E.R. Legends of the Zone Trilogy</a>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-
-  <!-- Install Files Popup -->
-  <div id="install-files-overlay" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center hidden z-50">
-    <div class="bg-gray-900 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-auto relative p-4">
-      <button id="install-files-close" aria-label="Close install files popup" class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl font-bold">&times;</button>
-      <div id="install-files-content" class="text-gray-200">
-        <h3 class="text-xl font-bold text-white mb-3">Essential Files</h3>
-        <div class="space-y-3">
-          <p class="text-sm text-gray-300 mb-4">
-            A lot of old-school mods need some (sometimes all) of these files to work. I recommend installing everything once and not having to think about it anymore.
-          </p>
-          
-          <div class="bg-gray-800 rounded-lg p-2.5 mb-2">
-            <h4 class="text-sm font-semibold text-white mb-1">7-Zip</h4>
-            <p class="text-xs text-gray-300 mb-1">Winrar has issues with some files extensions, always use 7zip to extract archives.</p>
-            <a href="https://www.7-zip.org/" target="_blank" class="text-blue-400 hover:underline text-xs">Download 7-Zip</a>
-          </div>
-
-          <div class="bg-gray-800 rounded-lg p-2.5 mb-2">
-            <h4 class="text-sm font-semibold text-white mb-1">OpenAL</h4>
-            <p class="text-xs text-gray-300 mb-1">Audio library required by A LOT of old S.T.A.L.K.E.R. mods.</p>
-            <a href="https://www.openal.org/downloads/" target="_blank" class="text-blue-400 hover:underline text-xs">Download OpenAL</a>
-          </div>
-
-          <div class="bg-gray-800 rounded-lg p-2.5 mb-2">
-            <h4 class="text-sm font-semibold text-white mb-1">DirectX End-User Runtimes 2010</h4>
-            <p class="text-xs text-gray-300 mb-1">Legacy DirectX runtime components needed for these beautiful OG graphics.</p>
-            <a href="https://www.microsoft.com/en-us/download/details.aspx?id=8109" target="_blank" class="text-blue-400 hover:underline text-xs">Download DirectX Runtime 2010</a>
-          </div>
-
-          <div class="bg-gray-800 rounded-lg p-2.5 mb-2">
-            <h4 class="text-sm font-semibold text-white mb-1">Microsoft .NET Framework 4.8</h4>
-            <p class="text-xs text-gray-300 mb-1">Runtime environment required by many mod installers and configuration tools.</p>
-            <a href="https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-8-offline-installer-for-windows-9d23f658-3b97-68ab-d013-aa3c3e7495e0" target="_blank" class="text-blue-400 hover:underline text-xs">Download .NET Framework 4.8</a>
-          </div>
-
-          <div class="bg-gray-800 rounded-lg p-2.5 mb-2">
-            <h4 class="text-sm font-semibold text-white mb-1">Visual C++ Redistributable 2013 x86</h4>
-            <p class="text-xs text-gray-300 mb-1">More essential runtime libraries for older 32-bit mod executables.</p>
-            <a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784" target="_blank" class="text-blue-400 hover:underline text-xs">Download VC++ 2013 x86</a>
-          </div>
-
-          <div class="bg-gray-800 rounded-lg p-2.5">
-            <h4 class="text-sm font-semibold text-white mb-1">Visual C++ Redistributable 2015+</h4>
-            <p class="text-xs text-gray-300 mb-1">Latest Visual C++ runtime libraries for newer mods and enhanced features.</p>
-            <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170" target="_blank" class="text-blue-400 hover:underline text-xs">Download VC++ 2015+ Latest</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include about-popup.html %}
+  {% include essentials-popup.html %}
 </div>
