@@ -24,11 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!lightbox || !lightboxImg) return;
 
-    // Collect all gallery images
-    galleryImages = Array.from(galleryThumbnails).map(thumb => ({
-      src: thumb.getAttribute('data-full-src'),
-      alt: thumb.querySelector('img').alt
-    }));
+    // Collect all gallery images - get from page data if available, otherwise use thumbnails
+    const pageGalleryData = document.querySelector('[data-gallery-images]');
+    if (pageGalleryData) {
+      const allImages = JSON.parse(pageGalleryData.getAttribute('data-gallery-images'));
+      const baseUrl = pageGalleryData.getAttribute('data-base-url');
+      galleryImages = allImages.slice(0, 10).map((image, index) => ({
+        src: baseUrl + image,
+        alt: `Gallery image ${index + 1}`
+      }));
+    } else {
+      // Fallback to thumbnail-based collection
+      galleryImages = Array.from(galleryThumbnails).map(thumb => ({
+        src: thumb.getAttribute('data-full-src'),
+        alt: thumb.querySelector('img').alt
+      }));
+    }
 
     // Add click event to thumbnails
     galleryThumbnails.forEach((thumb, index) => {
