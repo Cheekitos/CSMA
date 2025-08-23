@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Enhanced Title -->
+  {% if page.seo_title %}
+    <title>{{ page.seo_title }}</title>
+  {% elsif page.title %}
+    <title>{{ page.title }} - Install Guide & Download | {{ site.title }}</title>
+  {% else %}
+    <title>{{ site.title }} | S.T.A.L.K.E.R. Mods Archive</title>
+  {% endif %}
+  
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  
+  <!-- Enhanced Description -->
+  {% if page.seo_description %}
+    <meta name="description" content="{{ page.seo_description }}">
+  {% elsif page.description %}
+    <meta name="description" content="{{ page.description | truncate: 155 }}">
+  {% else %}
+    <meta name="description" content="{{ site.description }}">
+  {% endif %}
+  
+  <!-- Enhanced Keywords -->
+  {% if page.keywords %}
+    <meta name="keywords" content="{{ page.keywords }}">
+  {% else %}
+    <meta name="keywords" content="STALKER mods, S.T.A.L.K.E.R. story mods, {{ page.platform }}, game modifications, Zone survival, atmospheric mods">
+  {% endif %}
+  
+  <meta name="author" content="{{ site.author }}">
+  
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="icon" href="{{ '/favicon-96x96.png' | relative_url }}" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  
+  <!-- Open Graph - Enhanced -->
+  <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.seo_description %}{{ page.seo_description }}{% elsif page.description %}{{ page.description | truncate: 155 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="{% if page.layout == 'mod' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/og-image.jpg' | absolute_url }}">
+  
+  <!-- Additional Open Graph for Mod Pages -->
+  {% if page.layout == 'mod' %}
+    <meta property="article:published_time" content="{% if page.release_date %}{{ page.release_date }}T00:00:00Z{% else %}{{ page.date | date_to_xmlschema }}{% endif %}">
+    <meta property="article:author" content="{{ page.mod_creator | default: 'Unknown' }}">
+    <meta property="article:section" content="Gaming Modifications">
+    <meta property="article:tag" content="STALKER">
+    <meta property="article:tag" content="{{ page.platform }}">
+    {% if page.engine %}
+    <meta property="article:tag" content="{{ page.engine }}">
+    {% endif %}
+  {% endif %}
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.seo_description %}{{ page.seo_description }}{% elsif page.description %}{{ page.description | truncate: 155 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{{ '/og-image.jpg' | absolute_url }}">
+  
+  <!-- Enhanced Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": {% if page.layout == 'mod' %}"SoftwareApplication"{% else %}["WebSite", "CollectionPage"]{% endif %},
+    {% if page.layout == 'mod' %}
+      "name": "{{ page.title }}",
+      "description": "{{ page.description | escape }}",
+      "applicationCategory": "Game Modification",
+      "operatingSystem": "Windows",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "{{ page.mod_creator | default: 'Unknown' }}"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ page.rating }}",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "1"
+      },
+      {% if page.release_date %}
+      "datePublished": "{{ page.release_date }}",
+      {% endif %}
+      "downloadUrl": {% if page.download_url %}"{{ page.download_url }}"{% else %}null{% endif %},
+      "screenshot": {% if page.video %}"https://img.youtube.com/vi/{{ page.video | split: '/' | last | split: '?' | first }}/hqdefault.jpg"{% else %}null{% endif %},
+      "keywords": "{% if page.keywords %}{{ page.keywords }}{% else %}STALKER mod, {{ page.platform }}, game modification{% endif %}"
+    {% else %}
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "description": "{{ site.description }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ site.url }}{{ site.baseurl }}/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "S.T.A.L.K.E.R. Story Mods Collection",
+        "description": "A curated collection of story modifications for the S.T.A.L.K.E.R. game series",
+        "numberOfItems": "{{ site.mods.size }}+",
+        "itemListOrder": "http://schema.org/ItemListOrderDescending"
+      }
+    {% endif %}
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body class="bg-gray-900 text-white font-sans p-4">
+<script>
+  (function(){
+    var fullres = document.createElement('script');
+    fullres.async = true;
+    fullres.src = 'https://t.fullres.net/cheeki.js?'+(new Date()-new Date()%43200000);
+    document.head.appendChild(fullres);
+  })();
+</script>
+
+{{ content }}
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
