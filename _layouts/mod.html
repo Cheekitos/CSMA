@@ -104,7 +104,9 @@ layout: default
 
       <!-- Image Gallery -->
       {% if page.gallery_images and page.gallery_images.size > 0 %}
-      <div class="image-gallery mb-4">
+      <div class="image-gallery mb-4" 
+           data-gallery-images='{{ page.gallery_images | slice: 0, 10 | jsonify }}'
+           data-base-url="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | relative_url }}">
         {% for image in page.gallery_images limit: 3 %}
         <div class="gallery-thumbnail" data-full-src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}">
           <img src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}" alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
@@ -274,6 +276,7 @@ layout: default
       </section>
 
       <!-- Video Section -->
+      <!-- Video Section -->
       <section class="bg-gray-800 rounded-lg p-5">
         <div class="flex items-center mb-3">
           <svg class="w-5 h-5 mr-2 text-red-400" fill="currentColor" viewBox="0 0 20 20">
@@ -339,8 +342,8 @@ layout: default
   <div id="lightbox" class="lightbox">
     <div class="lightbox-content">
       <img id="lightbox-img" src="" alt="" />
-      <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous image">◀</button>
-      <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next image">▶</button>
+      <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous image"></button>
+      <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next image"></button>
       <button id="lightbox-close" class="lightbox-close" aria-label="Close lightbox">×</button>
       <div id="lightbox-counter" class="lightbox-counter"></div>
     </div>
