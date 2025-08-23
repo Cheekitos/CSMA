@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
   let cardsPerRow = 3; // Default to 3 cards per row
   let currentDisplayedMods = []; // Track what's currently being displayed
   
-  // Get all mod cards
+  // Get all mod cards with safety check
   const allModCards = Array.from(document.querySelectorAll('.mod-card'));
-  currentDisplayedMods = [...allModCards];
+  if (allModCards.length > 0) {
+    currentDisplayedMods = [...allModCards];
+  }
 
   // Image Gallery functionality
   let currentImageIndex = 0;
@@ -190,9 +192,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize video thumbnails
   initializeVideoThumbnails();
 
-  // Sort functionality
+  // Sort functionality - with safety check
   const sortButton = document.getElementById('sort-button');
-  if (sortButton) {
+  if (sortButton && allModCards.length > 0) {
     sortButton.addEventListener('click', () => {
       const gradesHidden = document.body.classList.contains('hide-grades');
       
@@ -255,9 +257,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Search functionality
+  // Search functionality - with safety check
   const searchInput = document.getElementById('search-input');
-  if (searchInput) {
+  if (searchInput && allModCards.length > 0) {
     searchInput.addEventListener('input', e => {
       const q = e.target.value.toLowerCase();
       
@@ -283,7 +285,9 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (sortBtn) {
       sortBtn.textContent = 'Sort by Rating';
       sortState = 0;
-      renderMods([...allModCards]);
+      if (allModCards.length > 0) {
+        renderMods([...allModCards]);
+      }
     }
     syncToggleStates();
   }
