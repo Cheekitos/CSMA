@@ -1,0 +1,17 @@
+<!-- Mobile buttons -->
+<div class="grid grid-cols-2 gap-2 mb-4 sm:hidden">
+  <button id="essentials-button-mobile" aria-label="View essential files" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-2 rounded">
+    Essentials
+  </button>
+  <button id="contact-button-mobile" aria-label="About" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-3 rounded">
+    About
+  </button>
+  {% if include.show_toggles %}
+  <button id="toggle-grades-mobile" aria-label="Toggle grades visibility" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-2 rounded transition-all duration-200 border-2 border-transparent">
+    Hide Grades
+  </button>
+  <button id="toggle-videos-mobile" aria-label="Toggle videos visibility" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-2 rounded transition-all duration-200 border-2 border-transparent">
+    Hide Videos
+  </button>
+  {% endif %}
+</div>
