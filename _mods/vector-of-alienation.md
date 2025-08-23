@@ -15,6 +15,12 @@ gallery_images:
   - "screenshot02.jpg"
   - "screenshot03.jpg"
   - "screenshot04.jpg"
+  - "screenshot05.jpg"
+  - "screenshot06.jpg"
+  - "screenshot07.jpg"
+  - "screenshot08.jpg"
+  - "screenshot09.jpg"
+  - "screenshot10.jpg"
 
 # SEO ENHANCEMENT SECTION
 seo_title: "Vector of Alienation - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
