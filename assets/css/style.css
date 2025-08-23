@@ -683,27 +683,30 @@ section h2 {
 .lightbox-prev::before {
   content: '‹';
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .lightbox-next::before {
   content: '›';
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Ensure arrows are centered properly */
+/* Make sure the button container is positioned relative for absolute positioning to work */
 .lightbox-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox-nav::before {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
