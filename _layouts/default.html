@@ -121,7 +121,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body class="bg-gray-900 text-white font-sans p-4">
+<body class="bg-gray-900 text-white font-sans p-4{% if page.body_class %} {{ page.body_class }}{% endif %}">
 <script>
   (function(){
     var fullres = document.createElement('script');
