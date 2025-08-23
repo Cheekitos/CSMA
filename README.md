@@ -20,6 +20,7 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - Add Release Date
 - Add common Troubleshooting & Tips section
 - Links Subsections, Inline and extra formatting options
+- First iteration of the Image Gallery (3 images + Lightbox)
 - Popup content into separate files, show/hide toggle buttons based on context
 
 ## ❌ To Do
