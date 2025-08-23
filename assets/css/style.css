@@ -148,6 +148,18 @@ h3, .platform-block {
   transform: translateY(-50%) scale(0.95);
 }
 
+.lightbox-prev::before {
+  content: '◀';
+  color: white;
+  font-size: 16px;
+}
+
+.lightbox-next::before {
+  content: '▶';
+  color: white;
+  font-size: 16px;
+}
+
 .lightbox-prev {
   left: 20px;
 }
@@ -232,6 +244,7 @@ h3, .platform-block {
   }
 }
 
+/* Remaining styles... */
 /* Pros and Cons Section Styling */
 .pros-section ul li {
   color: #4ade80; /* Bright green for pros */
