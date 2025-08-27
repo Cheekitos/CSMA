@@ -51,21 +51,27 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* Filter dropdown styles */
-.filter-dropdown-pushdown {
-  position: static;
-  width: 100%;
-  margin-top: 0;
+/* Filter dropdown styles - Updated positioning and animation */
+#filter-dropdown {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+  opacity: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+#filter-dropdown:not(.hidden) {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Smooth animation for mod list when dropdown opens */
+#mod-list {
+  transition: margin-top 0.3s ease;
 }
 
 /* When filter dropdown is shown, add margin to push content down */
 #search-container:has(#filter-dropdown:not(.hidden)) ~ #mod-list {
   margin-top: 0.75rem;
-  transition: margin-top 0.2s ease;
-}
-
-#filter-dropdown {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Custom radio and checkbox styles */
@@ -188,14 +194,14 @@ h3, .platform-block {
 }
 
 .lightbox-prev::before {
-  content: '‹';
+  content: 'â€¹';
   color: white;
   font-size: 18px;
   font-weight: bold;
 }
 
 .lightbox-next::before {
-  content: '›';
+  content: 'â€º';
   color: white;
   font-size: 18px;
   font-weight: bold;
