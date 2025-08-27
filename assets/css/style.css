@@ -52,41 +52,42 @@ h3, .platform-block {
 }
 
 /* Filter dropdown styles */
+.filter-dropdown-pushdown {
+  position: static;
+  width: 100%;
+  margin-top: 0;
+}
+
+/* When filter dropdown is shown, add margin to push content down */
+#search-container:has(#filter-dropdown:not(.hidden)) ~ #mod-list {
+  margin-top: 0.75rem;
+  transition: margin-top 0.2s ease;
+}
+
 #filter-dropdown {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-#filter-dropdown h4 {
-  color: #d1d5db;
-}
-
-#filter-dropdown label {
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-#filter-dropdown label:hover {
-  color: #f3f4f6;
-}
-
-/* Custom checkbox styles */
-.filter-checkbox {
+/* Custom radio and checkbox styles */
+.filter-checkbox,
+.filter-radio {
   accent-color: #eab308;
+  transform: scale(0.9);
 }
 
-.filter-checkbox:focus {
+.filter-checkbox:focus,
+.filter-radio:focus {
   outline: 2px solid #eab308;
   outline-offset: 2px;
 }
 
-/* Filter toggle button hover effect */
-#filter-toggle {
-  padding: 0.25rem;
-  border-radius: 0.25rem;
+/* Filter text styling */
+#filter-text {
+  user-select: none;
 }
 
-#filter-toggle:hover {
-  background-color: rgba(55, 65, 81, 0.5);
+#filter-text:hover {
+  color: #f3f4f6;
 }
 
 /* Image Gallery Styles */
