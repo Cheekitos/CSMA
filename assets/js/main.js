@@ -250,9 +250,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Clear all filters
+  // Clear all filters - Updated to also clear search text
   if (clearFiltersBtn) {
     clearFiltersBtn.addEventListener('click', () => {
+      // Clear search input text
+      if (searchInput) {
+        searchInput.value = '';
+      }
+      
       // Clear standalone checkbox
       const standaloneCheckbox = document.getElementById('filter-standalone-yes');
       if (standaloneCheckbox) standaloneCheckbox.checked = false;
