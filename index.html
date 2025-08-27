@@ -18,7 +18,7 @@ body_class: main-page
     The goal is simply to consolidate, preserve, and make easily accessible these mods and their English translations, which are too often scattered across various websites, hosting services, and Discord servers. All credit goes to the original mod authors.
   </p>
   
-  <div class="flex flex-wrap items-center gap-2 mb-4">
+  <div class="flex flex-wrap items-start gap-2 mb-4">
     <button id="sort-button" aria-label="Sort mods by rating" class="bg-yellow-500 hover:bg-yellow-600 text-black text-sm font-medium py-1 px-3 rounded w-32">
       Sort by Rating
     </button>
@@ -35,12 +35,11 @@ body_class: main-page
       <span id="filter-text" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs italic cursor-pointer hover:text-white transition-colors">Filters</span>
       <div id="filter-dropdown" class="absolute top-full left-0 right-0 bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-2 hidden z-10 shadow-lg">
         <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-          <!-- Standalone Filter -->
+          <!-- Standalone Filter - Just checkbox -->
           <div class="flex items-center gap-2">
             <span class="text-xs text-gray-300 font-semibold">Standalone:</span>
             <label class="flex items-center text-xs text-gray-400">
-              <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox mr-1">
-              Yes
+              <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox">
             </label>
           </div>
           
