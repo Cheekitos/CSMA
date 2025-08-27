@@ -18,8 +18,8 @@ body_class: main-page
     The goal is simply to consolidate, preserve, and make easily accessible these mods and their English translations, which are too often scattered across various websites, hosting services, and Discord servers. All credit goes to the original mod authors.
   </p>
   
-  <div class="flex flex-wrap items-start gap-2 mb-4">
-    <button id="sort-button" aria-label="Sort mods by rating" class="bg-yellow-500 hover:bg-yellow-600 text-black text-sm font-medium py-1 px-3 rounded w-32">
+  <div class="flex flex-wrap items-start gap-2 mb-4" id="controls-container">
+    <button id="sort-button" aria-label="Sort mods by rating" class="bg-yellow-500 hover:bg-yellow-600 text-black text-sm font-medium py-1 px-3 rounded w-32 h-8">
       Sort by Rating
     </button>
     <div class="flex items-center gap-1">
@@ -31,7 +31,7 @@ body_class: main-page
       </button>
     </div>
     <div class="relative flex-1 min-w-[150px]" id="search-container">
-      <input id="search-input" type="text" aria-label="Search mods" placeholder="Search mods..." class="w-full px-2 py-1 pr-12 text-sm rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+      <input id="search-input" type="text" aria-label="Search mods" placeholder="Search mods..." class="w-full px-2 py-1 pr-12 text-sm rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 h-8" />
       <span id="filter-text" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs italic cursor-pointer hover:text-white transition-colors">Filters</span>
       <div id="filter-dropdown" class="absolute top-full left-0 right-0 bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-2 hidden z-10 shadow-lg">
         <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
