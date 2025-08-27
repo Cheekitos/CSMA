@@ -30,33 +30,80 @@ body_class: main-page
         +
       </button>
     </div>
-    
-    <!-- New Filter Dropdowns -->
-    <select id="standalone-filter" class="bg-gray-800 text-white text-sm py-1 px-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-      <option value="">All Types</option>
-      <option value="true">Standalone</option>
-      <option value="false">Requires Base Game</option>
-    </select>
-    
-    <select id="platform-filter" class="bg-gray-800 text-white text-sm py-1 px-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-      <option value="">All Platforms</option>
-      <option value="Shadow of Chernobyl">Shadow of Chernobyl</option>
-      <option value="Clear Sky">Clear Sky</option>
-      <option value="Call of Pripyat">Call of Pripyat</option>
-    </select>
-    
-    <select id="engine-filter" class="bg-gray-800 text-white text-sm py-1 px-2 rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-      <option value="">All Engines</option>
-      <option value="Base Game Engine">Base Game</option>
-      <option value="Call of Chernobyl">Call of Chernobyl</option>
-      <option value="OGSR">OGSR</option>
-      <option value="OLR">OLR</option>
-      <option value="Anomaly">Anomaly</option>
-      <option value="CoC">CoC</option>
-      <option value="Dead Air">Dead Air</option>
-    </select>
-    
-    <input id="search-input" type="text" aria-label="Search mods" placeholder="Search mods..." class="flex-1 min-w-[150px] px-2 py-1 text-sm rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+    <div class="relative flex-1 min-w-[150px]">
+      <input id="search-input" type="text" aria-label="Search mods" placeholder="Search mods..." class="w-full px-2 py-1 text-sm rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+      <button id="filter-toggle" aria-label="Toggle filters" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.121A1 1 0 013 6.414V4z"/>
+        </svg>
+      </button>
+      <div id="filter-dropdown" class="absolute top-full left-0 right-0 bg-gray-800 border border-gray-700 rounded-b-md mt-1 p-3 hidden z-10 shadow-lg">
+        <div class="space-y-3">
+          <!-- Standalone Filter -->
+          <div>
+            <h4 class="text-sm font-medium text-gray-300 mb-2">Standalone</h4>
+            <div class="space-y-1">
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                Yes
+              </label>
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-standalone-no" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                No
+              </label>
+            </div>
+          </div>
+          
+          <!-- Platform Filter -->
+          <div>
+            <h4 class="text-sm font-medium text-gray-300 mb-2">Platform</h4>
+            <div class="space-y-1">
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-platform-soc" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                Shadow of Chernobyl
+              </label>
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-platform-cs" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                Clear Sky
+              </label>
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-platform-cop" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                Call of Pripyat
+              </label>
+            </div>
+          </div>
+          
+          <!-- Engine Filter -->
+          <div>
+            <h4 class="text-sm font-medium text-gray-300 mb-2">Engine</h4>
+            <div class="space-y-1">
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-engine-coc" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                Call of Chernobyl
+              </label>
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-engine-ogsr" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                OGSR
+              </label>
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-engine-olr" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                OLR
+              </label>
+              <label class="flex items-center text-sm text-gray-400">
+                <input type="checkbox" id="filter-engine-soup" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+                Soup
+              </label>
+            </div>
+          </div>
+          
+          <!-- Filter Actions -->
+          <div class="flex gap-2 pt-2 border-t border-gray-700">
+            <button id="clear-filters" class="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded">Clear All</button>
+            <button id="close-filters" class="text-xs px-2 py-1 bg-yellow-500 hover:bg-yellow-600 text-black rounded ml-auto">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="mod-list" class="grid gap-4 cards-3">
@@ -66,8 +113,8 @@ body_class: main-page
          data-mod-title="{{ mod.title | downcase }}" 
          data-mod-description="{{ mod.short_description | default: mod.description | downcase }}" 
          data-mod-platform="{{ mod.platform | downcase }}"
-         data-mod-standalone="{{ mod.standalone }}"
-         data-mod-engine="{{ mod.engine | downcase }}">
+         data-mod-engine="{{ mod.engine | downcase }}"
+         data-mod-standalone="{{ mod.standalone }}">
         <div class="flex justify-between items-center mb-3 gap-2">
           <h3 class="text-2xl font-semibold text-gray-100 drop-shadow whitespace-nowrap overflow-hidden text-ellipsis hover:text-yellow-400 transition-colors">
             {{ mod.title }}
