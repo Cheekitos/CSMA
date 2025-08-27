@@ -3,6 +3,7 @@
 title: "Vector of Alienation"
 rating: 4.2
 standalone: true
+lowspec_friendly: true
 platform: "Shadow of Chernobyl"
 engine: "Oblivion Lost Remake"
 release_date: "2015-07-31"
