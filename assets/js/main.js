@@ -206,11 +206,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function hasActiveFilters() {
     const searchQuery = searchInput ? searchInput.value.trim() : '';
     const standaloneCheckbox = document.getElementById('filter-standalone-yes');
+    const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
     const platformRadio = document.querySelector('input[name="platform-filter"]:checked');
     const engineRadio = document.querySelector('input[name="engine-filter"]:checked');
     
     return searchQuery !== '' || 
            (standaloneCheckbox && standaloneCheckbox.checked) ||
+           (lowspecCheckbox && lowspecCheckbox.checked) ||
            platformRadio || 
            engineRadio;
   }
@@ -277,6 +279,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const standaloneCheckbox = document.getElementById('filter-standalone-yes');
       if (standaloneCheckbox) standaloneCheckbox.checked = false;
       
+      // Clear low-spec checkbox
+      const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
+      if (lowspecCheckbox) lowspecCheckbox.checked = false;
+      
       // Clear platform radios
       document.querySelectorAll('input[name="platform-filter"]').forEach(radio => {
         radio.checked = false;
@@ -311,6 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get active filters
     const activeFilters = {
       standalone: false,
+      lowspec: false,
       platform: null,
       engine: null
     };
@@ -319,6 +326,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const standaloneCheckbox = document.getElementById('filter-standalone-yes');
     if (standaloneCheckbox && standaloneCheckbox.checked) {
       activeFilters.standalone = true;
+    }
+
+    // Low-spec filter (only show low-spec if checked)
+    const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
+    if (lowspecCheckbox && lowspecCheckbox.checked) {
+      activeFilters.lowspec = true;
     }
 
     // Platform filter (radio buttons)
@@ -367,6 +380,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (activeFilters.standalone) {
         const cardStandalone = card.getAttribute('data-mod-standalone') === 'true';
         if (!cardStandalone) {
+          return false;
+        }
+      }
+
+      // Low-spec filter (only filter if checkbox is checked)
+      if (activeFilters.lowspec) {
+        const cardLowspec = card.getAttribute('data-mod-lowspec') === 'true';
+        if (!cardLowspec) {
           return false;
         }
       }
