@@ -51,13 +51,15 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* UPDATED: Filter dropdown styles - Fixed to properly push down mod cards */
+/* UPDATED: Filter dropdown styles - Fixed height and focus ring */
 #filter-dropdown {
   transition: all 0.3s ease;
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   opacity: 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   pointer-events: none;
+  padding: 0.75rem; /* Reduced padding */
+  margin-top: 1px; /* Small gap to prevent covering focus ring */
 }
 
 #filter-dropdown:not(.hidden) {
@@ -76,7 +78,7 @@ h3, .platform-block {
 
 /* UPDATED: When dropdown is open, add margin to push down mod list */
 #controls-container.filter-dropdown-open {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem; /* Reduced from 4rem */
 }
 
 /* UPDATED: Ensure all control elements have consistent height */
