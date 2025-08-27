@@ -51,15 +51,15 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* UPDATED: Filter dropdown styles - Fixed height and focus ring */
+/* UPDATED: Filter dropdown styles - Reduced height significantly */
 #filter-dropdown {
   transition: all 0.3s ease;
   transform: translateY(-5px);
   opacity: 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   pointer-events: none;
-  padding: 0.5rem; /* Reduced from 0.75rem for less height */
-  margin-top: 2px; /* Increased from 1px for better focus ring visibility */
+  padding: 0.25rem; /* Reduced from 0.5rem to 0.25rem (4px) for much less height */
+  margin-top: 2px; /* Kept for focus ring visibility */
 }
 
 #filter-dropdown:not(.hidden) {
@@ -68,7 +68,7 @@ h3, .platform-block {
   pointer-events: all;
 }
 
-/* UPDATED: Controls container positioning - ensures buttons stay aligned */
+/* UPDATED: Controls container positioning - reduced margin for smaller dropdown */
 #controls-container {
   position: relative;
   z-index: 5;
@@ -76,9 +76,9 @@ h3, .platform-block {
   transition: margin-bottom 0.3s ease;
 }
 
-/* UPDATED: When dropdown is open, add margin to push down mod list */
+/* UPDATED: When dropdown is open, reduced margin to match smaller dropdown height */
 #controls-container.filter-dropdown-open {
-  margin-bottom: 2.5rem; /* Reduced from 3rem to match smaller dropdown height */
+  margin-bottom: 1.75rem; /* Reduced from 2.5rem to match smaller dropdown height */
 }
 
 /* UPDATED: Ensure all control elements have consistent height */
@@ -235,14 +235,14 @@ h3, .platform-block {
 }
 
 .lightbox-prev::before {
-  content: 'ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¹';
+  content: 'ÃƒÆ'Ã†'Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¹';
   color: white;
   font-size: 18px;
   font-weight: bold;
 }
 
 .lightbox-next::before {
-  content: 'ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Âº';
+  content: 'ÃƒÆ'Ã†'Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº';
   color: white;
   font-size: 18px;
   font-weight: bold;
@@ -337,9 +337,9 @@ h3, .platform-block {
     overflow-y: auto;
   }
 
-  /* Mobile controls spacing */
+  /* Mobile controls spacing - reduced to match desktop */
   .filter-dropdown-open {
-    margin-bottom: 2.5rem; /* Updated to match desktop value */
+    margin-bottom: 1.75rem; /* Updated to match desktop value */
   }
 }
 
