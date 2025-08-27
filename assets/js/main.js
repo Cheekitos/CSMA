@@ -190,6 +190,142 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize video thumbnails
   initializeVideoThumbnails();
 
+  // Filter functionality
+  const filterToggle = document.getElementById('filter-toggle');
+  const filterDropdown = document.getElementById('filter-dropdown');
+  const clearFiltersBtn = document.getElementById('clear-filters');
+  const closeFiltersBtn = document.getElementById('close-filters');
+  const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+
+  // Toggle filter dropdown
+  if (filterToggle && filterDropdown) {
+    filterToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      filterDropdown.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!filterDropdown.contains(e.target) && !filterToggle.contains(e.target)) {
+        filterDropdown.classList.add('hidden');
+      }
+    });
+  }
+
+  // Close filters button
+  if (closeFiltersBtn) {
+    closeFiltersBtn.addEventListener('click', () => {
+      filterDropdown.classList.add('hidden');
+    });
+  }
+
+  // Clear all filters
+  if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener('click', () => {
+      filterCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      applyFilters();
+    });
+  }
+
+  // Apply filters when checkboxes change
+  filterCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', applyFilters);
+  });
+
+  function applyFilters() {
+    // Get active filters
+    const activeFilters = {
+      standalone: [],
+      platform: [],
+      engine: []
+    };
+
+    // Standalone filters
+    if (document.getElementById('filter-standalone-yes').checked) {
+      activeFilters.standalone.push(true);
+    }
+    if (document.getElementById('filter-standalone-no').checked) {
+      activeFilters.standalone.push(false);
+    }
+
+    // Platform filters
+    if (document.getElementById('filter-platform-soc').checked) {
+      activeFilters.platform.push('shadow of chernobyl');
+    }
+    if (document.getElementById('filter-platform-cs').checked) {
+      activeFilters.platform.push('clear sky');
+    }
+    if (document.getElementById('filter-platform-cop').checked) {
+      activeFilters.platform.push('call of pripyat');
+    }
+
+    // Engine filters
+    if (document.getElementById('filter-engine-coc').checked) {
+      activeFilters.engine.push('call of chernobyl');
+    }
+    if (document.getElementById('filter-engine-ogsr').checked) {
+      activeFilters.engine.push('ogsr');
+    }
+    if (document.getElementById('filter-engine-olr').checked) {
+      activeFilters.engine.push('olr');
+    }
+    if (document.getElementById('filter-engine-soup').checked) {
+      activeFilters.engine.push('soup');
+    }
+
+    // Get search query
+    const searchInput = document.getElementById('search-input');
+    const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
+
+    // Filter mods
+    const filtered = allModCards.filter(card => {
+      // Search filter
+      if (searchQuery) {
+        const title = card.getAttribute('data-mod-title') || '';
+        const description = card.getAttribute('data-mod-description') || '';
+        const platform = card.getAttribute('data-mod-platform') || '';
+        
+        if (!title.includes(searchQuery) && !description.includes(searchQuery) && !platform.includes(searchQuery)) {
+          return false;
+        }
+      }
+
+      // Standalone filter
+      if (activeFilters.standalone.length > 0) {
+        const cardStandalone = card.getAttribute('data-mod-standalone') === 'true';
+        if (!activeFilters.standalone.includes(cardStandalone)) {
+          return false;
+        }
+      }
+
+      // Platform filter
+      if (activeFilters.platform.length > 0) {
+        const cardPlatform = (card.getAttribute('data-mod-platform') || '').toLowerCase();
+        if (!activeFilters.platform.includes(cardPlatform)) {
+          return false;
+        }
+      }
+
+      // Engine filter
+      if (activeFilters.engine.length > 0) {
+        const cardEngine = (card.getAttribute('data-mod-engine') || '').toLowerCase();
+        if (cardEngine && !activeFilters.engine.includes(cardEngine)) {
+          return false;
+        }
+        // If card has no engine and engine filters are active, exclude it
+        if (!cardEngine) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+
+    renderMods(filtered);
+  }
+
   // Sort functionality
   const sortButton = document.getElementById('sort-button');
   if (sortButton) {
@@ -198,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (gradesHidden) {
         // Shuffle the cards
-        const shuffled = shuffleArray([...allModCards]);
+        const shuffled = shuffleArray([...currentDisplayedMods]);
         renderMods(shuffled);
       } else {
         sortState = (sortState + 1) % 3;
@@ -207,11 +343,12 @@ document.addEventListener('DOMContentLoaded', function() {
         switch(sortState) {
           case 0:
             sortButton.textContent = 'Sort by Rating';
-            toRender = [...allModCards]; // Original order
-            break;
+            // Apply current filters instead of showing all cards
+            applyFilters();
+            return; // Exit early since applyFilters will call renderMods
           case 1:
             sortButton.textContent = 'Highest First';
-            toRender = [...allModCards].sort((a, b) => {
+            toRender = [...currentDisplayedMods].sort((a, b) => {
               const ratingA = parseFloat(a.querySelector('.rating span').textContent);
               const ratingB = parseFloat(b.querySelector('.rating span').textContent);
               return ratingB - ratingA;
@@ -219,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
           case 2:
             sortButton.textContent = 'Lowest First';
-            toRender = [...allModCards].sort((a, b) => {
+            toRender = [...currentDisplayedMods].sort((a, b) => {
               const ratingA = parseFloat(a.querySelector('.rating span').textContent);
               const ratingB = parseFloat(b.querySelector('.rating span').textContent);
               return ratingA - ratingB;
@@ -255,67 +392,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Enhanced filtering system
-  function applyFilters() {
-    const searchQuery = document.getElementById('search-input').value.toLowerCase();
-    const standaloneFilter = document.getElementById('standalone-filter').value;
-    const platformFilter = document.getElementById('platform-filter').value;
-    const engineFilter = document.getElementById('engine-filter').value;
-    
-    const filtered = allModCards.filter(card => {
-      // Get all data attributes
-      const title = card.getAttribute('data-mod-title') || '';
-      const description = card.getAttribute('data-mod-description') || '';
-      const platform = card.getAttribute('data-mod-platform') || '';
-      const standalone = card.getAttribute('data-mod-standalone');
-      const engine = card.getAttribute('data-mod-engine') || '';
-      
-      // Check search text
-      const matchesSearch = !searchQuery || 
-        title.includes(searchQuery) || 
-        description.includes(searchQuery) || 
-        platform.includes(searchQuery);
-      
-      // Check standalone filter
-      const matchesStandalone = !standaloneFilter || 
-        (standaloneFilter === 'true' && standalone === 'true') ||
-        (standaloneFilter === 'false' && standalone === 'false');
-      
-      // Check platform filter  
-      const matchesPlatform = !platformFilter || 
-        platform === platformFilter.toLowerCase();
-      
-      // Check engine filter
-      const matchesEngine = !engineFilter || 
-        engine.includes(engineFilter.toLowerCase());
-      
-      return matchesSearch && matchesStandalone && matchesPlatform && matchesEngine;
-    });
-    
-    renderMods(filtered);
-  }
-
-  // Search functionality - updated to use combined filtering
+  // Search functionality - updated to work with filters
   const searchInput = document.getElementById('search-input');
   if (searchInput) {
     searchInput.addEventListener('input', applyFilters);
-  }
-
-  // Filter dropdown event listeners
-  const standaloneFilter = document.getElementById('standalone-filter');
-  const platformFilter = document.getElementById('platform-filter');
-  const engineFilter = document.getElementById('engine-filter');
-
-  if (standaloneFilter) {
-    standaloneFilter.addEventListener('change', applyFilters);
-  }
-
-  if (platformFilter) {
-    platformFilter.addEventListener('change', applyFilters);
-  }
-
-  if (engineFilter) {
-    engineFilter.addEventListener('change', applyFilters);
   }
 
   // Toggle grades functionality - consolidated handlers
@@ -329,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (sortBtn) {
       sortBtn.textContent = 'Sort by Rating';
       sortState = 0;
-      renderMods([...allModCards]);
+      applyFilters(); // Apply current filters instead of showing all cards
     }
     syncToggleStates();
   }
@@ -449,6 +529,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.key === 'Escape') {
       if (contactOverlay) contactOverlay.classList.add('hidden');
       if (installFilesOverlay) installFilesOverlay.classList.add('hidden');
+      if (filterDropdown && !filterDropdown.classList.contains('hidden')) {
+        filterDropdown.classList.add('hidden');
+      }
     }
   });
 });
