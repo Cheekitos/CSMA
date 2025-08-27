@@ -58,23 +58,14 @@ h3, .platform-block {
   opacity: 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   pointer-events: none;
-  padding: 0.5rem; /* Further reduced padding */
-  margin-top: 2px; /* Small gap to prevent covering focus ring */
+  padding: 0.75rem; /* Reduced padding */
+  margin-top: 1px; /* Small gap to prevent covering focus ring */
 }
 
 #filter-dropdown:not(.hidden) {
   transform: translateY(0);
   opacity: 1;
   pointer-events: all;
-}
-
-/* UPDATED: Compact filter content */
-#filter-dropdown .flex {
-  gap: 1rem; /* Reduced gap between filter groups */
-}
-
-#filter-dropdown .flex.flex-wrap {
-  gap: 0.75rem 1.5rem; /* Reduced vertical gap, maintained horizontal gap */
 }
 
 /* UPDATED: Controls container positioning - ensures buttons stay aligned */
@@ -87,7 +78,7 @@ h3, .platform-block {
 
 /* UPDATED: When dropdown is open, add margin to push down mod list */
 #controls-container.filter-dropdown-open {
-  margin-bottom: 5rem; /* Increased back to 5rem for proper spacing */
+  margin-bottom: 3rem; /* Reduced from 4rem */
 }
 
 /* UPDATED: Ensure all control elements have consistent height */
