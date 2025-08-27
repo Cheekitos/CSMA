@@ -3,6 +3,7 @@
 title: "Wind of Time"
 rating: 4.5
 standalone: true
+lowspec_friendly: true
 platform: "Call of Pripyat"
 engine: ""
 release_date: "2017-01-15"
