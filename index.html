@@ -30,77 +30,64 @@ body_class: main-page
         +
       </button>
     </div>
-    <div class="relative flex-1 min-w-[150px]">
-      <input id="search-input" type="text" aria-label="Search mods" placeholder="Search mods..." class="w-full px-2 py-1 text-sm rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
-      <button id="filter-toggle" aria-label="Toggle filters" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.121A1 1 0 013 6.414V4z"/>
-        </svg>
-      </button>
-      <div id="filter-dropdown" class="absolute top-full left-0 right-0 bg-gray-800 border border-gray-700 rounded-b-md mt-1 p-3 hidden z-10 shadow-lg">
-        <div class="space-y-3">
+    <div class="relative flex-1 min-w-[150px]" id="search-container">
+      <input id="search-input" type="text" aria-label="Search mods" placeholder="Search mods..." class="w-full px-2 py-1 pr-12 text-sm rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+      <span id="filter-text" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs italic cursor-pointer hover:text-white transition-colors">Filters</span>
+      <div id="filter-dropdown" class="bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-2 hidden z-10 shadow-lg filter-dropdown-pushdown">
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
           <!-- Standalone Filter -->
-          <div>
-            <h4 class="text-sm font-medium text-gray-300 mb-2">Standalone</h4>
-            <div class="space-y-1">
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
-                Yes
-              </label>
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-standalone-no" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
-                No
-              </label>
-            </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-300">Standalone:</span>
+            <label class="flex items-center text-xs text-gray-400">
+              <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox mr-1">
+              Only
+            </label>
           </div>
           
           <!-- Platform Filter -->
-          <div>
-            <h4 class="text-sm font-medium text-gray-300 mb-2">Platform</h4>
-            <div class="space-y-1">
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-platform-soc" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
-                Shadow of Chernobyl
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-300">Platform:</span>
+            <div class="flex items-center gap-2">
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="platform-filter" id="filter-platform-soc" class="filter-radio mr-1">
+                SoC
               </label>
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-platform-cs" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
-                Clear Sky
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="platform-filter" id="filter-platform-cs" class="filter-radio mr-1">
+                CS
               </label>
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-platform-cop" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
-                Call of Pripyat
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="platform-filter" id="filter-platform-cop" class="filter-radio mr-1">
+                CoP
               </label>
             </div>
           </div>
           
           <!-- Engine Filter -->
-          <div>
-            <h4 class="text-sm font-medium text-gray-300 mb-2">Engine</h4>
-            <div class="space-y-1">
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-engine-coc" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
-                Call of Chernobyl
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-300">Engine:</span>
+            <div class="flex items-center gap-2">
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="engine-filter" id="filter-engine-coc" class="filter-radio mr-1">
+                CoC
               </label>
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-engine-ogsr" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="engine-filter" id="filter-engine-ogsr" class="filter-radio mr-1">
                 OGSR
               </label>
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-engine-olr" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="engine-filter" id="filter-engine-olr" class="filter-radio mr-1">
                 OLR
               </label>
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="checkbox" id="filter-engine-soup" class="filter-checkbox mr-2 rounded bg-gray-700 border-gray-600 text-yellow-500 focus:ring-yellow-500">
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="engine-filter" id="filter-engine-soup" class="filter-radio mr-1">
                 Soup
               </label>
             </div>
           </div>
           
-          <!-- Filter Actions -->
-          <div class="flex gap-2 pt-2 border-t border-gray-700">
-            <button id="clear-filters" class="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded">Clear All</button>
-            <button id="close-filters" class="text-xs px-2 py-1 bg-yellow-500 hover:bg-yellow-600 text-black rounded ml-auto">Close</button>
-          </div>
+          <!-- Clear Button -->
+          <button id="clear-filters" class="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded ml-auto">Clear</button>
         </div>
       </div>
     </div>
