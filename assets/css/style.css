@@ -51,6 +51,44 @@ h3, .platform-block {
   align-items: center;
 }
 
+/* Filter dropdown styles */
+#filter-dropdown {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+#filter-dropdown h4 {
+  color: #d1d5db;
+}
+
+#filter-dropdown label {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+#filter-dropdown label:hover {
+  color: #f3f4f6;
+}
+
+/* Custom checkbox styles */
+.filter-checkbox {
+  accent-color: #eab308;
+}
+
+.filter-checkbox:focus {
+  outline: 2px solid #eab308;
+  outline-offset: 2px;
+}
+
+/* Filter toggle button hover effect */
+#filter-toggle {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+#filter-toggle:hover {
+  background-color: rgba(55, 65, 81, 0.5);
+}
+
 /* Image Gallery Styles */
 .image-gallery {
   display: flex;
@@ -149,15 +187,17 @@ h3, .platform-block {
 }
 
 .lightbox-prev::before {
-  content: '◀';
+  content: '‹';
   color: white;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .lightbox-next::before {
-  content: '▶';
+  content: '›';
   color: white;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .lightbox-prev {
@@ -242,22 +282,12 @@ h3, .platform-block {
     height: 35px;
     font-size: 18px;
   }
-}
 
-/* Filter dropdown styling */
-select {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  background-position: right 0.5rem center;
-  background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  padding-right: 2.5rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-select:focus {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23facc15' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  /* Mobile filter dropdown adjustments */
+  #filter-dropdown {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
 }
 
 /* Remaining styles... */
@@ -287,13 +317,6 @@ select:focus {
   .pros-section ul li,
   .cons-section ul li {
     font-size: 0.8rem; /* Even smaller on mobile */
-  }
-  
-  /* Responsive filter dropdowns on mobile */
-  select {
-    font-size: 0.75rem;
-    padding: 0.375rem 2rem 0.375rem 0.5rem;
-    min-width: 80px;
   }
 }
 
@@ -700,19 +723,4 @@ section h2 {
 .main-page #toggle-videos-mobile {
   font-size: 0.75rem !important; /* text-xs - smaller than current 0.875rem */
   padding: 0.25rem 0.5rem !important; /* py-1 px-2 - smaller padding */
-}
-
-/* Updated lightbox navigation arrows - clean white arrows, properly centered */
-.lightbox-prev::before {
-  content: '‹';
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.lightbox-next::before {
-  content: '›';
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
 }
