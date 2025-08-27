@@ -71,6 +71,12 @@ h3, .platform-block {
   position: relative;
   z-index: 5;
   background: transparent;
+  transition: margin-bottom 0.3s ease;
+}
+
+/* UPDATED: When dropdown is open, add margin to push down mod list */
+#controls-container.filter-dropdown-open {
+  margin-bottom: 4rem;
 }
 
 /* UPDATED: Ensure all control elements have consistent height */
@@ -85,11 +91,6 @@ h3, .platform-block {
 /* UPDATED: Search container positioning and spacing */
 #search-container {
   position: relative;
-}
-
-/* UPDATED: Dropdown spacing - creates proper gap below controls */
-.filter-dropdown-open {
-  margin-bottom: 5rem; /* Push down the mod list when dropdown is open */
 }
 
 /* Custom radio and checkbox styles */
@@ -336,7 +337,7 @@ h3, .platform-block {
 
   /* Mobile controls spacing */
   .filter-dropdown-open {
-    margin-bottom: 4rem; /* Less spacing on mobile */
+    margin-bottom: 3rem; /* Less spacing on mobile */
   }
 }
 
