@@ -33,20 +33,20 @@ body_class: main-page
     <div class="relative flex-1 min-w-[150px]" id="search-container">
       <input id="search-input" type="text" aria-label="Search mods" placeholder="Search mods..." class="w-full px-2 py-1 pr-12 text-sm rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
       <span id="filter-text" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs italic cursor-pointer hover:text-white transition-colors">Filters</span>
-      <div id="filter-dropdown" class="bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-2 hidden z-10 shadow-lg filter-dropdown-pushdown">
+      <div id="filter-dropdown" class="absolute top-full left-0 right-0 bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-2 hidden z-10 shadow-lg">
         <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
           <!-- Standalone Filter -->
           <div class="flex items-center gap-2">
-            <span class="text-xs text-gray-300">Standalone:</span>
+            <span class="text-xs text-gray-300 font-semibold">Standalone:</span>
             <label class="flex items-center text-xs text-gray-400">
               <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox mr-1">
-              Only
+              Yes
             </label>
           </div>
           
           <!-- Platform Filter -->
           <div class="flex items-center gap-2">
-            <span class="text-xs text-gray-300">Platform:</span>
+            <span class="text-xs text-gray-300 font-semibold">Platform:</span>
             <div class="flex items-center gap-2">
               <label class="flex items-center text-xs text-gray-400">
                 <input type="radio" name="platform-filter" id="filter-platform-soc" class="filter-radio mr-1">
@@ -65,7 +65,7 @@ body_class: main-page
           
           <!-- Engine Filter -->
           <div class="flex items-center gap-2">
-            <span class="text-xs text-gray-300">Engine:</span>
+            <span class="text-xs text-gray-300 font-semibold">Engine:</span>
             <div class="flex items-center gap-2">
               <label class="flex items-center text-xs text-gray-400">
                 <input type="radio" name="engine-filter" id="filter-engine-coc" class="filter-radio mr-1">
