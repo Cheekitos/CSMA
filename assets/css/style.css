@@ -96,10 +96,11 @@ h3, .platform-block {
 }
 
 #filter-dropdown button {
-  font-size: 0.7rem !important; /* Smaller clear button */
-  padding: 0.25rem 0.5rem !important; /* Smaller padding */
-  height: 24px !important; /* Fixed smaller height */
+  font-size: 0.65rem !important; /* Even smaller clear button text */
+  padding: 0.125rem 0.375rem !important; /* Much smaller padding - top/bottom reduced to 2px */
+  height: 20px !important; /* Much smaller height */
   line-height: 1 !important;
+  min-height: 20px !important;
 }
 
 /* UPDATED: Controls container positioning */
@@ -110,9 +111,9 @@ h3, .platform-block {
   transition: margin-bottom 0.3s ease;
 }
 
-/* UPDATED: When dropdown is open, appropriate margin for actual dropdown size */
+/* UPDATED: When dropdown is open, INCREASE margin to prevent overlap */
 #controls-container.filter-dropdown-open {
-  margin-bottom: 1.25rem; /* Further reduced to match actual dropdown height */
+  margin-bottom: 2.75rem; /* INCREASED to push mod cards down enough to prevent overlap */
 }
 
 /* UPDATED: Ensure all control elements have consistent height */
