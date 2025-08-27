@@ -3,6 +3,7 @@
 title: "Mod Title Here"
 rating: 3.5
 standalone: false
+lowspec_friendly: false
 platform: "Shadow of Chernobyl"
 engine: "Base Game Engine"
 release_date: "2024-01-15"
