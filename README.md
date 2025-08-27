@@ -31,7 +31,7 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - Tailwind CLI and other optimizations
 
 ## 🌟 Wishlist 
-- Open up the site to mods I didn't review 
+- Open up the site to mods I didn't review, 3rd Party reviewers, collabs etc. 
 - Move out of GitHub to dedicated hosting
 - Users can create a profile and post reviews / grade mods
 - Small discussion forum
