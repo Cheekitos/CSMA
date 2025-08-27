@@ -51,30 +51,45 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* Filter dropdown styles - Updated for better positioning and animation */
+/* UPDATED: Filter dropdown styles - Fixed to properly push down mod cards */
 #filter-dropdown {
-  transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease;
+  transition: all 0.3s ease;
   transform: translateY(-10px);
   opacity: 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  margin-top: 0;
+  pointer-events: none;
 }
 
 #filter-dropdown:not(.hidden) {
   transform: translateY(0);
   opacity: 1;
-  margin-top: 0.5rem; /* This creates the spacing between search bar and dropdown */
+  pointer-events: all;
 }
 
-/* Updated mod list spacing when dropdown is open */
-#mod-list {
-  transition: margin-top 0.3s ease;
-  margin-top: 0;
+/* UPDATED: Controls container positioning - ensures buttons stay aligned */
+#controls-container {
+  position: relative;
+  z-index: 5;
+  background: transparent;
 }
 
-/* When filter dropdown is shown, add margin to push content down */
-#search-container:has(#filter-dropdown:not(.hidden)) ~ #mod-list {
-  margin-top: 6rem; /* Adjusted to push down mod cards when dropdown is open */
+/* UPDATED: Ensure all control elements have consistent height */
+#controls-container button,
+#controls-container input {
+  height: 32px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* UPDATED: Search container positioning and spacing */
+#search-container {
+  position: relative;
+}
+
+/* UPDATED: Dropdown spacing - creates proper gap below controls */
+.filter-dropdown-open {
+  margin-bottom: 5rem; /* Push down the mod list when dropdown is open */
 }
 
 /* Custom radio and checkbox styles */
@@ -217,14 +232,14 @@ h3, .platform-block {
 }
 
 .lightbox-prev::before {
-  content: 'Ã¢â‚¬Â¹';
+  content: 'ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¹';
   color: white;
   font-size: 18px;
   font-weight: bold;
 }
 
 .lightbox-next::before {
-  content: 'Ã¢â‚¬Âº';
+  content: 'ÃƒÂ¢Ã¢â€šÂ¬Ã‚Âº';
   color: white;
   font-size: 18px;
   font-weight: bold;
@@ -319,9 +334,9 @@ h3, .platform-block {
     overflow-y: auto;
   }
 
-  /* Mobile mod list spacing adjustment */
-  #search-container:has(#filter-dropdown:not(.hidden)) ~ #mod-list {
-    margin-top: 4rem; /* Less spacing on mobile */
+  /* Mobile controls spacing */
+  .filter-dropdown-open {
+    margin-bottom: 4rem; /* Less spacing on mobile */
   }
 }
 
