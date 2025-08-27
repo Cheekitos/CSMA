@@ -51,27 +51,30 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* Filter dropdown styles - Updated positioning and animation */
+/* Filter dropdown styles - Updated for better positioning and animation */
 #filter-dropdown {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease;
   transform: translateY(-10px);
   opacity: 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-top: 0;
 }
 
 #filter-dropdown:not(.hidden) {
   transform: translateY(0);
   opacity: 1;
+  margin-top: 0.5rem; /* This creates the spacing between search bar and dropdown */
 }
 
-/* Smooth animation for mod list when dropdown opens */
+/* Updated mod list spacing when dropdown is open */
 #mod-list {
   transition: margin-top 0.3s ease;
+  margin-top: 0;
 }
 
 /* When filter dropdown is shown, add margin to push content down */
 #search-container:has(#filter-dropdown:not(.hidden)) ~ #mod-list {
-  margin-top: 0.75rem;
+  margin-top: 6rem; /* Adjusted to push down mod cards when dropdown is open */
 }
 
 /* Custom radio and checkbox styles */
@@ -94,6 +97,26 @@ h3, .platform-block {
 
 #filter-text:hover {
   color: #f3f4f6;
+}
+
+/* Better alignment for buttons and search bar */
+.flex.flex-wrap.items-start {
+  align-items: flex-start;
+}
+
+/* Ensure buttons stay aligned with search input height */
+#sort-button,
+#cards-less,
+#cards-more {
+  height: 32px; /* Match the search input height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search input consistent height */
+#search-input {
+  height: 32px;
 }
 
 /* Image Gallery Styles */
@@ -194,14 +217,14 @@ h3, .platform-block {
 }
 
 .lightbox-prev::before {
-  content: 'â€¹';
+  content: 'Ã¢â‚¬Â¹';
   color: white;
   font-size: 18px;
   font-weight: bold;
 }
 
 .lightbox-next::before {
-  content: 'â€º';
+  content: 'Ã¢â‚¬Âº';
   color: white;
   font-size: 18px;
   font-weight: bold;
@@ -294,6 +317,11 @@ h3, .platform-block {
   #filter-dropdown {
     max-height: 60vh;
     overflow-y: auto;
+  }
+
+  /* Mobile mod list spacing adjustment */
+  #search-container:has(#filter-dropdown:not(.hidden)) ~ #mod-list {
+    margin-top: 4rem; /* Less spacing on mobile */
   }
 }
 
