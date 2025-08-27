@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
   let cardsPerRow = 3; // Default to 3 cards per row
   let currentDisplayedMods = []; // Track what's currently being displayed
   
-  // Get all mod cards with safety check
+  // Get all mod cards
   const allModCards = Array.from(document.querySelectorAll('.mod-card'));
-  if (allModCards.length > 0) {
-    currentDisplayedMods = [...allModCards];
-  }
+  currentDisplayedMods = [...allModCards];
 
   // Image Gallery functionality
   let currentImageIndex = 0;
@@ -192,9 +190,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize video thumbnails
   initializeVideoThumbnails();
 
-  // Sort functionality - with safety check
+  // Sort functionality
   const sortButton = document.getElementById('sort-button');
-  if (sortButton && allModCards.length > 0) {
+  if (sortButton) {
     sortButton.addEventListener('click', () => {
       const gradesHidden = document.body.classList.contains('hide-grades');
       
@@ -257,21 +255,67 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Search functionality - with safety check
-  const searchInput = document.getElementById('search-input');
-  if (searchInput && allModCards.length > 0) {
-    searchInput.addEventListener('input', e => {
-      const q = e.target.value.toLowerCase();
+  // Enhanced filtering system
+  function applyFilters() {
+    const searchQuery = document.getElementById('search-input').value.toLowerCase();
+    const standaloneFilter = document.getElementById('standalone-filter').value;
+    const platformFilter = document.getElementById('platform-filter').value;
+    const engineFilter = document.getElementById('engine-filter').value;
+    
+    const filtered = allModCards.filter(card => {
+      // Get all data attributes
+      const title = card.getAttribute('data-mod-title') || '';
+      const description = card.getAttribute('data-mod-description') || '';
+      const platform = card.getAttribute('data-mod-platform') || '';
+      const standalone = card.getAttribute('data-mod-standalone');
+      const engine = card.getAttribute('data-mod-engine') || '';
       
-      const filtered = allModCards.filter(card => {
-        const title = card.getAttribute('data-mod-title') || '';
-        const description = card.getAttribute('data-mod-description') || '';
-        const platform = card.getAttribute('data-mod-platform') || '';
-        
-        return title.includes(q) || description.includes(q) || platform.includes(q);
-      });
-      renderMods(filtered);
+      // Check search text
+      const matchesSearch = !searchQuery || 
+        title.includes(searchQuery) || 
+        description.includes(searchQuery) || 
+        platform.includes(searchQuery);
+      
+      // Check standalone filter
+      const matchesStandalone = !standaloneFilter || 
+        (standaloneFilter === 'true' && standalone === 'true') ||
+        (standaloneFilter === 'false' && standalone === 'false');
+      
+      // Check platform filter  
+      const matchesPlatform = !platformFilter || 
+        platform === platformFilter.toLowerCase();
+      
+      // Check engine filter
+      const matchesEngine = !engineFilter || 
+        engine.includes(engineFilter.toLowerCase());
+      
+      return matchesSearch && matchesStandalone && matchesPlatform && matchesEngine;
     });
+    
+    renderMods(filtered);
+  }
+
+  // Search functionality - updated to use combined filtering
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
+  }
+
+  // Filter dropdown event listeners
+  const standaloneFilter = document.getElementById('standalone-filter');
+  const platformFilter = document.getElementById('platform-filter');
+  const engineFilter = document.getElementById('engine-filter');
+
+  if (standaloneFilter) {
+    standaloneFilter.addEventListener('change', applyFilters);
+  }
+
+  if (platformFilter) {
+    platformFilter.addEventListener('change', applyFilters);
+  }
+
+  if (engineFilter) {
+    engineFilter.addEventListener('change', applyFilters);
   }
 
   // Toggle grades functionality - consolidated handlers
@@ -285,9 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (sortBtn) {
       sortBtn.textContent = 'Sort by Rating';
       sortState = 0;
-      if (allModCards.length > 0) {
-        renderMods([...allModCards]);
-      }
+      renderMods([...allModCards]);
     }
     syncToggleStates();
   }
