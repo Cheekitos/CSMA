@@ -231,6 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (filterDropdown) {
       filterDropdown.classList.remove('hidden');
       isFilterDropdownOpen = true;
+      // Trigger reflow to ensure CSS transitions work
+      filterDropdown.offsetHeight;
     }
   }
 
