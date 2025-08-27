@@ -198,21 +198,31 @@ document.addEventListener('DOMContentLoaded', function() {
   const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
   const filterRadios = document.querySelectorAll('.filter-radio');
   const searchContainer = document.getElementById('search-container');
+  const controlsContainer = document.getElementById('controls-container');
 
   let isFilterDropdownOpen = false;
+
+  // Check if any filters are active
+  function hasActiveFilters() {
+    const searchQuery = searchInput ? searchInput.value.trim() : '';
+    const standaloneCheckbox = document.getElementById('filter-standalone-yes');
+    const platformRadio = document.querySelector('input[name="platform-filter"]:checked');
+    const engineRadio = document.querySelector('input[name="engine-filter"]:checked');
+    
+    return searchQuery !== '' || 
+           (standaloneCheckbox && standaloneCheckbox.checked) ||
+           platformRadio || 
+           engineRadio;
+  }
 
   // Show filter dropdown when clicking in search bar or on filter text
   if (searchInput && filterDropdown) {
     searchInput.addEventListener('focus', () => {
-      if (!isFilterDropdownOpen) {
-        showFilterDropdown();
-      }
+      showFilterDropdown();
     });
 
     searchInput.addEventListener('click', () => {
-      if (!isFilterDropdownOpen) {
-        showFilterDropdown();
-      }
+      showFilterDropdown();
     });
   }
 
@@ -228,8 +238,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function showFilterDropdown() {
-    if (filterDropdown) {
+    if (filterDropdown && controlsContainer) {
       filterDropdown.classList.remove('hidden');
+      controlsContainer.classList.add('filter-dropdown-open');
       isFilterDropdownOpen = true;
       // Trigger reflow to ensure CSS transitions work
       filterDropdown.offsetHeight;
@@ -237,20 +248,24 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function hideFilterDropdown() {
-    if (filterDropdown) {
-      filterDropdown.classList.add('hidden');
-      isFilterDropdownOpen = false;
+    if (filterDropdown && controlsContainer) {
+      // Only hide if no filters are active
+      if (!hasActiveFilters()) {
+        filterDropdown.classList.add('hidden');
+        controlsContainer.classList.remove('filter-dropdown-open');
+        isFilterDropdownOpen = false;
+      }
     }
   }
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside, but only if no filters are active
   document.addEventListener('click', (e) => {
     if (searchContainer && !searchContainer.contains(e.target)) {
       hideFilterDropdown();
     }
   });
 
-  // Clear all filters - Updated to also clear search text
+  // Clear all filters - Updated to also clear search text and close dropdown
   if (clearFiltersBtn) {
     clearFiltersBtn.addEventListener('click', () => {
       // Clear search input text
@@ -273,6 +288,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       
       applyFilters();
+      
+      // Force close dropdown since all filters are cleared
+      if (filterDropdown && controlsContainer) {
+        filterDropdown.classList.add('hidden');
+        controlsContainer.classList.remove('filter-dropdown-open');
+        isFilterDropdownOpen = false;
+      }
     });
   }
 
@@ -410,6 +432,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         renderMods(toRender);
       }
+      
+      // Don't hide dropdown if filters are active
+      if (!hasActiveFilters()) {
+        hideFilterDropdown();
+      }
     });
   }
 
@@ -424,6 +451,11 @@ document.addEventListener('DOMContentLoaded', function() {
         cardsPerRow++;
         updateGridLayout();
       }
+      
+      // Don't hide dropdown if filters are active
+      if (!hasActiveFilters()) {
+        hideFilterDropdown();
+      }
     });
   }
 
@@ -433,6 +465,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (cardsPerRow > 2) {
         cardsPerRow--;
         updateGridLayout();
+      }
+      
+      // Don't hide dropdown if filters are active
+      if (!hasActiveFilters()) {
+        hideFilterDropdown();
       }
     });
   }
@@ -456,6 +493,11 @@ document.addEventListener('DOMContentLoaded', function() {
       applyFilters(); // Apply current filters instead of showing all cards
     }
     syncToggleStates();
+    
+    // Don't hide dropdown if filters are active
+    if (!hasActiveFilters()) {
+      hideFilterDropdown();
+    }
   }
 
   // Setup consolidated toggle grades handlers
@@ -465,6 +507,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function handleToggleVideos() {
     document.body.classList.toggle('hide-videos');
     syncToggleStates();
+    
+    // Don't hide dropdown if filters are active
+    if (!hasActiveFilters()) {
+      hideFilterDropdown();
+    }
   }
 
   // Setup consolidated toggle videos handlers
@@ -514,6 +561,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function showContactOverlay() {
     const contactOverlay = document.getElementById('contact-overlay');
     if (contactOverlay) contactOverlay.classList.remove('hidden');
+    
+    // Don't hide dropdown if filters are active
+    if (!hasActiveFilters()) {
+      hideFilterDropdown();
+    }
   }
 
   // Setup consolidated contact handlers
@@ -546,6 +598,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function showInstallFilesOverlay() {
     const installFilesOverlay = document.getElementById('install-files-overlay');
     if (installFilesOverlay) installFilesOverlay.classList.remove('hidden');
+    
+    // Don't hide dropdown if filters are active
+    if (!hasActiveFilters()) {
+      hideFilterDropdown();
+    }
   }
 
   // Setup consolidated essentials handlers
@@ -573,7 +630,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.key === 'Escape') {
       if (contactOverlay) contactOverlay.classList.add('hidden');
       if (installFilesOverlay) installFilesOverlay.classList.add('hidden');
-      if (isFilterDropdownOpen) {
+      if (isFilterDropdownOpen && !hasActiveFilters()) {
         hideFilterDropdown();
       }
     }
