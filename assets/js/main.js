@@ -191,92 +191,134 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeVideoThumbnails();
 
   // Filter functionality
-  const filterToggle = document.getElementById('filter-toggle');
+  const searchInput = document.getElementById('search-input');
+  const filterText = document.getElementById('filter-text');
   const filterDropdown = document.getElementById('filter-dropdown');
   const clearFiltersBtn = document.getElementById('clear-filters');
-  const closeFiltersBtn = document.getElementById('close-filters');
   const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+  const filterRadios = document.querySelectorAll('.filter-radio');
+  const searchContainer = document.getElementById('search-container');
 
-  // Toggle filter dropdown
-  if (filterToggle && filterDropdown) {
-    filterToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      filterDropdown.classList.toggle('hidden');
+  let isFilterDropdownOpen = false;
+
+  // Show filter dropdown when clicking in search bar or on filter text
+  if (searchInput && filterDropdown) {
+    searchInput.addEventListener('focus', () => {
+      if (!isFilterDropdownOpen) {
+        showFilterDropdown();
+      }
     });
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!filterDropdown.contains(e.target) && !filterToggle.contains(e.target)) {
-        filterDropdown.classList.add('hidden');
+    searchInput.addEventListener('click', () => {
+      if (!isFilterDropdownOpen) {
+        showFilterDropdown();
       }
     });
   }
 
-  // Close filters button
-  if (closeFiltersBtn) {
-    closeFiltersBtn.addEventListener('click', () => {
-      filterDropdown.classList.add('hidden');
+  if (filterText && filterDropdown) {
+    filterText.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (isFilterDropdownOpen) {
+        hideFilterDropdown();
+      } else {
+        showFilterDropdown();
+      }
     });
   }
+
+  function showFilterDropdown() {
+    if (filterDropdown) {
+      filterDropdown.classList.remove('hidden');
+      isFilterDropdownOpen = true;
+    }
+  }
+
+  function hideFilterDropdown() {
+    if (filterDropdown) {
+      filterDropdown.classList.add('hidden');
+      isFilterDropdownOpen = false;
+    }
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (searchContainer && !searchContainer.contains(e.target)) {
+      hideFilterDropdown();
+    }
+  });
 
   // Clear all filters
   if (clearFiltersBtn) {
     clearFiltersBtn.addEventListener('click', () => {
-      filterCheckboxes.forEach(checkbox => {
-        checkbox.checked = false;
+      // Clear standalone checkbox
+      const standaloneCheckbox = document.getElementById('filter-standalone-yes');
+      if (standaloneCheckbox) standaloneCheckbox.checked = false;
+      
+      // Clear platform radios
+      document.querySelectorAll('input[name="platform-filter"]').forEach(radio => {
+        radio.checked = false;
       });
+      
+      // Clear engine radios
+      document.querySelectorAll('input[name="engine-filter"]').forEach(radio => {
+        radio.checked = false;
+      });
+      
       applyFilters();
     });
   }
 
-  // Apply filters when checkboxes change
-  filterCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', applyFilters);
+  // Apply filters when inputs change
+  filterCheckboxes.forEach(input => {
+    input.addEventListener('change', applyFilters);
+  });
+  
+  filterRadios.forEach(input => {
+    input.addEventListener('change', applyFilters);
   });
 
   function applyFilters() {
     // Get active filters
     const activeFilters = {
-      standalone: [],
-      platform: [],
-      engine: []
+      standalone: false,
+      platform: null,
+      engine: null
     };
 
-    // Standalone filters
-    if (document.getElementById('filter-standalone-yes').checked) {
-      activeFilters.standalone.push(true);
-    }
-    if (document.getElementById('filter-standalone-no').checked) {
-      activeFilters.standalone.push(false);
+    // Standalone filter (only show standalone if checked)
+    const standaloneCheckbox = document.getElementById('filter-standalone-yes');
+    if (standaloneCheckbox && standaloneCheckbox.checked) {
+      activeFilters.standalone = true;
     }
 
-    // Platform filters
-    if (document.getElementById('filter-platform-soc').checked) {
-      activeFilters.platform.push('shadow of chernobyl');
-    }
-    if (document.getElementById('filter-platform-cs').checked) {
-      activeFilters.platform.push('clear sky');
-    }
-    if (document.getElementById('filter-platform-cop').checked) {
-      activeFilters.platform.push('call of pripyat');
+    // Platform filter (radio buttons)
+    const platformRadio = document.querySelector('input[name="platform-filter"]:checked');
+    if (platformRadio) {
+      if (platformRadio.id === 'filter-platform-soc') {
+        activeFilters.platform = 'shadow of chernobyl';
+      } else if (platformRadio.id === 'filter-platform-cs') {
+        activeFilters.platform = 'clear sky';
+      } else if (platformRadio.id === 'filter-platform-cop') {
+        activeFilters.platform = 'call of pripyat';
+      }
     }
 
-    // Engine filters
-    if (document.getElementById('filter-engine-coc').checked) {
-      activeFilters.engine.push('call of chernobyl');
-    }
-    if (document.getElementById('filter-engine-ogsr').checked) {
-      activeFilters.engine.push('ogsr');
-    }
-    if (document.getElementById('filter-engine-olr').checked) {
-      activeFilters.engine.push('olr');
-    }
-    if (document.getElementById('filter-engine-soup').checked) {
-      activeFilters.engine.push('soup');
+    // Engine filter (radio buttons)
+    const engineRadio = document.querySelector('input[name="engine-filter"]:checked');
+    if (engineRadio) {
+      if (engineRadio.id === 'filter-engine-coc') {
+        activeFilters.engine = 'call of chernobyl';
+      } else if (engineRadio.id === 'filter-engine-ogsr') {
+        activeFilters.engine = 'ogsr';
+      } else if (engineRadio.id === 'filter-engine-olr') {
+        activeFilters.engine = 'olr';
+      } else if (engineRadio.id === 'filter-engine-soup') {
+        activeFilters.engine = 'soup';
+      }
     }
 
     // Get search query
-    const searchInput = document.getElementById('search-input');
     const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
 
     // Filter mods
@@ -292,30 +334,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // Standalone filter
-      if (activeFilters.standalone.length > 0) {
+      // Standalone filter (only filter if checkbox is checked)
+      if (activeFilters.standalone) {
         const cardStandalone = card.getAttribute('data-mod-standalone') === 'true';
-        if (!activeFilters.standalone.includes(cardStandalone)) {
+        if (!cardStandalone) {
           return false;
         }
       }
 
       // Platform filter
-      if (activeFilters.platform.length > 0) {
+      if (activeFilters.platform) {
         const cardPlatform = (card.getAttribute('data-mod-platform') || '').toLowerCase();
-        if (!activeFilters.platform.includes(cardPlatform)) {
+        if (cardPlatform !== activeFilters.platform) {
           return false;
         }
       }
 
       // Engine filter
-      if (activeFilters.engine.length > 0) {
+      if (activeFilters.engine) {
         const cardEngine = (card.getAttribute('data-mod-engine') || '').toLowerCase();
-        if (cardEngine && !activeFilters.engine.includes(cardEngine)) {
-          return false;
-        }
-        // If card has no engine and engine filters are active, exclude it
-        if (!cardEngine) {
+        if (cardEngine !== activeFilters.engine) {
           return false;
         }
       }
@@ -393,7 +431,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Search functionality - updated to work with filters
-  const searchInput = document.getElementById('search-input');
   if (searchInput) {
     searchInput.addEventListener('input', applyFilters);
   }
@@ -529,8 +566,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.key === 'Escape') {
       if (contactOverlay) contactOverlay.classList.add('hidden');
       if (installFilesOverlay) installFilesOverlay.classList.add('hidden');
-      if (filterDropdown && !filterDropdown.classList.contains('hidden')) {
-        filterDropdown.classList.add('hidden');
+      if (isFilterDropdownOpen) {
+        hideFilterDropdown();
       }
     }
   });
