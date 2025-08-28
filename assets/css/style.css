@@ -51,7 +51,7 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* UPDATED: Filter dropdown styles - compact horizontal layout */
+/* UPDATED: Filter dropdown styles - compact horizontal layout with better spacing */
 #filter-dropdown {
   transition: all 0.3s ease;
   transform: translateY(-5px);
@@ -69,20 +69,29 @@ h3, .platform-block {
   pointer-events: all;
 }
 
-/* Compact horizontal filter layout */
+/* Compact horizontal filter layout - UPDATED for better spacing */
 #filter-dropdown .flex.flex-wrap.items-center {
   gap: 0.25rem 1rem; /* Small vertical gap, moderate horizontal gap */
+  white-space: nowrap; /* Prevent wrapping of individual filter groups */
 }
 
 #filter-dropdown .flex.items-center.gap-1 {
-  gap: 0.25rem; /* Tight spacing between labels and inputs */
+  gap: 0.375rem; /* Slightly more spacing between labels and inputs */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
+/* UPDATED: More space between platform radio buttons and their labels */
 #filter-dropdown .flex.items-center.gap-2 {
-  gap: 0.5rem; /* Platform options spacing */
+  gap: 0.75rem; /* Increased spacing for platform options */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-/* Compact text sizing */
+/* UPDATED: Add specific spacing for radio button labels */
+#filter-dropdown input[type="radio"] + span {
+  margin-left: 0.25rem; /* Add space between radio button and label text */
+}
+
+/* Compact text sizing - UPDATED to scale down on smaller screens */
 #filter-dropdown span {
   font-size: 0.75rem !important;
   line-height: 1.2 !important;
@@ -94,6 +103,7 @@ h3, .platform-block {
   padding: 0 !important;
   line-height: 1.2 !important;
   cursor: pointer;
+  white-space: nowrap; /* Prevent label text wrapping */
 }
 
 #filter-dropdown input[type="checkbox"],
@@ -101,9 +111,10 @@ h3, .platform-block {
   width: 12px !important;
   height: 12px !important;
   margin: 0 !important;
+  flex-shrink: 0; /* Prevent input shrinking */
 }
 
-/* UPDATED: Controls container with minimal dropdown spacing */
+/* UPDATED: Controls container with reduced dropdown spacing */
 #controls-container {
   position: relative;
   z-index: 5;
@@ -111,9 +122,9 @@ h3, .platform-block {
   transition: margin-bottom 0.2s ease;
 }
 
-/* Much smaller margin - just enough for the compact dropdown */
+/* REDUCED: Much smaller margin for dropdown */
 #controls-container.filter-dropdown-open {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem; /* Reduced from 4rem */
 }
 
 /* UPDATED: Search input padding */
@@ -341,7 +352,7 @@ h3, .platform-block {
   z-index: 1001;
 }
 
-/* Mobile responsiveness for gallery and filters */
+/* Mobile responsiveness for gallery and filters - UPDATED */
 @media (max-width: 768px) {
   .image-gallery {
     flex-direction: column;
@@ -379,16 +390,45 @@ h3, .platform-block {
     font-size: 18px;
   }
 
-  /* Mobile filter dropdown - keep horizontal but allow wrapping */
+  /* UPDATED: Mobile filter dropdown - scale down but keep horizontal */
   #filter-dropdown {
-    padding: 0.75rem;
-    left: 0.5rem;
-    right: 0.5rem;
+    padding: 0.5rem 0.625rem; /* Slightly reduced padding */
+    left: 0.25rem;
+    right: 0.25rem;
   }
 
-  /* Slightly more margin on mobile for wrapped filters */
+  /* Scale down text on mobile but keep horizontal layout */
+  #filter-dropdown span {
+    font-size: 0.6875rem !important; /* 11px instead of 12px */
+  }
+
+  #filter-dropdown label {
+    font-size: 0.6875rem !important; /* 11px instead of 12px */
+  }
+
+  #filter-dropdown input[type="checkbox"],
+  #filter-dropdown input[type="radio"] {
+    width: 10px !important; /* Smaller inputs */
+    height: 10px !important;
+    transform: scale(0.9); /* Slight scale down */
+  }
+
+  /* Reduced spacing on mobile */
+  #filter-dropdown .flex.flex-wrap.items-center {
+    gap: 0.125rem 0.75rem; /* Tighter gaps */
+  }
+
+  #filter-dropdown .flex.items-center.gap-1 {
+    gap: 0.25rem; /* Reduced spacing */
+  }
+
+  #filter-dropdown .flex.items-center.gap-2 {
+    gap: 0.5rem; /* Reduced platform spacing */
+  }
+
+  /* REDUCED: Smaller margin on mobile for dropdown */
   #controls-container.filter-dropdown-open {
-    margin-bottom: 5rem;
+    margin-bottom: 2.25rem; /* Reduced from 5rem */
   }
 
   /* Mobile search input sizing */
@@ -399,37 +439,89 @@ h3, .platform-block {
 
   #filter-text {
     right: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.6875rem; /* Smaller filter text */
   }
 }
 
-/* Extra small screens */
+/* Extra small screens - UPDATED */
 @media (max-width: 480px) {
   #controls-container.filter-dropdown-open {
-    margin-bottom: 6rem;
+    margin-bottom: 2rem; /* Further reduced from 6rem */
   }
 
   #filter-dropdown {
-    left: -0.25rem;
-    right: -0.25rem;
-    padding: 0.5rem;
+    left: -0.125rem;
+    right: -0.125rem;
+    padding: 0.375rem 0.5rem; /* Even more compact */
   }
 
-  /* Allow more wrapping on very small screens */
+  /* Even smaller text and inputs */
+  #filter-dropdown span {
+    font-size: 0.625rem !important; /* 10px */
+  }
+
+  #filter-dropdown label {
+    font-size: 0.625rem !important; /* 10px */
+  }
+
+  #filter-dropdown input[type="checkbox"],
+  #filter-dropdown input[type="radio"] {
+    width: 9px !important;
+    height: 9px !important;
+    transform: scale(0.85);
+  }
+
+  /* Tighter spacing for very small screens */
   #filter-dropdown .flex.flex-wrap.items-center {
-    gap: 0.5rem 0.75rem;
+    gap: 0.125rem 0.5rem; /* Very tight gaps */
+  }
+
+  #filter-dropdown .flex.items-center.gap-1 {
+    gap: 0.1875rem;
+  }
+
+  #filter-dropdown .flex.items-center.gap-2 {
+    gap: 0.375rem;
   }
 }
 
-/* Very narrow screens (minimum card width) */
+/* Very narrow screens (minimum card width) - UPDATED */
 @media (max-width: 320px) {
   #controls-container.filter-dropdown-open {
-    margin-bottom: 7rem;
+    margin-bottom: 1.75rem; /* Minimal margin */
   }
   
-  /* Even tighter spacing for very narrow screens */
+  #filter-dropdown {
+    padding: 0.25rem 0.375rem; /* Very compact */
+  }
+
+  /* Smallest possible text while remaining readable */
+  #filter-dropdown span {
+    font-size: 0.5625rem !important; /* 9px */
+  }
+
+  #filter-dropdown label {
+    font-size: 0.5625rem !important; /* 9px */
+  }
+
+  #filter-dropdown input[type="checkbox"],
+  #filter-dropdown input[type="radio"] {
+    width: 8px !important;
+    height: 8px !important;
+    transform: scale(0.8);
+  }
+
+  /* Minimal spacing for narrowest screens */
   #filter-dropdown .flex.flex-wrap.items-center {
-    gap: 0.25rem 0.5rem;
+    gap: 0.0625rem 0.375rem; /* Minimal gaps */
+  }
+
+  #filter-dropdown .flex.items-center.gap-1 {
+    gap: 0.125rem;
+  }
+
+  #filter-dropdown .flex.items-center.gap-2 {
+    gap: 0.25rem;
   }
 }
 
