@@ -1,4 +1,4 @@
-/* Custom styles for S.T.A.L.K.E.R. Mods Archive */
+/* Custom styles */
 
 .hide-videos .video-container {
   display: none;
@@ -34,7 +34,7 @@ h3, .platform-block {
 .platform-full {
   display: flex;
   align-items: center;
-  gap: 0.375rem; /* This gives you 6px of space between each element */
+  gap: 0.375rem; 
 }
 
 .platform-compact {
@@ -51,7 +51,6 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* UPDATED: Filter dropdown styles - compact horizontal layout with better spacing */
 #filter-dropdown {
   transition: all 0.3s ease;
   transform: translateY(-5px);
@@ -69,29 +68,25 @@ h3, .platform-block {
   pointer-events: all;
 }
 
-/* Compact horizontal filter layout - UPDATED for better spacing */
 #filter-dropdown .flex.flex-wrap.items-center {
-  gap: 0.25rem 1rem; /* Small vertical gap, moderate horizontal gap */
-  white-space: nowrap; /* Prevent wrapping of individual filter groups */
+  gap: 0.25rem 1rem; 
+  white-space: nowrap; 
 }
 
 #filter-dropdown .flex.items-center.gap-1 {
-  gap: 0.375rem; /* Slightly more spacing between labels and inputs */
-  flex-shrink: 0; /* Prevent shrinking */
+  gap: 0.375rem; 
+  flex-shrink: 0; 
 }
 
-/* UPDATED: More space between platform radio buttons and their labels */
 #filter-dropdown .flex.items-center.gap-2 {
-  gap: 0.75rem; /* Increased spacing for platform options */
-  flex-shrink: 0; /* Prevent shrinking */
+  gap: 0.75rem;
+  flex-shrink: 0;
 }
 
-/* UPDATED: Add specific spacing for radio button labels */
 #filter-dropdown input[type="radio"] + span {
-  margin-left: 0.25rem; /* Add space between radio button and label text */
+  margin-left: 0.25rem; 
 }
 
-/* Compact text sizing - UPDATED to scale down on smaller screens */
 #filter-dropdown span {
   font-size: 0.75rem !important;
   line-height: 1.2 !important;
@@ -103,7 +98,7 @@ h3, .platform-block {
   padding: 0 !important;
   line-height: 1.2 !important;
   cursor: pointer;
-  white-space: nowrap; /* Prevent label text wrapping */
+  white-space: nowrap; 
 }
 
 #filter-dropdown input[type="checkbox"],
@@ -111,10 +106,9 @@ h3, .platform-block {
   width: 12px !important;
   height: 12px !important;
   margin: 0 !important;
-  flex-shrink: 0; /* Prevent input shrinking */
+  flex-shrink: 0; 
 }
 
-/* UPDATED: Controls container with reduced dropdown spacing */
 #controls-container {
   position: relative;
   z-index: 5;
@@ -122,17 +116,14 @@ h3, .platform-block {
   transition: margin-bottom 0.2s ease;
 }
 
-/* REDUCED: Much smaller margin for dropdown */
 #controls-container.filter-dropdown-open {
-  margin-bottom: 2.5rem; /* Reduced from 4rem */
+  margin-bottom: 2.5rem; 
 }
 
-/* UPDATED: Search input padding */
 #search-input {
   padding-right: 4rem !important;
 }
 
-/* Filter text and arrow styling */
 #filter-text {
   user-select: none;
   display: flex;
@@ -144,12 +135,10 @@ h3, .platform-block {
   color: #f3f4f6;
 }
 
-/* Arrow rotation when dropdown is open */
 #filter-text.dropdown-open #filter-arrow {
   transform: rotate(180deg);
 }
 
-/* Ensure consistent control heights */
 #controls-container button,
 #controls-container input {
   height: 32px !important;
@@ -158,12 +147,10 @@ h3, .platform-block {
   justify-content: center;
 }
 
-/* Search container positioning */
 #search-container {
   position: relative;
 }
 
-/* Custom radio and checkbox styles */
 .filter-checkbox,
 .filter-radio {
   accent-color: #eab308;
@@ -176,12 +163,10 @@ h3, .platform-block {
   outline-offset: 2px;
 }
 
-/* Better alignment for buttons and search bar */
 .flex.flex-wrap.items-start {
   align-items: flex-start;
 }
 
-/* Ensure buttons stay aligned with search input height */
 #sort-button,
 #cards-less,
 #cards-more {
@@ -191,12 +176,10 @@ h3, .platform-block {
   justify-content: center;
 }
 
-/* Search input consistent height */
 #search-input {
   height: 32px;
 }
 
-/* Image Gallery Styles - FIXED to maintain consistent sizing */
 .image-gallery {
   display: flex;
   gap: 0.5rem;
@@ -204,17 +187,13 @@ h3, .platform-block {
 }
 
 .gallery-thumbnail {
-  /* Fixed width instead of flex: 1 to maintain consistent sizing */
-  width: calc((100% - 1rem) / 3); /* Calculate width for 3 images with gap */
-  min-width: 120px; /* Minimum width to prevent too small images */
-  max-width: 200px; /* Maximum width to prevent too large images */
+  flex: 1;
   aspect-ratio: 16/9;
   border-radius: 0.375rem;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 2px solid transparent;
-  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .gallery-thumbnail:hover {
@@ -230,7 +209,6 @@ h3, .platform-block {
   display: block;
 }
 
-/* Lightbox Styles */
 .lightbox {
   position: fixed;
   top: 0;
@@ -356,7 +334,6 @@ h3, .platform-block {
   z-index: 1001;
 }
 
-/* Mobile responsiveness for gallery and filters - UPDATED */
 @media (max-width: 768px) {
   .image-gallery {
     flex-direction: column;
@@ -364,8 +341,6 @@ h3, .platform-block {
   }
   
   .gallery-thumbnail {
-    width: 100%; /* Full width on mobile when stacked */
-    max-width: none;
     aspect-ratio: 16/9;
   }
   
@@ -396,48 +371,43 @@ h3, .platform-block {
     font-size: 18px;
   }
 
-  /* UPDATED: Mobile filter dropdown - scale down but keep horizontal */
   #filter-dropdown {
-    padding: 0.5rem 0.625rem; /* Slightly reduced padding */
+    padding: 0.5rem 0.625rem; 
     left: 0.25rem;
     right: 0.25rem;
   }
 
-  /* Scale down text on mobile but keep horizontal layout */
   #filter-dropdown span {
-    font-size: 0.6875rem !important; /* 11px instead of 12px */
+    font-size: 0.6875rem !important; 
   }
 
   #filter-dropdown label {
-    font-size: 0.6875rem !important; /* 11px instead of 12px */
+    font-size: 0.6875rem !important; 
   }
 
   #filter-dropdown input[type="checkbox"],
   #filter-dropdown input[type="radio"] {
-    width: 10px !important; /* Smaller inputs */
+    width: 10px !important; 
     height: 10px !important;
-    transform: scale(0.9); /* Slight scale down */
+    transform: scale(0.9); 
   }
 
-  /* Reduced spacing on mobile */
   #filter-dropdown .flex.flex-wrap.items-center {
-    gap: 0.125rem 0.75rem; /* Tighter gaps */
+    gap: 0.125rem 0.75rem; 
   }
 
   #filter-dropdown .flex.items-center.gap-1 {
-    gap: 0.25rem; /* Reduced spacing */
+    gap: 0.25rem; 
   }
 
   #filter-dropdown .flex.items-center.gap-2 {
-    gap: 0.5rem; /* Reduced platform spacing */
+    gap: 0.5rem; 
   }
 
-  /* REDUCED: Smaller margin on mobile for dropdown */
   #controls-container.filter-dropdown-open {
-    margin-bottom: 2.25rem; /* Reduced from 5rem */
+    margin-bottom: 2.25rem; 
   }
 
-  /* Mobile search input sizing */
   #search-input {
     padding-right: 4.5rem !important;
     font-size: 14px;
@@ -445,37 +415,27 @@ h3, .platform-block {
 
   #filter-text {
     right: 0.5rem;
-    font-size: 0.6875rem; /* Smaller filter text */
+    font-size: 0.6875rem; 
   }
 }
 
-/* For very small screens with enough width, show 2 images per row */
-@media (max-width: 480px) and (min-width: 769px) {
-  .gallery-thumbnail {
-    width: calc((100% - 0.5rem) / 2); /* Show 2 per row on small screens */
-    min-width: 140px;
-  }
-}
-
-/* Extra small screens - UPDATED */
 @media (max-width: 480px) {
   #controls-container.filter-dropdown-open {
-    margin-bottom: 2rem; /* Further reduced from 6rem */
+    margin-bottom: 2rem; 
   }
 
   #filter-dropdown {
     left: -0.125rem;
     right: -0.125rem;
-    padding: 0.375rem 0.5rem; /* Even more compact */
+    padding: 0.375rem 0.5rem; 
   }
 
-  /* Even smaller text and inputs */
   #filter-dropdown span {
-    font-size: 0.625rem !important; /* 10px */
+    font-size: 0.625rem !important; 
   }
 
   #filter-dropdown label {
-    font-size: 0.625rem !important; /* 10px */
+    font-size: 0.625rem !important; 
   }
 
   #filter-dropdown input[type="checkbox"],
@@ -485,9 +445,8 @@ h3, .platform-block {
     transform: scale(0.85);
   }
 
-  /* Tighter spacing for very small screens */
   #filter-dropdown .flex.flex-wrap.items-center {
-    gap: 0.125rem 0.5rem; /* Very tight gaps */
+    gap: 0.125rem 0.5rem;
   }
 
   #filter-dropdown .flex.items-center.gap-1 {
@@ -499,23 +458,21 @@ h3, .platform-block {
   }
 }
 
-/* Very narrow screens (minimum card width) - UPDATED */
 @media (max-width: 320px) {
   #controls-container.filter-dropdown-open {
-    margin-bottom: 1.75rem; /* Minimal margin */
+    margin-bottom: 1.75rem; 
   }
   
   #filter-dropdown {
-    padding: 0.25rem 0.375rem; /* Very compact */
+    padding: 0.25rem 0.375rem; 
   }
 
-  /* Smallest possible text while remaining readable */
   #filter-dropdown span {
-    font-size: 0.5625rem !important; /* 9px */
+    font-size: 0.5625rem !important; 
   }
 
   #filter-dropdown label {
-    font-size: 0.5625rem !important; /* 9px */
+    font-size: 0.5625rem !important; 
   }
 
   #filter-dropdown input[type="checkbox"],
@@ -525,9 +482,8 @@ h3, .platform-block {
     transform: scale(0.8);
   }
 
-  /* Minimal spacing for narrowest screens */
   #filter-dropdown .flex.flex-wrap.items-center {
-    gap: 0.0625rem 0.375rem; /* Minimal gaps */
+    gap: 0.0625rem 0.375rem; 
   }
 
   #filter-dropdown .flex.items-center.gap-1 {
@@ -539,37 +495,33 @@ h3, .platform-block {
   }
 }
 
-/* Remaining styles... */
-/* Pros and Cons Section Styling */
 .pros-section ul li {
-  color: #4ade80; /* Bright green for pros */
-  font-size: 0.875rem; /* 14px - smaller than description */
+  color: #4ade80; 
+  font-size: 0.875rem; 
   line-height: 1.4;
   margin-bottom: 0.25rem;
 }
 
 .cons-section ul li {
-  color: #f87171; /* Bright red for cons */
-  font-size: 0.875rem; /* 14px - smaller than description */
+  color: #f87171; 
+  font-size: 0.875rem; 
   line-height: 1.4;
   margin-bottom: 0.25rem;
 }
 
 .pros-section ul li span:first-child,
 .cons-section ul li span:first-child {
-  font-weight: 700; /* Bold + and - signs */
-  font-size: 1rem; /* Slightly larger signs */
+  font-weight: 700; 
+  font-size: 1rem; 
 }
 
-/* Ensure pros/cons don't take up too much space on smaller screens */
 @media (max-width: 768px) {
   .pros-section ul li,
   .cons-section ul li {
-    font-size: 0.8rem; /* Even smaller on mobile */
+    font-size: 0.8rem;
   }
 }
 
-/* Default video thumbnail styles for main page cards */
 .video-thumbnail {
   position: relative;
   cursor: pointer;
@@ -621,11 +573,10 @@ h3, .platform-block {
   margin-left: 4px;
 }
 
-/* Mod page specific video styles - maintain size */
 .mod-page-video .video-thumbnail {
   aspect-ratio: 16/9;
   height: auto;
-  min-height: 150px; /* Ensure minimum size */
+  min-height: 150px;
 }
 
 .mod-page-video .play-button {
@@ -640,25 +591,23 @@ h3, .platform-block {
   margin-left: 3px;
 }
 
-/* UPDATED: Adjust the grid layout for links and video sections - Moderate adjustment */
 .mod-page-sections {
   display: grid;
-  grid-template-columns: 1.6fr 1.4fr; /* Links section slightly narrower, Video section slightly wider */
-  gap: 1.25rem; /* 20px gap */
+  grid-template-columns: 1.6fr 1.4fr;
+  gap: 1.25rem; 
 }
 
-/* Make sections slightly smaller on mod pages but maintain video size */
 .mod-page-sections section {
-  padding: 1.25rem; /* 20px, reduced from 1.5rem (24px) */
+  padding: 1.25rem; 
 }
 
 .mod-page-sections h2 {
-  font-size: 1.29rem; /* FIXED: Increased by 15% from 1.125rem */
+  font-size: 1.29rem; 
   font-weight: 600;
 }
 
 .mod-page-sections svg {
-  width: 1.25rem; /* 20px, reduced from 1.5rem (24px) */
+  width: 1.25rem; 
   height: 1.25rem;
 }
 
@@ -669,7 +618,6 @@ h3, .platform-block {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Remove skeleton loading for cleaner video thumbnails */
 .skeleton-loading {
   display: none;
 }
@@ -701,7 +649,6 @@ h3, .platform-block {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
-/* Header buttons styling - fixed to be consistent across pages */
 #essentials-button,
 #contact-button,
 #toggle-grades,
@@ -710,12 +657,11 @@ h3, .platform-block {
 #contact-button-mobile,
 #toggle-grades-mobile,
 #toggle-videos-mobile {
-  font-size: 0.875rem !important; /* text-sm */
-  padding: 0.375rem 0.75rem !important; /* py-1.5 px-3 */
+  font-size: 0.875rem !important; 
+  padding: 0.375rem 0.75rem !important; 
   transition: all 0.2s ease;
 }
 
-/* Prose styles for mod content - RESTORED FROM OLD VERSION */
 .prose {
   color: #d1d5db;
 }
@@ -731,36 +677,35 @@ h3, .platform-block {
 }
 
 .prose h2 {
-  font-size: 1.25rem; /* Reduced from 1.5rem to match h3 size */
-  line-height: 1.75rem; /* Reduced from 2rem */
-  margin-top: 1.25rem; /* Reduced from 2rem */
-  margin-bottom: 0.75rem; /* Reduced from 1rem */
+  font-size: 1.25rem; 
+  line-height: 1.75rem; 
+  margin-top: 1.25rem; 
+  margin-bottom: 0.75rem; 
 }
 
 .prose h3 {
-  font-size: 1.125rem; /* Slightly smaller than h2 */
+  font-size: 1.125rem; 
   line-height: 1.5rem;
-  margin-top: 1rem; /* Reduced from 1.5rem */
-  margin-bottom: 0.5rem; /* Reduced from 0.75rem */
+  margin-top: 1rem; 
+  margin-bottom: 0.5rem; 
 }
 
-/* UPDATED: Add more space between sections - target specific sections */
 .prose h3:nth-of-type(2) {
-  margin-top: 2rem; /* More space before "Troubleshooting & Tips" */
+  margin-top: 2rem; 
 }
 
 .prose p {
-  margin-bottom: 0.75rem; /* Reduced from 1rem */
-  line-height: 1.5; /* Reduced from 1.625 */
+  margin-bottom: 0.75rem;
+  line-height: 1.5; 
 }
 
 .prose ul, .prose ol {
-  margin-bottom: 1rem; /* Increased spacing for better section separation */
+  margin-bottom: 1rem; 
   padding-left: 1.5rem;
 }
 
 .prose li {
-  margin-bottom: 0.5rem; /* Increased spacing between items */
+  margin-bottom: 0.5rem; 
   line-height: 1.6;
 }
 
@@ -787,7 +732,7 @@ h3, .platform-block {
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
-  margin-bottom: 0.75rem; /* Reduced from 1rem */
+  margin-bottom: 0.75rem; 
 }
 
 .prose blockquote {
@@ -795,7 +740,7 @@ h3, .platform-block {
   padding-left: 1rem;
   color: #9ca3af;
   font-style: italic;
-  margin: 0.75rem 0; /* Reduced from 1rem 0 */
+  margin: 0.75rem 0; 
 }
 
 .prose strong {
@@ -807,13 +752,12 @@ h3, .platform-block {
   font-style: italic;
 }
 
-/* Compact variant for prose */
 .prose-compact {
-  font-size: 0.875rem; /* Slightly smaller text */
+  font-size: 0.875rem; 
 }
 
 .prose-compact h2 {
-  font-size: 1.125rem; /* Even smaller for compact */
+  font-size: 1.125rem; 
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -830,15 +774,14 @@ h3, .platform-block {
 }
 
 .prose-compact ul, .prose-compact ol {
-  margin-bottom: 0.75rem; /* Increased from 0.5rem for better spacing in compact mode */
+  margin-bottom: 0.75rem; 
 }
 
 .prose-compact li {
-  margin-bottom: 0.375rem; /* Increased from 0.125rem for better bullet spacing */
-  line-height: 1.5; /* Improved line height for compact bullets */
+  margin-bottom: 0.375rem; 
+  line-height: 1.5; 
 }
 
-/* UPDATED: Custom compact installation steps - Fixed alignment and spacing */
 .prose-compact .space-y-3 {
   margin-top: 1rem;
 }
@@ -851,41 +794,39 @@ h3, .platform-block {
   margin-bottom: 0;
 }
 
-/* UPDATED: FIXED Installation step numbering - proper alignment and reduced spacing */
 .prose .space-y-3 .flex.items-start {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem; /* Reduced gap for better alignment */
-  margin-bottom: 0.25rem; /* Much reduced spacing between lines */
+  gap: 0.5rem; 
+  margin-bottom: 0.25rem; 
 }
 
 .prose .space-y-3 .flex.items-start span {
-  color: #fbbf24; /* Yellow color */
+  color: #fbbf24; 
   font-weight: bold;
-  font-size: 0.875rem; /* FIXED: Consistent size with instruction text */
+  font-size: 0.875rem; 
   flex-shrink: 0;
   line-height: 1.5;
-  width: 1.2rem; /* Fixed width for consistent alignment */
+  width: 1.2rem; 
   text-align: left;
-  margin-top: 0; /* Ensure no extra margin */
+  margin-top: 0; 
 }
 
 .prose .space-y-3 .flex.items-start div {
   flex: 1;
   line-height: 1.5;
   display: block;
-  margin-top: 0; /* Ensure no extra margin */
+  margin-top: 0; 
 }
 
 .prose .space-y-3 .flex.items-start p {
   margin: 0;
   color: #d1d5db;
   display: block;
-  font-size: 0.875rem; /* Consistent size with number */
-  line-height: 1.5; /* Consistent line height */
+  font-size: 0.875rem; 
+  line-height: 1.5; 
 }
 
-/* Ensure the installation steps container works properly */
 .prose .space-y-3 {
   display: block;
 }
@@ -893,15 +834,14 @@ h3, .platform-block {
 .prose .space-y-3 > div {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem; /* Consistent with above */
-  margin-bottom: 0.25rem; /* Much reduced spacing - consistent with above */
+  gap: 0.5rem;
+  margin-bottom: 0.25rem; 
 }
 
 .prose .space-y-3 > div:last-child {
   margin-bottom: 0;
 }
 
-/* Override any conflicting Tailwind classes specifically for installation numbers */
 .prose .text-yellow-400 {
   color: #fbbf24;
 }
@@ -915,20 +855,18 @@ h3, .platform-block {
 }
 
 .prose .text-lg {
-  font-size: 0.875rem !important; /* FIXED: Force override to match text size */
+  font-size: 0.875rem !important; 
 }
 
 .prose .flex-shrink-0 {
   flex-shrink: 0;
 }
 
-/* ADDED: Make main section titles 15% bigger */
 section h2 {
-  font-size: 1.38rem; /* 15% bigger main section titles */
+  font-size: 1.38rem; 
   font-weight: 600;
 }
 
-/* Responsive adjustments */
 @media (max-width: 640px) {
   .cards-2, .cards-3, .cards-4 {
     grid-template-columns: 1fr;
@@ -942,27 +880,23 @@ section h2 {
     white-space: normal;
   }
 
-  /* Stack sections vertically on mobile and maintain proportions */
   .mod-page-sections {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  /* Ensure video maintains aspect ratio on mobile */
   .mod-page-video .video-thumbnail {
     min-height: 120px;
   }
 }
 
-/* Medium screens - adjust proportions but keep moderate ratio */
 @media (min-width: 641px) and (max-width: 1024px) {
   .mod-page-sections {
-    grid-template-columns: 1.6fr 1.4fr; /* Maintain the moderate ratio on medium screens */
+    grid-template-columns: 1.6fr 1.4fr; 
     gap: 1rem;
   }
 }
 
-/* Main page specific button sizing - smaller buttons only on main page */
 .main-page #essentials-button,
 .main-page #contact-button,
 .main-page #toggle-grades,
@@ -971,6 +905,6 @@ section h2 {
 .main-page #contact-button-mobile,
 .main-page #toggle-grades-mobile,
 .main-page #toggle-videos-mobile {
-  font-size: 0.75rem !important; /* text-xs - smaller than current 0.875rem */
-  padding: 0.25rem 0.5rem !important; /* py-1 px-2 - smaller padding */
+  font-size: 0.75rem !important; 
+  padding: 0.25rem 0.5rem !important; 
 }
