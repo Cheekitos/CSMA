@@ -7,8 +7,7 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 
 ## 🚧 In Progress
 
-- Filtering system for the search bar (standalone, platform, low spec friendly)
-- Writing each mod individual page (Short description, Long Description, Common troubleshooting steps, SEO stuff, making sure migration from old website didn't mess up things etc.
+- Writing each mod individual page (Short description, Long Description, Pros & COns, Install Guide, Common troubleshooting steps, Screenshots, SEO...)
 
 ## ✅ Done
 - Rebuild old website to be Jekyll-based with Server-side rendering
@@ -23,11 +22,11 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - First iteration of the Image Gallery (Few images + Lightbox)
 - Popup content into separate files, show/hide toggle buttons based on context
 - Fixing some quirks / display issues with the mod page template
+- Filtering system for the search bar (standalone, platform, low spec friendly)
 
 ## ❌ To Do
 - Add Requirements Section (Maybe, hard to find reliable info for most mods)
 - Stop pushing my video reviews on the main page by replacing the embed with a mod custom thumbnail or screenshot
-- Screenshot gallery on mods individual pages
 - Tailwind CLI and other optimizations
 
 ## 🌟 Wishlist 
