@@ -190,11 +190,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize video thumbnails
   initializeVideoThumbnails();
 
-  // Filter functionality
+  // UPDATED: Filter functionality with new UI
   const searchInput = document.getElementById('search-input');
   const filterText = document.getElementById('filter-text');
+  const filterTextContent = document.getElementById('filter-text-content');
+  const filterArrow = document.getElementById('filter-arrow');
   const filterDropdown = document.getElementById('filter-dropdown');
-  const clearFiltersBtn = document.getElementById('clear-filters');
   const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
   const filterRadios = document.querySelectorAll('.filter-radio');
   const searchContainer = document.getElementById('search-container');
@@ -208,13 +209,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const standaloneCheckbox = document.getElementById('filter-standalone-yes');
     const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
     const platformRadio = document.querySelector('input[name="platform-filter"]:checked');
-    const engineRadio = document.querySelector('input[name="engine-filter"]:checked');
     
     return searchQuery !== '' || 
            (standaloneCheckbox && standaloneCheckbox.checked) ||
            (lowspecCheckbox && lowspecCheckbox.checked) ||
-           platformRadio || 
-           engineRadio;
+           platformRadio;
+  }
+
+  // UPDATED: Update filter text based on dropdown state
+  function updateFilterText() {
+    if (filterTextContent && filterText) {
+      if (isFilterDropdownOpen) {
+        filterTextContent.textContent = 'Clear';
+        filterText.classList.add('dropdown-open');
+      } else {
+        filterTextContent.textContent = 'Filters';
+        filterText.classList.remove('dropdown-open');
+      }
+    }
   }
 
   // Show filter dropdown when clicking in search bar or on filter text
@@ -232,6 +244,8 @@ document.addEventListener('DOMContentLoaded', function() {
     filterText.addEventListener('click', (e) => {
       e.stopPropagation();
       if (isFilterDropdownOpen) {
+        // If showing "Clear", clear all filters
+        clearAllFilters();
         hideFilterDropdown();
       } else {
         showFilterDropdown();
@@ -244,6 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
       filterDropdown.classList.remove('hidden');
       controlsContainer.classList.add('filter-dropdown-open');
       isFilterDropdownOpen = true;
+      updateFilterText();
       // Trigger reflow to ensure CSS transitions work
       filterDropdown.offsetHeight;
     }
@@ -256,8 +271,32 @@ document.addEventListener('DOMContentLoaded', function() {
         filterDropdown.classList.add('hidden');
         controlsContainer.classList.remove('filter-dropdown-open');
         isFilterDropdownOpen = false;
+        updateFilterText();
       }
     }
+  }
+
+  // UPDATED: Clear all filters function
+  function clearAllFilters() {
+    // Clear search input text
+    if (searchInput) {
+      searchInput.value = '';
+    }
+    
+    // Clear standalone checkbox
+    const standaloneCheckbox = document.getElementById('filter-standalone-yes');
+    if (standaloneCheckbox) standaloneCheckbox.checked = false;
+    
+    // Clear low-spec checkbox
+    const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
+    if (lowspecCheckbox) lowspecCheckbox.checked = false;
+    
+    // Clear platform radios
+    document.querySelectorAll('input[name="platform-filter"]').forEach(radio => {
+      radio.checked = false;
+    });
+    
+    applyFilters();
   }
 
   // Close dropdown when clicking outside, but only if no filters are active
@@ -266,43 +305,6 @@ document.addEventListener('DOMContentLoaded', function() {
       hideFilterDropdown();
     }
   });
-
-  // Clear all filters - Updated to also clear search text and close dropdown
-  if (clearFiltersBtn) {
-    clearFiltersBtn.addEventListener('click', () => {
-      // Clear search input text
-      if (searchInput) {
-        searchInput.value = '';
-      }
-      
-      // Clear standalone checkbox
-      const standaloneCheckbox = document.getElementById('filter-standalone-yes');
-      if (standaloneCheckbox) standaloneCheckbox.checked = false;
-      
-      // Clear low-spec checkbox
-      const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
-      if (lowspecCheckbox) lowspecCheckbox.checked = false;
-      
-      // Clear platform radios
-      document.querySelectorAll('input[name="platform-filter"]').forEach(radio => {
-        radio.checked = false;
-      });
-      
-      // Clear engine radios
-      document.querySelectorAll('input[name="engine-filter"]').forEach(radio => {
-        radio.checked = false;
-      });
-      
-      applyFilters();
-      
-      // Force close dropdown since all filters are cleared
-      if (filterDropdown && controlsContainer) {
-        filterDropdown.classList.add('hidden');
-        controlsContainer.classList.remove('filter-dropdown-open');
-        isFilterDropdownOpen = false;
-      }
-    });
-  }
 
   // Apply filters when inputs change
   filterCheckboxes.forEach(input => {
@@ -313,13 +315,13 @@ document.addEventListener('DOMContentLoaded', function() {
     input.addEventListener('change', applyFilters);
   });
 
+  // UPDATED: Apply filters function - removed engine filter logic
   function applyFilters() {
     // Get active filters
     const activeFilters = {
       standalone: false,
       lowspec: false,
-      platform: null,
-      engine: null
+      platform: null
     };
 
     // Standalone filter (only show standalone if checked)
@@ -343,20 +345,6 @@ document.addEventListener('DOMContentLoaded', function() {
         activeFilters.platform = 'clear sky';
       } else if (platformRadio.id === 'filter-platform-cop') {
         activeFilters.platform = 'call of pripyat';
-      }
-    }
-
-    // Engine filter (radio buttons)
-    const engineRadio = document.querySelector('input[name="engine-filter"]:checked');
-    if (engineRadio) {
-      if (engineRadio.id === 'filter-engine-coc') {
-        activeFilters.engine = 'call of chernobyl';
-      } else if (engineRadio.id === 'filter-engine-ogsr') {
-        activeFilters.engine = 'ogsr';
-      } else if (engineRadio.id === 'filter-engine-olr') {
-        activeFilters.engine = 'olr';
-      } else if (engineRadio.id === 'filter-engine-soup') {
-        activeFilters.engine = 'soup';
       }
     }
 
@@ -396,14 +384,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (activeFilters.platform) {
         const cardPlatform = (card.getAttribute('data-mod-platform') || '').toLowerCase();
         if (cardPlatform !== activeFilters.platform) {
-          return false;
-        }
-      }
-
-      // Engine filter
-      if (activeFilters.engine) {
-        const cardEngine = (card.getAttribute('data-mod-engine') || '').toLowerCase();
-        if (cardEngine !== activeFilters.engine) {
           return false;
         }
       }
