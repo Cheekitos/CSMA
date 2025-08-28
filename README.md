@@ -7,20 +7,20 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 
 ## 🚧 In Progress
 
-- Filtering system for the search bar (standalone, platform, engine)
+- Filtering system for the search bar (standalone, platform, low spec friendly)
 - Writing each mod individual page (Short description, Long Description, Common troubleshooting steps, SEO stuff, making sure migration from old website didn't mess up things etc.
 
 ## ✅ Done
 - Rebuild old website to be Jekyll-based with Server-side rendering
-- .md file template to build static pages. Easy update / maintain.
+- Use .md file template to build static pages for easy streamlined mod updates
 - Remove Download & Install guide links from the mod cards on the main page.
-- Card Hovering zoom. Click the card anywhere to open the Mod Individual Page.
+- Card Hovering zoom. Click the card anywhere to open the new Mod Individual Page.
 - Card has a short mod description, Individual page has a detailed description with pros and cons.
 - Add new button for game engine (Anomaly, Call of Chernobyl etc..)
 - Add Release Date
 - Add common Troubleshooting & Tips section
 - Links Subsections, Inline and extra formatting options
-- First iteration of the Image Gallery (3 images + Lightbox)
+- First iteration of the Image Gallery (Few images + Lightbox)
 - Popup content into separate files, show/hide toggle buttons based on context
 - Fixing some quirks / display issues with the mod page template
 
