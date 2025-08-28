@@ -38,30 +38,30 @@ body_class: main-page
           <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
         </svg>
       </span>
-      <div id="filter-dropdown" class="absolute top-full left-0 right-0 bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-3 hidden z-10 shadow-lg">
-        <div class="flex flex-col gap-4">
+      <div id="filter-dropdown" class="absolute top-full left-0 right-0 bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-2 hidden z-10 shadow-lg">
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
           <!-- Standalone Filter - Just checkbox -->
           <div class="flex items-center gap-2">
-            <span class="text-sm text-gray-300 font-semibold min-w-[70px]">Standalone:</span>
-            <label class="flex items-center text-sm text-gray-400">
+            <span class="text-xs text-gray-300 font-semibold">Standalone:</span>
+            <label class="flex items-center text-xs text-gray-400">
               <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox">
             </label>
           </div>
           
           <!-- Platform Filter -->
-          <div class="flex flex-col gap-2">
-            <span class="text-sm text-gray-300 font-semibold">Platform:</span>
-            <div class="flex flex-wrap items-center gap-3">
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="radio" name="platform-filter" id="filter-platform-soc" class="filter-radio mr-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-300 font-semibold">Platform:</span>
+            <div class="flex items-center gap-2">
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="platform-filter" id="filter-platform-soc" class="filter-radio mr-1">
                 SoC
               </label>
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="radio" name="platform-filter" id="filter-platform-cs" class="filter-radio mr-2">
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="platform-filter" id="filter-platform-cs" class="filter-radio mr-1">
                 CS
               </label>
-              <label class="flex items-center text-sm text-gray-400">
-                <input type="radio" name="platform-filter" id="filter-platform-cop" class="filter-radio mr-2">
+              <label class="flex items-center text-xs text-gray-400">
+                <input type="radio" name="platform-filter" id="filter-platform-cop" class="filter-radio mr-1">
                 CoP
               </label>
             </div>
@@ -69,8 +69,8 @@ body_class: main-page
           
           <!-- Low-spec Friendly Filter - Just checkbox -->
           <div class="flex items-center gap-2">
-            <span class="text-sm text-gray-300 font-semibold min-w-[70px]">Low-spec Friendly:</span>
-            <label class="flex items-center text-sm text-gray-400">
+            <span class="text-xs text-gray-300 font-semibold">Low-spec Friendly:</span>
+            <label class="flex items-center text-xs text-gray-400">
               <input type="checkbox" id="filter-lowspec-yes" class="filter-checkbox">
             </label>
           </div>
