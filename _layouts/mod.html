@@ -104,15 +104,51 @@ layout: default
 
       <!-- Image Gallery -->
       {% if page.gallery_images and page.gallery_images.size > 0 %}
-      <div class="image-gallery mb-4" 
-           data-gallery-images='{{ page.gallery_images | slice: 0, 10 | jsonify }}'
-           data-base-url="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | relative_url }}">
-        {% for image in page.gallery_images limit: 3 %}
-        <div class="gallery-thumbnail" data-full-src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}">
-          <img src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}" alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
-        </div>
+        {% comment %} Check if all gallery images are empty strings {% endcomment %}
+        {% assign has_real_images = false %}
+        {% assign real_images = "" | split: "," %}
+        {% for image in page.gallery_images %}
+          {% if image != "" and image != nil %}
+            {% assign has_real_images = true %}
+            {% assign real_images = real_images | push: image %}
+          {% endif %}
         {% endfor %}
-      </div>
+        
+        {% if has_real_images %}
+          {% comment %} Show real images and fill remaining slots with placeholders {% endcomment %}
+          <div class="image-gallery mb-4" 
+               data-gallery-images='{{ page.gallery_images | slice: 0, 10 | jsonify }}'
+               data-base-url="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | relative_url }}">
+            
+            {% comment %} Show real images first {% endcomment %}
+            {% for image in real_images limit: 3 %}
+            <div class="gallery-thumbnail" data-full-src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}">
+              <img src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}" alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
+            </div>
+            {% endfor %}
+            
+            {% comment %} Fill remaining slots with placeholders if needed {% endcomment %}
+            {% assign remaining_slots = 3 | minus: real_images.size %}
+            {% if remaining_slots > 0 %}
+              {% for i in (1..remaining_slots) %}
+              <div class="gallery-thumbnail" data-full-src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}">
+                <img src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}" alt="{{ page.title }} placeholder image {{ i }}" loading="lazy">
+              </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        {% else %}
+          {% comment %} All images are empty strings, show 3 placeholders {% endcomment %}
+          <div class="image-gallery mb-4" 
+               data-gallery-images='["placeholder.jpg", "placeholder.jpg", "placeholder.jpg"]'
+               data-base-url="{{ '/assets/images/screenshots/' | relative_url }}">
+            {% for i in (1..3) %}
+            <div class="gallery-thumbnail" data-full-src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}">
+              <img src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}" alt="{{ page.title }} placeholder image {{ i }}" loading="lazy">
+            </div>
+            {% endfor %}
+          </div>
+        {% endif %}
       {% endif %}
       
       <!-- Main Features Title -->
@@ -377,5 +413,4 @@ layout: default
   {% endif %}
 
   {% include about-popup.html %}
-  {% include essentials-popup.html %}
-</div>
+  {% include essentials-popup
