@@ -29,23 +29,22 @@ links:
     url: "https://www.moddb.com/mods/goldsphere-completion/downloads"
   - label: "Ap-pro Official Page"
     url: "https://ap-pro.ru/forums/topic/2545-golden-sphere/"
-    
   - title: "C-Consciousness Community"
-  
-  - label: "Discord"
-    url: "https://discord.gg/gyMdq3a"
-    inline: true
-  - label: "Moddb Group"
-    url: "https://www.moddb.com/groups/c-consciousness"
-    inline: true
-  - label: "Spreadsheet"
-    url: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
-    inline: true
+    links:
+      - label: "Discord"
+        url: "https://discord.gg/gyMdq3a"
+        inline: true
+      - label: "Moddb Group"
+        url: "https://www.moddb.com/groups/c-consciousness"
+        inline: true
+      - label: "Spreadsheet"
+        url: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
+        inline: true
 
 mod_creator: "jek@n, charsi, I am dead (OGSR Port)"
 translation_by: "E'ruiq/jjzargo, skenka25013"
 additional_credits: |
-Mega_Worm - SDK Consultations, Developers of add-ons for the game engine v.10007, Rafael, Andrey S, TehTron, Assol and Olya - testers, Vlador and Pidzhoe - voicing the characters' phrases, Phorumer, Ed_rez, Editor46, Fedot "qwqwqw" - models of weapons and NPCs, Artos - scripting modules, Voltmod - working on sounds
+  Mega_Worm - SDK Consultations, Developers of add-ons for the game engine v.10007, Rafael, Andrey S, TehTron, Assol and Olya - testers, Vlador and Pidzhoe - voicing the characters' phrases, Phorumer, Ed_rez, Editor46, Fedot "qwqwqw" - models of weapons and NPCs, Artos - scripting modules, Voltmod - working on sounds
 
   **Additional Contributors:**
   Creators of OGSE 0692, GSC for the cult game, Everyone who chipped in for Zhekan for new equipment, Unofficial Patch: drCarabas, Hoperise, kamray27, nasar75, sergei27shus, Sharomet, 13stalker13, OGSR Engine developers: kroddin, dsh
