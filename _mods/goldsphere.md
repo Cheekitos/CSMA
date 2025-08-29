@@ -48,9 +48,7 @@ links:
 mod_creator: |
   * jek@n
   * charsi
-  
-  **OGSR Port:**
-  * I am dead
+  * I am dead (OGSR Port)
 
 translation_by: |
   * E'ruiq/jjargo 
