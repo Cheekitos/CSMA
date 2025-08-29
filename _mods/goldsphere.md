@@ -59,12 +59,8 @@ additional_credits: |
   * Voltmod - working on sounds
 
   **Additional Contributors:**
-  * Creators of OGSE 0692
-  * GSC for the cult game
-  * Everyone who chipped in for Zhekan for new equipment
-  * Unofficial Patch: drCarabas, Hoperise, kamray27, nasar75, sergei27shus, Sharomet, 13stalker13
-  * OGSR Engine developers: kroddin, dsh
-  
+  Creators of OGSE and OGSR Engine developers (kroddin, dsh), Everyone who chipped in for Zhekan for new equipment, Unofficial Patch: drCarabas, Hoperise, kamray27, nasar75, sergei27shus, Sharomet, 13stalker13
+
   **Special Thanks:**
   C-Consciousness Discord & Moddb Group
 ---
@@ -93,7 +89,7 @@ additional_credits: |
     </div>
   </div>
 
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0;">
+  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">4.</span>
     <div style="flex: 1; line-height: 1.5;">
       <p style="margin: 0; color: #d1d5db;">This is Goldsphere OGSR 1.3 + Fixes by Toastman221 & Seushimare + Patch 1.4.3.5</p>
