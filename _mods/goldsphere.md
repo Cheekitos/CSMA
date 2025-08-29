@@ -47,29 +47,15 @@ links:
     url: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
     inline: true
 
-# EXAMPLE 1: Simple inline text (current format)
-mod_creator: "jek@n, charsi, I am dead (OGSR Port)"
-translation_by: "E'ruiq/jjargo, skenka25013"
+mod_creator: |
+   * jek@n
+   * charsi
+   **OGSR Port:**
+   * I am dead
 
-# EXAMPLE 2: Bulleted list format - use asterisks to create bullets
-# mod_creator: |
-#   * jek@n
-#   * charsi
-#   * I am dead (OGSR Port)
-
-# EXAMPLE 3: Mixed format - you can combine both
-# translation_by: |
-#   * E'ruiq/jjargo - Main Translation
-#   * skenka25013 - Additional Work
-
-# EXAMPLE 4: For longer lists with categories
-# mod_creator: |
-#   **Original Authors:**
-#   * jek@n - Lead Developer
-#   * charsi - Co-Developer
-#   
-#   **Port Authors:**
-#   * I am dead - OGSR Port
+ translation_by: |
+   * E'ruiq/jjargo 
+   * skenka25013 
 
 additional_credits: |
   Mega_Worm - SDK Consultations, Developers of add-ons for the game engine v.10007, Rafael, Andrey S, TehTron, Assol and Olya - testers, Vlador and Pidzhoe - voicing the characters' phrases, Phorumer, Ed_rez, Editor46, Fedot "qwqwqw" - models of weapons and NPCs, Artos - scripting modules, Voltmod - working on sounds
