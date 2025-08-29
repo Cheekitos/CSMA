@@ -9,6 +9,11 @@ release_date: "2017-07-16"
 short_description: "A wild and unhinged adventure set four years before Shadow of Chernobyl, mixing lots of open quests, puzzles, and bizarre occult mysteries. Full of Roadside Picnic references, it turns the Zone into a chaotic, unpredictable experience."
 description: "GoldSphere is a wild trip back to the early days of the Zone. You play as Zhekan, one of the first stalkers, chasing the legend of the Wish Granter. <br> The mod is full of unique, creative quests and mechanics, great characters to meet, aeras to explore with weird puzzles, strange anomalies, and tons of hidden secrets. And you even have a creepy Doll companion to guide you through this world full of Roadside Picnic references, dark humor, and unexpected twists. <br> It can be buggy with some frustrating quests at times, but still, GoldSphere is considered a legendary, 'must-play once' mod despite its flaws. Especially when you realize it's the impressive work of a single developer."
 
+gallery_images:
+  - 
+  - 
+  - 
+
 seo_title: "GoldSphere - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download GoldSphere for S.T.A.L.K.E.R. Shadow of Chernobyl. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
 keywords: "S.T.A.L.K.E.R. GoldSphere, STALKER GoldSphere, S.T.A.L.K.E.R. story mods, STALKER story mods, Shadow of Chernobyl mods, STALKER Shadow of Chernobyl mods, Best STALKER Shadow of Chernobyl mods, best S.T.A.L.K.E.R. mods 2025, best STALKER mods 2025, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
@@ -42,16 +47,30 @@ links:
     url: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
     inline: true
 
-mod_creator: |
-  * jek@n
-  * charsi
-**OGSR Port:**
-  * I am dead
+# EXAMPLE 1: Simple inline text (current format)
+mod_creator: "jek@n, charsi, I am dead (OGSR Port)"
+translation_by: "E'ruiq/jjargo, skenka25013"
 
-translation_by: |
-  * E'ruiq/jjargo 
-  * skenka25013
-    
+# EXAMPLE 2: Bulleted list format - use asterisks to create bullets
+# mod_creator: |
+#   * jek@n
+#   * charsi
+#   * I am dead (OGSR Port)
+
+# EXAMPLE 3: Mixed format - you can combine both
+# translation_by: |
+#   * E'ruiq/jjargo - Main Translation
+#   * skenka25013 - Additional Work
+
+# EXAMPLE 4: For longer lists with categories
+# mod_creator: |
+#   **Original Authors:**
+#   * jek@n - Lead Developer
+#   * charsi - Co-Developer
+#   
+#   **Port Authors:**
+#   * I am dead - OGSR Port
+
 additional_credits: |
   Mega_Worm - SDK Consultations, Developers of add-ons for the game engine v.10007, Rafael, Andrey S, TehTron, Assol and Olya - testers, Vlador and Pidzhoe - voicing the characters' phrases, Phorumer, Ed_rez, Editor46, Fedot "qwqwqw" - models of weapons and NPCs, Artos - scripting modules, Voltmod - working on sounds
 
@@ -60,6 +79,43 @@ additional_credits: |
 
   **Special Thanks:**
   C-Consciousness Discord & Moddb Group
+
+# ALTERNATIVE: Using bulleted format for additional_credits
+# additional_credits: |
+#   **Testing & QA:**
+#   * Mega_Worm - SDK Consultations
+#   * TehTron - Testing
+#   * Assol and Olya - Testing
+#   
+#   **Voice Acting:**
+#   * Vlador - Character Voice Work
+#   * Pidzhoe - Character Voice Work
+#   
+#   **Art & Models:**
+#   * Phorumer - Weapon Models
+#   * Ed_rez - NPC Models
+#   * Editor46 - Additional Models
+#   * Fedot "qwqwqw" - Weapon & NPC Models
+#   
+#   **Programming:**
+#   * Artos - Scripting Modules
+#   * Voltmod - Sound Work
+#   
+#   **Engine & Patches:**
+#   * drCarabas - Unofficial Patch
+#   * Hoperise - Unofficial Patch
+#   * kamray27 - Unofficial Patch
+#   * nasar75 - Unofficial Patch
+#   * sergei27shus - Unofficial Patch
+#   * Sharomet - Unofficial Patch
+#   * 13stalker13 - Unofficial Patch
+#   * kroddin - OGSR Engine Development
+#   * dsh - OGSR Engine Development
+#   
+#   **Special Thanks:**
+#   * C-Consciousness Discord & Moddb Group
+#   * GSC Game World for the original game
+#   * OGSE 0692 Creators
 ---
 
 ### Installation Instructions
