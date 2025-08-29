@@ -7,9 +7,12 @@ platform: "Shadow of Chernobyl"
 engine: "OGSR"
 release_date: "2017-07-16"
 short_description: "A wild and unhinged adventure set four years before Shadow of Chernobyl, mixing lots of open quests, puzzles, and bizarre occult mysteries. Full of Roadside Picnic references, it turns the Zone into a chaotic, unpredictable experience."
-description: "GoldSphere is a wild trip back to the early days of the Zone. You play as Zhekan, one of the first stalkers, chasing the legend of the Wish Granter. The mod is full of unique, creative quests and mechanics, great characters to meet, aeras to explore with weird puzzles, strange anomalies, and tons of hidden secrets. And you even have a creepy Doll companion to guide you through this world full of Roadside Picnic references, dark humor, and unexpected twists. It can be buggy with some frustrating quests at times, but still, GoldSphere is considered a legendary, "must-play once" mod despite its flaws. Especially when you realize it's the impressive work of a single developer."
+description: "GoldSphere is a wild trip back to the early days of the Zone. You play as Zhekan, one of the first stalkers, chasing the legend of the Wish Granter. The mod is full of unique, creative quests and mechanics, great characters to meet, aeras to explore with weird puzzles, strange anomalies, and tons of hidden secrets. And you even have a creepy Doll companion to guide you through this world full of Roadside Picnic references, dark humor, and unexpected twists. It can be buggy with some frustrating quests at times, but still, GoldSphere is considered a legendary, must-play once mod despite its flaws. Especially when you realize it's the impressive work of a single developer."
 
 gallery_images:
+  - "screenshot01.jpg"
+  - "screenshot02.jpg"
+  - "screenshot03.jpg"
 
 seo_title: "GoldSphere - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download GoldSphere for S.T.A.L.K.E.R. Shadow of Chernobyl. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
