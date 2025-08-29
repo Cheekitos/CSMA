@@ -316,16 +316,34 @@ layout: default
       
       <div class="space-y-4 text-sm">
         <!-- Mod Creator -->
+        {% if page.mod_creator %}
         <div class="flex items-start">
           <span class="text-gray-400 font-medium w-24 flex-shrink-0">Creator:</span>
-          <span class="text-white">{{ page.mod_creator | default: "Unknown" }}</span>
+          <div class="text-white flex-1">
+            {% if page.mod_creator contains '*' %}
+              <!-- Use markdown for bulleted lists -->
+              {{ page.mod_creator | markdownify }}
+            {% else %}
+              <!-- Display as plain text -->
+              <span>{{ page.mod_creator }}</span>
+            {% endif %}
+          </div>
         </div>
+        {% endif %}
         
         <!-- Translator -->
         {% if page.translation_by %}
         <div class="flex items-start">
           <span class="text-gray-400 font-medium w-24 flex-shrink-0">Translator:</span>
-          <span class="text-white">{{ page.translation_by }}</span>
+          <div class="text-white flex-1">
+            {% if page.translation_by contains '*' %}
+              <!-- Use markdown for bulleted lists -->
+              {{ page.translation_by | markdownify }}
+            {% else %}
+              <!-- Display as plain text -->
+              <span>{{ page.translation_by }}</span>
+            {% endif %}
+          </div>
         </div>
         {% endif %}
         
@@ -334,7 +352,7 @@ layout: default
         <div class="border-t border-gray-700 pt-4 mt-4">
           <div class="flex items-start mb-3">
             <span class="text-gray-400 font-medium w-24 flex-shrink-0">Thanks to:</span>
-            <div class="text-white space-y-1">
+            <div class="text-white space-y-1 flex-1">
               {{ page.additional_credits | markdownify }}
             </div>
           </div>
