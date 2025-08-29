@@ -46,14 +46,15 @@ links:
     inline: true
 
 mod_creator: |
-   * jek@n
-   * charsi
-   **OGSR Port:**
-   * I am dead
+  * jek@n
+  * charsi
+  
+  **OGSR Port:**
+  * I am dead
 
 translation_by: |
-   * E'ruiq/jjargo 
-   * skenka25013 
+  * E'ruiq/jjargo 
+  * skenka25013 
 
 additional_credits: |
   Mega_Worm - SDK Consultations, Developers of add-ons for the game engine v.10007, Rafael, Andrey S, TehTron, Assol and Olya - testers, Vlador and Pidzhoe - voicing the characters' phrases, Phorumer, Ed_rez, Editor46, Fedot "qwqwqw" - models of weapons and NPCs, Artos - scripting modules, Voltmod - working on sounds
