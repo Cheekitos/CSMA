@@ -47,13 +47,13 @@ links:
     url: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
     inline: true
 
-mod_creator: |
-  - jek@n
-  - charsi
-  - I am dead (OGSR Port)
-translation_by: |
-  - E'ruiq/jjzargo
-  - skenka25013
+mod_creator: 
+  - "jek@n"
+  - "charsi"
+  - "I am dead (OGSR Port)"
+translation_by:
+  - "E'ruiq/jjzargo"
+  - "skenka25013"
 additional_credits: |
   Mega_Worm - SDK Consultations, Developers of add-ons for the game engine v.10007, Rafael, Andrey S, TehTron, Assol and Olya - testers, Vlador and Pidzhoe - voicing the characters' phrases, Phorumer, Ed_rez, Editor46, Fedot "qwqwqw" - models of weapons and NPCs, Artos - scripting modules, Voltmod - working on sounds
 
