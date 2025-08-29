@@ -34,9 +34,7 @@ links:
     url: "https://www.moddb.com/mods/goldsphere-completion/downloads"
   - label: "Ap-pro Official Page"
     url: "https://ap-pro.ru/forums/topic/2545-golden-sphere/"
-
   - title: "C-Consciousness Community"
-  
   - label: "Discord"
     url: "https://discord.gg/gyMdq3a"
     inline: true
@@ -53,7 +51,7 @@ mod_creator: |
    **OGSR Port:**
    * I am dead
 
- translation_by: |
+translation_by: |
    * E'ruiq/jjargo 
    * skenka25013 
 
@@ -65,78 +63,4 @@ additional_credits: |
 
   **Special Thanks:**
   C-Consciousness Discord & Moddb Group
-
-# ALTERNATIVE: Using bulleted format for additional_credits
-# additional_credits: |
-#   **Testing & QA:**
-#   * Mega_Worm - SDK Consultations
-#   * TehTron - Testing
-#   * Assol and Olya - Testing
-#   
-#   **Voice Acting:**
-#   * Vlador - Character Voice Work
-#   * Pidzhoe - Character Voice Work
-#   
-#   **Art & Models:**
-#   * Phorumer - Weapon Models
-#   * Ed_rez - NPC Models
-#   * Editor46 - Additional Models
-#   * Fedot "qwqwqw" - Weapon & NPC Models
-#   
-#   **Programming:**
-#   * Artos - Scripting Modules
-#   * Voltmod - Sound Work
-#   
-#   **Engine & Patches:**
-#   * drCarabas - Unofficial Patch
-#   * Hoperise - Unofficial Patch
-#   * kamray27 - Unofficial Patch
-#   * nasar75 - Unofficial Patch
-#   * sergei27shus - Unofficial Patch
-#   * Sharomet - Unofficial Patch
-#   * 13stalker13 - Unofficial Patch
-#   * kroddin - OGSR Engine Development
-#   * dsh - OGSR Engine Development
-#   
-#   **Special Thanks:**
-#   * C-Consciousness Discord & Moddb Group
-#   * GSC Game World for the original game
-#   * OGSE 0692 Creators
 ---
-
-### Installation Instructions
-
-<div class="space-y-3 mt-4">
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
-    <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">1.</span>
-    <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">Requires Dependencies found in "Essentials" at the top of the page</p>
-    </div>
-  </div>
-
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
-    <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">2.</span>
-    <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">Extract Archive, move game folder to the root of your drive</p>
-    </div>
-  </div>
-
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
-    <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">3.</span>
-    <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">Launch "Start game.bat" or "xrEngine.exe" in the bin_x64 folder</p>
-    </div>
-  </div>
-
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
-    <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">4.</span>
-    <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">This is Goldsphere OGSR 1.3 + Fixes by Toastman221 & Seushimare + Patch 1.4.3.5</p>
-    </div>
-  </div>
-</div>
-
-### Troubleshooting & Tips
-
-- **This is the OGSR port of the mod:** You can play the original version, but it's famous for it's instability.
-- **Save Corruption (less common with OGSR version):** Use manual saves regularly, in new slots, instead of quicksaves.
