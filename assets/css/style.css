@@ -862,6 +862,54 @@ h3, .platform-block {
   flex-shrink: 0;
 }
 
+/* Credits section specific styling */
+.credits-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.credits-list ul li {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.credits-list ul li::before {
+  content: '•';
+  color: #fbbf24;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.credits-list p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Override prose styles for credits specifically */
+.credits-list .prose p,
+.credits-list .prose ul,
+.credits-list .prose li {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.credits-list .prose ul {
+  margin-bottom: 0;
+}
+
+.credits-list .prose li {
+  margin-bottom: 0.25rem;
+}
+
 section h2 {
   font-size: 1.38rem; 
   font-weight: 600;
