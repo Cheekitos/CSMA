@@ -56,20 +56,28 @@ body_class: main-page
             </label>
           </div>
           
+          <!-- Must Play Filter -->
+          <div class="flex items-center gap-1">
+            <span class="text-xs text-gray-300 font-semibold">Must Play:</span>
+            <label class="flex items-center text-xs text-gray-400">
+              <input type="checkbox" id="filter-mustplay-yes" class="filter-checkbox">
+            </label>
+          </div>
+          
           <!-- Platform Filter -->
           <div class="flex items-center gap-1">
             <span class="text-xs text-gray-300 font-semibold">Platform:</span>
             <div class="flex items-center gap-2">
               <label class="flex items-center text-xs text-gray-400">
-                <input type="radio" name="platform-filter" id="filter-platform-soc" class="filter-radio mr-1">
+                <input type="checkbox" id="filter-platform-soc" class="filter-checkbox mr-1">
                 <span>SoC</span>
               </label>
               <label class="flex items-center text-xs text-gray-400">
-                <input type="radio" name="platform-filter" id="filter-platform-cs" class="filter-radio mr-1">
+                <input type="checkbox" id="filter-platform-cs" class="filter-checkbox mr-1">
                 <span>CS</span>
               </label>
               <label class="flex items-center text-xs text-gray-400">
-                <input type="radio" name="platform-filter" id="filter-platform-cop" class="filter-radio mr-1">
+                <input type="checkbox" id="filter-platform-cop" class="filter-checkbox mr-1">
                 <span>CoP</span>
               </label>
             </div>
@@ -82,13 +90,14 @@ body_class: main-page
   <div id="mod-list" class="grid gap-4 cards-3">
     {% assign sorted_mods = site.mods | sort: 'rating' | reverse %}
     {% for mod in sorted_mods %}
-      <a href="{{ mod.url | relative_url }}" class="bg-gray-800 p-3 rounded-md shadow-sm flex flex-col h-full mod-card hover:text-white block" 
+      <a href="{{ mod.url | relative_url }}" class="bg-gray-800 p-3 rounded-md shadow-sm flex flex-col h-full mod-card hover:text-white block{% if mod.must_play %} must-play-card{% endif %}" 
          data-mod-title="{{ mod.title | downcase }}" 
          data-mod-description="{{ mod.short_description | default: mod.description | downcase }}" 
          data-mod-platform="{{ mod.platform | downcase }}"
          data-mod-engine="{{ mod.engine | downcase }}"
          data-mod-standalone="{{ mod.standalone }}"
-         data-mod-lowspec="{{ mod.lowspec_friendly }}">
+         data-mod-lowspec="{{ mod.lowspec_friendly }}"
+         data-mod-mustplay="{{ mod.must_play }}">
         
         <!-- List view content (hidden by default) -->
         <div class="list-content hidden">
@@ -96,14 +105,11 @@ body_class: main-page
             <h3 class="text-sm font-semibold text-gray-100 whitespace-nowrap overflow-hidden text-ellipsis hover:text-yellow-400 transition-colors">
               {{ mod.title }}
             </h3>
-            <span class="text-xs {% if mod.standalone %}text-green-400{% else %}text-gray-400{% endif %} flex-shrink-0">
-              {{ mod.standalone | default: false | capitalize }}
+            <span class="text-xs {% if mod.standalone %}text-green-400{% else %}text-red-400{% endif %} flex-shrink-0">
+              {% if mod.standalone %}Standalone{% else %}Requires base game{% endif %}
             </span>
             <span class="text-xs text-yellow-400 flex-shrink-0 platform-list-compact">
-              {% if mod.platform == "Shadow of Chernobyl" %}SoC
-              {% elsif mod.platform == "Clear Sky" %}CS
-              {% elsif mod.platform == "Call of Pripyat" %}CoP
-              {% else %}{{ mod.platform }}{% endif %}
+              {{ mod.platform }}
             </span>
           </div>
           <div class="list-right flex items-center space-x-1 text-yellow-400">
