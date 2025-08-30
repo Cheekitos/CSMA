@@ -6,7 +6,8 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 → [Check the New Page](https://cheekitos.github.io/CSMA/)
 
 ## 🚧 In Progress
-
+- Adding A list view of all the mods (easy way to see the top 50 - worst 50)
+- Adding 'Must Play' Option in the filters + highlight of the mod cards when selected
 - Writing each mod individual page (Short description, Long Description, Pros & COns, Install Guide, Common troubleshooting steps, Screenshots, SEO...)
 
 ## ✅ Done
