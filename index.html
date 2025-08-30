@@ -90,7 +90,7 @@ body_class: main-page
   <div id="mod-list" class="grid gap-4 cards-3">
     {% assign sorted_mods = site.mods | sort: 'rating' | reverse %}
     {% for mod in sorted_mods %}
-      <a href="{{ mod.url | relative_url }}" class="bg-gray-800 p-3 rounded-md shadow-sm flex flex-col h-full mod-card hover:text-white block{% if mod.must_play %} must-play-card{% endif %}" 
+      <a href="{{ mod.url | relative_url }}" class="bg-gray-800 p-3 rounded-md shadow-sm flex flex-col h-full mod-card hover:text-white block" 
          data-mod-title="{{ mod.title | downcase }}" 
          data-mod-description="{{ mod.short_description | default: mod.description | downcase }}" 
          data-mod-platform="{{ mod.platform | downcase }}"
