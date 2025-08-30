@@ -136,7 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateGridLayout() {
     const modList = document.getElementById('mod-list');
     if (modList) {
-      modList.className = `grid gap-4 cards-${cardsPerRow}`;
+      if (cardsPerRow === 'list') {
+        modList.className = 'cards-list';
+      } else {
+        modList.className = `grid gap-4 cards-${cardsPerRow}`;
+      }
     }
   }
 
@@ -441,17 +445,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Cards per row controls
+  // Cards per row controls - UPDATED for list view
   const cardsLessBtn = document.getElementById('cards-less');
   const cardsMoreBtn = document.getElementById('cards-more');
   
   if (cardsLessBtn) {
     cardsLessBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (cardsPerRow < 4) {
-        cardsPerRow++;
-        updateGridLayout();
+      if (cardsPerRow === 2) {
+        cardsPerRow = 3;
+      } else if (cardsPerRow === 3) {
+        cardsPerRow = 4;
+      } else if (cardsPerRow === 4) {
+        cardsPerRow = 'list';
       }
+      updateGridLayout();
       
       // Don't hide dropdown if filters are active
       if (!hasActiveFilters()) {
@@ -463,10 +471,14 @@ document.addEventListener('DOMContentLoaded', function() {
   if (cardsMoreBtn) {
     cardsMoreBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (cardsPerRow > 2) {
-        cardsPerRow--;
-        updateGridLayout();
+      if (cardsPerRow === 'list') {
+        cardsPerRow = 4;
+      } else if (cardsPerRow === 4) {
+        cardsPerRow = 3;
+      } else if (cardsPerRow === 3) {
+        cardsPerRow = 2;
       }
+      updateGridLayout();
       
       // Don't hide dropdown if filters are active
       if (!hasActiveFilters()) {
