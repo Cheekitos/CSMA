@@ -212,12 +212,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchQuery = searchInput ? searchInput.value.trim() : '';
     const standaloneCheckbox = document.getElementById('filter-standalone-yes');
     const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
-    const platformRadio = document.querySelector('input[name="platform-filter"]:checked');
+    const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
+    const platformCheckboxes = document.querySelectorAll('input[id^="filter-platform-"]:checked');
     
     return searchQuery !== '' || 
            (standaloneCheckbox && standaloneCheckbox.checked) ||
            (lowspecCheckbox && lowspecCheckbox.checked) ||
-           platformRadio;
+           (mustplayCheckbox && mustplayCheckbox.checked) ||
+           platformCheckboxes.length > 0;
   }
 
   // UPDATED: Update filter text based on dropdown state
@@ -295,9 +297,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
     if (lowspecCheckbox) lowspecCheckbox.checked = false;
     
-    // Clear platform radios
-    document.querySelectorAll('input[name="platform-filter"]').forEach(radio => {
-      radio.checked = false;
+    // Clear must-play checkbox
+    const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
+    if (mustplayCheckbox) mustplayCheckbox.checked = false;
+    
+    // Clear platform checkboxes
+    document.querySelectorAll('input[id^="filter-platform-"]').forEach(checkbox => {
+      checkbox.checked = false;
     });
     
     applyFilters();
@@ -319,13 +325,14 @@ document.addEventListener('DOMContentLoaded', function() {
     input.addEventListener('change', applyFilters);
   });
 
-  // UPDATED: Apply filters function - removed engine filter logic
+  // UPDATED: Apply filters function - changed to support new platform checkboxes and must-play
   function applyFilters() {
     // Get active filters
     const activeFilters = {
       standalone: false,
       lowspec: false,
-      platform: null
+      mustplay: false,
+      platforms: []
     };
 
     // Standalone filter (only show standalone if checked)
@@ -340,16 +347,21 @@ document.addEventListener('DOMContentLoaded', function() {
       activeFilters.lowspec = true;
     }
 
-    // Platform filter (radio buttons)
-    const platformRadio = document.querySelector('input[name="platform-filter"]:checked');
-    if (platformRadio) {
-      if (platformRadio.id === 'filter-platform-soc') {
-        activeFilters.platform = 'shadow of chernobyl';
-      } else if (platformRadio.id === 'filter-platform-cs') {
-        activeFilters.platform = 'clear sky';
-      } else if (platformRadio.id === 'filter-platform-cop') {
-        activeFilters.platform = 'call of pripyat';
-      }
+    // Must-play filter (only show must-play if checked)
+    const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
+    if (mustplayCheckbox && mustplayCheckbox.checked) {
+      activeFilters.mustplay = true;
+    }
+
+    // Platform filter (checkboxes)
+    if (document.getElementById('filter-platform-soc') && document.getElementById('filter-platform-soc').checked) {
+      activeFilters.platforms.push('shadow of chernobyl');
+    }
+    if (document.getElementById('filter-platform-cs') && document.getElementById('filter-platform-cs').checked) {
+      activeFilters.platforms.push('clear sky');
+    }
+    if (document.getElementById('filter-platform-cop') && document.getElementById('filter-platform-cop').checked) {
+      activeFilters.platforms.push('call of pripyat');
     }
 
     // Get search query
@@ -384,10 +396,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // Platform filter
-      if (activeFilters.platform) {
+      // Must-play filter (only filter if checkbox is checked)
+      if (activeFilters.mustplay) {
+        const cardMustplay = card.getAttribute('data-mod-mustplay') === 'true';
+        if (!cardMustplay) {
+          return false;
+        }
+      }
+
+      // Platform filter (if any platforms are selected, show only those)
+      if (activeFilters.platforms.length > 0) {
         const cardPlatform = (card.getAttribute('data-mod-platform') || '').toLowerCase();
-        if (cardPlatform !== activeFilters.platform) {
+        if (!activeFilters.platforms.includes(cardPlatform)) {
           return false;
         }
       }
