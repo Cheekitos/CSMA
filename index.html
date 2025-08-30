@@ -89,69 +89,105 @@ body_class: main-page
          data-mod-engine="{{ mod.engine | downcase }}"
          data-mod-standalone="{{ mod.standalone }}"
          data-mod-lowspec="{{ mod.lowspec_friendly }}">
-        <div class="flex justify-between items-center mb-3 gap-2">
-          <h3 class="text-2xl font-semibold text-gray-100 drop-shadow whitespace-nowrap overflow-hidden text-ellipsis hover:text-yellow-400 transition-colors">
-            {{ mod.title }}
-          </h3>
-          <div class="flex items-center space-x-1.5 text-yellow-400 rating">
-            <span class="text-base font-medium">{{ mod.rating }}</span>
-            <div class="flex items-center space-x-0.5 opacity-95">
+        
+        <!-- List view content (hidden by default) -->
+        <div class="list-content hidden">
+          <div class="list-left">
+            <h3 class="text-sm font-semibold text-gray-100 whitespace-nowrap overflow-hidden text-ellipsis hover:text-yellow-400 transition-colors">
+              {{ mod.title }}
+            </h3>
+            <span class="text-xs {% if mod.standalone %}text-green-400{% else %}text-gray-400{% endif %} flex-shrink-0">
+              {{ mod.standalone | default: false | capitalize }}
+            </span>
+            <span class="text-xs text-yellow-400 flex-shrink-0 platform-list-compact">
+              {% if mod.platform == "Shadow of Chernobyl" %}SoC
+              {% elsif mod.platform == "Clear Sky" %}CS
+              {% elsif mod.platform == "Call of Pripyat" %}CoP
+              {% else %}{{ mod.platform }}{% endif %}
+            </span>
+          </div>
+          <div class="list-right flex items-center space-x-1 text-yellow-400">
+            <span class="text-sm font-medium">{{ mod.rating }}</span>
+            <div class="flex items-center space-x-0.5">
               {% assign rating = mod.rating %}
               {% assign full_stars = rating | floor %}
-              {% assign half_star = rating | minus: full_stars %}
               {% for i in (1..5) %}
                 {% if i <= full_stars %}
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
-                {% elsif i == full_stars | plus: 1 and half_star >= 0.5 %}
-                  <svg class="w-4 h-4" viewBox="0 0 20 20"><defs><linearGradient id="halfGrad{{ forloop.parentloop.index }}{{ forloop.index }}" x1="0" x2="100%" y1="0" y2="0"><stop offset="50%" stop-color="#facc15"/><stop offset="50%" stop-color="#4b5563"/></linearGradient></defs><path fill="url(#halfGrad{{ forloop.parentloop.index }}{{ forloop.index }})" d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+                  <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
                 {% else %}
-                  <svg class="w-4 h-4 fill-gray-600" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+                  <svg class="w-3 h-3 fill-gray-600" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
                 {% endif %}
               {% endfor %}
             </div>
           </div>
         </div>
 
-        <div class="text-xs text-white mb-2 flex items-baseline gap-2">
-          <span class="leading-tight">Standalone:</span>
-          <div class="flex items-center gap-1">
-            <span class="{% if mod.standalone %}border border-white px-2 py-0.5 rounded-sm text-[10px] text-white leading-tight{% else %}text-gray-400 text-[10px] leading-tight{% endif %}" {% if mod.standalone %}style="background-color: rgba(250, 204, 21, 0.45);"{% endif %}>Yes</span>
-            <span class="text-gray-400 text-[10px] leading-tight">|</span>
-            <span class="{% unless mod.standalone %}border border-white px-2 py-0.5 rounded-sm text-[10px] text-white leading-tight{% else %}text-gray-400 text-[10px] leading-tight{% endunless %}" {% unless mod.standalone %}style="background-color: rgba(250, 204, 21, 0.45);"{% endunless %}>No</span>
+        <!-- Grid view content (visible by default) -->
+        <div class="grid-content">
+          <div class="flex justify-between items-center mb-3 gap-2">
+            <h3 class="text-2xl font-semibold text-gray-100 drop-shadow whitespace-nowrap overflow-hidden text-ellipsis hover:text-yellow-400 transition-colors">
+              {{ mod.title }}
+            </h3>
+            <div class="flex items-center space-x-1.5 text-yellow-400 rating">
+              <span class="text-base font-medium">{{ mod.rating }}</span>
+              <div class="flex items-center space-x-0.5 opacity-95">
+                {% assign rating = mod.rating %}
+                {% assign full_stars = rating | floor %}
+                {% assign half_star = rating | minus: full_stars %}
+                {% for i in (1..5) %}
+                  {% if i <= full_stars %}
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+                  {% elsif i == full_stars | plus: 1 and half_star >= 0.5 %}
+                    <svg class="w-4 h-4" viewBox="0 0 20 20"><defs><linearGradient id="halfGrad{{ forloop.parentloop.index }}{{ forloop.index }}" x1="0" x2="100%" y1="0" y2="0"><stop offset="50%" stop-color="#facc15"/><stop offset="50%" stop-color="#4b5563"/></linearGradient></defs><path fill="url(#halfGrad{{ forloop.parentloop.index }}{{ forloop.index }})" d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+                  {% else %}
+                    <svg class="w-4 h-4 fill-gray-600" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
           </div>
+
+          <div class="text-xs text-white mb-2 flex items-baseline gap-2">
+            <span class="leading-tight">Standalone:</span>
+            <div class="flex items-center gap-1">
+              <span class="{% if mod.standalone %}border border-white px-2 py-0.5 rounded-sm text-[10px] text-white leading-tight{% else %}text-gray-400 text-[10px] leading-tight{% endif %}" {% if mod.standalone %}style="background-color: rgba(250, 204, 21, 0.45);"{% endif %}>Yes</span>
+              <span class="text-gray-400 text-[10px] leading-tight">|</span>
+              <span class="{% unless mod.standalone %}border border-white px-2 py-0.5 rounded-sm text-[10px] text-white leading-tight{% else %}text-gray-400 text-[10px] leading-tight{% endunless %}" {% unless mod.standalone %}style="background-color: rgba(250, 204, 21, 0.45);"{% endunless %}>No</span>
+            </div>
+          </div>
+
+          <div class="text-xs text-white mb-2 flex items-baseline gap-2 platform-block">
+            <span class="leading-tight">Platform:</span>
+            <div class="flex items-center gap-1">
+              {% assign platforms = "Shadow of Chernobyl,Clear Sky,Call of Pripyat" | split: ',' %}
+              
+              <!-- Show only active platform when cards are smallest (cards-4) -->
+              <div class="platform-full">
+                {% for platform in platforms %}
+                  <span class="{% if mod.platform == platform %}border border-white bg-yellow-400 bg-opacity-50 px-2 py-0.5 rounded-sm text-[10px] text-white leading-tight{% else %}text-gray-400 text-[10px] leading-tight{% endif %}">{{ platform }}</span>
+                  {% unless forloop.last %}<span class="text-gray-400 text-[10px] leading-tight">|</span>{% endunless %}
+                {% endfor %}
+              </div>
+              
+              <!-- Show only highlighted platform when cards are smallest -->
+              <div class="platform-compact hidden">
+                <span class="border border-white bg-yellow-400 bg-opacity-50 px-2 py-0.5 rounded-sm text-[10px] text-white leading-tight">{{ mod.platform }}</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-gray-400 mb-3 text-sm flex-grow">{{ mod.short_description | default: mod.description }}</p>
+
+          {% if mod.video %}
+            {% assign video_id = mod.video | split: '/' | last | split: '?' | first %}
+            <div class="video-container mt-auto">
+              <div class="video-thumbnail" data-video-id="{{ video_id }}" data-video-url="{{ mod.video }}" onclick="event.preventDefault(); event.stopPropagation();">
+                <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="Video thumbnail" loading="lazy" class="w-full h-full object-cover rounded">
+                <div class="play-button"></div>
+              </div>
+            </div>
+          {% endif %}
         </div>
-
-        <div class="text-xs text-white mb-2 flex items-baseline gap-2 platform-block">
-          <span class="leading-tight">Platform:</span>
-          <div class="flex items-center gap-1">
-            {% assign platforms = "Shadow of Chernobyl,Clear Sky,Call of Pripyat" | split: ',' %}
-            
-            <!-- Show only active platform when cards are smallest (cards-4) -->
-            <div class="platform-full">
-              {% for platform in platforms %}
-                <span class="{% if mod.platform == platform %}border border-white bg-yellow-400 bg-opacity-50 px-2 py-0.5 rounded-sm text-[10px] text-white leading-tight{% else %}text-gray-400 text-[10px] leading-tight{% endif %}">{{ platform }}</span>
-                {% unless forloop.last %}<span class="text-gray-400 text-[10px] leading-tight">|</span>{% endunless %}
-              {% endfor %}
-            </div>
-            
-            <!-- Show only highlighted platform when cards are smallest -->
-            <div class="platform-compact hidden">
-              <span class="border border-white bg-yellow-400 bg-opacity-50 px-2 py-0.5 rounded-sm text-[10px] text-white leading-tight">{{ mod.platform }}</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="text-gray-400 mb-3 text-sm flex-grow">{{ mod.short_description | default: mod.description }}</p>
-
-        {% if mod.video %}
-          {% assign video_id = mod.video | split: '/' | last | split: '?' | first %}
-          <div class="video-container mt-auto">
-            <div class="video-thumbnail" data-video-id="{{ video_id }}" data-video-url="{{ mod.video }}" onclick="event.preventDefault(); event.stopPropagation();">
-              <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="Video thumbnail" loading="lazy" class="w-full h-full object-cover rounded">
-              <div class="play-button"></div>
-            </div>
-          </div>
-        {% endif %}
       </a>
     {% endfor %}
   </div>
