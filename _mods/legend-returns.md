@@ -35,15 +35,15 @@ links:
     url: "https://ap-pro.ru/stuff/zov_pripjati/legend-returns-092-r214/"
 
 mod_creator: |
-  * Bot Nikolay - SDK
-  * Nikita "Nevropotolog" - 3D modeller, founder
-  * Andrey "Director_NTV" - game designer
-  * Alexander "XMODER" - 2D designer, lead encoder
-  * Artyom "rnm_016" Shewhart - gunsmith modeller, designer
-  * Dmitry "AspirinSGD" - quester, designer
-  * Denis Levshchanov - quester
-  * Leer Hansson - quester, encoder
-  * Nikita Kozhevnikov - community manager
+  - Bot Nikolay - SDK
+  - Nikita "Nevropotolog" - 3D modeller, founder
+  - Andrey "Director_NTV" - game designer
+  - Alexander "XMODER" - 2D designer, lead encoder
+  - Artyom "rnm_016" Shewhart - gunsmith modeller, designer
+  - Dmitry "AspirinSGD" - quester, designer
+  - Denis Levshchanov - quester
+  - Leer Hansson - quester, encoder
+  - Nikita Kozhevnikov - community manager
 translation_by: "SpecShadow"
 additional_credits: |
   * GSC for a great game and platform
