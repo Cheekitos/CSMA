@@ -39,45 +39,45 @@ body_class: main-page
         </svg>
       </span>
       <div id="filter-dropdown" class="absolute top-full left-2 right-2 bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-2 hidden z-10 shadow-lg">
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <div class="filter-content">
           <!-- Standalone Filter -->
-          <div class="flex items-center gap-1">
-            <span class="text-xs text-gray-300 font-semibold">Standalone:</span>
-            <label class="flex items-center text-xs text-gray-400">
+          <div class="filter-row">
+            <span class="filter-label">Standalone:</span>
+            <label class="filter-checkbox-label">
               <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox">
             </label>
           </div>
           
           <!-- Low-spec Friendly Filter -->
-          <div class="flex items-center gap-1">
-            <span class="text-xs text-gray-300 font-semibold">Low-spec Friendly:</span>
-            <label class="flex items-center text-xs text-gray-400">
+          <div class="filter-row">
+            <span class="filter-label">Low-spec Friendly:</span>
+            <label class="filter-checkbox-label">
               <input type="checkbox" id="filter-lowspec-yes" class="filter-checkbox">
             </label>
           </div>
           
           <!-- Must Play Filter -->
-          <div class="flex items-center gap-1">
-            <span class="text-xs text-gray-300 font-semibold">Must Play:</span>
-            <label class="flex items-center text-xs text-gray-400">
+          <div class="filter-row">
+            <span class="filter-label">Must Play:</span>
+            <label class="filter-checkbox-label">
               <input type="checkbox" id="filter-mustplay-yes" class="filter-checkbox">
             </label>
           </div>
           
           <!-- Platform Filter -->
-          <div class="flex items-center gap-1">
-            <span class="text-xs text-gray-300 font-semibold">Platform:</span>
-            <div class="flex items-center gap-2">
-              <label class="flex items-center text-xs text-gray-400">
-                <input type="checkbox" id="filter-platform-soc" class="filter-checkbox mr-1">
+          <div class="filter-row">
+            <span class="filter-label">Platform:</span>
+            <div class="platform-options">
+              <label class="platform-checkbox-label">
+                <input type="checkbox" id="filter-platform-soc" class="filter-checkbox">
                 <span>SoC</span>
               </label>
-              <label class="flex items-center text-xs text-gray-400">
-                <input type="checkbox" id="filter-platform-cs" class="filter-checkbox mr-1">
+              <label class="platform-checkbox-label">
+                <input type="checkbox" id="filter-platform-cs" class="filter-checkbox">
                 <span>CS</span>
               </label>
-              <label class="flex items-center text-xs text-gray-400">
-                <input type="checkbox" id="filter-platform-cop" class="filter-checkbox mr-1">
+              <label class="platform-checkbox-label">
+                <input type="checkbox" id="filter-platform-cop" class="filter-checkbox">
                 <span>CoP</span>
               </label>
             </div>
@@ -88,7 +88,7 @@ body_class: main-page
   </div>
 
   <div id="mod-list" class="grid gap-4 cards-3">
-    {% assign sorted_mods = site.mods | sort: 'rating' | reverse %}
+    {% assign sorted_mods = site.mods | sort: 'title' %}
     {% for mod in sorted_mods %}
       <a href="{{ mod.url | relative_url }}" class="bg-gray-800 p-3 rounded-md shadow-sm flex flex-col h-full mod-card hover:text-white block" 
          data-mod-title="{{ mod.title | downcase }}" 
