@@ -27,7 +27,7 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 
 ## ❌ To Do
 - Add Requirements Section (Maybe, hard to find reliable info for most mods)
-- Stop pushing my video reviews on the main page by replacing the embed with a mod custom thumbnail or screenshot
+- Stop pushing my video reviews on the main page, replace with screenshot or custom thumbnail
 - Tailwind CLI and other optimizations
 
 ## 🌟 Wishlist 
