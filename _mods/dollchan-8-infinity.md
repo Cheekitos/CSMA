@@ -45,7 +45,7 @@ links:
 
 mod_creator: "Andrey Mirai (aka Chiliaz)"
 translation_by: "carlkuwait"
-additional_credits: ""
+
 ---
 
 ### Installation Instructions
