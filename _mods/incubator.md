@@ -50,18 +50,18 @@ mod_creator: |
 translation_by: "Meztinos"
 additional_credits: |
   **Voice Actors**
-  * Oleg Korenev (HelgardRay) — Main character (Kramer)
-  * Oleg Kuzma (Locksmith, 6th class) — Remark
-  * Polina (PollyVader) — Morrigan
-  * Artyom K. (LucioTraum) — Limp / Wounded Stalker
-  * Natalia Aleinikova — Leliana
-  * George_Marshall — Brutal mercs
-  * Nikita (NikStrelok) — Professor Sokolov
-  * SeeFuck — Serbin, mercenary scientists, Clever
-  * Riddler- Enigma the stalker — Valentir
-  * Alien — Professor Kirillov, Professor Kiparis
-  * Vlad Chektorov — Stalker, Bandit, Assistant
-  * SKETYFACE — Music, menu, ambients
+  * Oleg Korenev (HelgardRay) - Main character (Kramer)
+  * Oleg Kuzma (Locksmith, 6th class) - Remark
+  * Polina (PollyVader) - Morrigan
+  * Artyom K. (LucioTraum) - Limp / Wounded Stalker
+  * Natalia Aleinikova - Leliana
+  * George_Marshall - Brutal mercs
+  * Nikita (NikStrelok) - Professor Sokolov
+  * SeeFuck - Serbin, mercenary scientists, Clever
+  * Riddler- Enigma the stalker - Valentir
+  * Alien - Professor Kirillov, Professor Kiparis
+  * Vlad Chektorov - Stalker, Bandit, Assistant
+  * SKETYFACE - Music, menu, ambients
 
   **Special Thanks**
   Greshnik13rs, Den-Stash, Artyom Bannikov, Ninja_Nub, Angry Wolf, makar, aaz, Krim, Gefos, ABSOLUTE NATURE 4, Emmis, Diesel, Azetrix, One_Shot, S.W.R.P, 3fallout3, loner, DanteZ, Nestandart_5443, makdm, Bartender, Phantom_86, ferr-um, Shennondoah, 3vtiger, Demosfen, Viktor, Sin!, August Autumn, Huntsman with a Double Barrel, Salem, owlromeo, Over Media, lehnov1986, Crazy Stalker, Open X-Ray, HollyWoodFX
