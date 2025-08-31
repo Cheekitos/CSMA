@@ -1,678 +1,1095 @@
-// Main JavaScript for S.T.A.L.K.E.R. Mods Archive
+/* Custom styles */
 
-document.addEventListener('DOMContentLoaded', function() {
-  let sortState = 0;
-  let cardsPerRow = 3; // Default to 3 cards per row
-  let currentDisplayedMods = []; // Track what's currently being displayed
-  
-  // Get all mod cards
-  const allModCards = Array.from(document.querySelectorAll('.mod-card'));
-  currentDisplayedMods = [...allModCards];
+.hide-videos .video-container {
+  display: none;
+}
 
-  // Image Gallery functionality
-  let currentImageIndex = 0;
-  let galleryImages = [];
+.hide-grades .rating {
+  display: none;
+}
 
-  function initializeImageGallery() {
-    const galleryThumbnails = document.querySelectorAll('.gallery-thumbnail');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-    const prevBtn = document.getElementById('lightbox-prev');
-    const nextBtn = document.getElementById('lightbox-next');
-    const closeBtn = document.getElementById('lightbox-close');
+/* Must Play card highlighting - only when filter is active */
+.highlight-mustplay .mod-card[data-mod-mustplay="true"] {
+  border: 2px solid rgba(250, 204, 21, 0.6) !important;
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(55, 65, 81, 0.8) !important;
+}
 
-    if (!lightbox || !lightboxImg) return;
+.highlight-mustplay .mod-card[data-mod-mustplay="true"]:hover {
+  border-color: rgba(250, 204, 21, 0.8) !important;
+  box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.6), 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
 
-    // Collect all gallery images - get from page data if available, otherwise use thumbnails
-    const pageGalleryData = document.querySelector('[data-gallery-images]');
-    if (pageGalleryData) {
-      const allImages = JSON.parse(pageGalleryData.getAttribute('data-gallery-images'));
-      const baseUrl = pageGalleryData.getAttribute('data-base-url');
-      galleryImages = allImages.slice(0, 10).map((image, index) => ({
-        src: baseUrl + image,
-        alt: `Gallery image ${index + 1}`
-      }));
-    } else {
-      // Fallback to thumbnail-based collection
-      galleryImages = Array.from(galleryThumbnails).map(thumb => ({
-        src: thumb.getAttribute('data-full-src'),
-        alt: thumb.querySelector('img').alt
-      }));
-    }
+.cards-list.highlight-mustplay .mod-card[data-mod-mustplay="true"] {
+  border: 1px solid rgba(250, 204, 21, 0.6) !important;
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4) !important;
+  background-color: rgba(31, 41, 55, 0.9) !important;
+}
 
-    // Add click event to thumbnails
-    galleryThumbnails.forEach((thumb, index) => {
-      thumb.addEventListener('click', () => {
-        currentImageIndex = index;
-        openLightbox();
-      });
-    });
+.cards-list.highlight-mustplay .mod-card[data-mod-mustplay="true"]:hover {
+  border-color: rgba(250, 204, 21, 0.8) !important;
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.6) !important;
+}
 
-    function openLightbox() {
-      if (galleryImages.length === 0) return;
-      
-      lightbox.classList.add('active');
-      updateLightboxImage();
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    }
+h3, .platform-block {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = ''; // Restore scrolling
-    }
+.rating {
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
-    function updateLightboxImage() {
-      if (galleryImages.length === 0) return;
-      
-      const currentImage = galleryImages[currentImageIndex];
-      lightboxImg.src = currentImage.src;
-      lightboxImg.alt = currentImage.alt;
-      
-      if (lightboxCounter) {
-        lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
-      }
-    }
+.mod-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
 
-    function nextImage() {
-      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-      updateLightboxImage();
-    }
+.mod-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: rgba(55, 65, 81, 0.5);
+}
 
-    function prevImage() {
-      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-      updateLightboxImage();
-    }
+.platform-full {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem; 
+}
 
-    // Event listeners for lightbox controls
-    if (closeBtn) {
-      closeBtn.addEventListener('click', closeLightbox);
-    }
+.platform-compact {
+  display: none;
+}
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', nextImage);
-    }
+/* When cards are at smallest size (cards-4), show compact platform */
+.cards-4 .platform-full {
+  display: none;
+}
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', prevImage);
-    }
+.cards-4 .platform-compact {
+  display: flex;
+  align-items: center;
+}
 
-    // Close lightbox when clicking outside the image
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
-    });
+/* List view styles */
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('active')) return;
+.cards-list .mod-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  height: 32px; /* Same height as search bar */
+  min-height: 32px;
+  background-color: rgba(31, 41, 55, 0.8);
+  border: 1px solid rgba(55, 65, 81, 0.5);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease-in-out;
+}
 
-      switch(e.key) {
-        case 'Escape':
-          closeLightbox();
-          break;
-        case 'ArrowRight':
-          nextImage();
-          break;
-        case 'ArrowLeft':
-          prevImage();
-          break;
-      }
-    });
-  }
+.cards-list .mod-card:hover {
+  background-color: rgba(55, 65, 81, 0.7);
+  border-color: rgba(250, 204, 21, 0.6);
+  transform: none; /* Override the scale transform */
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4);
+}
 
-  // Initialize image gallery if on mod page
-  initializeImageGallery();
+/* Show/hide content based on layout */
+.cards-list .list-content {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
 
-  // Consolidated button handler setup
-  function setupButtonHandlers(buttonIds, handler) {
-    buttonIds.forEach(id => {
-      const btn = document.getElementById(id);
-      if (btn) btn.addEventListener('click', handler);
-    });
-  }
+.cards-list .grid-content {
+  display: none !important;
+}
 
-  function updateGridLayout() {
-    const modList = document.getElementById('mod-list');
-    if (modList) {
-      if (cardsPerRow === 'list') {
-        modList.className = 'cards-list';
-      } else {
-        modList.className = `grid gap-4 cards-${cardsPerRow}`;
-      }
-    }
-  }
+.cards-2 .list-content,
+.cards-3 .list-content,
+.cards-4 .list-content {
+  display: none !important;
+}
 
-  // Video thumbnail click handler - improved to remove skeleton loading issues
-  function setupVideoThumbnails() {
-    document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
-      // Remove any skeleton loading elements that might interfere
-      const skeletonElements = thumbnail.querySelectorAll('.skeleton-loading');
-      skeletonElements.forEach(skeleton => skeleton.remove());
-      
-      thumbnail.addEventListener('click', function() {
-        const videoId = this.getAttribute('data-video-id');
-        const videoUrl = this.getAttribute('data-video-url');
-        
-        if (videoId) {
-          const iframe = document.createElement('iframe');
-          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-          iframe.allowFullscreen = true;
-          iframe.className = 'w-full aspect-video rounded';
+.cards-2 .grid-content,
+.cards-3 .grid-content,
+.cards-4 .grid-content {
+  display: block !important;
+}
 
-          const container = this.closest('.video-container');
-          if (container) {
-            container.innerHTML = '';
-            container.appendChild(iframe);
-            container.classList.add('video-loaded');
-          }
-        }
-      });
-    });
-  }
+/* List content layout */
+.list-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
 
-  // Initialize video thumbnails and ensure images load properly
-  function initializeVideoThumbnails() {
-    document.querySelectorAll('.video-thumbnail img').forEach(img => {
-      // Ensure images load and remove any loading states
-      img.onload = function() {
-        const skeletonElements = this.parentElement.querySelectorAll('.skeleton-loading');
-        skeletonElements.forEach(skeleton => skeleton.remove());
-      };
-      
-      // If image is already loaded (cached), trigger the onload
-      if (img.complete) {
-        img.onload();
-      }
-    });
-    
-    setupVideoThumbnails();
-  }
+.list-left h3 {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  // Initialize video thumbnails
-  initializeVideoThumbnails();
+.list-right {
+  flex-shrink: 0;
+}
 
-  // UPDATED: Filter functionality with new UI
-  const searchInput = document.getElementById('search-input');
-  const filterText = document.getElementById('filter-text');
-  const filterTextContent = document.getElementById('filter-text-content');
-  const filterArrow = document.getElementById('filter-arrow');
-  const filterDropdown = document.getElementById('filter-dropdown');
-  const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
-  const filterRadios = document.querySelectorAll('.filter-radio');
-  const searchContainer = document.getElementById('search-container');
-  const controlsContainer = document.getElementById('controls-container');
+/* Hide grades in list view when toggle is active */
+.hide-grades .cards-list .list-right {
+  display: none;
+}
 
-  let isFilterDropdownOpen = false;
+#filter-dropdown {
+  transition: all 0.3s ease;
+  transform: translateY(-5px);
+  opacity: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+  padding: 0.5rem 0.75rem;
+  margin-top: 2px;
+  min-height: fit-content;
+}
 
-  // Check if any filters are active
-  function hasActiveFilters() {
-    const searchQuery = searchInput ? searchInput.value.trim() : '';
-    const standaloneCheckbox = document.getElementById('filter-standalone-yes');
-    const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
-    const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
-    const platformCheckboxes = document.querySelectorAll('input[id^="filter-platform-"]:checked');
-    
-    return searchQuery !== '' || 
-           (standaloneCheckbox && standaloneCheckbox.checked) ||
-           (lowspecCheckbox && lowspecCheckbox.checked) ||
-           (mustplayCheckbox && mustplayCheckbox.checked) ||
-           platformCheckboxes.length > 0;
-  }
+#filter-dropdown:not(.hidden) {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
 
-  // UPDATED: Update filter text based on dropdown state
-  function updateFilterText() {
-    if (filterTextContent && filterText) {
-      if (isFilterDropdownOpen) {
-        filterTextContent.textContent = 'Clear';
-        filterText.classList.add('dropdown-open');
-      } else {
-        filterTextContent.textContent = 'Filters';
-        filterText.classList.remove('dropdown-open');
-      }
-    }
-  }
+#filter-dropdown .flex.flex-wrap.items-center {
+  gap: 0.25rem 1rem; 
+  white-space: nowrap; 
+}
 
-  // Show filter dropdown when clicking in search bar or on filter text
-  if (searchInput && filterDropdown) {
-    searchInput.addEventListener('focus', () => {
-      showFilterDropdown();
-    });
+#filter-dropdown .flex.items-center.gap-1 {
+  gap: 0.375rem; 
+  flex-shrink: 0; 
+}
 
-    searchInput.addEventListener('click', () => {
-      showFilterDropdown();
-    });
-  }
+#filter-dropdown .flex.items-center.gap-2 {
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
 
-  if (filterText && filterDropdown) {
-    filterText.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (isFilterDropdownOpen) {
-        // If showing "Clear", clear all filters
-        clearAllFilters();
-        hideFilterDropdown();
-      } else {
-        showFilterDropdown();
-      }
-    });
-  }
+#filter-dropdown input[type="radio"] + span {
+  margin-left: 0.25rem; 
+}
 
-  function showFilterDropdown() {
-    if (filterDropdown && controlsContainer) {
-      filterDropdown.classList.remove('hidden');
-      controlsContainer.classList.add('filter-dropdown-open');
-      isFilterDropdownOpen = true;
-      updateFilterText();
-      // Trigger reflow to ensure CSS transitions work
-      filterDropdown.offsetHeight;
-    }
-  }
+#filter-dropdown input[type="checkbox"] + span {
+  margin-left: 0.25rem; 
+}
 
-  function hideFilterDropdown() {
-    if (filterDropdown && controlsContainer) {
-      // Only hide if no filters are active
-      if (!hasActiveFilters()) {
-        filterDropdown.classList.add('hidden');
-        controlsContainer.classList.remove('filter-dropdown-open');
-        isFilterDropdownOpen = false;
-        updateFilterText();
-      }
-    }
-  }
+#filter-dropdown span {
+  font-size: 0.75rem !important;
+  line-height: 1.2 !important;
+}
 
-  // UPDATED: Clear all filters function
-  function clearAllFilters() {
-    // Clear search input text
-    if (searchInput) {
-      searchInput.value = '';
-    }
-    
-    // Clear standalone checkbox
-    const standaloneCheckbox = document.getElementById('filter-standalone-yes');
-    if (standaloneCheckbox) standaloneCheckbox.checked = false;
-    
-    // Clear low-spec checkbox
-    const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
-    if (lowspecCheckbox) lowspecCheckbox.checked = false;
-    
-    // Clear must-play checkbox
-    const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
-    if (mustplayCheckbox) mustplayCheckbox.checked = false;
-    
-    // Clear platform checkboxes
-    document.querySelectorAll('input[id^="filter-platform-"]').forEach(checkbox => {
-      checkbox.checked = false;
-    });
-    
-    applyFilters();
-  }
+#filter-dropdown label {
+  font-size: 0.75rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+  cursor: pointer;
+  white-space: nowrap; 
+}
 
-  // Close dropdown when clicking outside, but only if no filters are active
-  document.addEventListener('click', (e) => {
-    if (searchContainer && !searchContainer.contains(e.target)) {
-      hideFilterDropdown();
-    }
-  });
+#filter-dropdown input[type="checkbox"],
+#filter-dropdown input[type="radio"] {
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 !important;
+  flex-shrink: 0; 
+}
 
-  // Apply filters when inputs change
-  filterCheckboxes.forEach(input => {
-    input.addEventListener('change', applyFilters);
-  });
-  
-  filterRadios.forEach(input => {
-    input.addEventListener('change', applyFilters);
-  });
+#controls-container {
+  position: relative;
+  z-index: 5;
+  background: transparent;
+  transition: margin-bottom 0.2s ease;
+}
 
-  // UPDATED: Apply filters function - modified for must-play highlighting behavior
-  function applyFilters() {
-    // Get active filters
-    const activeFilters = {
-      standalone: false,
-      lowspec: false,
-      mustplay: false,
-      platforms: []
-    };
+#controls-container.filter-dropdown-open {
+  margin-bottom: 2.5rem; 
+}
 
-    // Standalone filter (only show standalone if checked)
-    const standaloneCheckbox = document.getElementById('filter-standalone-yes');
-    if (standaloneCheckbox && standaloneCheckbox.checked) {
-      activeFilters.standalone = true;
-    }
+#search-input {
+  padding-right: 4rem !important;
+}
 
-    // Low-spec filter (only show low-spec if checked)
-    const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
-    if (lowspecCheckbox && lowspecCheckbox.checked) {
-      activeFilters.lowspec = true;
-    }
+#filter-text {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
 
-  // Sort functionality
-  const sortButton = document.getElementById('sort-button');
-  if (sortButton) {
-    sortButton.addEventListener('click', () => {
-      const gradesHidden = document.body.classList.contains('hide-grades');
-      
-      if (gradesHidden) {
-        // Shuffle the cards
-        const shuffled = shuffleArray([...currentDisplayedMods]);
-        renderMods(shuffled);
-      } else {
-        sortState = (sortState + 1) % 3;
-        
-        let toRender;
-        switch(sortState) {
-          case 0:
-            sortButton.textContent = 'Sort by Rating';
-            // Apply current filters instead of showing all cards
-            applyFilters();
-            return; // Exit early since applyFilters will call renderMods
-          case 1:
-            sortButton.textContent = 'Highest First';
-            toRender = [...currentDisplayedMods].sort((a, b) => {
-              const ratingA = parseFloat(a.querySelector('.rating span').textContent);
-              const ratingB = parseFloat(b.querySelector('.rating span').textContent);
-              return ratingB - ratingA;
-            });
-            break;
-          case 2:
-            sortButton.textContent = 'Lowest First';
-            toRender = [...currentDisplayedMods].sort((a, b) => {
-              const ratingA = parseFloat(a.querySelector('.rating span').textContent);
-              const ratingB = parseFloat(b.querySelector('.rating span').textContent);
-              return ratingA - ratingB;
-            });
-            break;
-        }
-        renderMods(toRender);
-      }
-      
-      // Don't hide dropdown if filters are active
-      if (!hasActiveFilters()) {
-        hideFilterDropdown();
-      }
-    });
-  }
+#filter-text:hover {
+  color: #f3f4f6;
+}
 
-  // Cards per row controls - UPDATED for list view
-  const cardsLessBtn = document.getElementById('cards-less');
-  const cardsMoreBtn = document.getElementById('cards-more');
-  
-  if (cardsLessBtn) {
-    cardsLessBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (cardsPerRow === 2) {
-        cardsPerRow = 3;
-      } else if (cardsPerRow === 3) {
-        cardsPerRow = 4;
-      } else if (cardsPerRow === 4) {
-        cardsPerRow = 'list';
-      }
-      updateGridLayout();
-      
-      // Don't hide dropdown if filters are active
-      if (!hasActiveFilters()) {
-        hideFilterDropdown();
-      }
-    });
-  }
+#filter-text.dropdown-open #filter-arrow {
+  transform: rotate(180deg);
+}
 
-  if (cardsMoreBtn) {
-    cardsMoreBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (cardsPerRow === 'list') {
-        cardsPerRow = 4;
-      } else if (cardsPerRow === 4) {
-        cardsPerRow = 3;
-      } else if (cardsPerRow === 3) {
-        cardsPerRow = 2;
-      }
-      updateGridLayout();
-      
-      // Don't hide dropdown if filters are active
-      if (!hasActiveFilters()) {
-        hideFilterDropdown();
-      }
-    });
-  }
+#controls-container button,
+#controls-container input {
+  height: 32px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  // Search functionality - updated to work with filters
-  if (searchInput) {
-    searchInput.addEventListener('input', applyFilters);
-  }
+#search-container {
+  position: relative;
+}
 
-  // Toggle grades functionality - consolidated handlers
-  function handleToggleGrades() {
-    const sortBtn = document.getElementById('sort-button');
-    const isHiding = document.body.classList.toggle('hide-grades');
-    
-    if (isHiding && sortBtn) {
-      sortBtn.textContent = 'Randomize';
-      sortState = 0; 
-    } else if (sortBtn) {
-      sortBtn.textContent = 'Sort by Rating';
-      sortState = 0;
-      applyFilters(); // Apply current filters instead of showing all cards
-    }
-    syncToggleStates();
-    
-    // Don't hide dropdown if filters are active
-    if (!hasActiveFilters()) {
-      hideFilterDropdown();
-    }
-  }
+.filter-checkbox,
+.filter-radio {
+  accent-color: #eab308;
+  transform: scale(1);
+}
 
-  // Setup consolidated toggle grades handlers
-  setupButtonHandlers(['toggle-grades', 'toggle-grades-mobile'], handleToggleGrades);
+.filter-checkbox:focus,
+.filter-radio:focus {
+  outline: 2px solid #eab308;
+  outline-offset: 2px;
+}
 
-  // Toggle videos functionality - consolidated handlers
-  function handleToggleVideos() {
-    document.body.classList.toggle('hide-videos');
-    syncToggleStates();
-    
-    // Don't hide dropdown if filters are active
-    if (!hasActiveFilters()) {
-      hideFilterDropdown();
-    }
-  }
+.flex.flex-wrap.items-start {
+  align-items: flex-start;
+}
 
-  // Setup consolidated toggle videos handlers
-  setupButtonHandlers(['toggle-videos', 'toggle-videos-mobile'], handleToggleVideos);
+#sort-button,
+#cards-less,
+#cards-more {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  function syncToggleStates() {
-    const gradesHidden = document.body.classList.contains('hide-grades');
-    const videosHidden = document.body.classList.contains('hide-videos');
-    
-    // Update all grade toggle buttons
-    ['toggle-grades', 'toggle-grades-mobile'].forEach(id => {
-      const btn = document.getElementById(id);
-      if (btn) btn.classList.toggle('button-active', gradesHidden);
-    });
-    
-    // Update all video toggle buttons
-    ['toggle-videos', 'toggle-videos-mobile'].forEach(id => {
-      const btn = document.getElementById(id);
-      if (btn) btn.classList.toggle('button-active', videosHidden);
-    });
-  }
+#search-input {
+  height: 32px;
+}
 
-  function shuffleArray(array) {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  }
+.image-gallery {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
 
-  function renderMods(modArray) {
-    currentDisplayedMods = modArray;
-    const container = document.getElementById('mod-list');
-    if (!container) return;
-    
-    container.innerHTML = '';
-    modArray.forEach(card => {
-      const newCard = card.cloneNode(true);
-      
-      // Add must-play class if the card has must-play data attribute set to true
-      if (card.getAttribute('data-mod-mustplay') === 'true') {
-        newCard.classList.add('must-play-card');
-      }
-      
-      container.appendChild(newCard);
-    });
-    
-    // Re-setup video thumbnails for newly rendered cards
-    initializeVideoThumbnails();
-  }
+.gallery-thumbnail {
+  flex: 1;
+  aspect-ratio: 16/9;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid transparent;
+}
 
-  // Contact overlay functionality - consolidated handlers
-  function showContactOverlay() {
-    const contactOverlay = document.getElementById('contact-overlay');
-    if (contactOverlay) contactOverlay.classList.remove('hidden');
-    
-    // Don't hide dropdown if filters are active
-    if (!hasActiveFilters()) {
-      hideFilterDropdown();
-    }
-  }
+.gallery-thumbnail:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: #fbbf24;
+}
 
-  // Setup consolidated contact handlers
-  setupButtonHandlers(['contact-button', 'contact-button-mobile'], showContactOverlay);
+.gallery-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-  const contactClose = document.getElementById('contact-close');
-  const contactOverlay = document.getElementById('contact-overlay');
-  const revealEmail = document.getElementById('reveal-email');
-  const emailText = document.getElementById('email-text');
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
-  if (contactClose) {
-    contactClose.addEventListener('click', () => {
-      if (contactOverlay) contactOverlay.classList.add('hidden');
-    });
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.lightbox-prev::before {
+  content: '‹';
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.lightbox-next::before {
+  content: '›';
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 14px;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .image-gallery {
+    flex-direction: column;
+    gap: 0.75rem;
   }
   
-  if (contactOverlay) {
-    contactOverlay.addEventListener('click', e => {
-      if (e.target === contactOverlay) contactOverlay.classList.add('hidden');
-    });
+  .gallery-thumbnail {
+    aspect-ratio: 16/9;
   }
   
-  if (revealEmail && emailText) {
-    revealEmail.addEventListener('click', () => {
-      emailText.classList.remove('hidden');
-    });
+  .lightbox-content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+  
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .lightbox-prev {
+    left: 10px;
+  }
+  
+  .lightbox-next {
+    right: 10px;
+  }
+  
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
   }
 
-  // Install files overlay functionality - consolidated handlers
-  function showInstallFilesOverlay() {
-    const installFilesOverlay = document.getElementById('install-files-overlay');
-    if (installFilesOverlay) installFilesOverlay.classList.remove('hidden');
-    
-    // Don't hide dropdown if filters are active
-    if (!hasActiveFilters()) {
-      hideFilterDropdown();
-    }
+  #filter-dropdown {
+    padding: 0.5rem 0.625rem; 
+    left: 0.25rem;
+    right: 0.25rem;
   }
 
-  // Setup consolidated essentials handlers
-  setupButtonHandlers(['essentials-button', 'essentials-button-mobile'], showInstallFilesOverlay);
-
-  const installFilesOverlay = document.getElementById('install-files-overlay');
-  const installFilesClose = document.getElementById('install-files-close');
-
-  if (installFilesClose) {
-    installFilesClose.addEventListener('click', () => {
-      if (installFilesOverlay) installFilesOverlay.classList.add('hidden');
-    });
+  #filter-dropdown span {
+    font-size: 0.6875rem !important; 
   }
 
-  if (installFilesOverlay) {
-    installFilesOverlay.addEventListener('click', (e) => {
-      if (e.target === installFilesOverlay) {
-        installFilesOverlay.classList.add('hidden');
-      }
-    });
+  #filter-dropdown label {
+    font-size: 0.6875rem !important; 
   }
 
-  // Keyboard shortcuts
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      if (contactOverlay) contactOverlay.classList.add('hidden');
-      if (installFilesOverlay) installFilesOverlay.classList.add('hidden');
-      if (isFilterDropdownOpen && !hasActiveFilters()) {
-        hideFilterDropdown();
-      }
-    }
-  });
-});
-
-    // Platform filter (checkboxes)
-    if (document.getElementById('filter-platform-soc') && document.getElementById('filter-platform-soc').checked) {
-      activeFilters.platforms.push('shadow of chernobyl');
-    }
-    if (document.getElementById('filter-platform-cs') && document.getElementById('filter-platform-cs').checked) {
-      activeFilters.platforms.push('clear sky');
-    }
-    if (document.getElementById('filter-platform-cop') && document.getElementById('filter-platform-cop').checked) {
-      activeFilters.platforms.push('call of pripyat');
-    }
-
-    // Get search query
-    const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
-
-    // Filter mods (excluding must-play which only highlights)
-    const filtered = allModCards.filter(card => {
-      // Search filter
-      if (searchQuery) {
-        const title = card.getAttribute('data-mod-title') || '';
-        const description = card.getAttribute('data-mod-description') || '';
-        const platform = card.getAttribute('data-mod-platform') || '';
-        
-        if (!title.includes(searchQuery) && !description.includes(searchQuery) && !platform.includes(searchQuery)) {
-          return false;
-        }
-      }
-
-      // Standalone filter (only filter if checkbox is checked)
-      if (activeFilters.standalone) {
-        const cardStandalone = card.getAttribute('data-mod-standalone') === 'true';
-        if (!cardStandalone) {
-          return false;
-        }
-      }
-
-      // Low-spec filter (only filter if checkbox is checked)
-      if (activeFilters.lowspec) {
-        const cardLowspec = card.getAttribute('data-mod-lowspec') === 'true';
-        if (!cardLowspec) {
-          return false;
-        }
-      }
-
-      // Platform filter (if any platforms are selected, show only those)
-      if (activeFilters.platforms.length > 0) {
-        const cardPlatform = (card.getAttribute('data-mod-platform') || '').toLowerCase();
-        if (!activeFilters.platforms.includes(cardPlatform)) {
-          return false;
-        }
-      }
-
-      return true;
-    });
-
-    // Apply must-play highlighting
-    updateMustPlayHighlighting(activeFilters.mustplay);
-
-    renderMods(filtered);
+  #filter-dropdown input[type="checkbox"],
+  #filter-dropdown input[type="radio"] {
+    width: 10px !important; 
+    height: 10px !important;
+    transform: scale(0.9); 
   }
 
-  // NEW: Function to handle must-play highlighting
-  function updateMustPlayHighlighting(showMustPlay) {
-    const body = document.body;
-    
-    if (showMustPlay) {
-      body.classList.add('show-must-play');
-    } else {
-      body.classList.remove('show-must-play');
-    }
+  #filter-dropdown .flex.flex-wrap.items-center {
+    gap: 0.125rem 0.5rem;
   }
+
+  #filter-dropdown .flex.items-center.gap-1 {
+    gap: 0.1875rem;
+  }
+
+  #filter-dropdown .flex.items-center.gap-2 {
+    gap: 0.375rem;
+  }
+
+  /* Mobile list view adjustments */
+  .cards-list .list-left h3 {
+    max-width: 120px;
+  }
+
+  .cards-list .list-left {
+    gap: 0.375rem;
+  }
+}
+
+@media (max-width: 320px) {
+  #controls-container.filter-dropdown-open {
+    margin-bottom: 1.75rem; 
+  }
+  
+  #filter-dropdown {
+    padding: 0.25rem 0.375rem; 
+  }
+
+  #filter-dropdown span {
+    font-size: 0.5625rem !important; 
+  }
+
+  #filter-dropdown label {
+    font-size: 0.5625rem !important; 
+  }
+
+  #filter-dropdown input[type="checkbox"],
+  #filter-dropdown input[type="radio"] {
+    width: 8px !important;
+    height: 8px !important;
+    transform: scale(0.8);
+  }
+
+  #filter-dropdown .flex.flex-wrap.items-center {
+    gap: 0.0625rem 0.375rem; 
+  }
+
+  #filter-dropdown .flex.items-center.gap-1 {
+    gap: 0.125rem;
+  }
+
+  #filter-dropdown .flex.items-center.gap-2 {
+    gap: 0.25rem;
+  }
+
+  /* Extra small mobile list view */
+  .cards-list .list-left h3 {
+    max-width: 100px;
+  }
+
+  .cards-list .list-left {
+    gap: 0.25rem;
+  }
+}
+
+.pros-section ul li {
+  color: #4ade80; 
+  font-size: 0.875rem; 
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.cons-section ul li {
+  color: #f87171; 
+  font-size: 0.875rem; 
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.pros-section ul li span:first-child,
+.cons-section ul li span:first-child {
+  font-weight: 700; 
+  font-size: 1rem; 
+}
+
+@media (max-width: 768px) {
+  .pros-section ul li,
+  .cons-section ul li {
+    font-size: 0.8rem;
+  }
+}
+
+.video-thumbnail {
+  position: relative;
+  cursor: pointer;
+  background: #000;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.video-thumbnail:hover img {
+  opacity: 0.8;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  background: rgba(255, 0, 0, 0.8);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background: rgba(255, 0, 0, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 4px;
+}
+
+.mod-page-video .video-thumbnail {
+  aspect-ratio: 16/9;
+  height: auto;
+  min-height: 150px;
+}
+
+.mod-page-video .play-button {
+  width: 51px;
+  height: 36px;
+}
+
+.mod-page-video .play-button::after {
+  border-left: 15px solid white;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  margin-left: 3px;
+}
+
+.mod-page-sections {
+  display: grid;
+  grid-template-columns: 1.6fr 1.4fr;
+  gap: 1.25rem; 
+}
+
+.mod-page-sections section {
+  padding: 1.25rem; 
+}
+
+.mod-page-sections h2 {
+  font-size: 1.29rem; 
+  font-weight: 600;
+}
+
+.mod-page-sections svg {
+  width: 1.25rem; 
+  height: 1.25rem;
+}
+
+.video-loaded iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 0.375rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.skeleton-loading {
+  display: none;
+}
+
+.arrow-pointer {
+  width: 0;
+  height: 0;
+  border-left: 6px solid white;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.button-active {
+  border-color: white;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 1), 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.cards-2 {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+
+.cards-3 {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.cards-4 {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+#essentials-button,
+#contact-button,
+#toggle-grades,
+#toggle-videos,
+#essentials-button-mobile,
+#contact-button-mobile,
+#toggle-grades-mobile,
+#toggle-videos-mobile {
+  font-size: 0.875rem !important; 
+  padding: 0.375rem 0.75rem !important; 
+  transition: all 0.2s ease;
+}
+
+.prose {
+  color: #d1d5db;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.prose h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.prose h2 {
+  font-size: 1.25rem; 
+  line-height: 1.75rem; 
+  margin-top: 1.25rem; 
+  margin-bottom: 0.75rem; 
+}
+
+.prose h3 {
+  font-size: 1.125rem; 
+  line-height: 1.5rem;
+  margin-top: 1rem; 
+  margin-bottom: 0.5rem; 
+}
+
+.prose h3:nth-of-type(2) {
+  margin-top: 2rem; 
+}
+
+.prose p {
+  margin-bottom: 0.75rem;
+  line-height: 1.5; 
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1rem; 
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem; 
+  line-height: 1.6;
+}
+
+.prose a {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #93c5fd;
+}
+
+.prose code {
+  background-color: #374151;
+  color: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.prose pre {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 0.75rem; 
+}
+
+.prose blockquote {
+  border-left: 4px solid #fbbf24;
+  padding-left: 1rem;
+  color: #9ca3af;
+  font-style: italic;
+  margin: 0.75rem 0; 
+}
+
+.prose strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose-compact {
+  font-size: 0.875rem; 
+}
+
+.prose-compact h2 {
+  font-size: 1.125rem; 
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-compact h3 {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.375rem;
+}
+
+.prose-compact p {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.prose-compact ul, .prose-compact ol {
+  margin-bottom: 0.75rem; 
+}
+
+.prose-compact li {
+  margin-bottom: 0.375rem; 
+  line-height: 1.5; 
+}
+
+.prose-compact .space-y-3 {
+  margin-top: 1rem;
+}
+
+.prose-compact .space-y-3 > div {
+  margin-bottom: 0.5rem;
+}
+
+.prose-compact .space-y-3 > div:last-child {
+  margin-bottom: 0;
+}
+
+.prose .space-y-3 .flex.items-start {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem; 
+  margin-bottom: 0.25rem; 
+}
+
+.prose .space-y-3 .flex.items-start span {
+  color: #fbbf24; 
+  font-weight: bold;
+  font-size: 0.875rem; 
+  flex-shrink: 0;
+  line-height: 1.5;
+  width: 1.2rem; 
+  text-align: left;
+  margin-top: 0; 
+}
+
+.prose .space-y-3 .flex.items-start div {
+  flex: 1;
+  line-height: 1.5;
+  display: block;
+  margin-top: 0; 
+}
+
+.prose .space-y-3 .flex.items-start p {
+  margin: 0;
+  color: #d1d5db;
+  display: block;
+  font-size: 0.875rem; 
+  line-height: 1.5; 
+}
+
+.prose .space-y-3 {
+  display: block;
+}
+
+.prose .space-y-3 > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem; 
+}
+
+.prose .space-y-3 > div:last-child {
+  margin-bottom: 0;
+}
+
+.prose .text-yellow-400 {
+  color: #fbbf24;
+}
+
+.prose .text-gray-300 {
+  color: #d1d5db;
+}
+
+.prose .font-bold {
+  font-weight: bold;
+}
+
+.prose .text-lg {
+  font-size: 0.875rem !important; 
+}
+
+.prose .flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* Credits section specific styling */
+.credits-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.credits-list ul li {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.credits-list ul li::before {
+  content: '•';
+  color: #fbbf24;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.credits-list p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Override prose styles for credits specifically */
+.credits-list .prose p,
+.credits-list .prose ul,
+.credits-list .prose li {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.credits-list .prose ul {
+  margin-bottom: 0;
+}
+
+.credits-list .prose li {
+  margin-bottom: 0.25rem;
+}
+
+section h2 {
+  font-size: 1.38rem; 
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .cards-2, .cards-3, .cards-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .platform-block .flex {
+    flex-wrap: wrap;
+  }
+  
+  .platform-block span {
+    white-space: normal;
+  }
+
+  .mod-page-sections {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .mod-page-video .video-thumbnail {
+    min-height: 120px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .mod-page-sections {
+    grid-template-columns: 1.6fr 1.4fr; 
+    gap: 1rem;
+  }
+}
+
+.main-page #essentials-button,
+.main-page #contact-button,
+.main-page #toggle-grades,
+.main-page #toggle-videos,
+.main-page #essentials-button-mobile,
+.main-page #contact-button-mobile,
+.main-page #toggle-grades-mobile,
+.main-page #toggle-videos-mobile {
+  font-size: 0.75rem !important; 
+  padding: 0.25rem 0.5rem !important; 
+}
+
+@media (max-width: 600px) {
+  #filter-dropdown .flex.flex-wrap.items-center {
+    gap: 0.125rem 0.75rem; 
+  }
+
+  #filter-dropdown .flex.items-center.gap-1 {
+    gap: 0.25rem; 
+  }
+
+  #filter-dropdown .flex.items-center.gap-2 {
+    gap: 0.5rem; 
+  }
+
+  #controls-container.filter-dropdown-open {
+    margin-bottom: 2.25rem; 
+  }
+
+  #search-input {
+    padding-right: 4.5rem !important;
+    font-size: 14px;
+  }
+
+  #filter-text {
+    right: 0.5rem;
+    font-size: 0.6875rem; 
+  }
+
+  /* Mobile list view adjustments */
+  .cards-list .list-left h3 {
+    max-width: 150px;
+  }
+
+  .cards-list .list-left {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #controls-container.filter-dropdown-open {
+    margin-bottom: 2rem; 
+  }
+
+  #filter-dropdown {
+    left: -0.125rem;
+    right: -0.125rem;
+    padding: 0.375rem 0.5rem; 
+  }
+
+  #filter-dropdown span {
+    font-size: 0.625rem !important; 
+  }
+
+  #filter-dropdown label {
+    font-size: 0.625rem !important; 
+  }
+
+  #filter-dropdown input[type="checkbox"],
+  #filter-dropdown input[type="radio"] {
+    width: 9px !important;
+    height: 9px !important;
+    transform: scale(0.85);
+  }
+
+  #filter-dropdown .flex.flex-wrap.items-center {
+    gap: 0.125rem 0.5rem;
+  }
+}
