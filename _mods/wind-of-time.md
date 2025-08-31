@@ -51,6 +51,7 @@ additional_credits: |
   Ninja_Nub[NOR], Vincent_Vega), TKGP
 
   **Special Thanks:**
+  
   All the creators of these modifications: Absolute Nature, Atmosfear, Shoker Weapon Mod, Path in the Mist, In Spite of the Death, Valley of the Whistles, Pripyat: Breaking Point, STCoP Weapon Pack, Cubic Mini Mod, Spatial Anomaly, Call of Chernobyl, SWTC, SGM, AMK
 ---
 
