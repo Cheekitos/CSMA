@@ -5,18 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
   let cardsPerRow = 3; // Default to 3 cards per row
   let currentDisplayedMods = []; // Track what's currently being displayed
   
-  // Get all mod cards and sort them alphabetically by default
+  // Get all mod cards - now sorted alphabetically by default
   const allModCards = Array.from(document.querySelectorAll('.mod-card'));
-  // Sort alphabetically by title on page load
-  allModCards.sort((a, b) => {
-    const titleA = a.getAttribute('data-mod-title') || '';
-    const titleB = b.getAttribute('data-mod-title') || '';
-    return titleA.localeCompare(titleB);
-  });
   currentDisplayedMods = [...allModCards];
-  
-  // Render the alphabetically sorted mods on initial load
-  renderMods(currentDisplayedMods);
 
   // Image Gallery functionality
   let currentImageIndex = 0;
@@ -205,18 +196,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize video thumbnails
   initializeVideoThumbnails();
 
-  // UPDATED: Filter functionality with new UI
+  // UPDATED: Filter functionality with new card-based UI
   const searchInput = document.getElementById('search-input');
   const filterText = document.getElementById('filter-text');
   const filterTextContent = document.getElementById('filter-text-content');
   const filterArrow = document.getElementById('filter-arrow');
-  const filterDropdown = document.getElementById('filter-dropdown');
+  const filterCard = document.getElementById('filter-card');
   const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
-  const filterRadios = document.querySelectorAll('.filter-radio');
-  const searchContainer = document.getElementById('search-container');
-  const controlsContainer = document.getElementById('controls-container');
+  const clearFiltersBtn = document.getElementById('clear-filters');
 
-  let isFilterDropdownOpen = false;
+  let isFilterCardOpen = false;
 
   // Check if any filters are active
   function hasActiveFilters() {
@@ -247,11 +236,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // UPDATED: Update filter text based on dropdown state
+  // UPDATED: Update filter text based on card state
   function updateFilterText() {
     if (filterTextContent && filterText) {
-      if (isFilterDropdownOpen) {
-        filterTextContent.textContent = 'Clear';
+      if (isFilterCardOpen) {
+        filterTextContent.textContent = 'Hide';
         filterText.classList.add('dropdown-open');
       } else {
         filterTextContent.textContent = 'Filters';
@@ -260,48 +249,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Show filter dropdown when clicking in search bar or on filter text
-  if (searchInput && filterDropdown) {
+  // Show filter card when clicking in search bar or on filter text
+  if (searchInput && filterCard) {
     searchInput.addEventListener('focus', () => {
-      showFilterDropdown();
+      showFilterCard();
     });
 
     searchInput.addEventListener('click', () => {
-      showFilterDropdown();
+      showFilterCard();
     });
   }
 
-  if (filterText && filterDropdown) {
+  if (filterText && filterCard) {
     filterText.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (isFilterDropdownOpen) {
-        // If showing "Clear", clear all filters
-        clearAllFilters();
-        hideFilterDropdown();
+      if (isFilterCardOpen) {
+        hideFilterCard();
       } else {
-        showFilterDropdown();
+        showFilterCard();
       }
     });
   }
 
-  function showFilterDropdown() {
-    if (filterDropdown && controlsContainer) {
-      filterDropdown.classList.remove('hidden');
-      controlsContainer.classList.add('filter-dropdown-open');
-      isFilterDropdownOpen = true;
+  function showFilterCard() {
+    if (filterCard) {
+      filterCard.classList.remove('hidden');
+      isFilterCardOpen = true;
       updateFilterText();
-      // Trigger reflow to ensure CSS transitions work
-      filterDropdown.offsetHeight;
     }
   }
 
-  function hideFilterDropdown() {
-    if (filterDropdown && controlsContainer) {
+  function hideFilterCard() {
+    if (filterCard) {
       // Only hide if no filters are active
       if (!hasActiveFilters()) {
-        filterDropdown.classList.add('hidden');
-        controlsContainer.classList.remove('filter-dropdown-open');
-        isFilterDropdownOpen = false;
+        filterCard.classList.add('hidden');
+        isFilterCardOpen = false;
         updateFilterText();
       }
     }
@@ -333,24 +316,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     updateMustPlayHighlighting();
     applyFilters();
+    hideFilterCard();
   }
 
-  // Close dropdown when clicking outside, but only if no filters are active
+  // Clear filters button handler
+  if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener('click', clearAllFilters);
+  }
+
+  // Close filter card when clicking outside, but only if no filters are active
   document.addEventListener('click', (e) => {
-    if (searchContainer && !searchContainer.contains(e.target)) {
-      hideFilterDropdown();
+    const searchContainer = document.getElementById('search-container');
+    if (searchContainer && !searchContainer.contains(e.target) && !filterCard.contains(e.target)) {
+      hideFilterCard();
     }
   });
 
   // Apply filters when inputs change
   filterCheckboxes.forEach(input => {
-    input.addEventListener('change', () => {
-      updateMustPlayHighlighting();
-      applyFilters();
-    });
-  });
-  
-  filterRadios.forEach(input => {
     input.addEventListener('change', () => {
       updateMustPlayHighlighting();
       applyFilters();
@@ -484,9 +467,9 @@ document.addEventListener('DOMContentLoaded', function() {
         renderMods(toRender);
       }
       
-      // Don't hide dropdown if filters are active
+      // Don't hide filter card if filters are active
       if (!hasActiveFilters()) {
-        hideFilterDropdown();
+        hideFilterCard();
       }
     });
   }
@@ -507,9 +490,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       updateGridLayout();
       
-      // Don't hide dropdown if filters are active
+      // Don't hide filter card if filters are active
       if (!hasActiveFilters()) {
-        hideFilterDropdown();
+        hideFilterCard();
       }
     });
   }
@@ -526,9 +509,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       updateGridLayout();
       
-      // Don't hide dropdown if filters are active
+      // Don't hide filter card if filters are active
       if (!hasActiveFilters()) {
-        hideFilterDropdown();
+        hideFilterCard();
       }
     });
   }
@@ -553,9 +536,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     syncToggleStates();
     
-    // Don't hide dropdown if filters are active
+    // Don't hide filter card if filters are active
     if (!hasActiveFilters()) {
-      hideFilterDropdown();
+      hideFilterCard();
     }
   }
 
@@ -567,9 +550,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.toggle('hide-videos');
     syncToggleStates();
     
-    // Don't hide dropdown if filters are active
+    // Don't hide filter card if filters are active
     if (!hasActiveFilters()) {
-      hideFilterDropdown();
+      hideFilterCard();
     }
   }
 
@@ -624,9 +607,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactOverlay = document.getElementById('contact-overlay');
     if (contactOverlay) contactOverlay.classList.remove('hidden');
     
-    // Don't hide dropdown if filters are active
+    // Don't hide filter card if filters are active
     if (!hasActiveFilters()) {
-      hideFilterDropdown();
+      hideFilterCard();
     }
   }
 
@@ -661,9 +644,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const installFilesOverlay = document.getElementById('install-files-overlay');
     if (installFilesOverlay) installFilesOverlay.classList.remove('hidden');
     
-    // Don't hide dropdown if filters are active
+    // Don't hide filter card if filters are active
     if (!hasActiveFilters()) {
-      hideFilterDropdown();
+      hideFilterCard();
     }
   }
 
@@ -692,8 +675,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.key === 'Escape') {
       if (contactOverlay) contactOverlay.classList.add('hidden');
       if (installFilesOverlay) installFilesOverlay.classList.add('hidden');
-      if (isFilterDropdownOpen && !hasActiveFilters()) {
-        hideFilterDropdown();
+      if (isFilterCardOpen && !hasActiveFilters()) {
+        hideFilterCard();
       }
     }
   });
