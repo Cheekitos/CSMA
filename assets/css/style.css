@@ -86,6 +86,27 @@ h3, .platform-block {
   margin-top: auto;
 }
 
+/* Specific fix for cards-4 layout to ensure video alignment */
+.cards-4 .mod-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-4 .grid-content {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.cards-4 .grid-content p {
+  flex-grow: 1;
+}
+
+.cards-4 .video-container {
+  margin-top: auto;
+}
+
 /* List view styles */
 .cards-list {
   display: flex;
