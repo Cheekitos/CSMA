@@ -234,19 +234,6 @@ h3, .platform-block {
   margin-bottom: 2.5rem; 
 }
 
-/* Mobile-specific fix to prevent filter dropdown from covering first card */
-@media (max-width: 480px) {
-  #controls-container.filter-dropdown-open {
-    margin-bottom: 3.5rem !important; 
-  }
-}
-
-@media (max-width: 320px) {
-  #controls-container.filter-dropdown-open {
-    margin-bottom: 4rem !important; 
-  }
-}
-
 #search-input {
   padding-right: 4rem !important;
 }
@@ -543,7 +530,7 @@ h3, .platform-block {
 
 @media (max-width: 320px) {
   #controls-container.filter-dropdown-open {
-    margin-bottom: 4.5rem !important; 
+    margin-bottom: 1.75rem; 
   }
   
   #filter-dropdown {
@@ -1088,7 +1075,7 @@ section h2 {
 
 @media (max-width: 480px) {
   #controls-container.filter-dropdown-open {
-    margin-bottom: 3.5rem !important; 
+    margin-bottom: 2rem; 
   }
 
   #filter-dropdown {
