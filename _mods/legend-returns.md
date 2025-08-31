@@ -8,7 +8,7 @@ platform: "Call of Pripyat"
 engine: "Call of Chernobyl"
 release_date: "2018-03-21"
 short_description: "The largest story-driven overhaul for Call of Chernobyl, blending open-world, freeplay gameplay with full plots and storylines to discover for multiple factions. Special attention was given to Sin and their quests, making it a must-play faction!"
-description: "Legend Returns is a freeplay-driven S.T.A.L.K.E.R. mod that blends restored cut content, new mechanics, and multiple faction storylines into one atmospheric experience. <br> Each faction comes with its own quests, perks, and challenges. The mod adds an expanded weapon pack, a detailed skill system, a demanding economy, new anomalies, psi-storms, <br> and cut mutants brought back from early builds. Built on Call of Chernobyl, it keeps performance stable while offering plenty of side quests and exploration. <br> Whether you join Sin, Duty, Clear Sky, or Monolith, the Zone here is harsh, unpredictable, and full of ways to test your survival. <br><br> Perfectly capturing the eerie feel of the original games, and enhanced by immersive soundscapes and events like psi-storms. While some storylines are rough or unfinished and balance can be harsh, fans praise its stability, mood, and sheer variety. A must-try for those who seek the \"lost\" vision of the Zone."
+description: "Legend Returns is a freeplay-driven S.T.A.L.K.E.R. mod that blends restored cut content, new mechanics, and multiple faction storylines into one atmospheric experience.<br> Each faction comes with its own quests, perks, and challenges. The mod adds an expanded weapon pack, a detailed skill system, a demanding economy, new anomalies, psi-storms, and cut mutants brought back from early builds.<br> Built on Call of Chernobyl, it perfectly captures the eerie feel of the original games, keeps performance stable and offers plenty of side quests and exploration. Whether you join Sin, Duty, Clear Sky, or Monolith, the Zone here is harsh, unpredictable, and full of ways to test your survival."
 
 gallery_images:
 
@@ -35,35 +35,35 @@ links:
     url: "https://ap-pro.ru/stuff/zov_pripjati/legend-returns-092-r214/"
 
 mod_creator: |
-  Bot Nikolay - SDK
-  Nikita "Nevropotolog" - 3D modeller, founder
-  Andrey "Director_NTV" - game designer
-  Alexander "XMODER" - 2D designer, lead encoder
-  Artyom "rnm_016" Shewhart - gunsmith modeller, designer
-  Dmitry "AspirinSGD" - quester, designer
-  Denis Levshchanov - quester
-  Leer Hansson - quester, encoder
-  Nikita Kozhevnikov - community manager
+  * Bot Nikolay - SDK
+  * Nikita "Nevropotolog" - 3D modeller, founder
+  * Andrey "Director_NTV" - game designer
+  * Alexander "XMODER" - 2D designer, lead encoder
+  * Artyom "rnm_016" Shewhart - gunsmith modeller, designer
+  * Dmitry "AspirinSGD" - quester, designer
+  * Denis Levshchanov - quester
+  * Leer Hansson - quester, encoder
+  * Nikita Kozhevnikov - community manager
 translation_by: "SpecShadow"
 additional_credits: |
-  GSC for a great game and platform
-  Team Epic for Call of Chernobyl
-  Vincent_Vega for some textures from SWTC
-  dezowave team for a couple of main menu textures
-  AdrenoBPC for post-effect scripting during GG injury
-  Tris for the scripted experience of cleaning weapons
-  half5life for developments on PM quests (on v.1.3.2)
-  Debrovski for the Partner Management Menu System
-  Soundpath for the texture of a slug beginner
-  Authors of the weapon mods OWR, OGR, Shoker, STCOP WP
-  Authors of the Metro and Silent Hill series for environmental sounds
-  Author of the VV mod for removing "kaos" combat music
-  Stern-13 for active assistance to developers
-  cari0us for help with interfaces
-  Vadim Drakoshin (Lost Path) for technical assistance
-  gridgt for fixing interface textures
-  av661194 for numerous CoC 1.4 fixes
-  Max Frolov (mopsm), Artyom "Shev" Shevchenko, Ivan "vangut" - development participants
+  * GSC for a great game and platform
+  * Team Epic for Call of Chernobyl
+  * Vincent_Vega for some textures from SWTC
+  * dezowave team for a couple of main menu textures
+  * AdrenoBPC for post-effect scripting during GG injury
+  * Tris for the scripted experience of cleaning weapons
+  * half5life for developments on PM quests (on v.1.3.2)
+  * Debrovski for the Partner Management Menu System
+  * Soundpath for the texture of a slug beginner
+  * Authors of the weapon mods OWR, OGR, Shoker, STCOP WP
+  * Authors of the Metro and Silent Hill series for environmental sounds
+  * Author of the VV mod for removing "kaos" combat music
+  * Stern-13 for active assistance to developers
+  * cari0us for help with interfaces
+  * Vadim Drakoshin (Lost Path) for technical assistance
+  * gridgt for fixing interface textures
+  * av661194 for numerous CoC 1.4 fixes
+  * Max Frolov (mopsm), Artyom "Shev" Shevchenko, Ivan "vangut" - development participants
 
   **Financial Support**
   Alexander Gradov, Pavel Wolf, Danila Makushin, Timur Hadji-Muradovich Bilalov, Denis Grinenko, Nikita Persikov, Alexander Ivanov, Oleg Kovalchuk, Ivan Zaitsev
