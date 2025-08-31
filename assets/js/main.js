@@ -5,9 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
   let cardsPerRow = 3; // Default to 3 cards per row
   let currentDisplayedMods = []; // Track what's currently being displayed
   
-  // Get all mod cards
+  // Get all mod cards and sort them alphabetically by default
   const allModCards = Array.from(document.querySelectorAll('.mod-card'));
+  // Sort alphabetically by title on page load
+  allModCards.sort((a, b) => {
+    const titleA = a.getAttribute('data-mod-title') || '';
+    const titleB = b.getAttribute('data-mod-title') || '';
+    return titleA.localeCompare(titleB);
+  });
   currentDisplayedMods = [...allModCards];
+  
+  // Render the alphabetically sorted mods on initial load
+  renderMods(currentDisplayedMods);
 
   // Image Gallery functionality
   let currentImageIndex = 0;
