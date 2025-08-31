@@ -65,11 +65,9 @@ additional_credits: |
   * av661194 for numerous CoC 1.4 fixes
   * Max Frolov (mopsm), Artyom "Shev" Shevchenko, Ivan "vangut" - development participants
     
-
   **Financial Support**
   
   Alexander Gradov, Pavel Wolf, Danila Makushin, Timur Hadji-Muradovich Bilalov, Denis Grinenko, Nikita Persikov, Alexander Ivanov, Oleg Kovalchuk, Ivan Zaitsev
-  
 
   **0.9 Testers**
   
