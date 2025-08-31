@@ -64,7 +64,9 @@ additional_credits: |
   * SKETYFACE - Music, menu, ambients
 
   **Special Thanks**
+  
   Greshnik13rs, Den-Stash, Artyom Bannikov, Ninja_Nub, Angry Wolf, makar, aaz, Krim, Gefos, ABSOLUTE NATURE 4, Emmis, Diesel, Azetrix, One_Shot, S.W.R.P, 3fallout3, loner, DanteZ, Nestandart_5443, makdm, Bartender, Phantom_86, ferr-um, Shennondoah, 3vtiger, Demosfen, Viktor, Sin!, August Autumn, Huntsman with a Double Barrel, Salem, owlromeo, Over Media, lehnov1986, Crazy Stalker, Open X-Ray, HollyWoodFX
+  
 ---
 
 ### Installation Instructions
