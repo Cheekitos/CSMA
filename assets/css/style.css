@@ -71,39 +71,14 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* Fix for consistent video positioning in grid cards */
-.card-content-container {
+/* Fix for video alignment - make grid content use flexbox */
+.grid-content {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.card-description {
-  flex-grow: 1;
-}
-
-.card-video {
-  margin-top: auto;
-}
-
-/* Specific fix for cards-4 layout to ensure video alignment */
-.cards-4 .mod-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.cards-4 .grid-content {
-  display: flex !important;
-  flex-direction: column;
-  height: 100%;
-  flex-grow: 1;
-}
-
-.cards-4 .grid-content p {
-  flex-grow: 1;
-}
-
-.cards-4 .video-container {
+.grid-content .video-container {
   margin-top: auto;
 }
 
@@ -156,7 +131,9 @@ h3, .platform-block {
 .cards-2 .grid-content,
 .cards-3 .grid-content,
 .cards-4 .grid-content {
-  display: block !important;
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* List content layout */
@@ -1125,3 +1102,4 @@ section h2 {
   #filter-dropdown .flex.flex-wrap.items-center {
     gap: 0.125rem 0.5rem;
   }
+}
