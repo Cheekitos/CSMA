@@ -28,22 +28,22 @@ cons:
 video: "https://www.youtube.com/embed/u1X0ti3JuNk?si=VYQFJ1xVHfwQ0czK"
 download_url: "https://www.mediafire.com/file/jobma0vfld1vg4l/Legend_Returns.7z/file"
 
-links:
+links:    
   - label: "ModDB Official Page"
     url: "https://www.moddb.com/mods/legend-returns"
   - label: "Ap-pro Official Page"
     url: "https://ap-pro.ru/stuff/zov_pripjati/legend-returns-092-r214/"
 
 mod_creator: |
-  - Bot Nikolay - SDK
-  - Nikita "Nevropotolog" - 3D modeller, founder
-  - Andrey "Director_NTV" - game designer
-  - Alexander "XMODER" - 2D designer, lead encoder
-  - Artyom "rnm_016" Shewhart - gunsmith modeller, designer
-  - Dmitry "AspirinSGD" - quester, designer
-  - Denis Levshchanov - quester
-  - Leer Hansson - quester, encoder
-  - Nikita Kozhevnikov - community manager
+  * Bot Nikolay - SDK
+  * Nikita "Nevropotolog" - 3D modeller, founder
+  * Andrey "Director_NTV" - game designer
+  * Alexander "XMODER" - 2D designer, lead encoder
+  * Artyom "rnm_016" Shewhart - gunsmith modeller, designer
+  * Dmitry "AspirinSGD" - quester, designer
+  * Denis Levshchanov - quester
+  * Leer Hansson - quester, encoder
+  * Nikita Kozhevnikov - community manager
 translation_by: "SpecShadow"
 additional_credits: |
   * GSC for a great game and platform
@@ -96,7 +96,7 @@ additional_credits: |
     </div>
   </div>
 
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">4.</span>
     <div style="flex: 1; line-height: 1.5;">
       <p style="margin: 0; color: #d1d5db;">On first launch, reset weather & lighting settings to default.</p>
