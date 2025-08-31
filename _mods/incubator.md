@@ -8,12 +8,8 @@ platform: "Call of Pripyat"
 engine: ""
 release_date: "2023-03-05"
 short_description: "An ominous antagonist coming after you, a great intrigue to slowly uncover, elevated by fully voiced characters, amazing cinematic cutscenes and an overall impressive production value, this is a must-play classic by the Vivient team."
-description: "You're dropped into Pripyat as a mercenary on what seems like a simple job, but things spiral fast into betrayal, psychological twists, and important choices that unlock multiple endings.<br>Incubator is all about story and atmosphere: fully voiced characters that feel alive, top-notch cinematic cutscenes, and an eerie, immersive soundscape that keeps you on edge. It's a short, tightly packed adventure that's easy to get into, with excellent visuals, smooth optimization, and remarkable stability. No crashes, no bugs, and one of VIVIENT Team's finest works. This is a must-play classic for fans of story-driven mods and anyone looking for a fresh, unforgettable trip into the Zone."
+description: "You're dropped into Pripyat as a mercenary on what seems like a simple job, but things spiral fast into betrayal, psychological twists, and important choices that unlock multiple endings.<br>Incubator is all about story and atmosphere: fully voiced characters that feel alive, top-notch cinematic cutscenes, and an eerie, immersive soundscape that keeps you on edge. It's a short, tightly packed adventure that's easy to get into, with excellent visuals, smooth optimization, and remarkable stability.<br> No crashes, no bugs, and one of VIVIENT Team's finest works. This is a must-play classic for fans of story-driven mods and anyone looking for a fresh, unforgettable trip into the Zone."
 
-gallery_images:
-  - ""
-  - ""
-  - ""
 
 seo_title: "Incubator - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download Incubator for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
@@ -31,16 +27,22 @@ video: "https://www.youtube.com/embed/xixdI00LpNw?si=6E_9ucVBBEP5A3-_"
 download_url: "https://www.mediafire.com/file/6896kn2czzxdq0d/Incubator.7z/file"
 
 links:    
-  - label: "Vivient Team Official Page"
-    url: "https://vk.com/vivient_team_mods"
-  - label: "Vivient Team Discord"
-    url: "https://discord.com/invite/UpxKJ3PyZ3"
   - label: "Ap-pro Official Page"
     url: "https://ap-pro.ru/stuff/zov_pripjati/inkubator-r379/"
+  - label: "Moddb Official Page"
+    url: "https://www.moddb.com/groups/na13241/news/release-of-the-story-mod-incubator"
+  
+  - title: "VIVIENT TEAM"
+  - label: "Official Page"
+    url: "https://vk.com/vivient_team_mods"
+    inline: true
+  - label: "Discord"
+    url: "https://discord.com/invite/UpxKJ3PyZ3"
+    inline: true
 
 mod_creator: |
-  * 4ECTOR: Plot, implementation, voice acting
-  * MayLay: Programming and graphics
+  * 4ECTOR - Plot, implementation, voice acting
+  * MayLay - Programming and graphics
 translation_by: "Meztinos"
 additional_credits: |
   **Voice Actors**
@@ -92,5 +94,3 @@ additional_credits: |
     </div>
   </div>
 </div>
-
-### Troubleshooting & Tips
