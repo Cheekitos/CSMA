@@ -67,9 +67,11 @@ additional_credits: |
   Oblivion Lost Remake Team, Hi_Flyer, Domestos, Macron
 
   **Additional Contributors:**
+  
   AMK Team, Shadows, Scavenger, Vincent Vega, RuWar, Dez0Wave Team, Zaurus, Maxim R., cOldSnake, LafuGix, OGSE team, Starleigh, Chriotmao, Amik
   
   **Special Thanks:**
+  
   C-Consciousness Community
 ---
 
