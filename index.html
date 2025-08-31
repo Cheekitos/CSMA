@@ -129,7 +129,7 @@ body_class: main-page
         </div>
 
         <!-- Grid view content (visible by default) -->
-        <div class="grid-content card-content-container">
+        <div class="grid-content">
           <div class="flex justify-between items-center mb-3 gap-2">
             <h3 class="text-2xl font-semibold text-gray-100 drop-shadow whitespace-nowrap overflow-hidden text-ellipsis hover:text-yellow-400 transition-colors">
               {{ mod.title }}
@@ -182,11 +182,11 @@ body_class: main-page
             </div>
           </div>
 
-          <p class="text-gray-400 mb-3 text-sm card-description">{{ mod.short_description | default: mod.description }}</p>
+          <p class="text-gray-400 mb-3 text-sm flex-grow">{{ mod.short_description | default: mod.description }}</p>
 
           {% if mod.video %}
             {% assign video_id = mod.video | split: '/' | last | split: '?' | first %}
-            <div class="video-container card-video">
+            <div class="video-container mt-auto">
               <div class="video-thumbnail" data-video-id="{{ video_id }}" data-video-url="{{ mod.video }}" onclick="event.preventDefault(); event.stopPropagation();">
                 <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="Video thumbnail" loading="lazy" class="w-full h-full object-cover rounded">
                 <div class="play-button"></div>
