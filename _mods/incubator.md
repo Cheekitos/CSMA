@@ -8,7 +8,11 @@ platform: "Call of Pripyat"
 engine: ""
 release_date: "2023-03-05"
 short_description: "An ominous antagonist coming after you, a great intrigue to slowly uncover, elevated by fully voiced characters, amazing cinematic cutscenes and an overall impressive production value, this is a must-play classic by the Vivient team."
-description: "You're dropped into Pripyat as a mercenary on what seems like a simple job, but things spiral fast into betrayal, psychological twists, and important choices that unlock multiple endings.<br>Incubator is all about story and atmosphere: fully voiced characters that feel alive, top-notch cinematic cutscenes, and an eerie, immersive soundscape that keeps you on edge. It's a short, tightly packed adventure that's easy to get into, with excellent visuals, smooth optimization, and remarkable stability.<br> No crashes, no bugs, and one of VIVIENT Team's finest works. This is a must-play classic for fans of story-driven mods and anyone looking for a fresh, unforgettable trip into the Zone."
+description: "Playing as Kramer, a mercenary contracted for a simple escort job, things spiral fast into a high-stakes hunt for a mysterious artifact, betrayal, psychological twists, 
+and key choices to make that will unlock multiple endings.<br>
+Incubator is all about story and atmosphere: fully voiced characters, cinematic cutscenes, and an eerie and immersive soundscape that keeps you on edge.
+It’s a short, tightly packed adventure that’s easy to dive into. Impressive production value and direction, with excellent visuals, smooth optimization, and rock-solid stability.
+This is one of VIVIENT Team’s finest works, and a must-play classic for fans of story-driven mods looking for a fresh, unforgettable trip into the Zone."
 
 
 seo_title: "Incubator - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
