@@ -88,7 +88,7 @@ body_class: main-page
   </div>
 
   <div id="mod-list" class="grid gap-4 cards-3">
-    {% assign sorted_mods = site.mods | sort: 'rating' | reverse %}
+    {% assign sorted_mods = site.mods | sort: 'title' %}
     {% for mod in sorted_mods %}
       <a href="{{ mod.url | relative_url }}" class="bg-gray-800 p-3 rounded-md shadow-sm flex flex-col h-full mod-card hover:text-white block" 
          data-mod-title="{{ mod.title | downcase }}" 
