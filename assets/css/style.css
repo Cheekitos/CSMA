@@ -71,6 +71,21 @@ h3, .platform-block {
   align-items: center;
 }
 
+/* Fix for consistent video positioning in grid cards */
+.card-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-description {
+  flex-grow: 1;
+}
+
+.card-video {
+  margin-top: auto;
+}
+
 /* List view styles */
 .cards-list {
   display: flex;
@@ -1089,4 +1104,3 @@ section h2 {
   #filter-dropdown .flex.flex-wrap.items-center {
     gap: 0.125rem 0.5rem;
   }
-}
