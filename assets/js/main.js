@@ -346,13 +346,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // UPDATED: Apply filters function - changed to support new platform checkboxes and must-play
+  // UPDATED: Apply filters function - modified to handle must-play as highlight-only
   function applyFilters() {
     // Get active filters
     const activeFilters = {
       standalone: false,
       lowspec: false,
-      mustplay: false,
+      mustplay: false, // This will be used for highlighting only
       platforms: []
     };
 
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function() {
       activeFilters.lowspec = true;
     }
 
-    // Must-play filter (only show must-play if checked)
+    // Must-play filter (for highlighting only, not filtering)
     const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
     if (mustplayCheckbox && mustplayCheckbox.checked) {
       activeFilters.mustplay = true;
@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get search query
     const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
 
-    // Filter mods
+    // Filter mods - MODIFIED: mustplay filter doesn't actually filter out cards
     const filtered = allModCards.filter(card => {
       // Search filter
       if (searchQuery) {
@@ -417,13 +417,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // Must-play filter (only filter if checkbox is checked)
-      if (activeFilters.mustplay) {
-        const cardMustplay = card.getAttribute('data-mod-mustplay') === 'true';
-        if (!cardMustplay) {
-          return false;
-        }
-      }
+      // NOTE: Must-play filter is NOT included here - it only highlights, doesn't filter
 
       // Platform filter (if any platforms are selected, show only those)
       if (activeFilters.platforms.length > 0) {
