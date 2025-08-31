@@ -67,9 +67,11 @@ additional_credits: |
   * Voltmod - working on sounds
 
   **Additional Contributors:**
+  
   Creators of OGSE and OGSR Engine developers (kroddin, dsh), Everyone who chipped in for Zhekan for new equipment, Unofficial Patch: drCarabas, Hoperise, kamray27, nasar75, sergei27shus, Sharomet, 13stalker13
 
   **Special Thanks:**
+  
   C-Consciousness Discord & Moddb Group
 ---
 
