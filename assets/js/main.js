@@ -222,6 +222,20 @@ document.addEventListener('DOMContentLoaded', function() {
            platformCheckboxes.length > 0;
   }
 
+  // Update must play highlighting based on filter state
+  function updateMustPlayHighlighting() {
+    const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
+    const modList = document.getElementById('mod-list');
+    
+    if (mustplayCheckbox && modList) {
+      if (mustplayCheckbox.checked) {
+        modList.classList.add('highlight-mustplay');
+      } else {
+        modList.classList.remove('highlight-mustplay');
+      }
+    }
+  }
+
   // UPDATED: Update filter text based on dropdown state
   function updateFilterText() {
     if (filterTextContent && filterText) {
@@ -306,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
       checkbox.checked = false;
     });
     
+    updateMustPlayHighlighting();
     applyFilters();
   }
 
@@ -318,11 +333,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Apply filters when inputs change
   filterCheckboxes.forEach(input => {
-    input.addEventListener('change', applyFilters);
+    input.addEventListener('change', () => {
+      updateMustPlayHighlighting();
+      applyFilters();
+    });
   });
   
   filterRadios.forEach(input => {
-    input.addEventListener('change', applyFilters);
+    input.addEventListener('change', () => {
+      updateMustPlayHighlighting();
+      applyFilters();
+    });
   });
 
   // UPDATED: Apply filters function - changed to support new platform checkboxes and must-play
@@ -585,6 +606,9 @@ document.addEventListener('DOMContentLoaded', function() {
     modArray.forEach(card => {
       container.appendChild(card.cloneNode(true));
     });
+    
+    // Re-apply must play highlighting after rendering
+    updateMustPlayHighlighting();
     
     // Re-setup video thumbnails for newly rendered cards
     initializeVideoThumbnails();
