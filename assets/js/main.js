@@ -142,6 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
         modList.className = `grid gap-4 cards-${cardsPerRow}`;
       }
     }
+    // Re-apply must play highlighting after layout change
+    updateMustPlayHighlighting();
   }
 
   // Video thumbnail click handler - improved to remove skeleton loading issues
