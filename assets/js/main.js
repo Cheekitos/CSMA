@@ -196,54 +196,43 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize video thumbnails
   initializeVideoThumbnails();
 
-  // Filter dropdown horizontal scroll functionality
+  // Filter dropdown horizontal scrolling functionality
   function initializeFilterScrolling() {
-    const filterDropdown = document.getElementById('filter-dropdown');
-    const scrollContainer = filterDropdown?.querySelector('.filter-scroll-container');
-    const scrollWrapper = filterDropdown?.querySelector('.filter-scroll-wrapper');
-    const leftArrow = filterDropdown?.querySelector('.filter-arrow-left');
-    const rightArrow = filterDropdown?.querySelector('.filter-arrow-right');
+    const filterWrapper = document.getElementById('filter-content-wrapper');
+    const filterContent = document.getElementById('filter-content');
+    const leftArrow = document.getElementById('filter-scroll-left');
+    const rightArrow = document.getElementById('filter-scroll-right');
 
-    if (!scrollContainer || !scrollWrapper || !leftArrow || !rightArrow) return;
+    if (!filterWrapper || !filterContent || !leftArrow || !rightArrow) return;
 
-    function checkScrollability() {
-      const isScrollable = scrollWrapper.scrollWidth > scrollWrapper.clientWidth;
-      
-      if (isScrollable) {
-        scrollContainer.classList.add('scrollable');
-      } else {
-        scrollContainer.classList.remove('scrollable');
-      }
-      
-      updateArrowStates();
-    }
+    function checkScrollNeed() {
+      const wrapperWidth = filterWrapper.clientWidth;
+      const contentWidth = filterContent.scrollWidth;
+      const scrollLeft = filterWrapper.scrollLeft;
+      const maxScroll = contentWidth - wrapperWidth;
 
-    function updateArrowStates() {
-      const scrollLeft = scrollWrapper.scrollLeft;
-      const maxScroll = scrollWrapper.scrollWidth - scrollWrapper.clientWidth;
-      
-      if (scrollLeft <= 5) {
-        scrollContainer.classList.add('at-start');
+      // Show/hide arrows based on scroll need and position
+      if (contentWidth > wrapperWidth) {
+        // Show left arrow if we can scroll left
+        leftArrow.classList.toggle('hidden', scrollLeft <= 0);
+        // Show right arrow if we can scroll right
+        rightArrow.classList.toggle('hidden', scrollLeft >= maxScroll);
       } else {
-        scrollContainer.classList.remove('at-start');
-      }
-      
-      if (scrollLeft >= maxScroll - 5) {
-        scrollContainer.classList.add('at-end');
-      } else {
-        scrollContainer.classList.remove('at-end');
+        // Hide both arrows if no scrolling needed
+        leftArrow.classList.add('hidden');
+        rightArrow.classList.add('hidden');
       }
     }
 
     function scrollLeft() {
-      scrollWrapper.scrollBy({
+      filterWrapper.scrollBy({
         left: -100,
         behavior: 'smooth'
       });
     }
 
     function scrollRight() {
-      scrollWrapper.scrollBy({
+      filterWrapper.scrollBy({
         left: 100,
         behavior: 'smooth'
       });
@@ -252,13 +241,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners
     leftArrow.addEventListener('click', scrollLeft);
     rightArrow.addEventListener('click', scrollRight);
+    
+    // Check scroll need on scroll
+    filterWrapper.addEventListener('scroll', checkScrollNeed);
+    
+    // Check scroll need when dropdown is shown
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const dropdown = mutation.target;
+          if (dropdown.id === 'filter-dropdown' && !dropdown.classList.contains('hidden')) {
+            // Small delay to ensure layout is complete
+            setTimeout(checkScrollNeed, 50);
+          }
+        }
+      });
+    });
 
-    // Check scrollability on scroll and resize
-    scrollWrapper.addEventListener('scroll', updateArrowStates);
-    window.addEventListener('resize', checkScrollability);
+    const filterDropdown = document.getElementById('filter-dropdown');
+    if (filterDropdown) {
+      observer.observe(filterDropdown, { attributes: true });
+    }
+
+    // Check on window resize
+    window.addEventListener('resize', checkScrollNeed);
 
     // Initial check
-    setTimeout(checkScrollability, 100); // Delay to ensure proper rendering
+    checkScrollNeed();
   }
 
   // Initialize filter scrolling
@@ -351,10 +360,6 @@ document.addEventListener('DOMContentLoaded', function() {
       updateFilterText();
       // Trigger reflow to ensure CSS transitions work
       filterDropdown.offsetHeight;
-      // Re-initialize filter scrolling when shown
-      setTimeout(() => {
-        initializeFilterScrolling();
-      }, 50);
     }
   }
 
