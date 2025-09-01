@@ -39,47 +39,49 @@ body_class: main-page
         </svg>
       </span>
       <div id="filter-dropdown" class="absolute top-full left-2 right-2 bg-gray-800 border border-gray-700 border-t-0 rounded-b-md p-2 hidden z-10 shadow-lg">
-        <div class="filter-content">
-          <!-- Standalone Filter -->
-          <div class="filter-row">
-            <span class="filter-label">Standalone:</span>
-            <label class="filter-checkbox-label">
-              <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox">
-            </label>
-          </div>
-          
-          <!-- Low-spec Friendly Filter -->
-          <div class="filter-row">
-            <span class="filter-label">Low-spec Friendly:</span>
-            <label class="filter-checkbox-label">
-              <input type="checkbox" id="filter-lowspec-yes" class="filter-checkbox">
-            </label>
-          </div>
-          
-          <!-- Must Play Filter -->
-          <div class="filter-row">
-            <span class="filter-label">Must Play:</span>
-            <label class="filter-checkbox-label">
-              <input type="checkbox" id="filter-mustplay-yes" class="filter-checkbox">
-            </label>
-          </div>
-          
-          <!-- Platform Filter -->
-          <div class="filter-row">
-            <span class="filter-label">Platform:</span>
-            <div class="platform-options">
-              <label class="platform-checkbox-label">
-                <input type="checkbox" id="filter-platform-soc" class="filter-checkbox">
-                <span>SoC</span>
+        <div class="filter-scroll-container">
+          <div class="filter-content">
+            <!-- Standalone Filter -->
+            <div class="filter-group">
+              <span class="filter-label">Standalone:</span>
+              <label class="filter-option">
+                <input type="checkbox" id="filter-standalone-yes" class="filter-checkbox">
               </label>
-              <label class="platform-checkbox-label">
-                <input type="checkbox" id="filter-platform-cs" class="filter-checkbox">
-                <span>CS</span>
+            </div>
+            
+            <!-- Low-spec Friendly Filter -->
+            <div class="filter-group">
+              <span class="filter-label">Low-spec Friendly:</span>
+              <label class="filter-option">
+                <input type="checkbox" id="filter-lowspec-yes" class="filter-checkbox">
               </label>
-              <label class="platform-checkbox-label">
-                <input type="checkbox" id="filter-platform-cop" class="filter-checkbox">
-                <span>CoP</span>
+            </div>
+            
+            <!-- Must Play Filter -->
+            <div class="filter-group">
+              <span class="filter-label">Must Play:</span>
+              <label class="filter-option">
+                <input type="checkbox" id="filter-mustplay-yes" class="filter-checkbox">
               </label>
+            </div>
+            
+            <!-- Platform Filter -->
+            <div class="filter-group">
+              <span class="filter-label">Platform:</span>
+              <div class="platform-options">
+                <label class="filter-option">
+                  <input type="checkbox" id="filter-platform-soc" class="filter-checkbox mr-1">
+                  <span>SoC</span>
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" id="filter-platform-cs" class="filter-checkbox mr-1">
+                  <span>CS</span>
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" id="filter-platform-cop" class="filter-checkbox mr-1">
+                  <span>CoP</span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
