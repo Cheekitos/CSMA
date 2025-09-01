@@ -196,6 +196,74 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize video thumbnails
   initializeVideoThumbnails();
 
+  // Filter dropdown horizontal scroll functionality
+  function initializeFilterScrolling() {
+    const filterDropdown = document.getElementById('filter-dropdown');
+    const scrollContainer = filterDropdown?.querySelector('.filter-scroll-container');
+    const scrollWrapper = filterDropdown?.querySelector('.filter-scroll-wrapper');
+    const leftArrow = filterDropdown?.querySelector('.filter-arrow-left');
+    const rightArrow = filterDropdown?.querySelector('.filter-arrow-right');
+
+    if (!scrollContainer || !scrollWrapper || !leftArrow || !rightArrow) return;
+
+    function checkScrollability() {
+      const isScrollable = scrollWrapper.scrollWidth > scrollWrapper.clientWidth;
+      
+      if (isScrollable) {
+        scrollContainer.classList.add('scrollable');
+      } else {
+        scrollContainer.classList.remove('scrollable');
+      }
+      
+      updateArrowStates();
+    }
+
+    function updateArrowStates() {
+      const scrollLeft = scrollWrapper.scrollLeft;
+      const maxScroll = scrollWrapper.scrollWidth - scrollWrapper.clientWidth;
+      
+      if (scrollLeft <= 5) {
+        scrollContainer.classList.add('at-start');
+      } else {
+        scrollContainer.classList.remove('at-start');
+      }
+      
+      if (scrollLeft >= maxScroll - 5) {
+        scrollContainer.classList.add('at-end');
+      } else {
+        scrollContainer.classList.remove('at-end');
+      }
+    }
+
+    function scrollLeft() {
+      scrollWrapper.scrollBy({
+        left: -100,
+        behavior: 'smooth'
+      });
+    }
+
+    function scrollRight() {
+      scrollWrapper.scrollBy({
+        left: 100,
+        behavior: 'smooth'
+      });
+    }
+
+    // Event listeners
+    leftArrow.addEventListener('click', scrollLeft);
+    rightArrow.addEventListener('click', scrollRight);
+
+    // Check scrollability on scroll and resize
+    scrollWrapper.addEventListener('scroll', updateArrowStates);
+    window.addEventListener('resize', checkScrollability);
+
+    // Initial check
+    setTimeout(checkScrollability, 100); // Delay to ensure proper rendering
+  }
+
+  // Initialize filter scrolling
+  initializeFilterScrolling();
+
   // UPDATED: Filter functionality with new UI
   const searchInput = document.getElementById('search-input');
   const filterText = document.getElementById('filter-text');
@@ -283,6 +351,10 @@ document.addEventListener('DOMContentLoaded', function() {
       updateFilterText();
       // Trigger reflow to ensure CSS transitions work
       filterDropdown.offsetHeight;
+      // Re-initialize filter scrolling when shown
+      setTimeout(() => {
+        initializeFilterScrolling();
+      }, 50);
     }
   }
 
