@@ -3,6 +3,7 @@ title: "Goldsphere"
 rating: 3.8
 standalone: true
 lowspec_friendly: true
+must_play: true
 platform: "Shadow of Chernobyl"
 engine: "OGSR"
 release_date: "2017-07-16"
