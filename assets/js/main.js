@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get all mod cards and sort alphabetically by default
   const allModCards = Array.from(document.querySelectorAll('.mod-card'));
   
-  // Sort alphabetically by title on page load
+  // Sort alphabetically by title by default
   allModCards.sort((a, b) => {
     const titleA = a.getAttribute('data-mod-title') || '';
     const titleB = b.getAttribute('data-mod-title') || '';
@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const shuffled = shuffleArray([...currentDisplayedMods]);
         renderMods(shuffled);
       } else {
-        sortState = (sortState + 1) % 3;
+        sortState = (sortState + 1) % 4; // Updated to include alphabetical sort
         
         let toRender;
         switch(sortState) {
@@ -480,6 +480,14 @@ document.addEventListener('DOMContentLoaded', function() {
               const ratingA = parseFloat(a.querySelector('.rating span').textContent);
               const ratingB = parseFloat(b.querySelector('.rating span').textContent);
               return ratingA - ratingB;
+            });
+            break;
+          case 3:
+            sortButton.textContent = 'Alphabetical';
+            toRender = [...currentDisplayedMods].sort((a, b) => {
+              const titleA = a.getAttribute('data-mod-title') || '';
+              const titleB = b.getAttribute('data-mod-title') || '';
+              return titleA.localeCompare(titleB);
             });
             break;
         }
