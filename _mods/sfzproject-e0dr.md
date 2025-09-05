@@ -1,5 +1,6 @@
 ---
 title: "SFZ Project E0 DR"
+slug: "sfzproject-e0dr"
 rating: 4.6
 standalone: true
 lowspec_friendly: false
