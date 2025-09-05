@@ -120,10 +120,15 @@ layout: default
                data-gallery-images='{{ page.gallery_images | slice: 0, 10 | jsonify }}'
                data-base-url="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | relative_url }}">
             
-            {% comment %} Show real images first {% endcomment %}
+            {% comment %} Show real images first with preview versions {% endcomment %}
             {% for image in real_images limit: 3 %}
-            <div class="gallery-thumbnail" data-full-src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}">
-              <img src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}" alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
+            {% assign preview_name = image | replace: '.jpg', '-pv.jpg' | replace: '.png', '-pv.png' %}
+            <div class="gallery-thumbnail" 
+                 data-full-src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}"
+                 data-preview-src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: preview_name | relative_url }}">
+              <img src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: preview_name | relative_url }}" 
+                   data-fallback="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}"
+                   alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
             </div>
             {% endfor %}
             
@@ -414,3 +419,4 @@ layout: default
 
   {% include about-popup.html %}
   {% include essentials-popup.html %}
+</div>
