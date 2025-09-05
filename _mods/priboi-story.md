@@ -40,16 +40,21 @@ links:
   - title: "Original Version"
   - label: "Moddb"
     url: "https://www.moddb.com/mods/priboi-story"
+    inline: true
   - label: "Ap-pro"
     url: "https://ap-pro.ru/stuff/ten_chernobylja/priboi-story-r25/"
+    inline: true
     
   - title: "Resources"
   - label: "Game Manual"
     url: "https://www.moddb.com/mods/priboi-story/downloads/priboi-manual"
+    inline: true
   - label: "OG Walkthrough"
     url: "https://www.moddb.com/mods/priboi-story/downloads/priboi-story-11-walkthru"
+    inline: true
   - label: "Overhaul Walkthrough"
     url: "https://kwagmyers.github.io/Walkthroughs/Priboi.html"
+    inline: true
 
 mod_creator: |
   * Dez0vawe Team (OG Mod)
