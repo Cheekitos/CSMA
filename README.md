@@ -24,6 +24,7 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - Filtering system for the search bar (standalone, platform, low spec friendly)
 - Adding A list view of all the mods (easy way to see the top 50 - worst 50)
 - Adding 'Must Play' Option in the filters + highlight of the mod cards when selected
+- Preview Image for the gallery Thumbnails for faster loading
 
 ## ❌ To Do
 - Add Requirements Section (Maybe, hard to find reliable info for most mods)
