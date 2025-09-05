@@ -24,6 +24,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!lightbox || !lightboxImg) return;
 
+    // Handle preview image fallbacks
+    function handleImageFallbacks() {
+      galleryThumbnails.forEach(thumbnail => {
+        const img = thumbnail.querySelector('img');
+        if (img && img.hasAttribute('data-fallback')) {
+          img.addEventListener('error', function() {
+            // If preview image fails to load, fall back to full resolution
+            this.src = this.getAttribute('data-fallback');
+            this.removeAttribute('data-fallback'); // Prevent infinite loop
+          });
+        }
+      });
+    }
+
+    // Initialize image fallbacks
+    handleImageFallbacks();
+
     // Collect all gallery images - get from page data if available, otherwise use thumbnails
     const pageGalleryData = document.querySelector('[data-gallery-images]');
     if (pageGalleryData) {
