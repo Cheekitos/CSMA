@@ -348,7 +348,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // UPDATED: Apply filters function - modified to handle must-play as highlight-only
+  // Helper function to apply current sort to an array of mods
+  function applySortToMods(modsArray) {
+    const gradesHidden = document.body.classList.contains('hide-grades');
+    
+    if (gradesHidden) {
+      // If grades are hidden, return shuffled array
+      return shuffleArray([...modsArray]);
+    }
+    
+    // Apply current sort state
+    switch(sortState) {
+      case 0:
+        // Default order (alphabetical by title)
+        return [...modsArray].sort((a, b) => {
+          const titleA = (a.getAttribute('data-mod-title') || '').toLowerCase();
+          const titleB = (b.getAttribute('data-mod-title') || '').toLowerCase();
+          return titleA.localeCompare(titleB);
+        });
+      case 1:
+        // Highest rating first
+        return [...modsArray].sort((a, b) => {
+          const ratingA = parseFloat(a.querySelector('.rating span').textContent);
+          const ratingB = parseFloat(b.querySelector('.rating span').textContent);
+          return ratingB - ratingA;
+        });
+      case 2:
+        // Lowest rating first
+        return [...modsArray].sort((a, b) => {
+          const ratingA = parseFloat(a.querySelector('.rating span').textContent);
+          const ratingB = parseFloat(b.querySelector('.rating span').textContent);
+          return ratingA - ratingB;
+        });
+      default:
+        return [...modsArray];
+    }
+  }
+
+  // UPDATED: Apply filters function - modified to preserve sort order
   function applyFilters() {
     // Get active filters
     const activeFilters = {
@@ -432,7 +469,9 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     });
 
-    renderMods(filtered);
+    // Apply current sort order to filtered results
+    const sortedFiltered = applySortToMods(filtered);
+    renderMods(sortedFiltered);
   }
 
   // Sort functionality
