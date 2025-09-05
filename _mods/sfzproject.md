@@ -1,6 +1,5 @@
 ---
 title: "SFZ Project E0 DR"
-slug: "sfzproject"
 rating: 4.6
 standalone: true
 lowspec_friendly: false
@@ -12,6 +11,10 @@ short_description: "A full remake of the 2020 SFZ Project: Episode Zero, this De
 description: "As a former and experienced mercenary, you're sent to investigate a missing team of scientists after a massive Zone emission. You soon find yourself trapped in a fully reworked Cordon, and must explore side quests, secrets, and cinematic cutscenes to uncover a mysterious story that gradually grows more horrifying.<br> With minimal combat to keep the focus on atmosphere, suspense, and carefully crafted encounters, SFZ Project: Episode Zero is a short but unforgettable adventure with engaging dialogue. Perfect for fans of psychological horror, haunting S.T.A.L.K.E.R. atmosphere, and exploration. The mod is beautifully crafted, with impressive attention to detail, high-quality visuals and sound design, and great stability."
 
 gallery_images:
+  - "screenshot01.jpg"
+  - "screenshot02.jpg"
+  - "screenshot03.jpg"
+  - "screenshot04.jpg"
 
 seo_title: "SFZ Project: Episode Zero - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download SFZ Project: Episode Zero for S.T.A.L.K.E.R. Shadow of Chernobyl. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
