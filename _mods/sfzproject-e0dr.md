@@ -1,5 +1,5 @@
 ---
-title: "SFZ Project E0DR"
+title: "SFZ Project E0 DR"
 rating: 4.6
 standalone: true
 lowspec_friendly: false
@@ -7,7 +7,7 @@ must_play: true
 platform: "Shadow of Chernobyl"
 engine: "OGSR"
 release_date: "2025-05-15"
-short_description: "A full remake of the 2020 SFZ Project: Episode Zero, this Deluxe Remake is one of the best short-form S.T.A.L.K.E.R. mods, offering exceptional storytelling, immersive design, and meticulous attention to detail."
+short_description: "A full remake of the 2020 SFZ Project: Episode Zero, this Deluxe Remake is one of the best short-form S.T.A.L.K.E.R. mods ever made, offering a memorable experience with exceptional storytelling, immersive design, and meticulous attention to detail."
 description: "As a former and experienced mercenary, you're sent to investigate a missing team of scientists after a massive Zone emission. You soon find yourself trapped in a fully reworked Cordon, and must explore side quests, secrets, and cinematic cutscenes to uncover a mysterious story that gradually grows more horrifying.<br> With minimal combat to keep the focus on atmosphere, suspense, and carefully crafted encounters, SFZ Project: Episode Zero is a short but unforgettable adventure with engaging dialogue. Perfect for fans of psychological horror, haunting S.T.A.L.K.E.R. atmosphere, and exploration. The mod is beautifully crafted, with impressive attention to detail, high-quality visuals and sound design, and great stability."
 
 gallery_images:
