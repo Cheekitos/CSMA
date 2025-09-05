@@ -10,10 +10,6 @@ release_date: "2020-09-18"
 short_description: "The Brainscorcher has been shut down, but strange cases of memory loss spread among Stalkers. Seems like the zone found another way to prevent the uncovering of its secrets. An intriguing plot, heavily expanded maps, and brutal difficulty."
 description: "You play as an amnesiac ex-Monolith, discovering that your forgotten identity is deeply tied to the secrets of the Zone. Set just after the Brain Scorcher is shut down, Dollchan 8: Infinity reimagines the plot of Shadow of Chernobyl in an expanded world built on the Call of Chernobyl engine.<br> Exploration is the mod's strongest point, with brand new and reworked locations, dynamic A-Life, new mutants, and an expanded weapon pack. There's even a hidden questline for those who want to discover weirder, unconventionnal secrets.<br> But the mod is also notorious for its harsh balance, grindy progression, frustrating survival mechanics, and frequent crashes. It's an ambitious experiment, buggy and unpolished, but packed with atmosphere and ideas you won't find anywhere else."
 
-gallery_images:
-  - ""
-  - ""
-  - ""
 
 seo_title: "Dollchan 8: Infinity - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download Dollchan 8: Infinity for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
