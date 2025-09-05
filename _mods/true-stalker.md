@@ -1,6 +1,6 @@
 ---
 title: "True Stalker"
-rating: 4
+rating: 4.0
 standalone: true
 lowspec_friendly: false
 must_play: false
@@ -11,6 +11,9 @@ short_description: "A brand new story in a vibrant and dangerous Zone, with a le
 description: "True Stalker is a large-scale S.T.A.L.K.E.R. mod built with care: atmospheric visuals, professional voice acting, a redesigned interface, and solid gunplay powered by GUNSLINGER.<br>Technically, it's a brilliant mod with fantastic presentation. Well optimized and stable, it truly feels like a modern STALKER game that managed to retain the gameplay style and mood of the original games. It suffers however from a weak narrative and main plot that lacks motivation, structure, and payoff, which undermines a bit the crazy potential of this mod. It's still an interesting and fun adventure worth playing at least once. Don't forget to count how many times the main protagonist gets knocked off!"
 
 gallery_images:
+  - ""
+  - ""
+  - ""
   - ""
 
 seo_title: "True Stalker - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
@@ -30,18 +33,19 @@ video: "https://www.youtube.com/embed/dquLKT-qFmE?si=Jl6L-PnvrFpC4Kpk"
 download_url: "https://drive.google.com/drive/folders/1sp-R4N2I1cDc8e4_oEDOrcZUp7X-gSrx"
 
 links:
-  - label: "ModDB Official Page"
+  - label: "Moddb Official Page"
     url: "https://www.moddb.com/mods/true-stalker"
   - label: "Ap-pro Official Page"
     url: "https://ap-pro.ru/stuff/zov_pripjati/true-stalker-r307/"
 
 mod_creator: "AP-PRO Team"
 translation_by: |
-  Simon Kostovki (@Kostov)
-  Vladislav Skuratov (@SkyLoader)
-  Alexey Rakov (@chriotmao)
+  * Simon Kostovki (@Kostov)
+  * Vladislav Skuratov (@SkyLoader)
+  * Alexey Rakov (@chriotmao)
 additional_credits: |
-  Idea and script: Alexey Prosandeev (@Wolfstalker)
+  **Idea and script:**
+  * Alexey Prosandeev (@Wolfstalker)
 
   **Game design:**
   * Vladimir Klekov (@Overf1rst)
@@ -168,10 +172,21 @@ additional_credits: |
     </div>
   </div>
 
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0;">
+  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">3.</span>
     <div style="flex: 1; line-height: 1.5;">
       <p style="margin: 0; color: #d1d5db;">Copy the contents of Patch 1.5 in your main game folder</p>
     </div>
   </div>
+
+  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0;">
+    <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">4.</span>
+    <div style="flex: 1; line-height: 1.5;">
+      <p style="margin: 0; color: #d1d5db;">Start the Game!</p>
+    </div>
+  </div>
 </div>
+
+### Troubleshooting & Tips
+
+- **OpenAL can't create sound device error:** You didn't install the required dependencies! Grab them on the top of this page.
