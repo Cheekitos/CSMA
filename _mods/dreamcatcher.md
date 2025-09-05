@@ -48,40 +48,40 @@ mod_creator: "VIVIENT TEAM"
 translation_by: "Meztinos"
 additional_credits: |
   **Modification developers:**
-  *4ECTOR - Director-producer. (SDK, Script, Quests, Cut-scenes, Gameplay, Sound design, Level design.)
-  *MayLay - Engine, weather, effects/particles. Assembly, polishing. (SDK, Graphics, Engine, Edits-fixes, Gameplay.)
-  *Artem Bannikov - Editor. Text edits, assistance. (Tester, Friend, Good person.)
-  *Daniil Subbota - Manager / for various questions, assistance. (Tester, Friend, Good person.)
-  *AziatkaVictor - Location "Dead City."
-  *Grez - Location "Forest Thicket."
-  *Ekagors - Location "Artifact's Lair."
-  *xday - Location "Afterlife."
+  * 4ECTOR - Director-producer. (SDK, Script, Quests, Cut-scenes, Gameplay, Sound design, Level design.)
+  * MayLay - Engine, weather, effects/particles. Assembly, polishing. (SDK, Graphics, Engine, Edits-fixes, Gameplay.)
+  * Artem Bannikov - Editor. Text edits, assistance. (Tester, Friend, Good person.)
+  * Daniil Subbota - Manager / for various questions, assistance. (Tester, Friend, Good person.)
+  * AziatkaVictor - Location "Dead City."
+  * Grez - Location "Forest Thicket."
+  * Ekagors - Location "Artifact's Lair."
+  * xday - Location "Afterlife."
 
   **Voice actors:**
-  *SeeYuck
-  *Oleg Korenev (HelgardRay)
-  *Oleg Kuzma (locksmith 6th grade)
-  *Polina (PollyVader)
-  *Artem K. (LucioTraum)
-  *Natalya Aleynikova
-  *George_Marshall
-  *Nikita (NikStrelok)
-  *Riddler-Stalker Enigma
-  *Alien
-  *Vlad Chektorov
-  *SKETYFACE (music accompaniment/menu/ambiences)
-  *xXxSANDROxXx
-  *Vekamaru
-  *MyDream
+  * SeeYuck
+  * Oleg Korenev (HelgardRay)
+  * Oleg Kuzma (locksmith 6th grade)
+  * Polina (PollyVader)
+  * Artem K. (LucioTraum)
+  * Natalya Aleynikova
+  * George_Marshall
+  * Nikita (NikStrelok)
+  * Riddler-Stalker Enigma
+  * Alien
+  * Vlad Chektorov
+  * SKETYFACE (music accompaniment/menu/ambiences)
+  * xXxSANDROxXx
+  * Vekamaru
+  * MyDream
 
   **AMBIENT:**
-  *SKETYFACE, Crypthios, Council of Nine, Caldon Glover, Dahlia's Tear, Aindulmedir
+  * SKETYFACE, Crypthios, Council of Nine, Caldon Glover, Dahlia's Tear, Aindulmedir
 
   **Translation Help:**
-  *lelop, skenka25013, nepnep01
+  * lelop, skenka25013, nepnep01
 
   **Special Thanks:**
-  *AMK, jenek96, Singapur22, Rilack, Vanilla, Greshnik13rs, Ninja_Nub[NOR], Angry Wolf, makar, Aaz, Krim, Emmis, Dante, Diesel, Azetrix, One_Shot, S.W.R.P, 3fallout3, loner, DanteZ, Nestandart_5443, Barman, Phantom_86, "Смерти Вопреки 3", ed_rez, Ekagors, MPCOPCS, ferr-um, Viktor, Shennondoah, 3vtiger, Demosfen, Sin!, August Autumn, Double-barreled Hunter, Salem, owlromeo, Over Media, lehnov1986, alex5773, Anomaly, Dmitry Zolotov, Dead_Outlaw, shadow-guardian, Den_Stash, KynesPeace, YuriVernadsky, FalkineIsaku, xday
+  * AMK, jenek96, Singapur22, Rilack, Vanilla, Greshnik13rs, Ninja_Nub[NOR], Angry Wolf, makar, Aaz, Krim, Emmis, Dante, Diesel, Azetrix, One_Shot, S.W.R.P, 3fallout3, loner, DanteZ, Nestandart_5443, Barman, Phantom_86, "Смерти Вопреки 3", ed_rez, Ekagors, MPCOPCS, ferr-um, Viktor, Shennondoah, 3vtiger, Demosfen, Sin!, August Autumn, Double-barreled Hunter, Salem, owlromeo, Over Media, lehnov1986, alex5773, Anomaly, Dmitry Zolotov, Dead_Outlaw, shadow-guardian, Den_Stash, KynesPeace, YuriVernadsky, FalkineIsaku, xday
 ---
 
 ### Installation Instructions
