@@ -1,6 +1,6 @@
 ---
 title: "True Stalker"
-rating: 4.0
+rating: 4
 standalone: true
 lowspec_friendly: false
 must_play: false
@@ -11,14 +11,14 @@ short_description: "A brand new story in a vibrant and dangerous Zone, with a le
 description: "True Stalker is a large-scale S.T.A.L.K.E.R. mod built with care: atmospheric visuals, professional voice acting, a redesigned interface, and solid gunplay powered by GUNSLINGER.<br>Technically, it's a brilliant mod with fantastic presentation. Well optimized and stable, it truly feels like a modern STALKER game that managed to retain the gameplay style and mood of the original games. It suffers however from a weak narrative and main plot that lacks motivation, structure, and payoff, which undermines a bit the crazy potential of this mod. It's still an interesting and fun adventure worth playing at least once. Don't forget to count how many times the main protagonist gets knocked off!"
 
 gallery_images:
-  - ""
-  - ""
-  - ""
-  - ""
+  - "screenshot01.jpg"
+  - "screenshot02.jpg"
+  - "screenshot03.jpg"
+  - "screenshot04.jpg"
 
 seo_title: "True Stalker - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download True Stalker for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
-keywords: "S.T.A.L.K.E.R. True Stalker, STALKER True Stalker, S.T.A.L.K.E.R. story mods, STALKER story mods, Call of Pripyat mods, STALKER Call of Pripyat mods, Best STALKER Call of Pripyat mods, best S.T.A.L.K.E.R. mods 2025, best STALKER mods 2025, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
+keywords: "S.T.A.L.K.E.R. True Stalker, True Stalker, S.T.A.L.K.E.R. story mods, STALKER story mods, Call of Pripyat mods, STALKER Call of Pripyat mods, Best Call of Pripyat mods, best S.T.A.L.K.E.R. mods, best STALKER mods, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
 
 pros:
   - "High production value"
@@ -32,8 +32,8 @@ cons:
 video: "https://www.youtube.com/embed/dquLKT-qFmE?si=Jl6L-PnvrFpC4Kpk"
 download_url: "https://drive.google.com/drive/folders/1sp-R4N2I1cDc8e4_oEDOrcZUp7X-gSrx"
 
-links:
-  - label: "Moddb Official Page"
+links:    
+  - label: "ModDB Official Page"
     url: "https://www.moddb.com/mods/true-stalker"
   - label: "Ap-pro Official Page"
     url: "https://ap-pro.ru/stuff/zov_pripjati/true-stalker-r307/"
@@ -57,7 +57,8 @@ additional_credits: |
   * Alexey Rakov (@chriotmao)
   * Vladimir Klekov (@Overf1rst)
   * Artyom Samoilenko (@SamArt)
-  * Graphics:
+
+  **Graphics:**
   * Vladislav Skuratov (@SkyLoader)
   * Alexander Kilyushik (@exDeMODER)
   * Alexey Rakov (@chriotmao)
@@ -95,7 +96,7 @@ additional_credits: |
   **Sound design:**
   * Rodion Lovchev (@CorryZeron)
 
-  **Translation into English:**
+  **English Translation:**
   * Simon Kostovki (@Kostov)
   * Vladislav Skuratov (@SkyLoader)
   * Alexey Rakov (@chriotmao)
@@ -179,7 +180,7 @@ additional_credits: |
     </div>
   </div>
 
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0;">
+  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">4.</span>
     <div style="flex: 1; line-height: 1.5;">
       <p style="margin: 0; color: #d1d5db;">Start the Game!</p>
