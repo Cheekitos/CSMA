@@ -71,6 +71,32 @@ h3, .platform-block {
   align-items: center;
 }
 
+/* Title and rating layout - default inline for cards-2 and cards-3 */
+.title-rating-inline {
+  display: flex;
+}
+
+.title-rating-stacked {
+  display: none;
+}
+
+/* For cards-4, use stacked layout instead */
+.cards-4 .title-rating-inline {
+  display: none;
+}
+
+.cards-4 .title-rating-stacked {
+  display: block;
+}
+
+/* In cards-4, allow title to use full width without truncation */
+.cards-4 .title-rating-stacked h3 {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.2;
+}
+
 /* Fix for video alignment - make grid content use flexbox */
 .grid-content {
   display: flex;
