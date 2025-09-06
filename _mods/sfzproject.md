@@ -1,5 +1,5 @@
 ---
-title: "SFZ Project E0 DR"
+title: "SFZ Project E0-DR"
 rating: 4.6
 standalone: true
 lowspec_friendly: false
