@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# XML Sitemap
+Sitemap: https://cheekitos.github.io/CSMA/sitemap.xml
+
+# Crawl delay (optional - be nice to servers)
+Crawl-delay: 1
+
+# Block common unwanted paths
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /_site/
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /.git/
+Disallow: *.json$
+
+# Allow specific important assets
+Allow: /assets/images/
+Allow: /assets/css/style.css
+Allow: /assets/js/main.js
