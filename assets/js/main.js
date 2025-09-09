@@ -527,8 +527,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const gradesHidden = document.body.classList.contains('hide-grades');
       
       if (gradesHidden) {
-        // Shuffle the cards
+        // Shuffle the cards and update baseline
         const shuffled = shuffleArray([...currentDisplayedMods]);
+        baselineOrder = [...shuffled]; // Update baseline to shuffled order
         renderMods(shuffled);
       } else {
         sortState = (sortState + 1) % 3;
@@ -537,6 +538,8 @@ document.addEventListener('DOMContentLoaded', function() {
         switch(sortState) {
           case 0:
             sortButton.textContent = 'Sort by Rating';
+            // Update baseline to alphabetical order
+            baselineOrder = applySortToMods([...allModCards]);
             // Apply current filters instead of showing all cards
             applyFilters();
             return; // Exit early since applyFilters will call renderMods
@@ -547,6 +550,8 @@ document.addEventListener('DOMContentLoaded', function() {
               const ratingB = parseFloat(b.querySelector('.rating span').textContent);
               return ratingB - ratingA;
             });
+            // Update baseline to this new order
+            baselineOrder = applySortToMods([...allModCards]);
             break;
           case 2:
             sortButton.textContent = 'Lowest First';
@@ -555,6 +560,8 @@ document.addEventListener('DOMContentLoaded', function() {
               const ratingB = parseFloat(b.querySelector('.rating span').textContent);
               return ratingA - ratingB;
             });
+            // Update baseline to this new order
+            baselineOrder = applySortToMods([...allModCards]);
             break;
         }
         renderMods(toRender);
