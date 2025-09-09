@@ -697,10 +697,6 @@ h3, .platform-block {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-.skeleton-loading {
-  display: none;
-}
-
 .arrow-pointer {
   width: 0;
   height: 0;
