@@ -402,7 +402,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // UPDATED: Apply filters function - modified to preserve sort order
+  // Helper function to preserve order when filtering
+  function preserveOrderFilter(modsToFilter) {
+    // Find the order of these mods in the currently displayed set
+    const orderMap = new Map();
+    currentDisplayedMods.forEach((mod, index) => {
+      const modTitle = mod.getAttribute('data-mod-title');
+      orderMap.set(modTitle, index);
+    });
+    
+    // Sort the filtered mods according to their original order
+    return modsToFilter.sort((a, b) => {
+      const titleA = a.getAttribute('data-mod-title');
+      const titleB = b.getAttribute('data-mod-title');
+      const orderA = orderMap.get(titleA) ?? Infinity;
+      const orderB = orderMap.get(titleB) ?? Infinity;
+      return orderA - orderB;
+    });
+  }
+
+  // UPDATED: Apply filters function - modified to preserve sort order when grades are hidden
   function applyFilters() {
     // Get active filters
     const activeFilters = {
@@ -486,9 +505,19 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     });
 
-    // Apply current sort order to filtered results
-    const sortedFiltered = applySortToMods(filtered);
-    renderMods(sortedFiltered);
+    // FIXED: Check if grades are hidden and preserve order instead of always applying sort
+    const gradesHidden = document.body.classList.contains('hide-grades');
+    let finalModOrder;
+    
+    if (gradesHidden) {
+      // When grades are hidden, preserve the current display order of filtered items
+      finalModOrder = preserveOrderFilter(filtered);
+    } else {
+      // When grades are visible, apply current sort order to filtered results
+      finalModOrder = applySortToMods(filtered);
+    }
+    
+    renderMods(finalModOrder);
   }
 
   // Sort functionality
