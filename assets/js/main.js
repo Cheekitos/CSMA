@@ -2,8 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   let sortState = 0;
-  let cardsPerRow = 3; // Default to 3 cards per row
-  let currentDisplayedMods = []; // Track what's currently being displayed
+  let cardsPerRow = 3;
+  let currentDisplayedMods = [];
   
   // Get all mod cards
   const allModCards = Array.from(document.querySelectorAll('.mod-card'));
@@ -30,9 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const img = thumbnail.querySelector('img');
         if (img && img.hasAttribute('data-fallback')) {
           img.addEventListener('error', function() {
-            // If preview image fails to load, fall back to full resolution
             this.src = this.getAttribute('data-fallback');
-            this.removeAttribute('data-fallback'); // Prevent infinite loop
+            this.removeAttribute('data-fallback');
           });
         }
       });
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize image fallbacks
     handleImageFallbacks();
 
-    // Collect all gallery images - get from page data if available, otherwise use thumbnails
+    // Collect all gallery images
     const pageGalleryData = document.querySelector('[data-gallery-images]');
     if (pageGalleryData) {
       const allImages = JSON.parse(pageGalleryData.getAttribute('data-gallery-images'));
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alt: `Gallery image ${index + 1}`
       }));
     } else {
-      // Fallback to thumbnail-based collection
       galleryImages = Array.from(galleryThumbnails).map(thumb => ({
         src: thumb.getAttribute('data-full-src'),
         alt: thumb.querySelector('img').alt
@@ -71,12 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
       
       lightbox.classList.add('active');
       updateLightboxImage();
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
       lightbox.classList.remove('active');
-      document.body.style.overflow = ''; // Restore scrolling
+      document.body.style.overflow = '';
     }
 
     function updateLightboxImage() {
@@ -159,17 +157,12 @@ document.addEventListener('DOMContentLoaded', function() {
         modList.className = `grid gap-4 cards-${cardsPerRow}`;
       }
     }
-    // Re-apply must play highlighting after layout change
     updateMustPlayHighlighting();
   }
 
-  // Video thumbnail click handler - improved to remove skeleton loading issues
+  // Video thumbnail click handler
   function setupVideoThumbnails() {
     document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
-      // Remove any skeleton loading elements that might interfere
-      const skeletonElements = thumbnail.querySelectorAll('.skeleton-loading');
-      skeletonElements.forEach(skeleton => skeleton.remove());
-      
       thumbnail.addEventListener('click', function() {
         const videoId = this.getAttribute('data-video-id');
         const videoUrl = this.getAttribute('data-video-url');
@@ -192,16 +185,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Initialize video thumbnails and ensure images load properly
   function initializeVideoThumbnails() {
     document.querySelectorAll('.video-thumbnail img').forEach(img => {
-      // Ensure images load and remove any loading states
       img.onload = function() {
-        const skeletonElements = this.parentElement.querySelectorAll('.skeleton-loading');
-        skeletonElements.forEach(skeleton => skeleton.remove());
+        // Image loaded successfully
       };
       
-      // If image is already loaded (cached), trigger the onload
       if (img.complete) {
         img.onload();
       }
@@ -213,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize video thumbnails
   initializeVideoThumbnails();
 
-  // UPDATED: Filter functionality with new UI
+  // Filter functionality
   const searchInput = document.getElementById('search-input');
   const filterText = document.getElementById('filter-text');
   const filterTextContent = document.getElementById('filter-text-content');
@@ -255,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // UPDATED: Update filter text based on dropdown state
+  // Update filter text based on dropdown state
   function updateFilterText() {
     if (filterTextContent && filterText) {
       if (isFilterDropdownOpen) {
@@ -283,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function() {
     filterText.addEventListener('click', (e) => {
       e.stopPropagation();
       if (isFilterDropdownOpen) {
-        // If showing "Clear", clear all filters
         clearAllFilters();
         hideFilterDropdown();
       } else {
@@ -298,14 +286,12 @@ document.addEventListener('DOMContentLoaded', function() {
       controlsContainer.classList.add('filter-dropdown-open');
       isFilterDropdownOpen = true;
       updateFilterText();
-      // Trigger reflow to ensure CSS transitions work
       filterDropdown.offsetHeight;
     }
   }
 
   function hideFilterDropdown() {
     if (filterDropdown && controlsContainer) {
-      // Only hide if no filters are active
       if (!hasActiveFilters()) {
         filterDropdown.classList.add('hidden');
         controlsContainer.classList.remove('filter-dropdown-open');
@@ -315,26 +301,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // UPDATED: Clear all filters function
+  // Clear all filters function
   function clearAllFilters() {
-    // Clear search input text
     if (searchInput) {
       searchInput.value = '';
     }
     
-    // Clear standalone checkbox
     const standaloneCheckbox = document.getElementById('filter-standalone-yes');
     if (standaloneCheckbox) standaloneCheckbox.checked = false;
     
-    // Clear low-spec checkbox
     const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
     if (lowspecCheckbox) lowspecCheckbox.checked = false;
     
-    // Clear must-play checkbox
     const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
     if (mustplayCheckbox) mustplayCheckbox.checked = false;
     
-    // Clear platform checkboxes
     document.querySelectorAll('input[id^="filter-platform-"]').forEach(checkbox => {
       checkbox.checked = false;
     });
@@ -370,28 +351,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const gradesHidden = document.body.classList.contains('hide-grades');
     
     if (gradesHidden) {
-      // If grades are hidden, return shuffled array
       return shuffleArray([...modsArray]);
     }
     
-    // Apply current sort state
     switch(sortState) {
       case 0:
-        // Default order (alphabetical by title)
         return [...modsArray].sort((a, b) => {
           const titleA = (a.getAttribute('data-mod-title') || '').toLowerCase();
           const titleB = (b.getAttribute('data-mod-title') || '').toLowerCase();
           return titleA.localeCompare(titleB);
         });
       case 1:
-        // Highest rating first
         return [...modsArray].sort((a, b) => {
           const ratingA = parseFloat(a.querySelector('.rating span').textContent);
           const ratingB = parseFloat(b.querySelector('.rating span').textContent);
           return ratingB - ratingA;
         });
       case 2:
-        // Lowest rating first
         return [...modsArray].sort((a, b) => {
           const ratingA = parseFloat(a.querySelector('.rating span').textContent);
           const ratingB = parseFloat(b.querySelector('.rating span').textContent);
@@ -404,14 +380,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Helper function to preserve order when filtering
   function preserveOrderFilter(modsToFilter) {
-    // Find the order of these mods in the currently displayed set
     const orderMap = new Map();
     currentDisplayedMods.forEach((mod, index) => {
       const modTitle = mod.getAttribute('data-mod-title');
       orderMap.set(modTitle, index);
     });
     
-    // Sort the filtered mods according to their original order
     return modsToFilter.sort((a, b) => {
       const titleA = a.getAttribute('data-mod-title');
       const titleB = b.getAttribute('data-mod-title');
@@ -421,35 +395,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // UPDATED: Apply filters function - modified to preserve sort order when grades are hidden
+  // Apply filters function
   function applyFilters() {
     // Get active filters
     const activeFilters = {
       standalone: false,
       lowspec: false,
-      mustplay: false, // This will be used for highlighting only
+      mustplay: false,
       platforms: []
     };
 
-    // Standalone filter (only show standalone if checked)
+    // Standalone filter
     const standaloneCheckbox = document.getElementById('filter-standalone-yes');
     if (standaloneCheckbox && standaloneCheckbox.checked) {
       activeFilters.standalone = true;
     }
 
-    // Low-spec filter (only show low-spec if checked)
+    // Low-spec filter
     const lowspecCheckbox = document.getElementById('filter-lowspec-yes');
     if (lowspecCheckbox && lowspecCheckbox.checked) {
       activeFilters.lowspec = true;
     }
 
-    // Must-play filter (for highlighting only, not filtering)
+    // Must-play filter (for highlighting only)
     const mustplayCheckbox = document.getElementById('filter-mustplay-yes');
     if (mustplayCheckbox && mustplayCheckbox.checked) {
       activeFilters.mustplay = true;
     }
 
-    // Platform filter (checkboxes)
+    // Platform filter
     if (document.getElementById('filter-platform-soc') && document.getElementById('filter-platform-soc').checked) {
       activeFilters.platforms.push('shadow of chernobyl');
     }
@@ -463,7 +437,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get search query
     const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
 
-    // Filter mods - MODIFIED: mustplay filter doesn't actually filter out cards
+    // Filter mods
     const filtered = allModCards.filter(card => {
       // Search filter
       if (searchQuery) {
@@ -476,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // Standalone filter (only filter if checkbox is checked)
+      // Standalone filter
       if (activeFilters.standalone) {
         const cardStandalone = card.getAttribute('data-mod-standalone') === 'true';
         if (!cardStandalone) {
@@ -484,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // Low-spec filter (only filter if checkbox is checked)
+      // Low-spec filter
       if (activeFilters.lowspec) {
         const cardLowspec = card.getAttribute('data-mod-lowspec') === 'true';
         if (!cardLowspec) {
@@ -492,9 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // NOTE: Must-play filter is NOT included here - it only highlights, doesn't filter
-
-      // Platform filter (if any platforms are selected, show only those)
+      // Platform filter
       if (activeFilters.platforms.length > 0) {
         const cardPlatform = (card.getAttribute('data-mod-platform') || '').toLowerCase();
         if (!activeFilters.platforms.includes(cardPlatform)) {
@@ -505,15 +477,13 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     });
 
-    // FIXED: Check if grades are hidden and preserve order instead of always applying sort
+    // Apply sort order
     const gradesHidden = document.body.classList.contains('hide-grades');
     let finalModOrder;
     
     if (gradesHidden) {
-      // When grades are hidden, preserve the current display order of filtered items
       finalModOrder = preserveOrderFilter(filtered);
     } else {
-      // When grades are visible, apply current sort order to filtered results
       finalModOrder = applySortToMods(filtered);
     }
     
@@ -527,9 +497,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const gradesHidden = document.body.classList.contains('hide-grades');
       
       if (gradesHidden) {
-        // Shuffle the cards and update baseline
         const shuffled = shuffleArray([...currentDisplayedMods]);
-        baselineOrder = [...shuffled]; // Update baseline to shuffled order
+        baselineOrder = [...shuffled];
         renderMods(shuffled);
       } else {
         sortState = (sortState + 1) % 3;
@@ -538,11 +507,9 @@ document.addEventListener('DOMContentLoaded', function() {
         switch(sortState) {
           case 0:
             sortButton.textContent = 'Sort by Rating';
-            // Update baseline to alphabetical order
             baselineOrder = applySortToMods([...allModCards]);
-            // Apply current filters instead of showing all cards
             applyFilters();
-            return; // Exit early since applyFilters will call renderMods
+            return;
           case 1:
             sortButton.textContent = 'Highest First';
             toRender = [...currentDisplayedMods].sort((a, b) => {
@@ -550,7 +517,6 @@ document.addEventListener('DOMContentLoaded', function() {
               const ratingB = parseFloat(b.querySelector('.rating span').textContent);
               return ratingB - ratingA;
             });
-            // Update baseline to this new order
             baselineOrder = applySortToMods([...allModCards]);
             break;
           case 2:
@@ -560,21 +526,19 @@ document.addEventListener('DOMContentLoaded', function() {
               const ratingB = parseFloat(b.querySelector('.rating span').textContent);
               return ratingA - ratingB;
             });
-            // Update baseline to this new order
             baselineOrder = applySortToMods([...allModCards]);
             break;
         }
         renderMods(toRender);
       }
       
-      // Don't hide dropdown if filters are active
       if (!hasActiveFilters()) {
         hideFilterDropdown();
       }
     });
   }
 
-  // Cards per row controls - UPDATED for list view
+  // Cards per row controls
   const cardsLessBtn = document.getElementById('cards-less');
   const cardsMoreBtn = document.getElementById('cards-more');
   
@@ -590,7 +554,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       updateGridLayout();
       
-      // Don't hide dropdown if filters are active
       if (!hasActiveFilters()) {
         hideFilterDropdown();
       }
@@ -609,19 +572,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       updateGridLayout();
       
-      // Don't hide dropdown if filters are active
       if (!hasActiveFilters()) {
         hideFilterDropdown();
       }
     });
   }
 
-  // Search functionality - updated to work with filters
+  // Search functionality
   if (searchInput) {
     searchInput.addEventListener('input', applyFilters);
   }
 
-  // Toggle grades functionality - consolidated handlers
+  // Toggle grades functionality
   function handleToggleGrades() {
     const sortBtn = document.getElementById('sort-button');
     const isHiding = document.body.classList.toggle('hide-grades');
@@ -632,44 +594,38 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (sortBtn) {
       sortBtn.textContent = 'Sort by Rating';
       sortState = 0;
-      applyFilters(); // Apply current filters instead of showing all cards
+      applyFilters();
     }
     syncToggleStates();
     
-    // Don't hide dropdown if filters are active
     if (!hasActiveFilters()) {
       hideFilterDropdown();
     }
   }
 
-  // Setup consolidated toggle grades handlers
   setupButtonHandlers(['toggle-grades', 'toggle-grades-mobile'], handleToggleGrades);
 
-  // Toggle videos functionality - consolidated handlers
+  // Toggle videos functionality
   function handleToggleVideos() {
     document.body.classList.toggle('hide-videos');
     syncToggleStates();
     
-    // Don't hide dropdown if filters are active
     if (!hasActiveFilters()) {
       hideFilterDropdown();
     }
   }
 
-  // Setup consolidated toggle videos handlers
   setupButtonHandlers(['toggle-videos', 'toggle-videos-mobile'], handleToggleVideos);
 
   function syncToggleStates() {
     const gradesHidden = document.body.classList.contains('hide-grades');
     const videosHidden = document.body.classList.contains('hide-videos');
     
-    // Update all grade toggle buttons
     ['toggle-grades', 'toggle-grades-mobile'].forEach(id => {
       const btn = document.getElementById(id);
       if (btn) btn.classList.toggle('button-active', gradesHidden);
     });
     
-    // Update all video toggle buttons
     ['toggle-videos', 'toggle-videos-mobile'].forEach(id => {
       const btn = document.getElementById(id);
       if (btn) btn.classList.toggle('button-active', videosHidden);
@@ -695,25 +651,20 @@ document.addEventListener('DOMContentLoaded', function() {
       container.appendChild(card.cloneNode(true));
     });
     
-    // Re-apply must play highlighting after rendering
     updateMustPlayHighlighting();
-    
-    // Re-setup video thumbnails for newly rendered cards
     initializeVideoThumbnails();
   }
 
-  // Contact overlay functionality - consolidated handlers
+  // Contact overlay functionality
   function showContactOverlay() {
     const contactOverlay = document.getElementById('contact-overlay');
     if (contactOverlay) contactOverlay.classList.remove('hidden');
     
-    // Don't hide dropdown if filters are active
     if (!hasActiveFilters()) {
       hideFilterDropdown();
     }
   }
 
-  // Setup consolidated contact handlers
   setupButtonHandlers(['contact-button', 'contact-button-mobile'], showContactOverlay);
 
   const contactClose = document.getElementById('contact-close');
@@ -739,18 +690,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Install files overlay functionality - consolidated handlers
+  // Install files overlay functionality
   function showInstallFilesOverlay() {
     const installFilesOverlay = document.getElementById('install-files-overlay');
     if (installFilesOverlay) installFilesOverlay.classList.remove('hidden');
     
-    // Don't hide dropdown if filters are active
     if (!hasActiveFilters()) {
       hideFilterDropdown();
     }
   }
 
-  // Setup consolidated essentials handlers
   setupButtonHandlers(['essentials-button', 'essentials-button-mobile'], showInstallFilesOverlay);
 
   const installFilesOverlay = document.getElementById('install-files-overlay');
