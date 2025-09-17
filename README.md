@@ -27,11 +27,13 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - Preview Image for the gallery Thumbnails for faster loading
 
 ## ❌ To Do
-- Add Requirements Section (Maybe, hard to find reliable info for most mods)
 - Stop pushing my video reviews on the main page, replace with screenshot or custom thumbnail
-- Tailwind CLI and other optimizations
+- If grades are hidden on main page, hide them on individual pages also (prob local storage approach)
+- Add Requirements Section (Maybe, hard to find reliable info for most mods)
+- Tailwind CLI and other optimizations (When we're 100% Done)
 
 ## 🌟 Wishlist 
+- Add new page for Anomaly Modpacks, CoC Modpacks... kind of a reference of good stuff to try
 - Open up the site to mods I didn't review, 3rd Party reviewers, collabs etc. 
 - Move out of GitHub to dedicated hosting
 - Users can create a profile and post reviews / grade mods
