@@ -179,52 +179,9 @@ document.addEventListener('DOMContentLoaded', function() {
     updateMustPlayHighlighting();
   }
 
-  // Video thumbnail setup with skeleton loading
+  // Video thumbnail click handler
   function setupVideoThumbnails() {
     document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
-      const img = thumbnail.querySelector('img');
-      
-      if (img) {
-        // Create skeleton element
-        const skeleton = document.createElement('div');
-        skeleton.className = 'video-skeleton';
-        thumbnail.appendChild(skeleton);
-        
-        // Set initial image state
-        img.classList.add('loading');
-        
-        // Handle image loading
-        const handleImageLoad = () => {
-          img.classList.remove('loading');
-          img.classList.add('loaded');
-          thumbnail.classList.add('loaded');
-        };
-        
-        const handleImageError = () => {
-          // Keep skeleton visible on error
-          img.classList.add('loaded'); // Still show the broken image state
-          thumbnail.classList.add('loaded');
-        };
-        
-        // Clean up existing listeners
-        img.removeEventListener('load', handleImageLoad);
-        img.removeEventListener('error', handleImageError);
-        
-        // Add new listeners
-        img.addEventListener('load', handleImageLoad);
-        img.addEventListener('error', handleImageError);
-        
-        // Check if image is already loaded
-        if (img.complete) {
-          if (img.naturalWidth > 0) {
-            handleImageLoad();
-          } else {
-            handleImageError();
-          }
-        }
-      }
-      
-      // Add click handler for video loading
       thumbnail.addEventListener('click', function() {
         const videoId = this.getAttribute('data-video-id');
         const videoUrl = this.getAttribute('data-video-url');
@@ -248,6 +205,16 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function initializeVideoThumbnails() {
+    document.querySelectorAll('.video-thumbnail img').forEach(img => {
+      img.onload = function() {
+        // Image loaded successfully
+      };
+      
+      if (img.complete) {
+        img.onload();
+      }
+    });
+    
     setupVideoThumbnails();
   }
 
