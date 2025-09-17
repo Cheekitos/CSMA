@@ -24,21 +24,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!lightbox || !lightboxImg) return;
 
-    // Handle preview image fallbacks
-    function handleImageFallbacks() {
+    // Enhanced image fallback handling
+    function setupImageFallbacks() {
       galleryThumbnails.forEach(thumbnail => {
         const img = thumbnail.querySelector('img');
-        if (img && img.hasAttribute('data-fallback')) {
-          img.addEventListener('error', function() {
-            this.src = this.getAttribute('data-fallback');
-            this.removeAttribute('data-fallback');
-          });
+        if (img) {
+          // Set up error handling for images that already have fallback
+          if (img.hasAttribute('data-fallback')) {
+            // Remove any existing error handler to avoid duplicates
+            img.removeEventListener('error', handleImageError);
+            img.addEventListener('error', handleImageError);
+          }
+          
+          // Check if image is already broken (failed to load before JS ran)
+          if (img.complete && img.naturalHeight === 0 && img.hasAttribute('data-fallback')) {
+            img.src = img.getAttribute('data-fallback');
+            img.removeAttribute('data-fallback');
+          }
         }
       });
     }
 
+    // Error handler function
+    function handleImageError(event) {
+      const img = event.target;
+      const fallback = img.getAttribute('data-fallback');
+      
+      if (fallback && img.src !== fallback) {
+        img.src = fallback;
+        img.removeAttribute('data-fallback');
+      }
+    }
+
     // Initialize image fallbacks
-    handleImageFallbacks();
+    setupImageFallbacks();
 
     // Collect all gallery images
     const pageGalleryData = document.querySelector('[data-gallery-images]');
