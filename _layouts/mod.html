@@ -123,12 +123,16 @@ layout: default
             {% comment %} Show real images first with preview versions {% endcomment %}
             {% for image in real_images limit: 3 %}
             {% assign preview_name = image | replace: '.jpg', '-pv.jpg' | replace: '.png', '-pv.png' %}
+            {% assign full_url = '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url %}
+            {% assign preview_url = '/assets/images/screenshots/' | append: page.slug | append: '/' | append: preview_name | relative_url %}
             <div class="gallery-thumbnail" 
-                 data-full-src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}"
-                 data-preview-src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: preview_name | relative_url }}">
-              <img src="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: preview_name | relative_url }}" 
-                   data-fallback="{{ '/assets/images/screenshots/' | append: page.slug | append: '/' | append: image | relative_url }}"
-                   alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
+                 data-full-src="{{ full_url }}"
+                 data-preview-src="{{ preview_url }}">
+              <img src="{{ preview_url }}" 
+                   data-fallback="{{ full_url }}"
+                   alt="{{ page.title }} screenshot {{ forloop.index }}" 
+                   loading="lazy"
+                   onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback) { this.src = this.dataset.fallback; this.removeAttribute('data-fallback'); }">
             </div>
             {% endfor %}
             
