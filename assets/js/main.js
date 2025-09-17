@@ -613,7 +613,9 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (sortBtn) {
       sortBtn.textContent = 'Sort by Rating';
       sortState = 0;
-      applyFilters();
+      // Don't call applyFilters() here to preserve current order
+      // Just re-render the current mods to update the display
+      renderMods(currentDisplayedMods);
     }
     syncToggleStates();
     
