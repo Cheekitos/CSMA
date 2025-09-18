@@ -10,8 +10,6 @@ release_date: "2021-09-25"
 short_description: "You're a hunter living quietly on the outskirts of the Zone. You've heard the stories, but never dared to step inside. When your brother mysteriously disappears on a hunt, your search forces you past the border for the first time."
 description: "It's been twenty years since the events in Call of Pripyat. The Zone is slowly fading away. The great factions are gone, and most stalkers left their place to wild animals. Only small groups of bandits and Monolith cling to the ruins of this decaying world. When your brother mysteriously disappears, you have no choice but to step into this old, cursed place.<br><br>The gameplay in the Journey is stripped down to minimalistic levels, and deliberately slow. No minimap, quest markers, trading, repairs, artifact, or even economy. Quests are delivered entirely through dialogue, making attention to detail and a love of exploration essential. It might look outdated and rough around the edges, but give it a chance, and its unique vision will offer a deeply immersive and memorable experience."
 
-gallery_images:
-
 seo_title: "The Journey - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download The Journey for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
 keywords: "S.T.A.L.K.E.R. Vector of Alienation, STALKER Vector of Alienation, S.T.A.L.K.E.R. story mods, STALKER story mods, Call of Pripyat mods, STALKER Call of Pripyat mods, Best STALKER Call of Pripyat mods, best S.T.A.L.K.E.R. mods, best STALKER mods, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
