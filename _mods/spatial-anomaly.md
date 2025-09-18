@@ -10,11 +10,6 @@ release_date: "2015-03-31"
 short_description: "Trapped in a strange anomaly, you're slowly running out of resources. A short, well-paced adventure with outstanding writing, memorable characters, captivating voice acting, in a world that won't let you go until the very end."
 description: "You play as Beast, a mercenary trapped with stalkers, soldiers, and rival factions inside a mysterious anomaly. In this closed-off bubble, resources are scarce, trust is fragile, and escape seems impossible. Your survival will require tough decisions.<br>Spatial Anomaly focus is on story, atmosphere, survival tension, and character interaction rather than open-ended exploration. It's short (around 10 hours to complete) but highly replayable thanks to different endings and choices you can make. An absolute must-play for any S.T.A.L.K.E.R. fan, offering a cinematic, emotional, and deeply immersive experience."
 
-gallery_images:
-  - ""
-  - ""
-  - ""
-
 seo_title: "Spatial Anomaly - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download Spatial Anomaly for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
 keywords: "S.T.A.L.K.E.R. Spatial Anomaly, STALKER Spatial Anomaly, S.T.A.L.K.E.R. story mods, STALKER story mods, Call of Pripyat mods, STALKER Call of Pripyat mods, Best STALKER Call of Pripyat mods, best S.T.A.L.K.E.R. mods, best STALKER mods, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
