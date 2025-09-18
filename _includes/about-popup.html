@@ -12,7 +12,7 @@
         <p id="email-text" class="text-blue-400 hidden">cheekitos@proton.me</p>
       </div>
       
-      <p class="mb-4">For everything else, you can <a href="https://linktr.ee/cheekibreekii" target="_blank" class="text-white hover:text-gray-300 underline">check me out here</a></p>
+      <p class="mb-4">For everything else, you can <a href="https://linktr.ee/cheekibreekii" target="_blank" class="text-yellow-500 hover:text-yellow-400 underline">check me out here</a>.</p>
       
       <div class="bg-gray-800 rounded-lg p-3 mt-4">
         <h4 class="text-white text-sm font-medium mb-3">Fan content creation guidelines</h4>
@@ -58,18 +58,16 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const revealEmailBtn = document.getElementById('reveal-email');
+document.getElementById('reveal-email').addEventListener('click', function() {
     const emailText = document.getElementById('email-text');
+    const button = this;
     
-    revealEmailBtn.addEventListener('click', function() {
-        if (emailText.classList.contains('hidden')) {
-            emailText.classList.remove('hidden');
-            revealEmailBtn.textContent = 'Hide Email';
-        } else {
-            emailText.classList.add('hidden');
-            revealEmailBtn.textContent = 'Reveal Email';
-        }
-    });
+    if (emailText.classList.contains('hidden')) {
+        emailText.classList.remove('hidden');
+        button.textContent = 'Hide Email';
+    } else {
+        emailText.classList.add('hidden');
+        button.textContent = 'Reveal Email';
+    }
 });
 </script>
