@@ -10,8 +10,6 @@ release_date: "2018-03-21"
 short_description: "The largest story-driven overhaul for Call of Chernobyl, blending open-world, freeplay gameplay with full plots and storylines to discover for multiple factions. Special attention was given to Sin and their quests, making it a must-play faction!"
 description: "Legend Returns is a freeplay-driven S.T.A.L.K.E.R. mod that blends restored cut content, new mechanics, and multiple faction storylines into one atmospheric experience.<br> Each faction comes with its own quests, perks, and challenges. The mod adds an expanded weapon pack, a detailed skill system, a demanding economy, new anomalies, psi-storms, and cut mutants brought back from early builds.<br> Built on Call of Chernobyl, it perfectly captures the eerie feel of the original games, keeps performance stable and offers plenty of side quests and exploration. Whether you join Sin, Duty, Clear Sky, or Monolith, the Zone here is harsh, unpredictable, and full of ways to test your survival."
 
-gallery_images:
-
 seo_title: "Legend Returns - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download Legend Returns for S.T.A.L.K.E.R. Call of Chernobyl. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
 keywords: "S.T.A.L.K.E.R. Legend Returns, STALKER Legend Returns, S.T.A.L.K.E.R. story mods, STALKER story mods, Call of Chernobyl mods, STALKER Call of Pripyat mods, Best STALKER Call of Pripyat mods, best S.T.A.L.K.E.R. mods 2025, best STALKER mods 2025, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
