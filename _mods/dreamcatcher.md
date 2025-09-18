@@ -10,12 +10,6 @@ release_date: "2023-11-15"
 short_description: "Sequel to Incubator (that I recommend playing first), we follow a rookie scientist's first steps into the Zone, on a mission full of danger and mysticism. Highly atmospheric, ambitious graphics, with a rich story and must-play side quests."
 description: "You play as a scientist known as the Assistant, sent to study the mysterious Dreamcatcher artifact. At first just a researcher, you will slowly transform into a hardened stalker as the story pulls you into dangerous expeditions, conspiracies, and strange encounters where your scientific knowledge tries to explain the Zone mysticism.<br> You'll meet familiar faces from earlier Vivient-Team mods along, uncover hidden stories, and make choices that will influence multiple possible endings. With a great main plot and engaging side quests, cutscenes, strong atmosphere, new mutants and artifacts, Dreamcatcher is all about diving deep into the Zone's mysteries."
 
-gallery_images:
-  - ""
-  - ""
-  - ""
-  - ""
-
 seo_title: "Dreamcatcher - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download Dreamcatcher for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
 keywords: "S.T.A.L.K.E.R. Dreamcatcher, STALKER Dreamcatcher, S.T.A.L.K.E.R. story mods, STALKER story mods, Call of Pripyat mods, STALKER Call of Pripyat mods, Best STALKER Call of Pripyat mods, best S.T.A.L.K.E.R. mods, best STALKER mods 2025, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
