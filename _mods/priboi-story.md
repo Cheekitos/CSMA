@@ -10,12 +10,6 @@ release_date: "2008-01-27"
 short_description: "A milestone in early S.T.A.L.K.E.R. modding, this is the 2020 Overhaul of the legendary 2008 Priboi Story modification. Bringing a brand new storyline to the game, it's very first total conversion mod for Shadow Of Chernobyl."
 description: "Priboi Story is one of the earliest full-story mods for S.T.A.L.K.E.R.: Shadow of Chernobyl, originally released in 2008. Acting as a quasi-sequel, it expands the Zone's narrative with new quests, characters, and locations, even influencing later official entries like Call of Pripyat.<br> The 2020 overhaul adds polish, stability, and improved gameplay. Playing as Military Lieutenant Priboi Slipchenko, you'll lead an investigation into the secretive UHSF organization. With free exploration of familiar but modified locations, new structures, transport options, reworked levels, enhanced graphics, updated weapons, new enemies, and improved audio, it's a must-play for veteran players and fans of early S.T.A.L.K.E.R. mods."
 
-gallery_images:
-  - ""
-  - ""
-  - ""
-  - ""
-
 seo_title: "Priboi Story - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Priboi Story for S.T.A.L.K.E.R. Shadow of Chernobyl. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
 keywords: "S.T.A.L.K.E.R. Priboi Story, STALKER Priboi Story, S.T.A.L.K.E.R. story mods, STALKER story mods, Shadow of Chernobyl mods, STALKER Shadow of Chernobyl mods, Best STALKER Shadow of Chernobyl mods, best S.T.A.L.K.E.R. mods 2025, best STALKER mods 2025, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
