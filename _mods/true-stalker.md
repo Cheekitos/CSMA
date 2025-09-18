@@ -10,11 +10,6 @@ release_date: "2023-12-21"
 short_description: "A brand new story in a vibrant and dangerous Zone, with a level of polish and quality so high it could pass for an official sequel. Great world design, custom UI, new audio, balanced and challenging gameplay, and the OG games spirit."
 description: "True Stalker is a large-scale S.T.A.L.K.E.R. mod built with care: atmospheric visuals, professional voice acting, a redesigned interface, and solid gunplay powered by GUNSLINGER.<br>Technically, it's a brilliant mod with fantastic presentation. Well optimized and stable, it truly feels like a modern STALKER game that managed to retain the gameplay style and mood of the original games. It suffers however from a weak narrative and main plot that lacks motivation, structure, and payoff, which undermines a bit the crazy potential of this mod. It's still an interesting and fun adventure worth playing at least once. Don't forget to count how many times the main protagonist gets knocked off!"
 
-gallery_images:
-  - ""
-  - ""
-  - ""
-
 seo_title: "True Stalker - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download True Stalker for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
 keywords: "S.T.A.L.K.E.R. True Stalker, True Stalker, S.T.A.L.K.E.R. story mods, STALKER story mods, Call of Pripyat mods, STALKER Call of Pripyat mods, Best Call of Pripyat mods, best S.T.A.L.K.E.R. mods, best STALKER mods, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
