@@ -22,10 +22,9 @@ keywords: "S.T.A.L.K.E.R. SFZ Project Episode Zero, STALKER SFZ Project Episode 
 
 pros:
   - "Strong, atmospheric storytelling"
-  - "Cinematic cutscenes"
-  - "Amazing sound design"
-  - "High-quality graphics"
-  - "Well-crafted main and side quests"
+  - "Beautiful graphics & cutscenes"
+  - "Immersive sound design"
+
 cons:
   - "Very short duration"
 
