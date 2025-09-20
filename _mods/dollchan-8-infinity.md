@@ -8,12 +8,12 @@ platform: "Call of Pripyat"
 engine: "Call of Chernobyl"
 release_date: "2020-09-18"
 short_description: "The Brainscorcher has been shut down, but strange cases of memory loss start spreading among Stalkers. It seems like the zone has found another way to preserve its secrets. An intriguing plot, heavily expanded maps to explore, and brutal difficulty."
-description: "You play as an amnesiac ex-Monolith, discovering that your forgotten identity is deeply tied to the secrets of the Zone.
-Set just after the Brain Scorcher is shut down, Dollchan 8: Infinity reimagines the plot of Shadow of Chernobyl in an expanded world built on the Call of Chernobyl engine.<br>
+description: "You play as an amnesiac ex-Monolith, slowly discovering that your forgotten identity is deeply tied to the secrets of the Zone.
+Set just after the shut down of the Brain Scorcher, Dollchan 8: Infinity reimagines the plot of Shadow of Chernobyl in an expanded world, built on the Call of Chernobyl engine.<br>
 Exploration is the mod's strongest point, with brand new and reworked locations, dynamic A-Life, new mutants, and an expanded weapon pack. 
 There's even a hidden questline for those who want to discover weirder, unconventionnal secrets.<br>
-But the mod is also notorious for its harsh balance, grindy progression, frustrating survival mechanics, and frequent crashes. It's an ambitious experiment, buggy and unpolished, 
-but packed with atmosphere and ideas you won't find anywhere else."
+The mod is also notorious for its harsh balance, grindy progression, frustrating survival mechanics, and frequent crashes. It's an ambitious experiment, buggy and unpolished, 
+but packed with a great atmosphere and ideas you won't find anywhere else."
 
 seo_title: "Dollchan 8: Infinity - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download Dollchan 8: Infinity for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
@@ -21,7 +21,7 @@ keywords: "S.T.A.L.K.E.R. Dollchan 8: Infinity, STALKER Dollchan 8: Infinity, S.
 
 pros:
   - "First major story mod on Call of Chernobyl"
-  - "Redesigned and new locations"
+  - "Redesigned new locations"
   - "Great weapon pack"
 cons:
   - "Poor balance"
