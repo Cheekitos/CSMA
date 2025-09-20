@@ -8,8 +8,8 @@ must_play: true
 platform: "Call of Pripyat"
 engine: ""
 release_date: "2017-01-15"
-short_description: "After a mysterious and devastating emission, the Zone has begun to devour everything, threatening all life on the planet. A soldier is sent into the past to uncover the source of the Zone instability, and prevent humanity's extinction."
-description: "You play as Demidov, a military man from the future, sent into the past to investigate the Zone's emissions and prevent a catastrophic blowout that threatens the world. <br>What starts as a straightforward mission soon unravels into an elaborate web of conspiracy, hidden labs, faction conflicts, and moral dilemmas.<br>Wind of Time brings new lore that could almost be considered canon, with strong ties to the original Shadow of Chernobyl. Engaging side quests, carefully crafted locations, and in the end a deep exploration of survival themes, morality, friendship, and the Zone's true nature."
+short_description: "After a mysterious and devastating emission, the Zone has begun to devour everything, threatening all life on the planet. A soldier is sent back in time to uncover the source of the Zone instability, and prevent humanity's extinction."
+description: "You play as Demidov, a military man from the future, sent into the past to investigate the Zone's emissions and prevent a catastrophic blowout that threatens the world. <br>What starts as a straightforward mission soon unravels into an elaborate web of conspiracy, hidden labs, faction conflicts, and moral dilemmas.<br>Ignoring the time travelling aspect of its premise, Wind of Time brings new lore that could almost be considered canon, with strong ties to the original Shadow of Chernobyl. Engaging side quests, carefully crafted locations, and in the end a deep exploration and reflexion on survival, morality, friendship, and the Zone's true nature."
 
 # SEO ENHANCEMENT SECTION
 seo_title: "Wind of Time - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
