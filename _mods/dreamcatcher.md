@@ -7,8 +7,12 @@ must_play: false
 platform: "Call of Pripyat"
 engine: ""
 release_date: "2023-11-15"
-short_description: "Sequel to Incubator (that I recommend playing first), we follow a rookie scientist's first steps into the Zone, on a mission full of danger and mysticism. Highly atmospheric, ambitious graphics, with a rich story and must-play side quests."
-description: "You play as a scientist known as the Assistant, sent to study the mysterious Dreamcatcher artifact. At first just a researcher, you will slowly transform into a hardened stalker as the story pulls you into dangerous expeditions, conspiracies, and strange encounters where your scientific knowledge tries to explain the Zone mysticism.<br> You'll meet familiar faces from earlier Vivient-Team mods along, uncover hidden stories, and make choices that will influence multiple possible endings. With a great main plot and engaging side quests, cutscenes, strong atmosphere, new mutants and artifacts, Dreamcatcher is all about diving deep into the Zone's mysteries."
+short_description: "Sequel to Incubator (that I recommend playing first), we follow the first steps of a rookie scientist's into the Zone. An adventure full of danger and mysticism with highly atmospheric, ambitious graphics, and a rich story full of must-play side quests."
+description: "You play as a scientist known as the Assistant, sent to study the mysterious Dreamcatcher artifact.
+At first just a researcher, you slowly transform into a hardened stalker as the story pulls you into dangerous expeditions, conspiracies, and strange encounters 
+where your scientific knowledge tries to understand and explain the Zone mysteries and deep mysticism.<br> 
+You’ll meet familiar faces from earlier Vivient-Team mods, uncover hidden stories, and make choices that will influence multiple possible endings. 
+With a great main plot and engaging side quests, cutscenes, strong atmosphere, new mutants and artifacts, Dreamcatcher is a deep dive into the Zone’s most baffling mysteries."
 
 seo_title: "Dreamcatcher - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download Dreamcatcher for S.T.A.L.K.E.R. Call of Pripyat. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
