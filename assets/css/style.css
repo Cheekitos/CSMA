@@ -627,8 +627,8 @@ h3, .platform-block {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 68px;
-  height: 48px;
+  width: 51px;
+  height: 36px;
   background: rgba(255, 0, 0, 0.8);
   border-radius: 8px;
   display: flex;
@@ -646,10 +646,10 @@ h3, .platform-block {
   content: '';
   width: 0;
   height: 0;
-  border-left: 20px solid white;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  margin-left: 4px;
+  border-left: 15px solid white;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  margin-left: 3px;
 }
 
 .mod-page-video .video-thumbnail {
