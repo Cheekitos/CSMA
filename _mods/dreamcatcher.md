@@ -19,8 +19,8 @@ seo_description: "Download Dreamcatcher for S.T.A.L.K.E.R. Call of Pripyat. Comp
 keywords: "S.T.A.L.K.E.R. Dreamcatcher, STALKER Dreamcatcher, S.T.A.L.K.E.R. story mods, STALKER story mods, Call of Pripyat mods, STALKER Call of Pripyat mods, Best STALKER Call of Pripyat mods, best S.T.A.L.K.E.R. mods, best STALKER mods 2025, immersive STALKER mod, best STALKER mod, Cheeki Breeki"
 
 pros:
-  - "Atmospheric world design and immersive cutscenes"
-  - "Strong main story"
+  - "Atmospheric and immersive"
+  - "Strong plot with great cutscenes"
   - "Quality voice acting"
 cons:
   - "Bugs and balance issues"
