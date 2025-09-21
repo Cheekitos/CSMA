@@ -18,8 +18,8 @@ keywords: "STALKER mods, STALKER story mods, best STALKER mods 2025, STALKER ins
   
  <p class="text-gray-300 text-sm mb-6">
     This page is a curated archive of S.T.A.L.K.E.R. game modifications, focusing mainly on story-driven projects I've reviewed on the <a href="https://linktr.ee/cheekibreekii" target="_blank" class="text-white underline">YouTube Channel</a>.
-    The goal is to consolidate, preserve, and make these mods and their English translations easily accessible, since they’re often scattered across different websites, hosting services, and Discord servers. Full credit goes to the original authors.<br>
-    The grades do reflect community opinion on their overall quality, but don’t get too hung up on them. Every mod featured here is worth your time. My advice will always be to go in as blind as possible, but if you want an overview before diving in, all the video reviews are spoiler-free and safe to watch.
+    The goal is to consolidate, preserve, and make these mods and their English translations easily accessible, since they're often scattered across different websites, hosting services, and Discord servers. Full credit goes to the original authors.<br>
+    The grades do reflect community opinion on their overall quality, but don't get too hung up on them. Every mod featured here is worth your time. My advice will always be to go in as blind as possible, but if you want an overview before diving in, all the video reviews are spoiler-free and safe to watch.
   </p>
   
   <div class="flex flex-wrap items-start gap-2 mb-4" id="controls-container">
@@ -192,7 +192,7 @@ keywords: "STALKER mods, STALKER story mods, best STALKER mods 2025, STALKER ins
             {% assign video_id = mod.video | split: '/' | last | split: '?' | first %}
             <div class="video-container mt-auto">
               <div class="video-thumbnail" data-video-id="{{ video_id }}" data-video-url="{{ mod.video }}" onclick="event.preventDefault(); event.stopPropagation();">
-                <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="Video thumbnail" loading="lazy" class="w-full h-full object-cover rounded">
+                <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="Video thumbnail" loading="lazy" width="480" height="360" class="w-full h-full object-cover rounded">
                 <div class="play-button"></div>
               </div>
             </div>
