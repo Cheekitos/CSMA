@@ -1,0 +1,113 @@
+---
+layout: default
+title: "Page Not Found - 404 Error"
+seo_title: "404 - Page Not Found | Cheeki's S.T.A.L.K.E.R. Mods Archive"
+seo_description: "The requested S.T.A.L.K.E.R. mod page could not be found. Return to the main archive to browse available mods and installation guides."
+keywords: "404 error, page not found, STALKER mods archive, mod not found"
+permalink: /404.html
+---
+
+<div class="max-w-4xl mx-auto text-center">
+  <!-- Header Section -->
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 gap-2">
+    <a href="{{ '/' | relative_url }}" class="text-3xl font-bold hover:text-yellow-400 transition-colors">
+      Cheeki's Mods Archive
+    </a>
+    {% include header-buttons.html %}
+  </div>
+
+  {% include mobile-buttons.html %}
+
+  <!-- 404 Error Content -->
+  <div class="bg-gray-800 rounded-lg p-8 mb-8">
+    <div class="mb-6">
+      <h1 class="text-6xl font-bold text-red-400 mb-4">404</h1>
+      <h2 class="text-2xl font-semibold text-white mb-4">Mod Not Found in the Zone</h2>
+      <p class="text-gray-300 text-lg mb-6">
+        The mod you're looking for seems to have disappeared into an anomaly. 
+        Maybe it was moved, deleted, or never existed in this part of the Zone.
+      </p>
+    </div>
+
+    <!-- Search-like functionality -->
+    <div class="bg-gray-700 rounded-lg p-6 mb-6">
+      <h3 class="text-white font-semibold mb-4">What you can do:</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+        <div class="flex items-start space-x-3">
+          <svg class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+          </svg>
+          <div>
+            <span class="text-white font-medium">Check the URL</span>
+            <p class="text-gray-300 text-sm">Make sure the mod name is spelled correctly</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start space-x-3">
+          <svg class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+          </svg>
+          <div>
+            <span class="text-white font-medium">Use the search</span>
+            <p class="text-gray-300 text-sm">Try searching for the mod on the main page</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start space-x-3">
+          <svg class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"/>
+          </svg>
+          <div>
+            <span class="text-white font-medium">Browse categories</span>
+            <p class="text-gray-300 text-sm">Filter by platform or features you're interested in</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start space-x-3">
+          <svg class="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+          </svg>
+          <div>
+            <span class="text-white font-medium">Contact me</span>
+            <p class="text-gray-300 text-sm">Report broken links or missing mods</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{{ '/' | relative_url }}" class="bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-3 px-6 rounded transition-colors">
+        Return to Main Archive
+      </a>
+      <button id="contact-button-404" class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded transition-colors">
+        Report Issue
+      </button>
+    </div>
+  </div>
+
+  <!-- Zone flavor text -->
+  <div class="text-gray-400 text-sm">
+    <p>"The Zone is unpredictable. Sometimes what you seek finds you, sometimes it disappears forever."</p>
+    <p class="mt-2">- Anonymous Stalker</p>
+  </div>
+</div>
+
+{% include about-popup.html %}
+{% include essentials-popup.html %}
+
+<script>
+// Make the 404 contact button work with existing popup
+document.addEventListener('DOMContentLoaded', function() {
+  const contactButton404 = document.getElementById('contact-button-404');
+  if (contactButton404) {
+    contactButton404.addEventListener('click', function() {
+      const overlay = document.getElementById('contact-overlay');
+      if (overlay) {
+        overlay.classList.remove('hidden');
+      }
+    });
+  }
+});
+</script>
