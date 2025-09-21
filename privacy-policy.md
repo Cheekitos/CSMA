@@ -53,7 +53,7 @@ You can also:
 ## Third-Party Services
 
 ### Fullres Analytics
-We use Fullres for privacy-focused analytics. Their privacy policy can be found at their website.
+We use Fullres for privacy-focused analytics.
 
 ### External Links
 Our site links to external mod downloads and resources. We're not responsible for the privacy practices of these external sites.
@@ -61,14 +61,6 @@ Our site links to external mod downloads and resources. We're not responsible fo
 ## Data Retention
 
 Analytics data is retained according to Fullres's data retention policy. We don't store any personal data ourselves.
-
-## International Users
-
-This site is hosted on GitHub Pages (USA) and uses Fullres Analytics. By using our site, you consent to data processing in these jurisdictions.
-
-## Changes to This Policy
-
-We may update this privacy policy occasionally. Changes will be posted on this page with an updated date.
 
 ## Contact Us
 
