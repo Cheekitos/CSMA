@@ -122,6 +122,14 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body class="bg-gray-900 text-white font-sans p-4{% if page.body_class %} {{ page.body_class }}{% endif %}">
+<script>
+  (function(){
+    var fullres = document.createElement('script');
+    fullres.async = true;
+    fullres.src = 'https://t.fullres.net/cheeki.js?'+(new Date()-new Date()%43200000);
+    document.head.appendChild(fullres);
+  })();
+</script>
 
 {{ content }}
 
