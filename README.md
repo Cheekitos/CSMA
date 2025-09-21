@@ -28,7 +28,6 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - Added a 404 page, Analytics solution, Cookies consent popup & Privacy Policy for GDPR compliance
 
 ## ❌ To Do
-- Stop pushing my video reviews on the main page, replace with screenshot or custom thumbnail
 - If grades are hidden on main page, hide them on individual pages also (prob local storage approach)
 - Add Requirements Section (Maybe, hard to find reliable info for most mods)
 - Tailwind CLI and other optimizations (When we're 100% Done)
