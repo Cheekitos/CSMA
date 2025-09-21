@@ -132,6 +132,8 @@ layout: default
                    data-fallback="{{ full_url }}"
                    alt="{{ page.title }} screenshot {{ forloop.index }}" 
                    loading="lazy"
+                   width="320"
+                   height="180"
                    onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback) { this.src = this.dataset.fallback; this.removeAttribute('data-fallback'); }">
             </div>
             {% endfor %}
@@ -141,7 +143,7 @@ layout: default
             {% if remaining_slots > 0 %}
               {% for i in (1..remaining_slots) %}
               <div class="gallery-thumbnail" data-full-src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}">
-                <img src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}" alt="{{ page.title }} placeholder image {{ i }}" loading="lazy">
+                <img src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}" alt="{{ page.title }} placeholder image {{ i }}" loading="lazy" width="320" height="180">
               </div>
               {% endfor %}
             {% endif %}
@@ -153,7 +155,7 @@ layout: default
                data-base-url="{{ '/assets/images/screenshots/' | relative_url }}">
             {% for i in (1..3) %}
             <div class="gallery-thumbnail" data-full-src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}">
-              <img src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}" alt="{{ page.title }} placeholder image {{ i }}" loading="lazy">
+              <img src="{{ '/assets/images/screenshots/placeholder.jpg' | relative_url }}" alt="{{ page.title }} placeholder image {{ i }}" loading="lazy" width="320" height="180">
             </div>
             {% endfor %}
           </div>
@@ -342,7 +344,7 @@ layout: default
           <div class="video-container mod-page-video">
             {% assign video_id = page.video | split: '/' | last | split: '?' | first %}
             <div class="video-thumbnail" data-video-id="{{ video_id }}" data-video-url="{{ page.video }}">
-              <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="Video review thumbnail" loading="lazy" class="w-full h-full object-cover rounded">
+              <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg" alt="Video review thumbnail" loading="lazy" width="480" height="360" class="w-full h-full object-cover rounded">
               <div class="play-button"></div>
             </div>
           </div>
