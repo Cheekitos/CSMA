@@ -25,7 +25,7 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - Adding A list view of all the mods (easy way to see the top 50 - worst 50)
 - Adding 'Must Play' Option in the filters + highlight of the mod cards when selected
 - Preview Image for the gallery Thumbnails for faster loading
-- Added a 404 page just in case
+- Added a 404 page just in case, Analytics solution, Cookies consent popup & Privacy Policy
 
 ## ❌ To Do
 - Stop pushing my video reviews on the main page, replace with screenshot or custom thumbnail
