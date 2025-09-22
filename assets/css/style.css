@@ -71,6 +71,32 @@ h3, .platform-block {
   align-items: center;
 }
 
+/* Title and rating layout control */
+/* Default: show horizontal layout (side by side) */
+.title-rating-horizontal {
+  display: flex;
+}
+
+.title-rating-vertical {
+  display: none;
+}
+
+/* For cards-4: hide horizontal layout and show vertical layout */
+.cards-4 .title-rating-horizontal {
+  display: none;
+}
+
+.cards-4 .title-rating-vertical {
+  display: block;
+}
+
+/* Allow title to wrap in cards-4 layout */
+.cards-4 .title-rating-vertical h3 {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
 /* Fix for video alignment - make grid content use flexbox */
 .grid-content {
   display: flex;
@@ -1067,4 +1093,6 @@ section h2 {
   }
 
   #filter-dropdown .flex.items-center.gap-1 {
-    gap
+    gap: 0.25rem;
+  }
+}
