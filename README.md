@@ -32,6 +32,7 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - If grades are hidden on main page, hide them on individual pages also (prob local storage approach)
 - Add Requirements Section (Maybe, hard to find reliable info for most mods)
 - Tailwind CLI and other optimizations (When we're 100% Done)
+- Improve website layout on mobile (at least the broken stuff, not a priority)
 
 ## 🌟 Wishlist 
 - Add new page for Anomaly Modpacks, CoC Modpacks... kind of a reference of good stuff to try
