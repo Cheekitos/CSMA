@@ -134,11 +134,36 @@ keywords: "STALKER mods, STALKER story mods, best STALKER mods 2025, STALKER ins
 
         <!-- Grid view content (visible by default) -->
         <div class="grid-content">
-          <div class="flex justify-between items-center mb-3 gap-2">
+          <!-- Title and rating for cards-2 and cards-3 (side by side) -->
+          <div class="flex justify-between items-center mb-3 gap-2 title-rating-horizontal">
             <h3 class="text-2xl font-semibold text-gray-100 drop-shadow whitespace-nowrap overflow-hidden text-ellipsis hover:text-yellow-400 transition-colors">
               {{ mod.title }}
             </h3>
             <div class="flex items-center space-x-1.5 text-yellow-400 rating">
+              <span class="text-base font-medium">{{ mod.rating }}</span>
+              <div class="flex items-center space-x-0.5 opacity-95">
+                {% assign rating = mod.rating %}
+                {% assign full_stars = rating | floor %}
+                {% assign half_star = rating | minus: full_stars %}
+                {% for i in (1..5) %}
+                  {% if i <= full_stars %}
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+                  {% elsif i == full_stars | plus: 1 and half_star >= 0.5 %}
+                    <svg class="w-4 h-4" viewBox="0 0 20 20"><defs><linearGradient id="halfGrad{{ forloop.parentloop.index }}{{ forloop.index }}" x1="0" x2="100%" y1="0" y2="0"><stop offset="50%" stop-color="#facc15"/><stop offset="50%" stop-color="#4b5563"/></linearGradient></defs><path fill="url(#halfGrad{{ forloop.parentloop.index }}{{ forloop.index }})" d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+                  {% else %}
+                    <svg class="w-4 h-4 fill-gray-600" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Title and rating for cards-4 (stacked vertically) -->
+          <div class="mb-3 title-rating-vertical">
+            <h3 class="text-2xl font-semibold text-gray-100 drop-shadow hover:text-yellow-400 transition-colors">
+              {{ mod.title }}
+            </h3>
+            <div class="flex items-center space-x-1.5 text-yellow-400 rating mt-1">
               <span class="text-base font-medium">{{ mod.rating }}</span>
               <div class="flex items-center space-x-0.5 opacity-95">
                 {% assign rating = mod.rating %}
