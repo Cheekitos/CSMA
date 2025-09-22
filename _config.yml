@@ -1,8 +1,8 @@
 # Site settings
 title: "Cheeki's S.T.A.L.K.E.R. Mods Archive"
 description: "Archive of the best S.T.A.L.K.E.R. mods with download links, rankings, install guides and tips. Everything you need to play STALKER mods easily."
-baseurl: "/CSMA"
-url: "https://cheekitos.github.io"
+baseurl: ""
+url: "https://www.cheeki.zone"
 author: "CheekiBreeki"
 
 # Build settings
