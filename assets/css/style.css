@@ -71,21 +71,6 @@ h3, .platform-block {
   align-items: center;
 }
 
-/* Reduce rating size by 25% when cards are at smallest size (cards-4) */
-.cards-4 .rating {
-  transform: scale(0.75);
-  transform-origin: right center;
-}
-
-.cards-4 .rating span {
-  font-size: 0.75em;
-}
-
-.cards-4 .rating svg {
-  width: 0.75rem;
-  height: 0.75rem;
-}
-
 /* Fix for video alignment - make grid content use flexbox */
 .grid-content {
   display: flex;
@@ -1082,6 +1067,4 @@ section h2 {
   }
 
   #filter-dropdown .flex.items-center.gap-1 {
-    gap: 0.25rem;
-  }
-}
+    gap
