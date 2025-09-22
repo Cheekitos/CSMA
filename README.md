@@ -26,6 +26,7 @@ Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main
 - Adding 'Must Play' Option in the filters + highlight of the mod cards when selected
 - Preview Image for the gallery Thumbnails for faster loading
 - Added a 404 page, Analytics solution, Cookies consent popup & Privacy Policy for GDPR compliance
+- CLS Optimizations so daddy Google can love me
 
 ## ❌ To Do
 - If grades are hidden on main page, hide them on individual pages also (prob local storage approach)
