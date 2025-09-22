@@ -1,5 +1,5 @@
 # Cheeki's Mods Archive v2
-Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main page shows a grid of mod cards, and each card now links to an individual mod page.
+New version of the Archive that displays S.T.A.L.K.E.R. game mods. Main page shows a grid of mod cards, and each card now links to an individual mod page.
 
 → [Check the Website](https://www.cheeki.zone/)   
 
