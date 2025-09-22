@@ -1,9 +1,7 @@
 # Cheeki's Mods Archive v2
 Current attempt at a Jekyll website that displays S.T.A.L.K.E.R. game mods. Main page shows a grid of mod cards, and each card now links to an individual mod page.
 
-→ [Current (Old) Page](https://www.cheeki.zone/)   
-
-→ [Check the New Page](https://cheekitos.github.io/CSMA/)
+→ [Check the Website](https://www.cheeki.zone/)   
 
 ## 🚧 In Progress
 - Adding new mods and writing each mod individual page (Short description, Long Description, Pros & Cons, Install Guide, Common troubleshooting steps, Screenshots, SEO...)
