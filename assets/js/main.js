@@ -809,4 +809,53 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  // About/FAQ Tab Switching functionality
+  const aboutTab = document.getElementById('about-tab');
+  const faqTab = document.getElementById('faq-tab');
+  const aboutContent = document.getElementById('about-content');
+  const faqContent = document.getElementById('faq-content');
+
+  if (aboutTab && faqTab && aboutContent && faqContent) {
+    aboutTab.addEventListener('click', () => {
+      // Switch to About tab
+      aboutTab.classList.add('text-white', 'border-yellow-400');
+      aboutTab.classList.remove('text-gray-400', 'border-transparent');
+      faqTab.classList.add('text-gray-400', 'border-transparent');
+      faqTab.classList.remove('text-white', 'border-yellow-400');
+      
+      // Show About content, hide FAQ content
+      aboutContent.classList.remove('hidden');
+      faqContent.classList.add('hidden');
+    });
+
+    faqTab.addEventListener('click', () => {
+      // Switch to FAQ tab
+      faqTab.classList.add('text-white', 'border-yellow-400');
+      faqTab.classList.remove('text-gray-400', 'border-transparent');
+      aboutTab.classList.add('text-gray-400', 'border-transparent');
+      aboutTab.classList.remove('text-white', 'border-yellow-400');
+      
+      // Show FAQ content, hide About content
+      faqContent.classList.remove('hidden');
+      aboutContent.classList.add('hidden');
+    });
+  }
+
+  // Reset to About tab when popup opens - modify existing contact button handlers
+  const originalShowContactOverlay = showContactOverlay;
+  showContactOverlay = function() {
+    originalShowContactOverlay();
+    
+    // Reset to About tab
+    if (aboutTab && faqTab && aboutContent && faqContent) {
+      aboutTab.classList.add('text-white', 'border-yellow-400');
+      aboutTab.classList.remove('text-gray-400', 'border-transparent');
+      faqTab.classList.add('text-gray-400', 'border-transparent');
+      faqTab.classList.remove('text-white', 'border-yellow-400');
+      
+      aboutContent.classList.remove('hidden');
+      faqContent.classList.add('hidden');
+    }
+  };
 });
