@@ -94,4 +94,4 @@ translation_by: "carlkuwait"
 - **Crash on first launch:** Uninstall reshade, change engine via JSGME, run the game as administrator
 - **Crash with "impossible to create a file" error:** Turn off autosaves in the game settings
 - **Crash in Rostok:** Do a Reset. Check the Readme.txt for the detailed reset steps
-- **Reshade issues & settings:** Check the "Translated Intructions Document" in the Links Section
+- **Reshade issues & settings:** Check the "Translated Instructions Document" in the Links Section
