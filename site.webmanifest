@@ -1,6 +1,6 @@
 {
   "name": "Cheeki's S.T.A.L.K.E.R. Mods Archive",
-  "short_name": "Cheeki's Mods",
+  "short_name": "Cheeki's Archive",
   "description": "Archive of the best S.T.A.L.K.E.R. mods with download links, rankings, install guides and tips",
   "start_url": "/",
   "scope": "/",
@@ -20,4 +20,5 @@
       "type": "image/png"
     }
   ]
+
 }
