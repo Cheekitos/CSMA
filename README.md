@@ -26,7 +26,8 @@ New version of the Archive that displays S.T.A.L.K.E.R. game mods. Main page sho
 - Grades wrap up under mod Title when showing 4 card per row
 - Added a 404 page, Analytics solution, Cookies consent popup & Privacy Policy for GDPR compliance
 - CLS Optimizations so daddy Google can love me
-- About section expantion + FAQ 
+- About section expantion + FAQ
+- New logo + Favicons
 
 ## ❌ To Do
 - If grades are hidden on main page, hide them on individual pages also (prob local storage approach)
