@@ -1,0 +1,23 @@
+{
+  "name": "Cheeki's S.T.A.L.K.E.R. Mods Archive",
+  "short_name": "Cheeki's Mods",
+  "description": "Archive of the best S.T.A.L.K.E.R. mods with download links, rankings, install guides and tips",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#facc15",
+  "background_color": "#111827",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
