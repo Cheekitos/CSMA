@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://cheekitos.github.io/CSMA/sitemap.xml
+Sitemap: https://www.cheeki.zone/sitemap.xml
 
 # Allow crawling of CSS and JS files
 Allow: /assets/css/
