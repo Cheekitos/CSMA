@@ -31,7 +31,9 @@ New version of the Archive that displays S.T.A.L.K.E.R. game mods. Main page sho
 
 ## ❌ To Do
 - If grades are hidden on main page, hide them on individual pages also (prob local storage approach)
-- Add Requirements Section (Maybe, hard to find reliable info for most mods)
+- Add Specs / Requirements Section
+- Add download file size / installed mod file size
+- Add aproximative gameplay duration of each mod 
 - Tailwind CLI and other optimizations (When we're 100% Done)
 - Improve website layout on mobile (at least the broken stuff, not a priority)
 
