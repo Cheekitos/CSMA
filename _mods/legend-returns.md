@@ -1,6 +1,6 @@
 ---
 title: "Legend Returns"
-rating: 4.1
+rating: 4
 standalone: true
 lowspec_friendly: true
 must_play: false
