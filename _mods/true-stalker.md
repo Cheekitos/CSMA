@@ -1,6 +1,6 @@
 ---
 title: "True Stalker"
-rating: 4.1
+rating: 3.9
 standalone: true
 lowspec_friendly: false
 must_play: false
