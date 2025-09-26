@@ -1,7 +1,7 @@
 ---
 # HEADER SECTION
 title: "Wind of Time"
-rating: 4.5
+rating: 4.3
 standalone: true
 lowspec_friendly: true
 must_play: true
