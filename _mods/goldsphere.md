@@ -1,6 +1,6 @@
 ---
 title: "Goldsphere"
-rating: 3.8
+rating: 3.9
 standalone: true
 lowspec_friendly: true
 must_play: true
