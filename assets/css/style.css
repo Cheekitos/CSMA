@@ -112,6 +112,8 @@ h3, .platform-block {
 .video-container {
   aspect-ratio: 16/9;
   min-height: 120px;
+  /* CLS FIX: Add background to prevent white flash while YouTube images load */
+  background-color: #1f2937;
 }
 
 /* CLS FIXES - Consistent image dimensions */
@@ -130,6 +132,8 @@ h3, .platform-block {
   aspect-ratio: 16/9;
   display: block;
   overflow: hidden;
+  /* CLS FIX: Add subtle background to prevent white flash */
+  background-color: #1f2937;
 }
 
 /* List view styles */
@@ -281,7 +285,8 @@ h3, .platform-block {
 }
 
 #controls-container.filter-dropdown-open {
-  margin-bottom: 2.5rem; 
+  /* CLS FIX: Slightly increased from 2.5rem to prevent minor layout jump */
+  margin-bottom: 2.75rem;
 }
 
 #search-input {
@@ -498,6 +503,11 @@ h3, .platform-block {
   z-index: 1001;
 }
 
+/* CLS FIX: Ensure all images display consistently to prevent layout shifts */
+img {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .image-gallery {
     flex-direction: column;
@@ -577,9 +587,10 @@ h3, .platform-block {
     gap: 0.375rem;
   }
 
-  /* CLS FIXES - Mobile video container */
+  /* CLS FIXES - Mobile video container with background */
   .video-container {
     min-height: 100px;
+    background-color: #1f2937;
   }
 }
 
