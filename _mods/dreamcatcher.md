@@ -1,6 +1,6 @@
 ---
 title: "Dreamcatcher"
-rating: 4.2
+rating: 4.1
 standalone: true
 lowspec_friendly: false
 must_play: false
