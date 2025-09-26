@@ -1,6 +1,6 @@
 ---
 title: "Priboi Story"
-rating: 3.7
+rating: 3.8
 standalone: false
 lowspec_friendly: true
 must_play: false
