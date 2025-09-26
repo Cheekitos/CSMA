@@ -1,6 +1,6 @@
 ---
 title: "The Journey"
-rating: 3.1
+rating: 3
 standalone: true
 lowspec_friendly: true
 must_play: false
