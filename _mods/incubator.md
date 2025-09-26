@@ -1,6 +1,6 @@
 ---
 title: "Incubator"
-rating: 4.4
+rating: 4.2
 standalone: true
 lowspec_friendly: true
 must_play: true
