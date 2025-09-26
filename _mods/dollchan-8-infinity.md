@@ -1,6 +1,6 @@
 ---
 title: "Dollchan 8: Infinity"
-rating: 3.5
+rating: 3.3
 standalone: true
 lowspec_friendly: true
 must_play: false
