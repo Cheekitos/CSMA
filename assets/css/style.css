@@ -1107,3 +1107,84 @@ section h2 {
     gap: 0.25rem;
   }
 }
+
+/* Try to Fix mobile filter dropdown issues */
+/* Increase z-index for filter dropdown to ensure it appears above mod cards */
+#filter-dropdown {
+  z-index: 50 !important; /* Increased from z-10 */
+}
+
+/* Ensure controls container has proper stacking context */
+#controls-container {
+  z-index: 40; /* Increased from z-index: 5 */
+}
+
+/* Fix mobile dropdown positioning and prevent overflow */
+@media (max-width: 768px) {
+  #filter-dropdown {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    white-space: nowrap; /* Prevent text wrapping that could cause issues */
+  }
+  
+  /* Ensure the dropdown content doesn't overflow and force scrollbar visibility */
+  #filter-dropdown .flex.flex-wrap.items-center {
+    flex-wrap: nowrap !important; /* Prevent wrapping on very small screens */
+    gap: 0.25rem 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem; /* Add space for potential scrollbar */
+    -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+    scrollbar-width: thin; /* Firefox - always show thin scrollbar */
+  }
+  
+  /* Force webkit scrollbar to always be visible */
+  #filter-dropdown .flex.flex-wrap.items-center::-webkit-scrollbar {
+    height: 8px;
+    -webkit-appearance: none;
+  }
+  
+  #filter-dropdown .flex.flex-wrap.items-center::-webkit-scrollbar-track {
+    background: rgba(55, 65, 81, 0.5);
+    border-radius: 4px;
+  }
+  
+  #filter-dropdown .flex.flex-wrap.items-center::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  #filter-dropdown .flex.flex-wrap.items-center::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+  
+  /* Adjust font sizes to fit better on mobile */
+  #filter-dropdown span,
+  #filter-dropdown label {
+    font-size: 0.65rem !important;
+    white-space: nowrap;
+  }
+}
+
+/* Extra small screens - even more compact */
+@media (max-width: 320px) {
+  #filter-dropdown {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  #filter-dropdown span,
+  #filter-dropdown label {
+    font-size: 0.6rem !important;
+  }
+  
+  #filter-dropdown input[type="checkbox"],
+  #filter-dropdown input[type="radio"] {
+    width: 8px !important;
+    height: 8px !important;
+  }
+}
