@@ -34,15 +34,15 @@ links:
 
 mod_creator: |
   * Bot Nikolay - SDK
-  * Nikita "Nevropotolog" - 3D modeller, founder
-  * Andrey "Director_NTV" - game designer
-  * Alexander "XMODER" - 2D designer, lead encoder
-  * Artyom "rnm_016" Shewhart - gunsmith modeller, designer
-  * Dmitry "AspirinSGD" - quester, designer
+  * Nikita 'Nevropotolog' - 3D modeller, founder
+  * Andrey 'Director_NTV' - game designer
+  * Alexander 'XMODER' - 2D designer, lead encoder
+  * Artyom 'rnm_016' Shewhart - gunsmith modeller, designer
+  * Dmitry 'AspirinSGD' - quester, designer
   * Denis Levshchanov - quester
   * Leer Hansson - quester, encoder
   * Nikita Kozhevnikov - community manager
-translation_by: "SpecShadow"
+translation_by: SpecShadow
 additional_credits: |
   * GSC for a great game and platform
   * Team Epic for Call of Chernobyl
@@ -61,7 +61,7 @@ additional_credits: |
   * Vadim Drakoshin (Lost Path) for technical assistance
   * gridgt for fixing interface textures
   * av661194 for numerous CoC 1.4 fixes
-  * Max Frolov (mopsm), Artyom "Shev" Shevchenko, Ivan "vangut" - development participants
+  * Max Frolov 'mopsm', Artyom 'Shev' Shevchenko, Ivan 'vangut' - development participants
     
   **Financial Support**
   
