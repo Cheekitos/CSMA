@@ -10,6 +10,12 @@ release_date: "2015-07-31"
 short_description: "A deep sci-fi thriller that reimagines S.T.A.L.K.E.R.'s 2004 original storyline. Fully overhauled environments, well crafted plotlines and alternate endings, with a tense, atmospheric journey through a lonelier, more mysterious Zone."
 description: "Vector of Alienation is an ambitious S.T.A.L.K.E.R.: Shadow of Chernobyl mod built on Oblivion Lost Remake (OLR). While staying true to OLR's goal of restoring and reimagining the game's original vision described in early development, it removes OLR's bloat to deliver a raw, atmospheric experience.<br> You'll navigate a desolate Zone with fully overhauled environments, few but key NPCs, dangerous mutants, and a bleak story that ends in three heavy, alternate endings. The gameplay emphasizes slow, methodical survival. Ammo is scarce, gear is costly, and every artifact matters, making exploration and decision-making meaningful. <br> Shorter and more stable than the OLR version it's based upon, Vector of Alienation is deeply immersive, and the perfect entry point for players seeking an authentic, grim S.T.A.L.K.E.R. experience."
 
+gallery_images:
+  - "screenshot01.jpg"
+  - "screenshot02.jpg"
+  - "screenshot03.jpg"
+  - "screenshot04.jpg"
+
 # SEO ENHANCEMENT SECTION
 seo_title: "Vector of Alienation - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download Vector of Alienation for S.T.A.L.K.E.R. Shadow of Chernobyl. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
