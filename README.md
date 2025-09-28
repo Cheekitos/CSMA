@@ -28,6 +28,7 @@ New version of the Archive that displays S.T.A.L.K.E.R. game mods. Main page sho
 - CLS Optimizations so daddy Google can love me
 - About section expantion + FAQ
 - New logo + Favicons
+- Fixing lots of display issues on mobile (almost there!)
 
 ## ❌ To Do
 - If grades are hidden on main page, hide them on individual pages also (prob local storage approach)
