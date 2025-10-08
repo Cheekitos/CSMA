@@ -8,10 +8,7 @@ platform: "Shadow of Chernobyl"
 engine: "OGSR"
 release_date: "2017-07-16"
 short_description: "A wild and unhinged adventure set four years before Shadow of Chernobyl, mixing lots of open quests, puzzles, and bizarre occult mysteries. Full of Roadside Picnic references, it turns the Zone into a chaotic, unpredictable experience."
-description: "GoldSphere is a wild trip back to the early days of the Zone. You play as Zhekan, one of the first stalkers, chasing the legend of the Wish Granter. <br>
-Full of unique quests and creative mechanics, with great characters to meet and cheeky dialogue, it's also a large world to explore with weird puzzles, strange anomalies, and tons of hidden secrets. 
-Your creepy Doll companion will guide you through this weird, unpredicatble adventure full of Roadside Picnic references, dark humor, and unexpected twists. <br>
-GoldSphere can be buggy with some frustrating quests at times, but still, it is considered a legendary, 'must-play once' mod despite its flaws. Especially when you realize it's the impressive work of a single developer."
+description: "GoldSphere is a wild trip back to the early days of the Zone. You play as Zhekan, one of the first stalkers, chasing the legend of the Wish Granter. <br> Full of unique quests and creative mechanics, with great characters to meet and cheeky dialogue, it's also a large world to explore with weird puzzles, strange anomalies, and tons of hidden secrets. Your creepy Doll companion will guide you through this weird, unpredicatble adventure full of Roadside Picnic references, dark humor, and unexpected twists. <br> GoldSphere can be buggy with some frustrating quests at times, but still, it is considered a legendary, 'must-play once' mod despite its flaws. Especially when you realize it's the impressive work of a single developer."
 
 seo_title: "GoldSphere - Download & Install Guide | Cheeki's S.T.A.L.K.E.R. Mods Archive"
 seo_description: "Download GoldSphere for S.T.A.L.K.E.R. Shadow of Chernobyl. Complete installation guide, gameplay features, and detailed review on Cheeki's S.T.A.L.K.E.R. Mods Archive"
@@ -33,6 +30,12 @@ links:
     url: "https://www.moddb.com/mods/goldsphere-completion/downloads"
   - label: "Ap-pro Official Page"
     url: "https://ap-pro.ru/forums/topic/2545-golden-sphere/"
+  
+  - title: "Resources"
+  - label: "Latest Patch 1.4.4 for OGSR Version"
+    url: "https://www.moddb.com/mods/goldsphere-completion/addons/goldsphere-ogsr-patch-14"
+  - label: "Toastman221 Full Walkthrough"
+    url: "https://www.youtube.com/@Headshot-pc7mz/playlists"
   
   - title: "C-Consciousness Community"
   
@@ -77,28 +80,42 @@ additional_credits: |
   <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">1.</span>
     <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">Requires Dependencies found in "Essentials" at the top of the page.</p>
+      <p style="margin: 0; color: #d1d5db;">This repack is Goldsphere OGSR 1.3 + Fixes by Toastman221 & Seushimare + Patch 1.4.3.5</p>
     </div>
   </div>
 
   <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">2.</span>
     <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">Extract Archive, move game folder to the root of your drive.</p>
+      <p style="margin: 0; color: #d1d5db;">Requires Dependencies found in "Essentials" at the top of the page</p>
     </div>
   </div>
 
   <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">3.</span>
     <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">Launch "Start game.bat" or "xrEngine.exe" in the bin_x64 folder.</p>
+      <p style="margin: 0; color: #d1d5db;">(Optional but recommended ) Grab the latest patch 1.4.4 by Skaim - Link below</p>
     </div>
   </div>
 
   <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">4.</span>
     <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">This is Goldsphere OGSR 1.3 + Fixes by Toastman221 & Seushimare + Patch 1.4.3.5</p>
+      <p style="margin: 0; color: #d1d5db;">Extract Main Archive, move game folder to the root of your drive</p>
+    </div>
+  </div>
+
+  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
+    <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">5.</span>
+    <div style="flex: 1; line-height: 1.5;">
+      <p style="margin: 0; color: #d1d5db;">Copy the "gamedata" folder of the patch 1.4.4, to your game location</p>
+    </div>
+  </div>
+
+  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0;">
+    <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">6.</span>
+    <div style="flex: 1; line-height: 1.5;">
+      <p style="margin: 0; color: #d1d5db;">Launch "Start game.bat" or "xrEngine.exe" in the bin_x64 folder</p>
     </div>
   </div>
 </div>
