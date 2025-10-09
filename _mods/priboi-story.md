@@ -36,7 +36,7 @@ download_url: "https://www.moddb.com/mods/priboi-story-overhaul-2020/downloads/p
 links:
   - label: "Overhaul Moddb Official Page"
     url: "https://www.moddb.com/mods/priboi-story-overhaul-2020"
-  - label: "Dezowave Official Website"
+  - label: "Dez0wave Official Website"
     url: "https://www.dezowave.com/priboi-story/"
     
   - title: "Original Version"
@@ -59,9 +59,9 @@ links:
     inline: true
 
 mod_creator: |
-  * Dez0vawe Team (OG Mod)
+  * Dez0wave Team (OG Mod)
   * 100radsbar (2020 Overhaul)
-translation_by: "Dez0vawe Team"
+translation_by: "Dez0wave Team"
 additional_credits: |
   * Wolfehunter, boinkmakr, Darius6, and the team behind SMP 2.4, for letting me use the Gun models, and Gun-sounds from SMP2.4.
   * The makers of Arsenal Mod (Gun models)
