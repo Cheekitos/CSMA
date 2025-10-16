@@ -59,8 +59,8 @@ mod_creator: |
   * Hozar_2002 - Snow shader mask, helpful tips
 
 translation_by: |
-  * TheMrDemonized
-  * Tyvian
+  * TheMrDemonized - Machine Translation
+  * Tyvian - Updated Complete Translation
 
 additional_credits: |
   **Voice actors**
