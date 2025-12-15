@@ -1,16 +1,13 @@
-<!-- Install Files Popup -->
 <div id="install-files-overlay" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center hidden z-50">
-  <div class="bg-gray-900 rounded-lg max-w-2xl w-full h-[80vh] p-4 relative text-sm text-gray-200 flex flex-col">
+  <div class="bg-gray-900 rounded-lg max-w-2xl w-full h-auto max-h-[80vh] p-4 relative text-sm text-gray-200 flex flex-col">
     <button id="install-files-close" aria-label="Close install files popup" class="absolute top-2 right-2 text-gray-400 hover:text-white text-xl">&times;</button>
     
-    <!-- Tab Navigation -->
-    <div class="flex mb-3 border-b border-gray-700">
+    <div class="flex mb-3 border-b border-gray-700 shrink-0">
       <button id="essentials-tab" class="text-lg font-bold text-white pb-2 px-2 border-b-2 border-yellow-400 mr-4">Essential Files</button>
       <button id="resources-tab" class="text-lg font-bold text-gray-400 hover:text-white pb-2 px-2 border-b-2 border-transparent">Resources</button>
     </div>
     
-    <!-- Essential Files Content -->
-    <div id="essentials-content" class="overflow-y-auto flex-1">
+    <div id="essentials-content" class="overflow-y-auto min-h-0">
       <div id="install-files-content" class="text-gray-200">
         <h3 class="text-xl font-bold text-white mb-3">Essential Files</h3>
         <div class="space-y-3">
@@ -51,8 +48,7 @@
       </div>
     </div>
 
-  <!-- Resources Content -->
-    <div id="resources-content" class="hidden overflow-y-auto flex-1">
+  <div id="resources-content" class="hidden overflow-y-auto min-h-0">
       <div class="space-y-4">
         <div class="bg-gray-800 rounded-lg p-3">
           <h4 class="text-white text-sm font-medium mb-2">C-Consciousness Community</h4>
@@ -91,3 +87,5 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
