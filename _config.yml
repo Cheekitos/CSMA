@@ -39,6 +39,19 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - "*.gem"
+  - "*.gemspec"
+  - SETUP-INSTRUCTIONS.md
+
+# Include settings
+include:
+  - _data
+
+# GitHub specific settings
+github: [metadata]
+kramdown:
+  input: GFM
+  hard_wrap: false
 
 # SEO
 twitter:
