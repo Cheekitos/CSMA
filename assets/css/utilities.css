@@ -1,0 +1,36 @@
+/* Utility Helper Classes */
+
+/* Hide/Show Utilities */
+.hide-videos .video-container {
+  display: none;
+}
+
+.hide-grades .rating {
+  display: none;
+}
+
+/* Hide grades in list view when toggle is active */
+.hide-grades .cards-list .list-right {
+  display: none;
+}
+
+/* Must Play Card Highlighting */
+/* Must Play card highlighting - only when filter is active */
+.highlight-mustplay .mod-card[data-mod-mustplay="true"] {
+  border: 2px solid #eab308 !important;
+  box-shadow: 0 0 8px rgba(234, 179, 8, 0.4) !important;
+}
+
+.cards-list.highlight-mustplay .mod-card[data-mod-mustplay="true"] {
+  border: 1px solid #eab308 !important;
+  box-shadow: 0 0 6px rgba(234, 179, 8, 0.3) !important;
+}
+
+/* Override hover effects for must-play highlighted cards */
+.highlight-mustplay .mod-card[data-mod-mustplay="true"]:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 12px rgba(234, 179, 8, 0.6) !important;
+}
+
+.cards-list.highlight-mustplay .mod-card[data-mod-mustplay="true"]:hover {
+  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4), 0 0 8px rgba(234, 179, 8, 0.4) !important;
+}

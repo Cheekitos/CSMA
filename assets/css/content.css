@@ -1,0 +1,220 @@
+/* Content-Specific Styles */
+/* This file is reserved for future content-specific styling needs */
+
+/* Example structures for future use: */
+
+/* Blog/Article Content */
+/*
+.article-content {
+  max-width: 65ch;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.article-meta {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+*/
+
+/* Documentation Styles */
+/*
+.docs-sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.docs-nav a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.docs-nav a:hover {
+  color: #ffffff;
+}
+
+.docs-nav a.active {
+  color: #fbbf24;
+  font-weight: 500;
+}
+*/
+
+/* FAQ/Help Content */
+/*
+.faq-item {
+  border-bottom: 1px solid #374151;
+  padding: 1rem 0;
+}
+
+.faq-question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.faq-answer {
+  margin-top: 0.75rem;
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+.faq-toggle {
+  transition: transform 0.2s ease;
+}
+
+.faq-item.open .faq-toggle {
+  transform: rotate(180deg);
+}
+*/
+
+/* News/Updates Content */
+/*
+.news-item {
+  border-left: 4px solid #fbbf24;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.news-date {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.news-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+*/
+
+/* Changelog Content */
+/*
+.changelog-version {
+  border-bottom: 2px solid #374151;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.version-number {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.version-date {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.changelog-list {
+  margin-top: 1rem;
+}
+
+.changelog-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.changelog-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #fbbf24;
+  font-weight: bold;
+}
+*/
+
+/* Table Content Styles */
+/*
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.content-table th,
+.content-table td {
+  border: 1px solid #374151;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.content-table th {
+  background-color: #374151;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.content-table tbody tr:nth-child(even) {
+  background-color: rgba(31, 41, 55, 0.3);
+}
+*/
+
+/* Alert/Notice Boxes */
+/*
+.notice-box {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid;
+}
+
+.notice-info {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-left-color: #3b82f6;
+  color: #bfdbfe;
+}
+
+.notice-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left-color: #f59e0b;
+  color: #fde68a;
+}
+
+.notice-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-left-color: #10b981;
+  color: #a7f3d0;
+}
+
+.notice-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left-color: #ef4444;
+  color: #fecaca;
+}
+*/
+
+/* Featured Content */
+/*
+.featured-banner {
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  border: 1px solid #fbbf24;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.featured-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fbbf24;
+}
+
+.featured-description {
+  color: #d1d5db;
+  margin-bottom: 1.5rem;
+}
+*/
+
+/* Currently empty - ready for future content-specific needs */

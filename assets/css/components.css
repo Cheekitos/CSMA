@@ -1,0 +1,200 @@
+/* Reusable UI Components */
+
+/* Button Styles */
+.button-active {
+  border-color: white;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 1), 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+#essentials-button,
+#contact-button,
+#toggle-grades,
+#toggle-videos,
+#essentials-button-mobile,
+#contact-button-mobile,
+#toggle-grades-mobile,
+#toggle-videos-mobile {
+  font-size: 0.875rem !important; 
+  padding: 0.375rem 0.75rem !important; 
+  transition: all 0.2s ease;
+}
+
+#sort-button,
+#cards-less,
+#cards-more,
+#toggle-grades,
+#toggle-videos {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#controls-container button,
+#controls-container input {
+  height: 32px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Toggle button icon states */
+#toggle-grades svg {
+  transition: fill 0.2s ease;
+}
+
+#toggle-videos svg {
+  transition: fill 0.2s ease;
+}
+
+/* When grades are hidden, turn star gray */
+.hide-grades #toggle-grades svg {
+  color: #4b5563 !important;
+}
+
+/* When videos are hidden, turn play icon gray */
+.hide-videos #toggle-videos svg {
+  color: #4b5563 !important;
+}
+
+/* Mod Cards */
+.mod-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.mod-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: rgba(55, 65, 81, 0.5);
+}
+
+/* Form Elements */
+#search-input {
+  height: 32px;
+  padding-right: 4rem !important;
+}
+
+#search-container {
+  position: relative;
+}
+
+.filter-checkbox,
+.filter-radio {
+  accent-color: #eab308;
+  transform: scale(1);
+}
+
+.filter-checkbox:focus,
+.filter-radio:focus {
+  outline: 2px solid #eab308;
+  outline-offset: 2px;
+}
+
+/* Filter Text Element */
+#filter-text {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#filter-text:hover {
+  color: #f3f4f6;
+}
+
+#filter-text.dropdown-open #filter-arrow {
+  transform: rotate(180deg);
+}
+
+/* Navigation and Breadcrumbs */
+.arrow-pointer {
+  width: 0;
+  height: 0;
+  border-left: 6px solid white;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Credits Section Specific Components */
+.credits-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.credits-list ul li {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.credits-list ul li::before {
+  content: '•';
+  color: #fbbf24;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.credits-list p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Override prose styles for credits specifically */
+.credits-list .prose p,
+.credits-list .prose ul,
+.credits-list .prose li {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.credits-list .prose ul {
+  margin-bottom: 0;
+}
+
+.credits-list .prose li {
+  margin-bottom: 0.25rem;
+}
+
+/* Pros and Cons Components */
+.pros-section ul li {
+  color: #4ade80; 
+  font-size: 0.875rem; 
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.cons-section ul li {
+  color: #f87171; 
+  font-size: 0.875rem; 
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.pros-section ul li span:first-child,
+.cons-section ul li span:first-child {
+  font-weight: 700; 
+  font-size: 1rem; 
+}
+
+/* Flex Layout Utilities */
+.flex.flex-wrap.items-start {
+  align-items: flex-start;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .pros-section ul li,
+  .cons-section ul li {
+    font-size: 0.8rem;
+  }
+}
