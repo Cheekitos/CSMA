@@ -1,10 +1,11 @@
-# Cheeki's Mods Archive v2
+# Cheeki's Mods Archive
 New version of the Archive that displays S.T.A.L.K.E.R. game mods. Main page shows a grid of mod cards, and each card now links to an individual mod page.
 
 → [Check the Website](https://www.cheeki.zone/)   
 
 ## 🚧 In Progress
 - Adding new mods and writing each mod individual page (Short description, Long Description, Pros & Cons, Install Guide, Common troubleshooting steps, Screenshots, SEO...)
+- Expanding on the newly implemented "Interactive Mod Map"
 
 ## ✅ Done
 - Rebuild old website to be Jekyll-based with Server-side rendering
@@ -28,10 +29,13 @@ New version of the Archive that displays S.T.A.L.K.E.R. game mods. Main page sho
 - CLS Optimizations so daddy Google can love me
 - About section expantion + FAQ
 - New logo + Favicons
-- Fixing lots of display issues on mobile (almost there!)
+- Fixing lots of display issues on mobile
+- Break down css / js for easier maintenance
+- Move the Hide videos / grades buttons in the search bar
+- First Iteration of the Interactive Mod Map
 
 ## ❌ To Do
-- If grades are hidden on main page, hide them on individual pages also (prob local storage approach)
+- If grades are hidden on main page, hide them on individual pages also
 - Add Specs / Requirements Section
 - Add download file size / installed mod file size
 - Add aproximative gameplay duration of each mod 
@@ -39,11 +43,7 @@ New version of the Archive that displays S.T.A.L.K.E.R. game mods. Main page sho
 - Improve website layout on mobile (at least the broken stuff, not a priority)
 
 ## 🌟 Wishlist 
-- Add new page for Anomaly Modpacks, CoC Modpacks... kind of a reference of good stuff to try
-- Open up the site to mods I didn't review, 3rd Party reviewers, collabs etc. 
-- Move out of GitHub to dedicated hosting
-- Users can create a profile and post reviews / grade mods
-- Small discussion forum
+- NO MORE - Need to work on content xd
 
 ---
 *Get out of here, Stalker!*
