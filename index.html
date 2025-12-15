@@ -9,12 +9,12 @@ keywords: "STALKER mods, STALKER story mods, best STALKER mods 2025, STALKER ins
 <div class="max-w-6xl mx-auto">
   <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1 gap-2">
     <h1 class="text-3xl font-bold">Cheeki's Mods Archive</h1>
-    {% include header-buttons.html show_toggles=true %}
+    {% include header-buttons.html %}
   </div>
 
   <h2 class="text-lg text-gray-400 mb-3">A collection of S.T.A.L.K.E.R. Story Mods</h2>
   
-  {% include mobile-buttons.html show_toggles=true %}
+  {% include mobile-buttons.html %}
   
  <p class="text-gray-300 text-sm mb-6">
     This page is a curated archive of S.T.A.L.K.E.R. game modifications, focusing mainly on story-driven projects I've reviewed on the <a href="https://linktr.ee/cheekibreekii" target="_blank" class="text-white underline">YouTube Channel</a>.
@@ -32,6 +32,14 @@ keywords: "STALKER mods, STALKER story mods, best STALKER mods 2025, STALKER ins
       </button>
       <button id="cards-more" aria-label="Show more cards per row" class="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-1 px-2 rounded w-8 h-8 flex items-center justify-center">
         +
+      </button>
+    </div>
+    <div class="flex items-center gap-1">
+      <button id="toggle-grades" aria-label="Toggle grade visibility" class="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-1 px-3 rounded h-8 whitespace-nowrap flex items-center justify-center">
+        <svg class="w-4 h-4 fill-current text-yellow-400" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.487 6.91l6.561-.955L10 0l2.952 5.955 6.561.955-4.757 4.635 1.122 6.545z"/></svg>
+      </button>
+      <button id="toggle-videos" aria-label="Toggle video visibility" class="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-1 px-3 rounded h-8 whitespace-nowrap flex items-center justify-center">
+        <svg class="w-5 h-5 fill-current text-red-500" viewBox="0 0 24 24"><path d="M21.8 8.001c0 0-0.195-1.378-0.795-1.985-0.76-0.797-1.613-0.801-2.004-0.847-2.799-0.202-6.997-0.202-6.997-0.202h-0.009c0 0-4.198 0-6.997 0.202-0.391 0.046-1.243 0.05-2.004 0.847-0.6 0.607-0.795 1.985-0.795 1.985s-0.199 1.618-0.199 3.237v1.517c0 1.618 0.199 3.237 0.199 3.237s0.195 1.378 0.795 1.985c0.761 0.797 1.76 0.771 2.205 0.855 1.6 0.153 6.8 0.201 6.8 0.201s4.203-0.006 7.001-0.209c0.391-0.047 1.243-0.05 2.004-0.847 0.6-0.607 0.795-1.985 0.795-1.985s0.199-1.618 0.199-3.237v-1.517c0-1.618-0.199-3.237-0.199-3.237zM9.935 14.594v-5.62l5.403 2.82-5.403 2.8z"/></svg>
       </button>
     </div>
     <div class="relative flex-1 min-w-[150px]" id="search-container">
