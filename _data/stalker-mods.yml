@@ -1,0 +1,765 @@
+# S.T.A.L.K.E.R. Mods Family Tree Data
+# Structure: base_games -> children -> hierarchical_children (nested as needed)
+
+base_games:
+  # The hyphen for the first list item must be correctly indented.
+  - id: soc
+    name: "Shadow of Chernobyl"
+    type: base-game
+    description: "The OG game that started it all. A local amnesiac addicted to cheap vodka decides that killing a mysterious man named Strelok is a perfectly reasonable life goal for someone currently living in a radioactive dumpster."
+    link: "https://store.steampowered.com/franchise/stalker"
+    link2: "https://www.gog.com/en/game/stalker_shadow_of_chernobyl"
+    children:
+      - id: zrp
+        name: "Zone Reclamation Project"
+        type: regular
+        badge: bugfixes
+        description: "Huge community effort aimed at fixing bugs, crashes and improving stability without changing the core gameplay and features of the original game."
+        link: "https://www.metacognix.com/files/stlkrsoc/index.html?utm_source=chatgpt.com"
+        link2: "https://www.moddb.com/mods/starter-pack/downloads/zone-reclamation-project-107-r5rc?utm_source=chatgpt.com"
+
+      - id: amk
+        name: "AMK"
+        type: platform-family
+        badge: overhaul
+        description: "One of the earliest total conversion mods that reshapes gameplay with offline A-Life mechanics, dynamic anomalies, expanded quests, improved HUD and detectors, and deeper survival mechanics."
+        link: "https://www.moddb.com/games/stalker/downloads/amk-1-4-eng"
+        link2: "https://www.amk-team.ru/forum/"
+        hierarchical_children:
+          - id: nlc7
+            name: "NLC7 (HE)"
+            type: regular
+            badge: soup
+            description: "Built on AMK's foundation and previous NLC7 builds, this NLC7 Hard Edition adds challenging survival mechanics, revamped loot and economy, extended story & quests, new mutants, and a strong emphasis on strategic gameplay."
+            link: "https://www.moddb.com/mods/nlc7-he23/downloads"
+            link2: null
+
+      - id: aa2
+        name: "Autumn Aurora 2"
+        type: regular
+        badge: overhaul
+        description: "Complete graphical overhaul that brings an autumnal atmosphere to the Zone, new vegetation and a custom weather system (but not only!). Also comes with audio, gameplay improvments and artifact detection mechanics."
+        link: "https://www.moddb.com/mods/autumn-aurora-compilation-mod"
+        link2: null
+
+      - id: fotograf
+        name: "F.O.T.O.G.R.A.F."
+        type: regular
+        badge: story
+        description: "Memorable and very unique mod with redesigned locations, brand new gameplay mechanics to discover, and a long, fully original story delving into the supernatural and eerie aspects of the Zone."
+        link: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
+        link2: "https://www.moddb.com/groups/stalkerseriescommunity/images/fotograf-mod-for-stalker-soc"
+        is_story: true
+
+      - id: kill-zone
+        name: "Kill Zone"
+        type: regular
+        badge: story
+        description: "Fight hordes of mutants with powerful weapons and vehicles. Action-packed mod from 2007."
+        link: "https://www.moddb.com/mods/kill-zone-translated"
+        link2: null
+        is_story: true
+
+      - id: left-to-die
+        name: "Left to Die"
+        type: regular
+        badge: overhaul
+        description: "Transforms SoC into a zombie apocalypse set in modern Russia with completely new maps, story, and survival-focused gameplay."
+        link: "https://www.moddb.com/mods/left-to-die"
+        link2: null
+
+      - id: lost-alpha
+        name: "Lost Alpha"
+        type: platform-family
+        badge: overhaul
+        description: "Restores content from early-stages of developement that was removed from the game before release. Expands the Zone with new maps, weapons, and a re-imagined storyline inspired by the original vision."
+        link: "https://www.dezowave.com/lost-alpha/"
+        link2: "https://www.moddb.com/mods/lost-alpha"
+        hierarchical_children:
+          - id: lost-alpha-dc
+            name: "Lost Alpha DC"
+            type: regular
+            badge: overhaul
+            description: "The Developer's Cut version of Lost Alpha, with refined visuals, improved stability, removed or streamlined controversial story elements and a more coherent experience."
+            link: "https://www.moddb.com/mods/lost-alpha/news/la-dc-versions"
+            link2: null
+
+          - id: lost-alpha-revisited
+            name: "Lost Alpha Revisited"
+            type: regular
+            badge: overhaul
+            description: "Update of the Lost Alpha DC with bugfixes, stability improvments and storyline changes."
+            link: "https://www.moddb.com/mods/lost-alpha/downloads/stalker-lost-alpha-revisited"
+            link2: "https://www.moddb.com/mods/lost-alpha/news/la-dc-versions"
+
+          - id: lost-alpha-extended
+            name: "Lost Alpha Extended"
+            type: regular
+            badge: overhaul
+            description: "Another update of the Lost Alpha DC with balance adjustments, additional content and a hardcore, challenge-oriented gameplay."
+            link: "https://www.moddb.com/mods/lost-alpha/news/new-version-of-la-dc-extended"
+            link2: "https://www.moddb.com/mods/lost-alpha/news/la-dc-versions"
+
+      - id: narodnaya
+        name: "Narodnaya Soljanka"
+        type: regular
+        badge: soup
+        description: "The classic and original soup-style total conversion for SoC. Extensively overhauls the game adding new quests, anomalies, mutants, items, maps... Turning S.T.A.L.K.E.R. into a more open, varied and replayable experience."
+        link: "https://www.moddb.com/mods/solyanka"
+        link2: null
+        hierarchical_children:
+          - id: stalkersoup
+            name: "STALKERSOUP"
+            type: regular
+            badge: soup
+            description: "Massive standalone compilation combining all three STALKER series with Narodnaya Soljanka, The Collector, and more. 50+ levels with extended storylines, unique progression system and hundred hours of content."
+            link: "http://www.tecnobacon.com/"
+            link2: "https://www.moddb.com/mods/stalkersoup"
+
+      - id: new-arsenal-7
+        name: "New Arsenal 7"
+        type: regular
+        badge: soup
+        description: "Massive new arsenal of weapons for gun lovers, but also adds a new storyline, new maps, multiple new gameplay features, and visual improvments."
+        link: "https://www.moddb.com/mods/new-arsenal-7/downloads/new-arsenal-71"
+        link2: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
+
+      - id: oblivion
+        name: "Oblivion Lost Remake"
+        type: platform-family
+        badge: overhaul
+        description: "A restoration of the cancelled Oblivion Lost build of SoC, reconstructing cut content and extending the story, while focusing on the original early-vision level design and deadly anomalies."
+        link: "https://www.moddb.com/mods/oblivion-lost-remake"
+        link2: null
+        hierarchical_children:
+          - id: voa
+            name: "Vector of Alienation"
+            type: regular
+            badge: story
+            description: "Ambitous and atmospheric story mod build on OLR with great writing and a well crafted plotline."
+            link: "https://www.cheeki.zone/mods/vector-of-alienation/"
+            link2: "https://www.moddb.com/mods/olr-vector-of-alienation"
+            is_story: true
+
+          - id: oblivion-lost-remake-3
+            name: "Oblivion Lost Remake 3.0"
+            type: regular
+            badge: overhaul
+            description: "A major update of Oblivion Lost vision with a new main story, advanced AI behaviors, hardcore survival mechanics, and expanded content with new gameplay mechanics and locations to discover."
+            link: "https://www.moddb.com/mods/oblivion-lost-remake-30-english-translation/features/feature-list-from-the-30-obt"
+            link2: null
+
+      - id: ogse
+        name: "OGSE 0.6.9.3"
+        type: engine-family
+        badge: overhaul
+        description: "Old Good Stalker Evolution is a standalone mod focused on creating a highly atmospheric Zone with improved stability, rich gameplay mechanics, tons of new content and missions with enhanced AI features, while fixing numerous vanilla bugs."
+        link: "https://www.moddb.com/mods/old-good-stalker-evolution"
+        link2: null
+        hierarchical_children:
+          - id: goldsphere-completion
+            name: "Goldsphere: Completion"
+            type: regular
+            badge: story
+            description: "Unique and interesting project bringing a brand new storyline (loosely based on the Roadside Picnic book) with new gameplay features, artifacts, anomalies, and esoteric side quests set eighteen years after the initial Chernobyl disaster."
+            link: "https://www.moddb.com/mods/goldsphere-completion"
+            link2: null
+            is_story: true
+
+          - id: left-to-die-2-de
+            name: "Left to Die 2.0 - Definitive Edition"
+            type: regular
+            badge: overhaul
+            description: "Enhanced remake of the Left to Die zombie mod with improved engine, new weather systems, expanded content, and survival-focused gameplay mechanics."
+            link: "https://dlcfun.com/en/stalker-shadow-of-chernobyl/stalker-shadow-of-chernobyl-left-to-die-20-definitive-edition"
+            link2: "https://ap-pro.ru/forums/topic/4134-left-to-die-20-definitive-edition/"
+
+          - id: radiophobia3
+            name: "Radiophobia 3"
+            type: regular
+            badge: overhaul
+            description: "Overhaul of SoC with updated graphics, improved gameplay and gunplay mechanics, new weapons and side-quests. A modernized, immersive mod that stays true to the original story."
+            link: "https://www.moddb.com/mods/radiophobia"
+            link2: null
+
+          - id: ogsr
+            name: "OGSR"
+            type: engine-family
+            badge: engine
+            description: "Old Good STALKER Remastered - Fork of the X-Ray engine expanding and reworking its core features, with modernized rendering, scripting capabilities, new modding tools and technical advancements."
+            link: "https://www.moddb.com/mods/ogsr-mod-repack-from-serega-lus-with-english-patch"
+            link2: "https://discord.gg/EpSQz6haEC"
+            hierarchical_children:
+              - id: alternativa
+                name: "Alternativa"
+                type: regular
+                badge: soup
+                description: "Unique story mod where as a simple civilian, you respond to the call of the Zone. Featuring a brand new, weird and unique plot, new maps, mutants, powers, fully voiced characters, and lots of extra content."
+                link: "https://www.moddb.com/mods/alternativa-14"
+                link2: "https://www.alternativa-mod.ru/"
+
+              - id: borov-story
+                name: "Borov's Story"
+                type: regular
+                badge: story
+                description: "Discover the origin story of Borov the Bandit, from simple barman in Yoga's gang to his rise as faction leader. Featuring new quests and better gameplay with Gunslinger implementation."
+                link: "https://www.cheeki.zone/mods/borov-story/"
+                link2: "https://www.moddb.com/mods/borovs-story-translated"
+                is_story: true
+
+              - id: goldsphere-ogsr
+                name: "Goldsphere OGSR"
+                type: regular
+                badge: story
+                description: "OGSR engine port of Goldsphere featuring improved graphics, modern weapons, enhanced UI, and better stability compared to the original OGSE version, with the same atmospheric story and unique gameplay mechanics."
+                link: "https://www.cheeki.zone/mods/goldsphere/"
+                link2: "https://www.moddb.com/mods/goldsphere-completion/addons/goldsphere-ogsr-english-translation"
+                is_story: true
+
+              - id: memories-of-the-zone
+                name: "Memories of the Zone"
+                type: regular
+                badge: vanillaplus
+                description: "Highly customizable modpack combining all the ZRP bugfixes and improvments, with enhanced graphics and new texture packs, improved weapon animations, and optional gameplay difficulty addons."
+                link: "https://www.moddb.com/mods/stalker-memories-of-the-zone"
+                link2: null
+
+              - id: ns2016
+                name: "Narodnaya Solyanka 2016"
+                type: regular
+                badge: soup
+                description: "Port of the legendary Soup mod to the new OGSR engine. Huge technical and graphical improvments. A good first introdcuction to Soup mods."
+                link: "https://www.moddb.com/mods/solyanka/downloads/narodnayasolyanka"
+                link2: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
+
+              - id: sfz-e0
+                name: "SFZ Project E0"
+                type: regular
+                badge: story
+                description: "Story modification featuring a linear scenario with many interesting gameplay elements, redesigned locations, and a focused narrative experience with meticulous attention to detail."
+                link: "https://www.moddb.com/mods/sfz-project-episode-zero"
+                link2: null
+                is_story: true
+                hierarchical_children:
+                  - id: sfz-e0-deluxe
+                    name: "SFZ Project E0 Deluxe Remake"
+                    type: regular
+                    badge: story
+                    description: "Remake of the original SFZ Project Episode Zero with revamped main story, expanded side-content, redesigned locations, updated gameplay and graphical components, and improved overall polish. Must-play experience."
+                    link: "https://www.moddb.com/mods/sfz-project"
+                    link2: "https://www.cheeki.zone/mods/sfzproject/"
+                    is_story: true
+                    
+              - id: zeroinv
+                name: "Zero Investment"
+                type: regular
+                badge: story
+                description: "Post-ironic looter shooter"
+                link: "https://www.moddb.com/mods/zero-investment"
+                link2: null
+
+      - id: priboi-story
+        name: "Priboi Story"
+        type: regular
+        badge: story
+        description: "A modding milestone and first mod bringing a new storyline to the game. Investigate a secret organization as military Lieutenant Priboi Slipchenko, with detective-style gameplay requiring document hunting and puzzle solving."
+        link: "https://www.moddb.com/mods/priboi-story"
+        link2: "https://www.dezowave.com/priboi-story/"
+        is_story: true
+        hierarchical_children:
+          - id: priboi-2020
+            name: "Priboi Story: 2020 Overhaul"
+            type: regular
+            badge: story
+            description: "Complete overhaul of the original Priboi Story with bug fixes, improved stability, enhanced graphics and gameplay mechanics."
+            link: "https://www.moddb.com/mods/priboi-story-overhaul-2020"
+            link2: null
+            is_story: true
+
+      - id: op-22
+        name: "OP 2.2"
+        type: regular
+        badge: soup
+        description: "Massive expansion mod with hundreds of hours of quests and open-world gameplay, ridiculous amount of (random) items and characters, dozens of locations, multiple overlapping storylines and extended content evolved from Narodnaya Soljanka."
+        link: "https://op-2.fandom.com/wiki/Cumulative_Pack_2_Wiki"
+        link2: null        
+
+      - id: prosectors-project
+        name: "Prosectors Project"
+        type: regular
+        badge: overhaul
+        description: "Global modification expanding the game with new locations, enhanced custom engine with new renderer, original gameplay mechanics, and reworked story."
+        link: "https://www.moddb.com/mods/prosectors-project-english-translation"
+        link2: null
+
+      - id: ss2
+        name: "Secret Trails 2"
+        type: regular
+        badge: story
+        description: "A long hunt for your lost brother, amnesia, twisty narrative, and a deep Monolith intrigue. There's an OGSR version out there with better looks, balance and bug fixes (but you'll lose the OG feel of the mod)."
+        link: "https://www.moddb.com/mods/secret-trails-2-english-repack"
+        link2: null
+
+      - id: soc-update-2
+        name: "SoC Update 2.0"
+        type: regular
+        badge: overhaul
+        description: "Brings Shadow of Chernobyl to contemporary standards with modernized graphics and sound upgrades, while preserving the original story. Custom engine modifications, new enhanced textures and improved visual effects."
+        link: "https://vk.com/stshoc_update"
+        link2: "https://stalker-mods.clan.su/load/s_t_a_l_k_e_r_ten_chernobylja/s_t_a_l_k_e_r_ten_chernobylja/shadow_of_chernobyl_update_1_4_2/5-1-0-7127"
+
+
+  - id: cs
+    name: "Clear Sky"
+    type: base-game
+    description: "The often underappreciated sequel (but a prequel story-wise). You're stuck in a swamp working for the least successful science club in the world, and watch factions wage pointless wars on each other while the Zone keeps killing everyone equally."
+    link: "https://store.steampowered.com/franchise/stalker"
+    link2: "https://www.gog.com/en/game/stalker_clear_sky"
+    children:
+      - id: srp
+        name: "Sky Reclamation Project"
+        type: regular
+        badge: bugfixes
+        description: "Community patch for Clear Sky focused on fixing bugs and improving stability while keeping the original gameplay intact."
+        link: "https://www.moddb.com/mods/srp"
+        link2: null
+
+      - id: arsenal-overhaul
+        name: "Arsenal Overhaul"
+        type: regular
+        badge: vanillaplus
+        description: "Expanded arsenal with over 80 weapons, 28 new ammunition types, high-quality weapon models and sounds, new suits, improved stalker variation and enhanced economy. Includes all the Sky Reclamation Project fixes."
+        link: "https://www.moddb.com/mods/arsenal-overhaul-clear-sky"
+        link2: null
+
+      - id: sky-renewal
+        name: "Sky Renewal"
+        type: regular
+        badge: vanillaplus
+        description: "Graphical remaster of Clear Sky featuring high-quality models, enhanced textures and shaders, reworked weather and lighting while aiming to preserve vanilla gameplay, atmosphere, and storyline."
+        link: "https://www.moddb.com/mods/sky-renewal-mod"
+        link2: null
+
+      - id: cs-complete
+        name: "Clear Sky Complete"
+        type: regular
+        badge: overhaul
+        description: "Replaces textures, improves lighting, weather effects, visuals, ambience, sound and UI and adds many features (scope system, sleeping bag) while preserving the original main storyline for a  more polished experience."
+        link: "https://www.moddb.com/mods/clear-sky-complete"
+        link2: null
+
+      - id: cs-lfo
+        name: "Clear Sky LFO"
+        type: regular
+        badge: overhaul
+        description: "Major overhaul of Clear Sky with an updated engine, beautiful graphics, weapons and animations, improved gameplay, and once the main storyline is completed transforms the game into a freeplay experience."
+        link: "https://www.moddb.com/mods/stalker-cs-last-fallout-overhaul-combo-mod"
+        link2: null
+
+      - id: hibernation-evil
+        name: "Hibernation Evil"
+        type: regular
+        badge: story
+        description: "Story mod with non-linear quest paths with multiple episodes and chapters, following a mercenary's journey through Pripyat with custom narrative progression."
+        link: "https://www.moddb.com/mods/hibernation-evil-episode-4-part-1-eng/downloads"
+        link2: "https://www.moddb.com/mods/hibernation-evil-episode-4-chapter-3"
+        is_story: true
+
+      - id: mystery
+        name: "Mystery"
+        type: regular
+        badge: overhaul
+        description: "Heavily inspired by MISERY for CoP, this overhaul has reworked gameplay and weapons, rebalanced mutant behaviors, redesigned anomalies and dark atmospheric visuals with new textures, sound effects, music, weather and lighting."
+        link: "https://www.moddb.com/mods/mystery"
+        link2: null
+
+      - id: ogsm
+        name: "OGSM"
+        type: regular
+        badge: freeplay
+        description: "Total overhaul attempting to restore the classic STALKER atmosphere with restored cut content, new mutants, weapons and armor, enhanced faction warfare, improved AI, and freeplay mode after completing the story."
+        link: "https://www.moddb.com/mods/stalker-clear-sky-ogsm-18-ce-2014-gereng/downloads/ogsm-v10"
+        link2: null
+        hierarchical_children:
+          - id: oldstory
+            name: "Old Story"
+            type: regular
+            badge: story
+            description: "Set one year before Shadow of Chernobyl, discover a new story, expanded locations, redesigned faction warfare systems, new characters and weapons, exploring a different take on the Zone's history and context."
+            link: "https://www.moddb.com/mods/old-story-116-cs-1510-eng"
+            link2: "https://www.gamepressure.com/download/stalker-clear-sky-old-story-v12-mod/zc10083"
+            is_story: true
+
+      - id: reborn
+        name: "REBORN"
+        type: platform-family
+        badge: soup
+        description: "Concentrated essence of Slav Jank."
+        link: "https://www.moddb.com/mods/reborn-another-way-253-eng"
+        link2: null
+        hierarchical_children:
+          - id: reborn-doppelganger
+            name: "Reborn Doppelganger"
+            type: regular
+            badge: soup
+            description: "Concentrated essence of Slav Jank on steroids."
+            link: "https://drive.google.com/file/d/1P-uDlgCGG3PpNXyRyKWdDCB9m1zNtmLc/view"
+            link2: null
+
+          - id: reborn-source
+            name: "Reborn Source"
+            type: regular
+            badge: soup
+            description: "Third installment in the Reborn series featuring lengthy storyline across 80+ locations with deep zone exploration, mystery investigation, and connections to previous Reborn narratives."
+            link: "https://www.moddb.com/mods/reborn-source"
+            link2: null
+            
+      - id: rtl
+        name: "Road to Limansk"
+        type: regular
+        badge: overhaul
+        description: "Build on SRP, a full gameplay overhaul for Clear Sky improving all aspects with new weapons, animations, expanded mechanics, and refined balance while maintaining the core Clear Sky experience."
+        link: "https://www.moddb.com/mods/the-road-to-limansk"
+        link2: null            
+
+  - id: cop
+    name: "Call of Pripyat"
+    type: base-game
+    description: "The least janky and better polished game of the trilogy. You play a military officer sent undercover as a Stalker to investigate why the Zone is bullying the Ukrainian Air Force. You still end up as the errand boy for every drunk in the area."
+    link: "https://store.steampowered.com/franchise/stalker"
+    link2: "https://www.gog.com/en/game/stalker_call_of_pripyat"
+    children:
+      - id: another-zone-mod
+        name: "Another Zone Mod"
+        type: regular
+        badge: story
+        description: "You play as Artyom, who enters the Zone searching for a mythical artifact to heal his sister. New questline, weapon pack, mutant looting and cooking mechanics, rebalanced gameplay and graphical tweaks."
+        link: "https://www.moddb.com/mods/another-zone-mod-translated"
+        link2: null
+        is_story: true
+        hierarchical_children:
+          - id: another-zone-mod-prologue
+            name: "Another Zone Mod: Prologue"
+            type: regular
+            badge: story
+            description: "Taking place before the events in AZM, you follow the steps of a missing military squad sent to Zaton to recover secret documents. New storyline, side quests, improved graphics & weapon pack."
+            link: "https://www.moddb.com/mods/another-zone-mod-prologue-translated"
+            link2: null
+            is_story: true
+
+      - id: dreamcatcher
+        name: "Dreamcatcher"
+        type: regular
+        badge: story
+        description: "You play as a scientist named Assistant, sent to study the mysterious Dreamcatcher artifact. As events unfold, you gradually turn into a hardened stalker. Sequel of Incubator that you should play first."
+        link: "https://www.cheeki.zone/mods/dreamcatcher/"
+        link2: "https://www.moddb.com/downloads/dreamcatcher-translation"
+        is_story: true
+
+      - id: ghosts-of-the-past
+        name: "Ghosts of the Past"
+        type: regular
+        badge: story
+        description: "Soldier Serpukhov investigates his grandfather's fate in Pripyat during WWII. Featuring new questlines, weapon pack, mysterious encounters and a focus on storyline with multiple endings."
+        link: "https://www.moddb.com/mods/ghosts-of-the-past-translated"
+        link2: null
+        is_story: true
+
+      - id: incubator
+        name: "Incubator"
+        type: regular
+        badge: story
+        description: "An intense story masterfully build on cinematic cutscenes, fully voiced characters, mysticism, gunfights, plot twists and multiple possible endings."
+        link: "https://www.cheeki.zone/mods/incubator/"
+        link2: "https://www.moddb.com/groups/na13241/news/release-of-the-story-mod-incubator"
+        is_story: true
+
+      - id: misery-22
+        name: "Misery 2.2"
+        type: regular
+        badge: overhaul
+        description: "Legendary overhaul of CoP emphasizing challenging difficulty, survival and immersion. Compeltely revamps environments, textures, sound, mutants, loot & economy for one of the harshest Zone Experiences."
+        link: "https://www.moddb.com/mods/stalker-misery"
+        link2: null
+
+      - id: openxray
+        name: "OpenXRay"
+        type: engine-family
+        badge: engine
+        description: "Open-source improved version of the X-Ray Engine offering 64-bit support, enhanced performance, bug fixes and new features for modders while maintaining compatibility with Call of Pripyat and other STALKER titles"
+        link: "https://github.com/OpenXRay/xray-16"
+        link2: null
+        hierarchical_children:
+          - id: true-stalker
+            name: "True Stalker"
+            type: regular
+            badge: story
+            description: "You play as Axe, a new stalker, in this total conversion with completely original storyline set after the events in CoP. New story, custom voice acting, cutscenes, improved UI, enhanced graphics, and new soundtrack."
+            link: "https://www.moddb.com/mods/true-stalker"
+            link2: "https://ap-pro.ru/stuff/zov_pripjati/true-stalker-r307/"
+            is_story: true
+
+      - id: path-in-the-mist
+        name: "Path in the Mist"
+        type: regular
+        badge: story
+        description: "Rookie stalker Shroud and his friend discover secret tunnels under Cordon and learn about a precious artifact hunted by a mysterious group. New storyline, quests, redesigned maps, new weapon pack and custom locations."
+        link: "https://www.moddb.com/mods/path-in-the-mist"
+        link2: null
+        is_story: true
+
+      - id: return-to-the-zone
+        name: "Return to the Zone"
+        type: regular
+        badge: story
+        description: "Created by Goldsphere developer Jekan, offers three separate campaigns with new maps, characters, plots and mechanics, new models, weapons and a new extraction mode."
+        link: "https://www.moddb.com/mods/return-to-the-zone-english-translation/downloads/return-to-the-zone-repack"
+        link2: "https://ap-pro.ru/forums/topic/4357-vozvrashtenie-v-zonu-vse-dopolneniya/"
+        is_story: true
+
+      - id: spatial-anomaly
+        name: "Spatial Anomaly"
+        type: regular
+        badge: story
+        description: "Play as Beast, a mercenary trapped inside a mysterious anomaly. Great survival and atmospheric story with outstanding writing, memorable characters, voice acting, and multiple endings."
+        link: "https://www.moddb.com/mods/spatial-anomaly-update-4"
+        link2: null
+        is_story: true
+
+      - id: thejourney
+        name: "The Journey"
+        type: regular
+        badge: story
+        description: "Set 20 years after the original trilogy. Nature has reclaimed the Zone. New story across seven maps (three entirely new, four reworked), with new vegetation, animals, mutants, and a hostile environment."
+        link: "https://www.moddb.com/mods/the-journey"
+        link2: null
+        is_story: true
+
+      - id: trapped
+        name: "Trapped"
+        type: regular
+        badge: story
+        description: "Military forces are trapped in Pripyat with limited communications and supplies and must survive alone. New underground maps, challenging gameplay, and an original adventure to discover."
+        link: "https://www.moddb.com/mods/trapped-translated"
+        link2: null
+        is_story: true
+
+      - id: valley-of-whispers
+        name: "Valley of Whispers"
+        type: regular
+        badge: story
+        description: "Set entirely on a large new map where you are hired to find a missing expedition that disappeared searching for the Heart of the Oasis artifact."
+        link: "https://www.moddb.com/games/stalker-call-of-pripyat/downloads/valley-of-whispers-eng-owr-3"
+        link2: "https://www.moddb.com/groups/stalkerseriescommunity/images/dolina-shorohov-valley-of-whispers-mod-for-cop"
+        is_story: true
+
+      - id: wind-of-time
+        name: "Wind of time"
+        type: regular
+        badge: story
+        description: "A complex storyline with multiple branching quests, an interesting plot involving time-travel, and a mission to save the world from the zone!"
+        link: "https://www.moddb.com/mods/wind-of-time"
+        link2: null
+        is_story: true
+
+      - id: coc
+        name: "Call of Chernobyl"
+        type: engine-family
+        badge: freeplay
+        description: "Highly replayable freeplay sandbox featuring all explorable maps from the series with overhauled AI and A-Life, character creation, repeatable missions, multiple game modes and extensive community addon support."
+        link: "https://www.moddb.com/mods/call-of-chernobyl"
+        link2: null
+        hierarchical_children:
+          - id: area
+            name: "A.R.E.A."
+            type: regular
+            badge: overhaul
+            description: "Realistic Zone experience, complete AI rework, new questlines, redesigned UI, weapon attachments system, new mutant hunting mechanics and extensive optimization. Designed for careful, hasteless and deliberate gameplay."
+            link: "https://www.moddb.com/mods/area"
+            link2: null
+
+          - id: call-of-misery
+            name: "Call of Misery"
+            type: regular
+            badge: overhaul
+            description: "Port of Misery 2 to CoC, featuring hardcore mechanics, enhanced difficulty, improved weapons balance, atmospheric visuals, and custom gameplay systems for experienced players."
+            link: "https://www.moddb.com/mods/stalker-com"
+            link2: null
+            hierarchical_children:
+              - id: road-to-the-north
+                name: "Road to the North"
+                type: regular
+                badge: overhaul
+                description: "30+ new missions over 32 maps, a full new storyline with branching paths depending on your choices, faction-based roleplay, realistic survival mechanics (working gas masks & oxygen tanks) new mutants, dynamic world events and great immersion."
+                link: "https://www.moddb.com/mods/zoneexpanded-road-to-the-north"
+                link2: null
+
+          - id: call-of-the-zone
+            name: "Call of the Zone"
+            type: regular
+            badge: overhaul
+            description: "Adds dynamic storylines across the entire Zone, hundreds of dynamic repeatable tasks, improved dialogue, dynamic A-Life population, shifting faction relations, dynamic anomaly fields and numerous gameplay enhancement."
+            link: "https://www.moddb.com/mods/doctorx-call-of-the-zone"
+            link2: null
+
+          - id: deadair-coc
+            name: "Dead Air"
+            type: regular
+            badge: overhaul
+            description: "Revamping nearly every aspect of the game and inspired by earlier hardcore mods, it focuses on survival realism, item & resource management, and the overall immersion, atmosphere and feel of the Zone."
+            link: "https://www.moddb.com/mods/dead-air"
+            link2: null
+            hierarchical_children:
+              - id: deadair-revolution
+                name: "Dead Air: Revolution"
+                type: regular
+                badge: overhaul
+                description: "Expansion of Dead Air featuring over 500 new quests with slow and methodical Zone exploration, new barter system, equipment improvements, crafting mechanics, and extensive balance adjustments across all aspects of gameplay."
+                link: "https://www.moddb.com/mods/dead-air/addons/dead-air-revolution-english-translation"
+                link2: null
+
+          - id: demosfen
+            name: "Demosfen"
+            type: regular
+            badge: overhaul
+            description: "Large project featuring many new locations, multiple quest chains, new character and mutant models, advanced features including helicopter flight, new artifacts, and reworked loot & trade mechanics."
+            link: "https://www.moddb.com/mods/demosfen"
+            link2: null
+
+          - id: dollchan-8
+            name: "Dollchan 8: Infinity"
+            type: regular
+            badge: story
+            description: "Set just after the shut down of the Brain Scorcher, it reimagines the plot of Shadow of Chernobyl in an expanded world, with a reworked world built for deep exploration."
+            link: "https://www.moddb.com/downloads/dollchan-8-infinity-english-translation"
+            link2: "https://www.cheeki.zone/mods/dollchan-8-infinity/"
+            is_story: true
+
+          - id: global-war
+            name: "Global War"
+            type: regular
+            badge: freeplay
+            description: "Large-scale warfare-mode with diverse weapons and armor for each faction, dynamic battles where groups fight for territory control, and a simulation of Zone conflicts with offline combat mechanics."
+            link: "https://www.moddb.com/mods/global-war-english-translation-repack"
+            link2: null
+
+          - id: iwp
+            name: "I.W.P."
+            type: regular
+            badge: freeplay
+            description: "Curated weapon selection with high quality models, textures and animations. But also much more! Reworked realistic gunplay, new item-use animations, expanded sound design, and extensive gameplay/technical customizations"
+            link: "https://www.moddb.com/mods/stalker-improved-weapon-pack"
+            link2: null
+
+          - id: last-day
+            name: "Last Day"
+            type: regular
+            badge: overhaul
+            description: "Based on CoM, CoC and a bundle of realism-oriented addons. Freeplay with intense survival mechanics, expanded gameplay systems focused on challenging economic and survival progression. Grandpa of Anomaly."
+            link: "https://www.moddb.com/mods/stalker-last-day"
+            link2: null
+
+          - id: legend-returns
+            name: "Legend Returns"
+            type: regular
+            badge: story
+            description: "Set between the events of SoC and CS, introduces a new storyline with separate paths for multiple factions, new locations, reworked weapons, visual enhancements, and perks system."
+            link: "https://www.moddb.com/mods/legend-returns"
+            link2: null
+            is_story: true
+
+          - id: team-lite
+            name: "Team Lite"
+            type: regular
+            badge: overhaul
+            description: "Freeplay project true to the original STALKER vision with restored visuals, gameplay mechanics and atmosphere from the early builds. New characters, unique token-based economy, and many quests to discover."
+            link: "https://www.moddb.com/mods/teamlite-mod"
+            link2: null
+
+          - id: anomaly
+            name: "Anomaly"
+            type: engine-family
+            badge: engine
+            description: "Standalone mod powered by the Monolith 64-bit engine offering stable, highly customizable freeplay experience with extensive addon and modding support."
+            link: "https://www.moddb.com/mods/stalker-anomaly/"
+            link2: null
+            hierarchical_children:
+              - id: anthology
+                name: "Anthology"
+                type: regular
+                badge: modpack
+                description: "Massive modpack compiling mutiple storylines from other mods and the original games, with redesigned and expanded locations, improved gameplay, and sound & visual addons for an enhanced experience."
+                link: "https://discord.com/invite/PWUyPrAZMv"
+                link2: null
+
+              - id: anomaly-redux
+                name: "Anomaly Redux"
+                type: regular
+                badge: modpack
+                description: "Modpack bundling many popular gameplay and visual mods into a cohesive package, and extensive customization for personalized gameplay experience."
+                link: null
+                link2: null
+
+              - id: bosspack
+                name: "Bosspack"
+                type: regular
+                badge: modpack
+                description: "Massive compilation reminiscing of Soup Mods, featuring over 1100 unique weapons, 200 reworked artifacts, 50 new mutants, hundreds of quests and tons of new mechanics to discover."
+                link: "https://discord.gg/2RzXzn4f3b"
+                link2: null
+
+              - id: dark-signal
+                name: "Dark Signal"
+                type: regular
+                badge: modpack
+                description: "Audio, visual, and gameplay overhaul focused on better immersion (without excessive difficulty), new mutant spawn systems with hunting and pack behaviors, increased radiation and anomalies, rebalanced ballistics, and impressive audio rework."
+                link: "https://www.moddb.com/mods/stalker-dark-signal"
+                link2: null
+
+              - id: efp
+                name: "Escape from Pripyat"
+                type: regular
+                badge: modpack
+                description: "Realism-focused modpack that transforms the game into a tougher, Escape from Tarkov–inspired survival shooter. Combat is punishing but fair. Deep weapon variety and extensive customization options, improved NPC loadouts and AI, intense survival mechanics."
+                link: "https://discord.gg/efp"
+                link2: null
+
+              - id: gamma
+                name: "GAMMA"
+                type: regular
+                badge: modpack
+                description: "Modular Modpack for Anomaly featuring over 500 addons focused on survival, scavenging, cooking, crafting and repairing with rebalanced economy, streamlined progression, and completely overhauled graphics and animations."
+                link: "https://www.stalkergamma.com/"
+                link2: null
+
+              - id: hcar
+                name: "H.C.A.R"
+                type: regular
+                badge: modpack
+                description: "Huge curated modpack that aims for a vanilla++ feel while overhauling pretty much every single aspect of the game. Challenging and with deep replayability."
+                link: "https://discord.gg/MKPs83N6Kh"
+                link2: null
+
+              - id: old-world-addon
+                name: "Old World Addon"
+                type: regular
+                badge: modpack
+                description: "Demake of Anomaly. A return to simpler roots, significantly reduced item bloat, rebalanced artifacts and economy to be closer to the OG games, while keeping the free-roaming sandbox style of gameplay."
+                link: "https://www.moddb.com/mods/stalker-anomaly/addons/152-old-world-addon"
+                link2: null
+                hierarchical_children:
+                  - id: forgotten-zone
+                    name: "Forgotten Zone"
+                    type: regular
+                    badge: overhaul
+                    description: "Keeps the rebalancing nostalgia style of OWA but introdices more modern standards through classic textures, sounds, lore-friendly features, lots of quality-of-life fixes and reimagined artifact economy encouraging exploration."
+                    link: "https://www.moddb.com/mods/stalker-anomaly/addons/stalker-forgotten-zone-beta"
+                    link2: null
+
+              - id: zona
+                name: "Zona"
+                type: regular
+                badge: modpack
+                description: "High-performance modpack with immersive mechanics, stable optimization for weaker computers, and extensive customization options designed for challenging, streamlined gameplay."
+                link: "https://discord.gg/drakomt-official-stalker-zona-server-939072582894903306"
+                link2: null
