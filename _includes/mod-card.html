@@ -1,0 +1,57 @@
+{% comment %}
+  Recursive include for rendering mod cards with their children
+  Parameters:
+    - mod: the mod object from the YAML data
+{% endcomment %}
+
+{% assign mod = include.mod %}
+
+<div class="flow-branch">
+  <div class="mod-card {{ mod.type }}" 
+       onclick="toggleCard(this); event.stopPropagation();" 
+       data-id="{{ mod.id }}"
+       data-name="{{ mod.name | downcase }}">
+    <div class="mod-header">
+      <div class="mod-title">{{ mod.name }}</div>
+      <div class="mod-badges">
+        {% if mod.hierarchical_children %}
+          <svg class="expand-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        {% endif %}
+        {% if mod.badge %}
+          {% if mod.badge == "vanillaplus" %}
+            <span class="mod-badge badge-{{ mod.badge }}">Vanilla+</span>
+          {% else %}
+            <span class="mod-badge badge-{{ mod.badge }}">{{ mod.badge | capitalize }}</span>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="mod-details">
+      <div class="mod-description">{{ mod.description }}</div>
+      {% if mod.link or mod.link2 %}
+        <div class="mod-links">
+          {% if mod.link %}
+            <a href="{{ mod.link }}" class="mod-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">View Details →</a>
+          {% endif %}
+          {% if mod.link2 %}
+            <a href="{{ mod.link2 }}" class="mod-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">More Info →</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  {% if mod.hierarchical_children %}
+    <div class="branch-connector left-aligned hidden" data-parent="{{ mod.id }}"></div>
+    
+    <div class="hierarchical-children hidden" data-parent="{{ mod.id }}">
+      {% for child in mod.hierarchical_children %}
+        <div class="hierarchical-item">
+          {% include mod-card.html mod=child %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
