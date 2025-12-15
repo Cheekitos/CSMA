@@ -122,15 +122,30 @@
   </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/filters.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/gallery.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/overlays.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/content.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/utilities.css' | relative_url }}">
 </head>
 <body class="bg-gray-900 text-white font-sans p-4{% if page.body_class %} {{ page.body_class }}{% endif %}">
-<!-- Analytics loaded conditionally via consent management in main.js -->
+<!-- Analytics loaded conditionally via consent management in analytics.js -->
 
 {{ content }}
 
 {% include cookie-consent.html %}
 
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<!-- JavaScript Files (order matters) -->
+<script src="{{ '/assets/js/analytics.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/core.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/filters.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/ui-controls.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/overlays.js' | relative_url }}"></script>
 </body>
 </html>
