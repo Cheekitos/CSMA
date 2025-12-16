@@ -112,14 +112,14 @@ base_games:
             name: "STALKERSOUP"
             type: regular
             badge: soup
-            description: "Massive standalone compilation combining all three STALKER series with Narodnaya Soljanka, The Collector, and more. 50+ levels with extended storylines, unique progression system and hundred hours of content."
+            description: "Started as an English port of the Russian Narodnaya Solyanka, but became it's own thing. Mashes together content from all games plus dozens of other addons. Dense NPC populations, zombie hordes and so much more."
             link: "http://www.tecnobacon.com/"
             link2: "https://www.moddb.com/mods/stalkersoup"
 
       - id: new-arsenal-7
         name: "New Arsenal 7"
         type: regular
-        badge: soup
+        badge: overhaul
         description: "Massive new arsenal of weapons for gun lovers, but also adds a new storyline, new maps, multiple new gameplay features, and visual improvments."
         link: "https://www.moddb.com/mods/new-arsenal-7/downloads/new-arsenal-71"
         link2: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
