@@ -697,7 +697,7 @@ base_games:
                 type: regular
                 badge: modpack
                 description: "Modpack bundling many popular gameplay and visual mods into a cohesive package, and extensive customization for personalized gameplay experience."
-                link: null
+                link: "https://discord.gg/DGHTTqBFqr"
                 link2: null
 
               - id: bosspack
