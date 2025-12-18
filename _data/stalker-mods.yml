@@ -150,7 +150,7 @@ base_games:
             link2: null
 
       - id: ogse
-        name: "OGSE 0.6.9.3"
+        name: "OGSE"
         type: engine-family
         badge: overhaul
         description: "Old Good Stalker Evolution is a standalone mod focused on creating a highly atmospheric Zone with improved stability, rich gameplay mechanics, tons of new content and missions with enhanced AI features, while fixing numerous vanilla bugs."
