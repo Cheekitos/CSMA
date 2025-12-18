@@ -548,7 +548,7 @@ base_games:
         name: "Valley of Whispers"
         type: regular
         badge: story
-        description: "Set entirely on a large new map where you are hired to find a missing expedition that disappeared searching for the Heart of the Oasis artifact."
+        description: "A classic story mod set entirely on a large new map with a well crafted story and detailed environmental narration. Blends horror elements with classic Stalker atmosphere."
         link: "https://www.moddb.com/games/stalker-call-of-pripyat/downloads/valley-of-whispers-eng-owr-3"
         link2: "https://www.moddb.com/groups/stalkerseriescommunity/images/dolina-shorohov-valley-of-whispers-mod-for-cop"
         is_story: true
