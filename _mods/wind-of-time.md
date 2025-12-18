@@ -91,4 +91,4 @@ additional_credits: |
 
 - **Game doesn't launch:** Delete pctrlchk.dll in the bin folder
 - **FPS drops:** Lower your settings for dynamic lighting and draw distance
-- **Soft-locks, transition crashes:** Make regular manual saves, loading earlier saves will fix most issues
+- **Memory Crashes:** Use the launch parameter <b>-no_staging</b>. You'll need to create a shortcut for your game .exe or .bat (whichever you use to start it) to add the parameter. Then Right click -> Target -> add a space then <b>-no_staging</b> at the end of the field -> Apply. 
