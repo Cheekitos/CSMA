@@ -556,6 +556,23 @@ body {
   color: white;
 }
 
+/* Subtle yellow highlight for Full View button - always visible */
+#toggleAllBtn {
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+#toggleAllBtn:hover {
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+  border-color: rgba(251, 191, 36, 0.6);
+}
+
+/* Remove highlight when active (feature already used) */
+#toggleAllBtn.active {
+  box-shadow: none;
+  border-color: #10b981;
+}
+
 .hidden { display: none !important; }
 
 /* Responsive */
