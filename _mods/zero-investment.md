@@ -69,28 +69,23 @@ additional_credits: |
   <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">2.</span>
     <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">(OGSR Standalone) Extract Main game Archive</p>
+      <p style="margin: 0; color: #d1d5db;">Pick either Legacy version for older hardware or SIMP version for the best graphics</p>
     </div>
   </div>
 
   <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">3.</span>
     <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">(OGSR Standalone) Extract SIMP Addon and copy gamedata and bin_x64 in your game folder</p>
+      <p style="margin: 0; color: #d1d5db;">Extract Main game Archive</p>
     </div>
   </div>
 
   <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">4.</span>
     <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">(OGSR Standalone) Launch game with bin_x64/xrEngine.exe</p>
+      <p style="margin: 0; color: #d1d5db;">Launch game with bin_x64/xrEngine.exe</p>
     </div>
   </div>
 
-  <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0;">
-    <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">5.</span>
-    <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">For Mod or non-OGSR version installation check the instructions in readme.txt</p>
-    </div>
   </div>
 </div>
