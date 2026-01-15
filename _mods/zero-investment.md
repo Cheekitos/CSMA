@@ -88,6 +88,4 @@ additional_credits: |
       <p style="margin: 0; color: #d1d5db;">Launch game with bin_x64/xrEngine.exe</p>
     </div>
   </div>
-
-  </div>
 </div>
