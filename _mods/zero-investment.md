@@ -51,6 +51,8 @@ additional_credits: |
   * hansart - a few weapon skins
   * Charlie Carious - dark UI
   * Василь Ебланович - HUD, Ukrainian localization
+  * lktr - Ukrainian localization help
+  * Meztinos - some promo art
 
   **Quality Insurance:**
   YnoobY, Nyanin, Lera Estrogen, fatetey
@@ -69,7 +71,7 @@ additional_credits: |
   <div class="flex items-start" style="gap: 0.75rem; margin-bottom: 0.75rem;">
     <span style="color: #fbbf24 !important; font-weight: bold; font-size: 0.875rem; flex-shrink: 0; line-height: 1.5; min-width: 1.2rem;">2.</span>
     <div style="flex: 1; line-height: 1.5;">
-      <p style="margin: 0; color: #d1d5db;">Pick either Legacy version for older hardware or SIMP version for the best graphics</p>
+      <p style="margin: 0; color: #d1d5db;">Pick either Legacy version (for older hardware) or SIMP version (for the best graphics)</p>
     </div>
   </div>
 
