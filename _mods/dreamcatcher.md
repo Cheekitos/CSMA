@@ -42,6 +42,17 @@ links:
     url: "https://discord.com/invite/UpxKJ3PyZ3"
     inline: true
 
+  - title: "C-Consciousness Community"
+  - label: "Discord"
+    url: "https://discord.gg/gyMdq3a"
+    inline: true
+  - label: "Moddb Group"
+    url: "https://www.moddb.com/groups/c-consciousness"
+    inline: true
+  - label: "Spreadsheet"
+    url: "https://docs.google.com/spreadsheets/d/1GgBFCRIbc7TQ5DwWHvWaridX1G64PYoWItkLyr3pBPk/edit?gid=0#gid=0"
+    inline: true
+
 mod_creator: "VIVIENT TEAM"
 translation_by: "Meztinos"
 additional_credits: |
@@ -131,3 +142,4 @@ additional_credits: |
 ### Troubleshooting & Tips
 
 - **Patch 07-12:** Lots of bug fixes and new cinematics, but English translations for the new content are missing
+- **Remaster 2.0:** A full remaster is available, check the c-con discord. I havn't tried it yet, but it'll probably end up being the one I recommend playing (if you have the hardware to run it properly!)
