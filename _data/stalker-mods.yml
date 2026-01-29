@@ -425,7 +425,7 @@ base_games:
   - id: cop
     name: "Call of Pripyat"
     type: base-game
-    description: "The least janky and better polished game of the trilogy. You play a military officer sent undercover as a Stalker to investigate why the Zone is bullying the Ukrainian Air Force. You still end up as the errand boy for every drunk in the area."
+    description: "The least janky and better polished game of the trilogy. You play a military officer sent undercover as a Stalker to investigate why the Zone is bullying the Ukrainian Air Force. You end up the errand boy for every drunk in the area."
     link: "https://store.steampowered.com/franchise/stalker"
     link2: "https://www.gog.com/en/game/stalker_call_of_pripyat"
     children:
