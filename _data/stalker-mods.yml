@@ -455,6 +455,15 @@ base_games:
         link: "https://www.cheeki.zone/mods/dreamcatcher/"
         link2: "https://www.moddb.com/downloads/dreamcatcher-translation"
         is_story: true
+        hierarchical_children:
+          - id: dreamcatcher-remaster
+            name: "Dreamcatcher 2.0"
+            type: regular
+            badge: story
+            description: "A full remaster of the mod and the recommended version to play if you have the hardware to run it properly!"
+            link: "https://ap-pro.ru/forums/topic/5764-lovec-snov-v20-remastered/"
+            link2: "https://discord.gg/gyMdq3a"
+            is_story: true
 
       - id: ghosts-of-the-past
         name: "Ghosts of the Past"
