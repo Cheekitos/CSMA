@@ -312,7 +312,7 @@ base_games:
   - id: cs
     name: "Clear Sky"
     type: base-game
-    description: "The often underappreciated sequel (but a prequel story-wise). You're stuck in a swamp working for the least successful science club in the world, and watch factions wage pointless wars on each other while the Zone keeps killing everyone equally."
+    description: "The often underappreciated sequel (but a prequel story-wise). You're stuck in a swamp working for the worst science club in the world. You watch factions wage pointless wars on each other, and the Zone keeps killing everyone equally."
     link: "https://store.steampowered.com/franchise/stalker"
     link2: "https://www.gog.com/en/game/stalker_clear_sky"
     children:
