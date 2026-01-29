@@ -6,7 +6,7 @@ base_games:
   - id: soc
     name: "Shadow of Chernobyl"
     type: base-game
-    description: "The OG game that started it all. A local amnesiac addicted to cheap vodka decides that killing a mysterious man named Strelok is a perfectly reasonable life goal for someone currently living in a radioactive dumpster."
+    description: "The game that started it all. A local amnesiac addicted to cheap vodka goes on a quest to kill a mysterious man called Strelok. A seemingly perfectly reasonable life goal for someone living in a radioactive dumpster."
     link: "https://store.steampowered.com/franchise/stalker"
     link2: "https://www.gog.com/en/game/stalker_shadow_of_chernobyl"
     children:
