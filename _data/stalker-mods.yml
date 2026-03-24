@@ -741,14 +741,6 @@ base_games:
                 link: "https://www.stalkergamma.com/"
                 link2: null
 
-              - id: hcar
-                name: "H.C.A.R"
-                type: regular
-                badge: modpack
-                description: "Huge curated modpack that aims for a vanilla++ feel while overhauling pretty much every single aspect of the game. Challenging and with deep replayability."
-                link: "https://discord.gg/MKPs83N6Kh"
-                link2: null
-
               - id: old-world-addon
                 name: "Old World Addon"
                 type: regular
