@@ -4,7 +4,7 @@ New version of the Archive that displays S.T.A.L.K.E.R. game mods. Main page sho
 → [Check the Website](https://www.cheeki.zone/)   
 
 ## 🚧 In Progress
-- Adding new mods and writing each mod individual page (Short description, Long Description, Pros & Cons, Install Guide, Common troubleshooting steps, Screenshots, SEO...)
+- Adding new mods and writing each mod individual page
 - Expanding on the newly implemented "Interactive Mod Map"
 
 ## ✅ Done
