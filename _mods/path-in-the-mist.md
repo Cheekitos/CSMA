@@ -39,7 +39,6 @@ links:
 
 mod_creator: "Spectrum Project"
 translation_by: "PsyWarVeteran"
-additional_credits: ""
 ---
 
 ### Installation Instructions
