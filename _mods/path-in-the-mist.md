@@ -7,8 +7,8 @@ must_play: false
 platform: "Call of Pripyat"
 engine: "OGSR"
 release_date: "2014-05-24"
-short_description: "Two idiots sneak into the Zone pretending to be scientists on an important mission, get caught by the military, and have to suffer the consequences."
-description: "An old-school classic that just received a port to the OGSR engine. Whether you play the original version or the modernized one, it’s a fun little adventure (around 12-15 hours to finish) that takes you through great reworked locations, creepy new undergrounds, and some very unique missions. What starts as two friends getting caught by the military while sneaking into the Zone turns into the hunt for the Pendulum, a mysterious artifact sought after by the secretive Spectrum group."
+short_description: "Follow the story of Shroud and Borland, two idiots that decided to sneak into the Zone pretending to be scientists on an important mission. They get caught by the military, and have to suffer the consequences."
+description: "An old-school classic that just received a port to the OGSR engine. Whether you play the original version or the modernized one, it’s a fun little adventure (around 12-15 hours to finish) that takes you through great reworked locations, creepy new undergrounds, and some very unique missions. <br> What starts as two friends getting caught by the military while sneaking into the Zone turns into the hunt for the Pendulum, a mysterious artifact sought after by the secretive Spectrum group."
 
 gallery_images:
   - "screenshot01.jpg"
